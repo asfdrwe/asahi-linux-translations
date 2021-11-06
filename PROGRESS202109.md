@@ -2,6 +2,7 @@
 
 ---
 # 進歩報告:2021年9月
+- [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202108.md)
 
 今月はとても忙しい月でした。カーネル側で多くの動きがあり、ツールの改良やリバースエンジニアリングのセッションも行われました。
 現時点でAsahi Linuxは基本的なLinuxデスクトップ（GPUアクセラレーションはなし）として使用可能です。これまで基盤が変動していましたが、
@@ -90,7 +91,7 @@ Sven氏は、下流のデバイスドライバがこの共通の処理コード�
 現在では下流のカーネルブランチでNVMeがうまく動作するようになりました。しかし、アップストリームに移行するためには、まだ大幅な改善が必要です。
 
 - **DCP**（`apple-dcp`、*開発中/機能する*）: M1のディスプレイコントローラのハードウェアについては、
-- [前回の進歩報告](https://asahilinux.org/2021/08/progress-report-august-2021/)で
+- [前回の進歩報告](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202108.md)で
 紹介したので、ここでは説明を割愛しますが、詳細を知りたい方は戻ってきてください。[Alyssa Rosenzweig氏](https://twitter.com/alyssarzg)が
 Linux用のドライバを書く挑戦をしていて、すでにうまく機能しています。これにより、解像度の切り替え（4K HDMIモニターのサポートを含む）や、
 適切なティアフリーのページめくりなどが動作します。これは、DCPがRTKitのASCでもあることから、Sven氏のRTKitとメールボックスのレイヤー上に
@@ -148,7 +149,7 @@ M1でAsahi Linuxを試すのが待ちきれない :-)
 インストールするだけ）をアップデートして、古いmacOSバージョンのサポート、異なるリカバリバージョンの処理、同じAPFSコンテナ内の
 複数のmacOSインストールの対応を強化しました。もしあなたが開発者で、この機能を試してみたいと思われるなら、私たちのIRCチャンネルに
 来ていただければ、すべてのセットアップをお手伝いします。インストーラがどのように動作するかを知りたい方は、
-[前回の進捗報告](https://asahilinux.org/2021/08/progress-report-august-2021/)をご覧ください。
+[前回の進捗報告](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202108.md)をご覧ください。
 
 安定したカーネル基盤ができあがったら、『公式』インストーラーの公開を開始します。そのバージョンでは、Linux のためのスペースを
 確保するために macOS をリサイズしたり、m1n1 + U-Boot をインストールしたり、EFI パーティションをセットアップしたり、
