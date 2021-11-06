@@ -2,7 +2,7 @@
 
 ---
 # 進歩報告:2021年8月
-- [前回](https://asahilinux.org/2021/03/progress-report-january-february-2021/)
+- [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20210102.md)
 - [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202109.md)
 
 前回の更新から随分と時間が経ってしまいました！正直なところ、第1回進歩報告はハードルが高すぎて、それに見合うだけのマンスリーレポートを
