@@ -1,8 +1,6 @@
 [Progress Report: September 2021](https://asahilinux.org/2021/10/progress-report-september-2021/)の非公式日本語訳です。
 
 訳注: 
-- 原文で本家文書wikiへのリンクは対応する日本語訳文書wikiへのリンクに置き換え
-- 原文での単語説明のための英語版Wikipediaへのリンクは、対応する日本語版が存在する場合、日本語版Wikipediaへのリンクに置き換え
 - Githubのmarkdownで使えないiframeでのtwitterへの埋め込みをリンクに置き換え
 
 ---
