@@ -1,5 +1,10 @@
 [Progress Report: August 2021](https://asahilinux.org/2021/08/progress-report-august-2021/)の非公式日本語訳です。
 
+訳注: 
+- 原文で本家文書wikiへのリンクは対応する日本語訳文書wikiへのリンクに置き換え
+- 原文での単語説明のための英語版Wikipediaへのリンクは、対応する日本語版が存在する場合、日本語版Wikipediaへのリンクに置き換え
+- Githubのmarkdownで使えないiframeでのtwitterへの埋め込みをリンクに置き換え
+
 ---
 # 進歩報告:2021年8月
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20210102.md)
