@@ -5,7 +5,7 @@
 ---
 # コミュニティ
 
-プロジェクトに興味のある方は、ぜひお立ち寄りください![プロジェクトへの貢献方法](https://github.com/asfdrwe/asahi-linux-translations/blob/main/contribute.md)をご覧ください。
+プロジェクトに興味のある方はぜひお立ち寄りください![プロジェクトへの貢献方法](https://github.com/asfdrwe/asahi-linux-translations/blob/main/contribute.md)をご覧ください。
 
 すべてのコミュニティメンバーは、私たちの[行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)を遵守することが
 期待されていることを忘れないでください。
