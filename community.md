@@ -7,11 +7,11 @@
 
 プロジェクトに興味のある方はぜひお立ち寄りください![プロジェクトへの貢献方法](https://github.com/asfdrwe/asahi-linux-translations/blob/main/contribute.md)をご覧ください。
 
-すべてのコミュニティメンバーは、私たちの[行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)を遵守することが
-期待されていることを忘れないでください。
+すべてのコミュニティメンバーは私たちの[行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)を遵守すると
+期待されているのを忘れないでください。
 
 ## IRC
-開発やプロジェクトの話し合いは、ほとんどIRCで行われます。OFTC IRC ネットワークにいくつかのチャンネルがあります。
+開発やプロジェクトの話し合いはほとんどIRCで行われます。OFTC IRC ネットワークにいくつかのチャンネルがあります。
 
 - #asahi \[[logs](https://oftc.irclog.whitequark.org/asahi) - [matrix](https://matrix.to/#/#_oftc_#asahi:matrix.org)\] -
 プロジェクトに関する一般的な議論
