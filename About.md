@@ -1,4 +1,6 @@
 [About Asahi Linux](https://asahilinux.org/about/)の2021年12月25日時点の非公式日本語訳です。
+
+訳注: プロジェクトページへのリンクは対応する日本語訳へのリンクに置き換え
  
 ---
 # Asahi Linuxについて
@@ -59,7 +61,7 @@ Apple Silicon Mac における線引きは、SEP ファームウェアが閉じ�
 Apple Silicon Mac ではそうなっていません。これは単なる哲学的な問題ではなく、パフォーマンスや安定性に大きく影響します。
 
 ### Asahi Linuxは誰が作っているのですか？
-Asahi Linux はコミュニティであり、誰でも貢献することができます。もし興味があれば[貢献ページ](https://asahilinux.org/contribute)をご覧ください！
+Asahi Linux はコミュニティであり、誰でも貢献することができます。もし興味があれば[貢献ページ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/contribute.md)をご覧ください！
 主な貢献者は以下の通りです。
 
 - Hector Martin 『marcan』、Asahiプロジェクトのリーダーです。marcan氏は熟練のリバースエンジニア兼デベロッパーで、15年以上Linuxを移植したり、文書化
