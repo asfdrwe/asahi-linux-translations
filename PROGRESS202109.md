@@ -6,6 +6,7 @@
 ---
 # 進歩報告:2021年9月
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202108.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20211011.md)
 
 今月はとても忙しい月でした。カーネル側で多くの動きがあり、ツールの改良やリバースエンジニアリングのセッションも行われました。
 現時点でAsahi Linuxは基本的なLinuxデスクトップ（GPUアクセラレーションはなし）として使用可能です！これまで基盤が変動していましたが、
