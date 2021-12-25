@@ -42,7 +42,7 @@ Appleは、Apple Silicon Mac上で署名されていない/カスタムカーネ
 
 ### これは合法ですか？
 Linux対応の構築にmacOS からコードを取得しない限り、macOS の派生作品ではないので、配布やエンドユーザの使用は完全に合法です。
-詳しくは[著作権およびリバースエンジニアリングポリシー](https://asahilinux.org/copyright/)をご覧ください。
+詳しくは[著作権およびリバースエンジニアリングポリシー](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)をご覧ください。
 
 ### どのようにリリースされるのですか？
 すべての開発は私たちの[GitHub](https://github.com/AsahiLinux)で行われます。すべての貢献はそれぞれの（Linuxカーネルから始まる)上流プロジェクトに統合する
@@ -70,7 +70,7 @@ PS4上の独自のハードウェアに Linux を移植し、OpenGL と Vulkan (
 [AsbestOS](https://github.com/marcan/asbestos)、[The Homebrew Channel](https://wiibrew.org/wiki/Homebrew_Channel) と 
 [BootMii](https://wiibrew.org/wiki/BootMii) 開発チームの一員として [Wii Homebrew エコシステム](https://wiibrew.org/)に多くの貢献をし、
 多くのハードウェアを文書化してopen homebrew SDKトール寄与するなどです。
-- Alyssa Rosenzweig、Asahi GPUの主役。Alyssa氏は、Arm Mali GPUのリバースエンジニアリングを行い、フリーのPanfrostドライバを構築したことで
+- Alyssa Rosenzweig、Asahi GPUのリーダー。Alyssa氏は、Arm Mali GPUのリバースエンジニアリングを行い、フリーのPanfrostドライバを構築したことで
 知られるLinuxグラフィックスハッカーです。彼女は、Mesa3D の上流開発者であり、Panfrost と Asahi ドライバの両方をメンテナンスしています。
 - Dougall Johnson 『dougallj』、命令セットアーキテクチャに関する並はずれた人物です。Dougall氏 は Apple GPU の命令セットの多くをリバースエンジニアリングし、
 Apple M1 の CPU コアのタイミングを解析してマイクロアーキテクチャの詳細について解析しています。
