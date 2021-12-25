@@ -5,7 +5,7 @@
 - [コミュニティ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/community.md)
 - [貢献](https://github.com/asfdrwe/asahi-linux-translations/blob/main/contribute.md)
 - [支援](https://github.com/asfdrwe/asahi-linux-translations/blob/main/support.md)
-- [行動規範(まだ翻訳作業中)](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
+- [行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
 - [著作権ポリシー(まだ翻訳作業中)](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
 - 進歩報告(ブログ)
   - [進歩報告:2021年10月11月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20211011.md)
