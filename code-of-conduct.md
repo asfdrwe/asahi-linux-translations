@@ -1,5 +1,7 @@
 [Asahi Linux Code of Conduct](https://asahilinux.org/code-of-conduct/)の2021年12月25日時点の非公式日本語訳です。
  
+まだDeepLの翻訳を貼っただけ
+ 
 ---
 # Asahi Linux 行動規範
 
