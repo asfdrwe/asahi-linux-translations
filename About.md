@@ -1,6 +1,7 @@
 [About Asahi Linux](https://asahilinux.org/about/)の2021年12月25日時点の非公式日本語訳です。
 
 訳注: プロジェクトページへのリンクは対応する日本語訳へのリンクに置き換え
+
 訳者による名称に関する参考資料:[青森りんごTS導入協議会りんご大学の旭りんごの説明](https://www.ringodaigaku.com/main/hinshu/a/asahi.html)
 
 ---
