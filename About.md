@@ -2,8 +2,6 @@
 
 訳注: プロジェクトページへのリンクは対応する日本語訳へのリンクに置き換え
 
-訳者による名称に関する参考資料:[青森りんごTS導入協議会りんご大学の旭りんごの説明](https://www.ringodaigaku.com/main/hinshu/a/asahi.html)
-
 ---
 # Asahi Linuxについて
 Asahi Linuxは、2020年のM1 Mac Mini、MacBook Air、MacBook Proから始まったApple Silicon MacにLinuxを移植することを目的としたプロジェクトでコミュニティです。
@@ -17,7 +15,6 @@ Asahi Linuxはフリーでオープンソースのソフトウェア開発者た
 ## 名称
 Asahiは日本語で『日の出』を意味し、リンゴの品種の名前でもあります。旭りんご（asahi ringo）は、Macの名前の由来となったリンゴの品種
 『McIntosh Apple』として知られていています。
-
 
 ## ロゴマーク
 ![Asahi Linux logo](https://asahilinux.org/img/AsahiLinux_logomark.svg)
