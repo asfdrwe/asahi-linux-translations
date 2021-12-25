@@ -103,7 +103,7 @@ IRCチャンネルで行われることを要求しています。
 
 ## リバースエンジニアリングによらない開発
 既存のAsahi Linuxのコードを見てそれを改良するだけであれば（他のどこからもコードを取ったり参照したりしない）、リバースエンジニアリングには
-当たらないので特に心配する必要はないでしょう。ただし、[著作権ポリシー](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md#著作権方針)には
+当たらないので特に心配する必要はないでしょう。ただし、[著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md#著作権方針)には
 必ず従ってください。
 
 ## 他のオープンソースコードを参照する
