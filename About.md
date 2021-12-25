@@ -14,7 +14,7 @@ Asahi Linuxはフリーでオープンソースのソフトウェア開発者た
 Asahiは日本語で『日の出』を意味し、リンゴの品種の名前でもあります。旭りんご（asahi ringo）は、Macの名前の由来となったリンゴの品種
 『McIntosh Apple』として知られていています。
 
-訳者による追記:[青森りんごTS導入協議会の旭りんごの説明](https://www.ringodaigaku.com/main/hinshu/a/asahi.html)
+訳者による追記:[青森りんごTS導入協議会りんご大学の旭りんごの説明](https://www.ringodaigaku.com/main/hinshu/a/asahi.html)
 
 ## ロゴマーク
 ![Asahi Linux logo](https://asahilinux.org/img/AsahiLinux_logomark.svg)
