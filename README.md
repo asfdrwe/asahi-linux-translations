@@ -13,7 +13,7 @@
   - [進歩報告:2021年8月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202108.md)
   - [進歩報告:2021年1月2月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20210102.md)
 
-- [Wikiの日本語訳](https://github.com/asfdrwe/asahi-linux-translations/wiki)
+- [文書Wiki](https://github.com/asfdrwe/asahi-linux-translations/wiki)
 
 この日本語訳は元の文書の[ライセンス](https://github.com/AsahiLinux/docs/blob/main/LICENSE)と同様にCC BY-SA 4.0に従います。
 
