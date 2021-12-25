@@ -1,5 +1,5 @@
 # Asahi Linuxの文書の非公式翻訳
-[Asahi Linux](https://asahilinux.org/)のWebページと[文書Wiki](https://github.com/AsahiLinux/docs)の非公式の日本語訳です。
+[Asahi LinuxのWebページ](https://asahilinux.org/)と[文書Wiki](https://github.com/AsahiLinux/docs)の非公式の日本語訳です。
 
 - [概要](https://github.com/asfdrwe/asahi-linux-translations/blob/main/About.md)
 - [コミュニティ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/community.md)
