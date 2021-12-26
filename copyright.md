@@ -59,7 +59,7 @@ with this project or the open source license(s) involved.
 
 参考訳
 ```
-開発者による出所証明書 1.1
+開発者による出所証明 1.1
 
 このプロジェクトに貢献する際に私は以下のことを証明します。
 
