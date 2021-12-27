@@ -2,7 +2,7 @@
  
 ---
 # Asahi Linuxへの支援
-Asahi Linux は marcan氏が Patreon 資金調達プロジェクトとして始まり、現在彼は Patreon と GitHub の両方のスポンサーから 
+Asahi Linux は marcan氏が Patreon 資金調達プロジェクトとして始まり、現在Patreon と GitHub の両方のスポンサーから 
 Asahi Linux にフルタイムで取り組めるだけの寄付を集めることを目標としています。この活動に金銭的な貢献をしたい方は、
 [Patreonキャンペーン](https://patreon.com/marcan)または[GitHubスポンサーページ](https://github.com/sponsors/marcan)までお越しください。
 1回限りの寄付やその他の手配については、[marcan氏](<mailto:marcan@marcan.st>)に直接ご連絡ください。
