@@ -41,7 +41,7 @@ AppleはApple Silicon Mac上で署名されていない/カスタムカーネル
 
 ### これは合法ですか？
 Linux対応の構築にmacOS からコードを取得しない限り、macOS の派生作品ではないので、配布やエンドユーザの使用は完全に合法です。
-詳しくは[著作権およびリバースエンジニアリングポリシー](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)をご覧ください。
+詳しくは[著作権およびリバースエンジニアリング方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)をご覧ください。
 
 ### どのようにリリースされるのですか？
 すべての開発は私たちの[GitHub](https://github.com/AsahiLinux)で行われます。すべての貢献はそれぞれの（Linuxカーネルから始まる)上流プロジェクトに統合する
