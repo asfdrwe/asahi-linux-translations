@@ -4,11 +4,10 @@
 
 ---
 # Asahi Linuxについて
-Asahi Linuxは、2020年のM1 Mac Mini、MacBook Air、MacBook Proから始まったApple Silicon MacにLinuxを移植することを目的としたプロジェクトでコミュニティです。
+Asahi Linuxは、2020年のM1 Mac Mini、MacBook Air、MacBook Proから始まったApple Silicon MacにLinuxを移植することを目的としたプロジェクトであり、コミュニティです。
 
 私たちの目標は、単にこれらのマシン上でLinuxを動作させるだけでなく、日常的なOSとして使用できるレベルまで磨き上げることです。Apple Siliconは全く文書化されていない
-プラットフォームなので、これを実現するには膨大な作業が必要です。特に、Apple GPUのアーキテクチャをリバースエンジニアリングし、Apple GPU用オープンソースドライバを
-開発しています。
+プラットフォームなので、これを実現するには膨大な作業が必要です。特に、Apple GPUのアーキテクチャをリバースエンジニアリングしオープンソースドライバを開発しています。
 
 Asahi Linuxはフリーでオープンソースのソフトウェア開発者たちの活発なコミュニティによって開発されています。
 
@@ -54,27 +53,27 @@ Linux対応の構築にmacOS からコードを取得しない限り、macOS の
 『完全にオープン』なものはありません。完全にオープンなソフトウェアとハードウェアを持つ有用なコンピュータは
 現在存在しません（一部の企業がそのように売り込もうとするのは当然ですが）。最終的に変わるのはクローズドパーツとオープンパーツの間にどこで線を引くかです。
 Apple Silicon Mac における線引きは、SEP ファームウェアが閉じたまま、代替カーネルイメージが起動するときです。これは、標準的な PC における線引きと
-非常に似ており、UEFI ファームウェアは OS ローダを起動するが、ME/PSP ファームウェアは閉じたままです。実際、メインストリーム x86 プラットフォームは、
+非常に似ており、UEFI ファームウェアは OS ローダを起動するが、ME/PSP ファームウェアは閉じたままです。実際、メインストリームのx86 プラットフォームは、
 プロプライエタリな UEFI ファームウェアが SMM 割り込みを介していつでも OS からメイン CPU を奪うことが許されているため、間違いなくより侵入的です。
-Apple Silicon Mac ではそうなっていません。これは単なる哲学的な問題ではなく、パフォーマンスや安定性に大きく影響します。
+Apple Silicon Mac ではそうなっていません。これは単なる哲学的な問題ではなくパフォーマンスや安定性に大きく影響します。
 
 ### Asahi Linuxは誰が作っているのですか？
 Asahi Linux はコミュニティであり、誰でも貢献することができます。もし興味があれば[貢献ページ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/contribute.md)をご覧ください！
 主な貢献者は以下の通りです。
 
-- Hector Martin 『marcan』、Asahiプロジェクトのリーダーです。marcan氏は熟練のリバースエンジニア兼デベロッパーで、15年以上Linuxを移植したり、文書化
-されていないデバイスや閉じたデバイスで非公式ソフトウェアを実行した経験を持っています。今回のプロジェクトは、彼にとって最も野心的なプロジェクトであり、
-[コミュニティの寄付やスポンサーシップ](https://asahilinux.org/support)を通じて資金を調達しています。彼のこれまでのプロジェクトには、
+- Hector Martin 『marcan』、Asahiプロジェクトのリーダーです。marcan氏は熟練のリバースエンジニア兼デベロッパーで、15年以上の間、Linuxを移植したり、文書化
+されていないデバイスやクローズドデバイスで非公式ソフトウェアを実行した経験を持っています。今回のプロジェクトは、彼にとって最も野心的なプロジェクトであり、
+[コミュニティの寄付やスポンサーシップ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/support.md)を通じて資金を調達しています。彼のこれまでのプロジェクトには、
 PS4上の独自のハードウェアに Linux を移植し、OpenGL と Vulkan (radeon/amdgpu ドライバー) を使用して完全な 3D アクセラレーションを可能にした 
 [PS4 Linux](https://github.com/fail0verflow/ps4-linux)、GameOS モード用の PS3 Linux ブートローダーと関連カーネルパッチで PS3 Slim で Linux を動作させる 
 [AsbestOS](https://github.com/marcan/asbestos)、[The Homebrew Channel](https://wiibrew.org/wiki/Homebrew_Channel) と 
 [BootMii](https://wiibrew.org/wiki/BootMii) 開発チームの一員として [Wii Homebrew エコシステム](https://wiibrew.org/)に多くの貢献をし、
 多くのハードウェアを文書化してopen homebrew SDKトール寄与するなどです。
-- Alyssa Rosenzweig、Asahi GPUのリーダー。Alyssa氏は、Arm Mali GPUのリバースエンジニアリングを行い、フリーのPanfrostドライバを構築したことで
+- Alyssa Rosenzweig、Asahi GPUのリーダーです。Alyssa氏は、Arm Mali GPUのリバースエンジニアリングを行い、フリーのPanfrostドライバを構築したことで
 知られるLinuxグラフィックスハッカーです。彼女は、Mesa3D の上流開発者であり、Panfrost と Asahi ドライバの両方をメンテナンスしています。
 - Dougall Johnson 『dougallj』、命令セットアーキテクチャに関する並はずれた人物です。Dougall氏 は Apple GPU の命令セットの多くをリバースエンジニアリングし、
 Apple M1 の CPU コアのタイミングを解析してマイクロアーキテクチャの詳細について解析しています。
 - Sven Peter、 Sven氏は、USB、PCIe、Ethernet、Wi-Fiに必要なAppleのDevice Address Resolution Table（DART）に対するLinux上流での対応に
 休むことなく取り組んできました。彼はまたm1n1 に USB ガジェットへの対応を追加しました。
-- Mark Kettenis、OpenBSD の開発者。Mark氏は、PCIe と NVMe (ANS) に必要なbringupを含む、Apple M1 コアペリフェラル用の m1n1 と U-Boot 
+- Mark Kettenis、OpenBSD の開発者です。Mark氏は、PCIe と NVMe (ANS) に必要なbringupを含む、Apple M1 コアペリフェラル用の m1n1 と U-Boot 
 ドライバを書きました。また、Mark氏は、Linux の移植と並行して、Apple M1 用の OpenBSD のドライバも書いています。
