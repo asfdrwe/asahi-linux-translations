@@ -4,7 +4,7 @@
 - Githubのmarkdownで使えないiframeでのtwitterへの埋め込みをリンクに置き換え
 
 ---
-# 進歩報告:2021年9月
+# 進捗報告:2021年9月
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202108.md)
 - [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20211011.md)
 
