@@ -7,11 +7,12 @@
 - [支援](https://github.com/asfdrwe/asahi-linux-translations/blob/main/support.md)
 - [行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
 - [著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
-- 進歩報告(ブログ)
-  - [進歩報告:2021年10月11月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20211011.md)
-  - [進歩報告:2021年9月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202109.md)
-  - [進歩報告:2021年8月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202108.md)
-  - [進歩報告:2021年1月2月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20210102.md)
+- ブログ
+  - [進捗報告:2021年10月11月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20211011.md)
+  - [進捗報告:2021年9月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202109.md)
+  - [進捗報告:2021年8月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202108.md)
+  - [進捗報告:2021年1月2月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20210102.md)
+  - [最初のAsahi Linux アルファ版リリースです！](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202203.md)
 
 - [文書Wiki](https://github.com/asfdrwe/asahi-linux-translations/wiki)
 
