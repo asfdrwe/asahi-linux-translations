@@ -8,7 +8,7 @@
 - [行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
 - [著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
 - ブログ
-  - [最初のAsahi Linux アルファ版リリースです！:2022年３月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202203.md)
+  - [最初のAsahi Linux アルファ版リリースです！(2022年3月)](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202203.md)
   - [進捗報告:2021年10月11月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20211011.md)
   - [進捗報告:2021年9月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202109.md)
   - [進捗報告:2021年8月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202108.md)
