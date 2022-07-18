@@ -6,6 +6,7 @@
 
 # 最初のAsahi Linux アルファ版リリースです！
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20211011.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202207.md)
 
 久しぶりのブログ更新です！ 本当はもう少し進捗報告したかったのですが、いつも『もうひとつ』があって...そこで代わりに思い切って 
 Asahi Linux リファレンスディストリビューションの最初のパブリックアルファ版を公開することにしました！
