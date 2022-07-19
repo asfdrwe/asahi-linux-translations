@@ -1,4 +1,4 @@
-[July 2022 Release & Progress Report](https://asahilinux.org/2022/07/july-2022-release/)の非公式日本語訳です。
+[M2 is here! July 2022 Release & Progress Report](https://asahilinux.org/2022/07/july-2022-release/)の非公式日本語訳です。
 
 訳注: 
 - Githubのmarkdownで使えないiframeでのtwitterへの埋め込みをリンクに置き換え
