@@ -229,7 +229,7 @@ OpenBSD のインストーラは、魔法の Apple パーティションにつ�
 
 みなさんが何を考えているかわかります...GPUはどうなるのでしょうか？
 
-[埋め込みツイート](https://twitter.com/LinaAsahi/status/1537828477352615936)
+[埋め込みツイート](https://twitter.com/LinaAsahi/status/1537828477352615936) (訳注: オープンソースドライバでM1 GPUをUSB経由のeGPUとして動かす内容)
 
 良いニュースです！数ヶ月前、[Asahi Lina氏](https://twitter.com/LinaAsahi)がチームに加わり、M1 GPU
 ハードウェア・インターフェースのリバースエンジニアリングとそのためのドライバ作成に挑戦してくれました。この短期間に、
