@@ -1,7 +1,7 @@
 Asahi Lina氏の[AGX coherency, caching, and TLBs](https://gist.github.com/asahilina/1a70f1f26b9cd3c52d61d2b8e8b27673)の2022年10月15日時点での非公式日本語訳。
 
 Apple SiliconのGPUの解析とLinuxドライバの実装に関するメモです。
-ライセンスが不明ですがおそらくCC BY-SA 4.0として扱っていいと思うのでAsahi Linux関係の資料として勝手に翻訳しました。
+ライセンスが不明ですがAsahi Linuxと同様に自由に使える文書と思いAsahi Linux関係の資料として勝手に翻訳しました。
 まずければ消します。
 
 略語について適宜解説を追記したり日本語訳wikiにある場合は日本語wikiへのリンクを追加しています。
