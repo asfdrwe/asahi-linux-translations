@@ -39,12 +39,12 @@ GPUユーザオブジェクトは、macOSでは常にGPU=R-かGPU=RWのどちら
 
 #### TLB
 
-GPU MMUのTLBは、外部共有(Outer Sharable)ドメインで[AP](https://github.com/asfdrwe/asahi-linux-translations/wiki/%E7%94%A8%E8%AA%9E%E9%9B%86#a)側の
+GPU MMUのTLBは、Outer Sharable(外部共有)ドメインで[AP](https://github.com/asfdrwe/asahi-linux-translations/wiki/%E7%94%A8%E8%AA%9E%E9%9B%86#a)側の
 TLBI命令（！）で管理されています。つまり、CPUはGPUの仮想アドレス(訳注: VA, Virtual Address)をCPUの仮想アドレスとみなして（！）、TLBI命令を直接発行しているだけなのです。そのため、GPU TLBを
 撃ち落とすと無関係なCPU TLBも誤って撃ち落としてしまう可能性があります。macOSでは、CPUのユーザ空間の仮想空間アロケータにGPUの仮想空間レンジをグローバルに予約することで
 これを解決しています（痛い！T_T）。
 
-TLBI命令はTTBATで設定されたASIDを使用します(うまくいけば？macOSは常にこれらを1:1に設定するので、これはもっと実験が必要です...)。
+TLBI命令はTTBATで設定されたASIDを使用します(うまくいけば？macOSは常にこれらを1:1に設定するので、これはもっと実験が必要です...)
 
 #### キャッシュ
 
