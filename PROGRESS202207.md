@@ -8,6 +8,7 @@
 # M2登場！ 進捗報告:2022年7月
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202203.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202211.md)
 
 またまた久々の進捗報告へようこそ! いつものように予想以上に忙しく...だけどビッグニュースがあります！
 Mac StudioとBluetoothと*M2に対応した*新しいAsahi Linuxのアップデートをリリースしました！
