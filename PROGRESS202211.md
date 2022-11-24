@@ -32,9 +32,9 @@ PHY ハードウェア全体の再構成を管理することです。実際に�
 
 PHY 自体の駆動に加えて、PHY ドライバは、USB コントローラドライバ (``dwc3``) とタイプ C ポートコントローラドライバ (``tipd``) とを
 大変慎重に調整しなければなりません。デバイスが接続されたり外されたりするとき、複雑なネゴシエーションのダンスが起こり、最終的に、
-どのワイヤ上でどのプロトコルを実行するかを決定することにつながります。この情報は、PHY が適切に信号をルーティングできるよう
+どのワイヤ上でどのプロトコルを実行するかを決定することにつながります。この情報はPHY が適切に信号をルーティングできるよう
 PHY に伝えられなければならず(ケーブルをどのような向きで差し込んだかなども含む）、全てが正しい順序で初期化された後に、
-USB コントローラが起動されます(訳注: 原文の構文解析ができないのでよくわかりません: This information has to be communicated to the PHY (including things like what orientation you plugged the cable in) so it can route its signals appropriately, and only after everything has been initialized in the right order can the USB controller be brought up. )。さらに厄介なことに、このハードウェアは非常に気まぐれで、何か問題が起きるとコントローラがロックしたり動作
+USB コントローラが起動されます。さらに厄介なことに、このハードウェアは非常に気まぐれで、何か問題が起きるとコントローラがロックしたり動作
 しなくなったりする可能性があります！
 
 USB3モードはかなり堅固だと思いますが、デバイスを素早くホットプラグするようなことをするときには、いくつかの不具合が予想されます。
