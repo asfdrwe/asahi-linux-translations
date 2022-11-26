@@ -8,7 +8,7 @@
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202207.md)
 
-また遅ればせながら進捗報告の時間がやってまいりました。今月のアップデートでは、新しいハードウェアの対応や新機能や長年の問題点の修正に加え、
+またまた遅ればせながら進捗報告の時間がやってまいりました。今月のアップデートでは、新しいハードウェアの対応や新機能や長年の問題点の修正に加え、
 待望のサスペンドとディスプレイコントローラに対応した最先端カーネルブランチが詰め込まれています！
 
 Asahi Linuxに初めて触れる方は、[以前のリリース告知](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202203.md)にある
