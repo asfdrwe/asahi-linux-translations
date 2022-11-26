@@ -1,7 +1,6 @@
 [Updates galore! November 2022 Progress Report](https://asahilinux.org/2022/11/november-2022-report/)の非公式日本語訳です。
 
 訳注
-- 作業中: まだDeepLの結果を貼っただけのもの＋一部翻訳修正 (2022/11/23)
 - ブログへのリンクやwikiへのリンクを対応する日本語訳ページへのリンクに置き換え
 
 ---
