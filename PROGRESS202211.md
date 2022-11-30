@@ -7,6 +7,7 @@
 # アップデート満載！ 進捗報告:2022年11月
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202207.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202211.md)
 
 またまた遅ればせながら進捗報告の時間がやってまいりました。今月のアップデートでは、新しいハードウェアの対応や新機能や
 長年の問題点の修正に加え、待望のサスペンドとディスプレイコントローラに対応した最先端カーネルブランチが詰め込まれています！
