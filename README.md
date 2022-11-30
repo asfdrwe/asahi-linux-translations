@@ -8,6 +8,7 @@
 - [行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
 - [著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
 - ブログ
+  - [M1 GPU物語:2022年11月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202211.md) (2022/11/30作業中　まだDeepLの結果を貼っただけ
   - [アップデート満載！進捗報告:2022年11月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202211.md)
   - [M2登場！進捗報告:2022年7月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202207.md)
   - [最初のAsahi Linux アルファ版リリースです！(2022年3月)](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202203.md)
