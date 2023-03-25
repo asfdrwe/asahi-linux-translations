@@ -8,6 +8,7 @@
 - [行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
 - [著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
 - ブログ
+  - [Asahi LinuxでVulkanへの道を拓く:2023年3月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202303.md)
   - [Asahi LinuxにApple GPUドライバ登場:2022年12月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202212.md)
   - [M1 GPU物語:2022年11月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202211.md)
   - [アップデート満載！進捗報告:2022年11月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202211.md)
