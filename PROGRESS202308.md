@@ -5,7 +5,7 @@
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202306.md)
 
-みなさん、待ちに待っていました！多くの方が想像していたことでしょう。[Flock To Fedora](https://flocktofedora.org/)で発表ましたが、今正式に発表する時が来ました：
+みなさん、待ちに待っていました！多くの方が想像していたことでしょう。[Flock To Fedora](https://flocktofedora.org/)で発表しましたが、正式に発表する時が来ました。
 
 **Asahi Linuxの新しいフラッグシップ・ディストリビューションはFedora Asahi Remixになります！**
 
