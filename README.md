@@ -1,6 +1,8 @@
 # Asahi Linuxの文書の非公式翻訳
 [Asahi LinuxのWebページ](https://asahilinux.org/)と[文書Wiki](https://github.com/AsahiLinux/docs)の非公式の日本語訳です。
 
+- [Fedora Asahi Remix](https://github.com/asfdrwe/asahi-linux-translations/blob/main/fedora.md)
+
 - [概要](https://github.com/asfdrwe/asahi-linux-translations/blob/main/About.md)
 - [コミュニティ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/community.md)
 - [貢献](https://github.com/asfdrwe/asahi-linux-translations/blob/main/contribute.md)
