@@ -10,6 +10,7 @@
 - [行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
 - [著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
 - ブログ
+  - [Fedora Asahi Remixの新機能](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202401.md)
   - [新しいフラッグシップディストリビューション: Fedora Asahi Remix:2023年8月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202308.md)
   - [Asahi LinuxでのOpenGL 3.1:2023年6月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202306.md)
   - [Asahi LinuxでVulkanへの道を拓く:2023年3月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202303.md)
