@@ -60,7 +60,7 @@ Mac Proは圧倒的に人気のないMacモデルであり、もっと緊急に�
 M3はどうですか?今年のニュースをお楽しみに...
 
 ## GPU - OpenGL ES 3.1に準拠など...
-2023年の夏、[Alyssa Rosenzweig氏]https://rosenzweig.io/]のGPUリバースエンジニアリング作業により、OpenGL 2.1から
+2023年の夏、[Alyssa Rosenzweig氏](https://rosenzweig.io/)のGPUリバースエンジニアリング作業により、OpenGL 2.1から
 OpenGL 3.1へ、同様にOpenGL ES 2.0対応がOpenGL ES 3.0へと
 [飛躍的に向上](https://rosenzweig.io/blog/opengl3-on-asahi-linux.html)しました。わずか2ヵ月後の2023年8月には
 M1ファミリーとM2ファミリーのグラフィックス・ハードウェア向けに、世界で唯一の準拠したOpenGL ES 3.1実装である
