@@ -99,7 +99,7 @@ Asahi Linuxで動くようになりました。そして、私たちはここで
 数回のカーネルマージの後、Logicool Bluetooth マウスが自動的にペアリングされなくなったことに気づいたユーザーがいました。
 Linuxではそういうものだと受け入れ、bluetoothctlを使って手動でペアリングを始めたユーザーもいましたが、
 Janne Grunnau氏はこの問題を何とかしようと思いました。1つずつパッチを適用しテストする手動のgit解析です。
-m1n1の超高速起動とデスクトップまでの[カーネルテストサイクル](https://github.com/asfdrwe/asahi-linux-translations/wiki/%E3%83t%86%E3%82%B6%E3%83%BC%E3%83%96%E3%83%BC%E3%83%88%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%28%E9%96%8B%E7%99%BA%E8%80%85%E5%90%91%E3%81%91%29)を
+m1n1の超高速起動とデスクトップまでの[カーネルテストサイクル](https://github.com/asfdrwe/asahi-linux-translations/wiki/%E3%83%86%E3%82%B6%E3%83%BC%E3%83%96%E3%83%BC%E3%83%88%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%28%E9%96%8B%E7%99%BA%E8%80%85%E5%90%91%E3%81%91%29)を
 10秒間有効にしました。Janne氏はkernel v6.4の（Logitechデバイスが使用する）Bluetooth Low Energy (BLE)ベースのペアリング
 を後退させる正確なコミットを見つけました。
 小さなローペースのLinuxサブシステムは[いいものです](https://social.treehouse.systems/@janne/111133921649343751)。
