@@ -285,7 +285,7 @@ Apple Silicon上でタスクをスケジューリングしてみましょう。�
 オーディオ処理は、そのリアルタイムの性質上、常にフルパフォーマンスが与えられていました。計算してみたところ、
 DSPコードを実行するのにフルパフォーマンスに近い性能は必要ないことがわかりました。この問題を解決するために、Pipewireと
 Wireplumberに、アプリケーションの性能要件を一定の範囲に固定するスケジューラ機能であるUtilization Clamping
-(訳注:[解説文書](https://docs.kernel.org/scheduler/sched-util-clamp.html) )を使う機能を与えました。
+を使う機能を与えました。
 PipewireとWireplumberの最大性能を極端に低く設定し、スケジューラが*最低*動作時に効率コアへ制限するようにした。
 どちらも*完璧に*機能し、ユーザーのバッテリー寿命を大幅に節約できます！この素晴らしい機能はあまり活用されていないため、
 数週間前に私たちが要求するまで、標準のFedoraカーネルでは有効化されていませんでした（CONFIG_UCLAMP_TASK）。
@@ -297,6 +297,11 @@ EASとUtilization Clampingを組み合わせることで、15インチM2 MacBook
 座っているだけで約6時間だったものが、1080p30のYouTubeで約8～10時間、デスクトップで12～15時間、スクリーンオフの
 アイドルタイムで25～28時間という驚異的な長さになりました。、バッテリー駆動時間をさらに延ばすために、まだまだ
 たくさんの裏技を用意しています。ご期待ください！
+
+訳注:Energy-Aware Schedulingに関する参考文書
+- [Energy-Aware Scheduling](https://docs.kernel.org/scheduler/sched-energy.html)
+- [Utilization Clamping](https://docs.kernel.org/scheduler/sched-util-clamp.html)
+- [Pipewire](https://wiki.archlinux.jp/index.php/PipeWire)
 
 ## ユーザースペースとディストリビューション
 ### `kernel-16k` - Fedora に群がる
