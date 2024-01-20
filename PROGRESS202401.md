@@ -54,10 +54,10 @@ HDMI出力での作業はまだ完了していません:M2+sのデスクトッ�
 後ろの4K HDMIモニターをつないだFedora 39 Asahi Remixを動かす16インチ M1 Max。  
 [Source: Hanchin Hsieh, @yuchanns@dvd.chat](https://dvd.chat/notes/9mt5ifiwb2lb00ec)
 
-まだ対応して唯一のプラットフォームはMac Proですがが、しないといけないことはおそらくもうあまり残っていないでしょう。
-『MacBook Pro』ではなく『Mac Pro』です。その名前を聞いたことがある人さえほとんどいないでしょう。
+まだ対応して唯一のプラットフォームはMac Proですが、しないといけないことはおそらくもうあまり残っていないでしょう。
+『MacBook Pro』ではなく『Mac Pro』です。その名前を聞いたことがある人さえほとんどいないはず。
 Mac Proは圧倒的に人気のないMacモデルであり、もっと緊急にハードウェア対応必要がありました。
-M3はどうですか?今年のニュースをお楽しみに...
+M3はどうなりますか?今年のニュースをお楽しみに...
 
 ## GPU - OpenGL ES 3.1に準拠など...
 2023年の夏、[Alyssa Rosenzweig氏](https://rosenzweig.io/)のGPUリバースエンジニアリング作業により、OpenGL 2.1から
