@@ -91,9 +91,9 @@ GPU 上で展開されます。テッセレーションは（それが解放さ�
 Asahi Linuxで動くようになりました。そして、私たちはここで立ち止まるつもりはありません;-)
 
 訳注: ジオメトリシェーダーについての日本語の参考文献
-- https://ja.wikipedia.org/wiki/%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC#%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8
-- https://soramamenatan.hatenablog.com/entry/2020/10/10/150318
-- https://edom18.hateblo.jp/entry/2018/07/11/140455
+- [ジオメトリシェーダーとシェーダステージ](https://ja.wikipedia.org/wiki/%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC#%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8)
+- [Unityでのジオメトリシェーダー例その1](https://soramamenatan.hatenablog.com/entry/2020/10/10/150318)
+- [Unityでのジオメトリシェーダー例その2](https://edom18.hateblo.jp/entry/2018/07/11/140455)
 
 ## Bluetooth - リグレッション修正とM2対応
 数回のカーネルマージの後、Logicool Bluetooth マウスが自動的にペアリングされなくなったことに気づいたユーザーがいました。
