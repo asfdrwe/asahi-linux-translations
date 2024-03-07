@@ -1,7 +1,5 @@
-.. SPDX-License-Identifier: GPL-2.0
-
-`Utilization Clamping <https://docs.kernel.org/_sources/scheduler/sched-util-clamp.rst.txt>`_  の非公式日本語訳です。
-ライセンスは原文のGPL-2.0に従います。
+`Energy Aware Scheduling <https://docs.kernel.org/scheduler/sched-energy.html>`_  の非公式日本語訳です。
+ライセンスは原文のライセンス(GPL-2.0のはず)に従います。
 
 訳注: 
 
