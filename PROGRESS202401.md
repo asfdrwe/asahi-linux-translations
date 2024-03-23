@@ -1,5 +1,8 @@
 [New in Fedora Asahi Remix](https://asahilinux.org/2024/01/fedora-asahi-new/)の非公式日本語訳です。
 
+訳注:
+- Energy Aware Schedulingの日本語訳への[リンク](https://github.com/asfdrwe/asahi-linux-translations/blob/main/EnergyAwareScheduling.rst)を追加(2024/3/23)
+
 ---
 # Fedora Asahi Remixの新機能
 
@@ -300,6 +303,7 @@ EASとUtilization Clampingを組み合わせることで、15インチM2 MacBook
 
 訳注:Energy-Aware Schedulingに関する参考文書
 - [Energy-Aware Scheduling](https://docs.kernel.org/scheduler/sched-energy.html)
+  - [非公式日本語訳](https://github.com/asfdrwe/asahi-linux-translations/blob/main/EnergyAwareScheduling.rst) (2024/3/23追加)
 - [Utilization Clamping](https://docs.kernel.org/scheduler/sched-util-clamp.html)
 - [Pipewire](https://wiki.archlinux.jp/index.php/PipeWire)
 
