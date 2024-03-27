@@ -9,11 +9,12 @@
 	* `上記文書の和訳 <https://hiraku-wfs.hatenablog.com/entry/20141214/1418572909>`_
 	* `CFS Scheduler の解説 <https://atmarkit.itmedia.co.jp/flinux/rensai/watch2009/watch09c.html>`_
 
-* LinuxでのIntelのハイブリッド・アーキテクチャーへの対応への解説
+* LinuxでのIntelのハイブリッド・アーキテクチャーへの対応に関する参考文献
 
 	* https://www.coelacanth-dream.com/posts/2022/01/02/intel-hfi/
 	* https://www.coelacanth-dream.com/posts/2022/09/10/linux-kernel-intel-itd/
 	* https://retrage01.hateblo.jp/entry/2023/08/20/195456 (2024/3/27追加)
+	* https://lpc.events/event/16/contributions/1275/attachments/995/2000/Brown-Neri%20LPC%202022.09.13%20Linux%20Intel-Hybrid%20Scheduling.pdf (2024/3/27追加)
 
 =====================================================================
 Energy Aware Scheduling
