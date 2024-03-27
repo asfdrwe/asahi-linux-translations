@@ -13,7 +13,7 @@
 
 	* https://www.coelacanth-dream.com/posts/2022/01/02/intel-hfi/
 	* https://www.coelacanth-dream.com/posts/2022/09/10/linux-kernel-intel-itd/
-
+	* https://retrage01.hateblo.jp/entry/2023/08/20/195456 (2024/3/27追加)
 
 =====================================================================
 Energy Aware Scheduling
