@@ -3,21 +3,21 @@
 
 訳注:
 
-* まだ作業中(2024/3/26)
+* まだ作業中(2024/3/30)
 * APIについてkernelヘッダの埋め込みはそのまま貼り付け
 * カーネル文書へのリンクで日本語訳があるものは日本語訳へのリンクに変更
 
 =======================
-Energy Model of devices
+機器エネルギーモデル
 =======================
 
 1. 概要
 -------
 
-エネルギーモデル（EM）フレームワークは、さまざまな性能レベルでデバイスが消費する電力を知るドライバと、
+エネルギーモデル（Energy Model, EM）フレームワークは、さまざまな性能レベルでデバイスが消費する電力を知るドライバと、
 その情報を使用してエネルギーを考慮した判断を行うカーネルの間のインターフェイスとして機能します。
 
-デバイスが消費する電力に関する情報源はプラットフォームによって大きく異なります。
+機器が消費する電力に関する情報源はプラットフォームによって大きく異なります。
 これらの電力コストは場合によっては、Devicetreeデータを用いて推定することができます。
 また、ファームウェアの方が良く知っている場合もあります。あるいは、ユーザー空間が最適かもしれません。
 各クライアント・サブシステムが可能な限りの情報源への対応を独自に繰り返し実装することを避けるために、
@@ -63,6 +63,8 @@ EMフレームワークは電力コストテーブルの形式を標準化する
         | Devicetree   |   |  ファームウェア |  |      ?       |
         +--------------+   +---------------+  +--------------+
 
+訳注: IPAはおそらく`Intelligent Power Allocation <https://developer.arm.com/Tools%20and%20Software/Intelligent%20Power%20Allocation>`_
+
 CPU 機器の場合、EM フレームワークは、システム内の『性能ドメイン(performance domain)』ごとに電力コストテーブルを管理します。
 性能ドメインとはCPU のグループです。性能ドメインは一般的にCPUFreq ポリシーと 1 対 1 に対応付けされます。
 性能ドメイン内のすべてのCPUは同じマイクロアーキテクチャである必要があります。異なる性能ドメイン内のCPUは
@@ -99,11 +101,11 @@ EM フレームワークを使用するには、CONFIG_ENERGY_MODEL を有効に
 2.2 性能ドメインの登録
 ^^^^^^^^^^^^^^^^^^^^
 
-『上級』EMの登録
+『上級(advanced)』EMの登録
 ~~~~~~~~~~~~~~
 
 『上級』EMはドライバーがより正確なパワーモデルを提供することができるようになっていることから名付けられました。
-(『単純』EMの場合のように）フレームワークで実装された数式に限定されるものではありません。
+(『単純(simple)』EMの場合のように）フレームワークで実装された数式に限定されるものではありません。
 各性能状態に対して実行される実際の電力測定をよりよく反映することができます。したがって、この
 EM静的電力（リーク）を考慮することが重要である場合には、この登録方法を優先すべきです。
 
@@ -123,182 +125,259 @@ EM 機器が同じ尺度を使用しているかどうかをチェックする�
 異なる尺度がある場合、これらのサブシステムは警告やエラーを返したり、動作を停止したり、パニックを起こしたりすることに
 なるかもしれません。このコールバックを実装したドライバの例については3節、この API の詳細については2.4節 を参照してください。
 
-！！！！2024/3/26ここまで！！！！！
+DT(訳注:Devicetree)を利用するEMの登録
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-DTを利用するEMの登録
-~~~~~~~~~~~~~~~~~
+EMはOPP(訳注: `Operating Performance Point <https://docs.kernel.org/power/opp.html>`_)
+フレームワークを使用して登録することもでき、DTの『operating-points-v2』内の情報に登録することもできます。
+DT の各 OPP エントリは、マイクロワット電力値が含まれるプロパティ『opp-microwatt 』に拡張できます。
+このOPP DTプロパティにより、プラットフォームは、総電力（静的＋動的）を反映する EM 電力値を登録することが
+できます。これらの電力値は実験や測定から直接得られるかもしれません。
 
-EMはOPPフレームワークを使用して登録することもでき、DTの情報
-"operating-points-v2 "に登録することもできる。DT の各 OPP エントリは、プロパティ
-"opp-microwatt "には、マイクロワット電力値が含まれる。このOPP DTプロパティ
-このOPP DTプロパティにより、プラットフォームは、総電力（静的＋動的）を反映するEM電力値
-(静的＋動的）を反映する EM 電力値を登録することができる。これらの電力値は
-実験や測定から直接得られるかもしれない。
-
-『人工』EM の登録
-~~~~~~~~~~~~~~
-
+『人工(artificial)』EM の登録
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 各性能状態の電力値に関する詳細な知識が不足しているドライバーのために、カスタム・コールバックを提供するオプションがあります。
-各パフォーマンス・ステートのパワー値に関する詳細な知識が不足しているドライバーのために、カスタム・コールバックを提供するオプションがあります。コールバック
-.get_cost() はオプションで、EASによって使用される「コスト」値を提供します。
-これは、CPUタイプ間の相対効率に関する情報のみを提供するプラットフォー
-これは、CPUタイプ間の相対効率に関する情報のみを提供するプラットフォームにとって有用である。
-抽象的な消費電力モデルを作成することができる。しかし、抽象的な電力モデルであっても
-しかし、抽象的な電力モデルであっても、入力電力値のサイズ制限を考慮すると、適合させるのが難しい場合がある。
-.get_cost()は、CPUの効率を反映する'cost'値を提供することができる。
-を提供することができる。これにより
-を提供することができる。
-とは異なる関係を持つEAS情報を提供することができる。このようなプラットフォームにEMを登録するには
-ドライバは、フラグ'microwatts'を0に設定し、.get_power()コールバックを提供し、.get_cost()
-.get_cost()コールバックを提供しなければならない。EMフレームワークは、このようなプラットフォーム
-を適切に処理する。EM_PERF_DOMAIN_ARTIFICIALフラグが設定されます。
-フラグが設定される。EMを使用している他のフレームワークでは、このフラグをテストし、適切に扱うために特別な注意を払う必要があります。
-を使用している他のフレームワークは、このフラグをテストし、適切に扱うために特別な注意を払う必要があります。
+コールバック.get_cost() はオプションで、EASによって使用される『コスト』値を提供します。
+これはCPUタイプ間の相対効率に関する情報のみを提供するプラットフォームにとって有用であり、
+抽象的な消費電力モデルを作成することができます。しかし、抽象的な電力モデルであっても、入力電力値の
+サイズ制限を考慮すると、適合させるのが難しい場合があります。これによって、EMの内部計算式が『コスト』値を計算する際に
+強いられるものととは異なる関係を持つEAS情報を提供することができるようになります。
+このようなプラットフォームにEMを登録するには、ドライバは、フラグ『microwatts』を0に設定し、.get_power()コールバックを
+提供し、.get_cost()コールバックを提供しなければなりません。EMフレームワークは、このようなプラットフォーム
+を適切に処理します。そういったプラットフォームではEM_PERF_DOMAIN_ARTIFICIALフラグが設定されます。
+EMを使用している他のフレームワークでは、このフラグをテストし、適切に扱うために特別な注意を払う必要があります。
 
-シンプルな'EMの登録
+『単純』EMの登録
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-単純な'EMは、フレームワーク・ヘルパー関数
-cpufreq_register_em_with_opp()を使って登録される。これは以下のようなパワーモデルを実装しています。
-数学式::
+単純EMは、フレームワーク・ヘルパー関数cpufreq_register_em_with_opp()を使って登録されます。
+これは以下の数学式に強く結びつくパワーモデルを実装しています。::
 
 	Power = C * V^2 * f
 
-このメソッドを使って登録されたEMは、実際のデバイスの物理を正しく反映しないかもしれません。
-例えば、静的消費電力（リーク）が重要な場合などである。
-
+このメソッドを使って登録されたEMは、実際の機器の物性を正しく反映しないかもしれません。
+例えば、静的消費電力（リーク）が重要な場合などです。
 
 2.3 性能ドメインへのアクセス
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-エネルギー・モデルへのアクセスを提供する 2 つの API 関数があります：
+エネルギーモデルへのアクセスを提供する 2 つの API 関数があります:
 em_cpu_get()はCPU IDを引数にとり、em_pd_get()はデバイスポインタを引数にとります。
-ポインタを引数にとります。どのインターフェイスを使用するかはサブシステムに依存します。
-どちらのインターフェイスを使用するかはサブシステムによって異なりますが、CPU デバイスの場合は、どちらの関数も同じ性能領域を返します。
-を返します。
+どちらのインターフェイスを使用するかはサブシステムによって異なりますが、CPU 機器の場合は、
+どちらの関数も同じ性能ドメインを返します。
 
-CPUのエネルギー・モデルに興味のあるサブシステムは
-em_cpu_get() API を使用して取得できます。エネルギー・モデル・テーブルは、性能ドメインの作成時に一度割り当てられ、メモリ上に保持されます。
-エネルギー・モデル・テーブルは、パフォーマンス・ドメインの作成時に一度割り当てられ、そのままメモリに保持されます。
+CPUのエネルギーモデルに興味のあるサブシステムはem_cpu_get() API を使用して取得できます。
+エネルギーモデルテーブルは、性能ドメインの作成時に一度割り当てられ、メモリ上に保持されます。
 
-パフォーマンス・ドメインが消費するエネルギーは
-em_cpu_energy() APIを使用して推定できます。この推定は、schedutil
-CPUデバイスの場合、CPUfreqガバナーが使用されていると仮定して計算されます。現在のところ、この計算は
-は提供されていない。
+性能ドメインが消費するエネルギーはem_cpu_energy() APIを使用して推定できます。この推定は、schedutil
+CPU 機器の場合、CPUfreq governorが使用されていると仮定して計算されます。現在のところ、この計算は
+他の種類の機器には提供されていません。
 
-上記のAPIに関する詳細は、``<linux/energy_model.h>`` または2.4節
+上記のAPIに関する詳細は、``<linux/energy_model.h>`` または2.4節にあります。
 
-2.4 本APIの説明詳細
+2.4 ランタイム修正
+^^^^^^^^^^^^^^^^
+
+実行時にEMを更新したいドライバは、以下の専用関数を使用して、変更されたEMの新しいインスタンスを割り当てる必要があります。
+APIは以下です::
+
+  struct em_perf_table __rcu *em_table_alloc(struct em_perf_domain *pd);
+
+これにより、EMフレームワークが必要とするRCUとkrefを含む新しいEMテーブルを含む構造体を割り当てることができます。
+
+『struct em_perf_table』は性能状態を昇順に並べたリストである配列『struct em_perf_state state[]』を含みます。
+このリストは、EMを更新したいデバイス・ドライバによって入力されなければなりません。
+周波数のリストは（ブート中に作成された）既存のEMから取得することができます。
+『struct em_perf_state』内の内容も、同様にドライバが入力しなければなりません。
+
+これはRCUポインタswapを使用してEM更新を行うAPIです::
+
+  int em_dev_update_perf_domain(struct device *dev,
+			struct em_perf_table __rcu *new_table);
+
+ドライバは、割り当てられて初期化された新しい EM『struct em_perf_table』へのポインタを提供しなければなりません。
+この新しいEMはEMフレームワーク内で安全に使用され、カーネル内の他のサブシステム（thermal(熱量)、powercap(電力制限)）から
+見えるようになります。このAPIの主な設計目標は、高速で、実行時に余分な計算やメモリ割り当てを行わないことです。
+事前に計算されたEMがデバイスドライバで利用可能な場合、性能のオーバーヘッドを抑えて、単純にEMを再利用できるようにすべきです。
+
+EMを解放するために、ドライバによって先に提供された場合には（例えば、モジュールがアンロードされたときなど）、
+APIを呼び出す必要があります::
+
+  void em_table_free(struct em_perf_table __rcu *table);
+
+これにより、他のサブシステム（EASなど）が使用していないときは、EMフレームワークがメモリを安全に削除できるようになります。
+
+他のサブシステム（thermal、powercapなど）で電力値を使用するには、読み込み側を保護し、EM のテーブルデータの
+一貫性を提供する API を呼び出す必要があります::
+
+  struct em_perf_state *em_perf_state_from_pd(struct em_perf_domain *pd);
+
+これは、昇順に並べた性能状態の配列である『struct em_perf_state』ポインターを返します。
+この関数は、（rcu_read_lock()の後)RCUの読み取りロック・セクション内で呼ばれます。
+EMテーブルが不要になったらrcu_real_unlock()を呼び出す必要があります。このようにすることで、EMは
+RCU読み取りセクションを安全に使用しを安全に使用し、ユーザーを保護します。また、EMフレームワークが
+メモリ解放することができます。使い方の詳細は、3.2節のにあります。
+
+em_perf_state::costの値を計算するデバイスドライバ専用のAPIがあります。::
+
+  int em_dev_compute_costs(struct device *dev, struct em_perf_state *table,
+                           int nr_states);
+
+EMからのこれらの『コスト』値はEASで使用されます。新しい EM テーブルは、エントリ数とデバイスポインタとともに
+渡されなければなりません。コスト値の計算が適切に行われた場合、この関数の戻り値は0となります。この関数は、
+各性能状態の非効率性を正しく設定するための処理も行います。それに応じてem_perf_state::flagsを更新します。
+そして、そのような準備された新しいEMをem_dev_update_perf_domain()関数に渡すことができ、それを使用することがでます。
+
+上記のAPIの詳細については、``<linux/energy_model.h>``、およびに3.2節にデバイスドライバでの更新メカニズムの
+簡単な実装を示すサンプルコードがあります。
+
+2.5 本APIの説明詳細
 ^^^^^^^^^^^^^^^^^
 
-struct em_perf_state
+.. code-block:: C
 
-    Performance state of a performance domain
+  struct em_perf_state
+    性能ドメインの性能状態
 
-Definition:
 
-struct em_perf_state {
+定義
+
+.. code-block:: C
+
+  struct em_perf_state {
+    unsigned long performance;
     unsigned long frequency;
     unsigned long power;
     unsigned long cost;
     unsigned long flags;
-};
+  };
 
-Members
+メンバー
 
+performance
+    与えられた周波数でのCPU性能(容量)
 frequency
-
-    The frequency in KHz, for consistency with CPUFreq
+    CPUFreqと整合性を保つKHz単位での周波数
 power
-
-    The power consumed at this level (by 1 CPU or by a registered device). It can be a total power: static and dynamic.
+    （1CPUまたは登録された機器によって）このレベルで消費される電力。静的消費電力と動的消費電力の合計
 cost
-
-    The cost coefficient associated with this level, used during energy calculation. Equal to: power * max_frequency / frequency
+    エネルギー計算中に使用されるこのレベルに関連するコスト係数。次式に等しい: power * max_frequency / frequency
 flags
+    下記の『em_perf_state flags』の説明を参照
 
-    see "em_perf_state flags" description below.
+.. code-block:: C
 
-struct em_perf_domain
+  struct em_perf_table
+    性能状態テーブル
 
-    Performance domain
+定義
 
-Definition:
+.. code-block:: C
 
-struct em_perf_domain {
-    struct em_perf_state *table;
+  struct em_perf_table {
+    struct rcu_head rcu;
+    struct kref kref;
+    struct em_perf_state state[];
+  };
+
+メンバー
+
+rcu
+    安全なアクセスと破壊に使用されるRCU
+kref
+    ユーザーを追跡するための参照カウンター
+state
+    昇順に並べられた性能パフォーマンス状態のリスト
+
+.. code-block:: C
+
+  struct em_perf_domain
+    性能ドメイン
+
+定義
+
+.. code-block:: C
+
+  struct em_perf_domain {
+    struct em_perf_table __rcu *em_table;
     int nr_perf_states;
     unsigned long flags;
     unsigned long cpus[];
-};
+  };
 
-Members
-
-table
-
-    List of performance states, in ascending order
+メンバー
+em_table
+    実行時に修正可能なem_perf_tableへのポインタ
 nr_perf_states
-
-    Number of performance states
+    性能状態数
 flags
-
-    See "em_perf_domain flags"
+    『em_perf_domain flags』を参照
 cpus
+    ドメインのCPUをカバーするcpumask。スケジューラーでのエネルギー計算中に起こりうるキャッシュミスを避け、メモリ領域の確保／解放を簡単にするための性能上の理由より
 
-    Cpumask covering the CPUs of the domain. It's here for performance reasons to avoid potential cache misses during energy calculations in the scheduler and simplifies allocating/freeing that memory region.
+説明
 
-Description
+CPU機器の場合、『性能ドメイン』は、性能が一緒にスケールされるCPUのグループを表します。性能ドメインのすべてのCPUは、
+同じマイクロアーキテクチャでなければなりません。性能ドメインは、多くの場合、CPUFreqポリシーと1対1のマッピングを持ちます。
+その他の機器の場合、cpusフィールドは未使用です。
 
-In case of CPU device, a "performance domain" represents a group of CPUs whose performance is scaled together. All CPUs of a performance domain must have the same micro-architecture. Performance domains often have a 1-to-1 mapping with CPUFreq policies. In case of other devices the cpus field is unused.
+.. code-block:: C
 
-struct em_perf_state *em_pd_get_efficient_state(struct em_perf_domain *pd, unsigned long freq)
+  int em_pd_get_efficient_state(struct em_perf_state *table, int nr_perf_states, unsigned long max_util, unsigned long pd_flags)¶
+   EMから効率的な性能状態を取得
 
-    Get an efficient performance state from the EM
+引数
 
-Parameters
+.. code-block:: C
 
-struct em_perf_domain *pd
+  struct em_perf_state *table
+    昇順に並べられた性能状態のリスト
+  int nr_perf_states
+    性能状態数
+  unsigned long max_util
+    EMでマップする最大稼働率
+  unsigned long pd_flags
+    性能ドメインフラグ
 
-    Performance domain for which we want an efficient frequency
-unsigned long freq
+説明
+スケジューラーのコードから頻繁に呼び出されるため、チェック機能は実装されていません。
 
-    Frequency to map with the EM
+戻り値
 
-Description
+max_util要件を満たすのに十分な、効率的なパフォーマンス状態ID。
 
-It is called from the scheduler code quite frequently and as a consequence doesn't implement any check.
+返り値
+効率的な性能状態のidで、max_utilの要求に大変十分に適合
 
-Return
+.. code-block:: C
 
-An efficient performance state, high enough to meet freq requirement.
+  unsigned long em_cpu_energy(struct em_perf_domain *pd, unsigned long max_util, unsigned long sum_util, unsigned long allowed_cpu_cap)
+    性能ドメインのCPUで消費されるエネルギーを算出
 
-unsigned long em_cpu_energy(struct em_perf_domain *pd, unsigned long max_util, unsigned long sum_util, unsigned long allowed_cpu_cap)
+引数
 
-    Estimates the energy consumed by the CPUs of a performance domain
+.. code-block:: C
 
-Parameters
+  struct em_perf_domain *pd
+    エネルギーが算出される性能ドメイン
+  unsigned long max_util
+    ドメインのCPU内での最高稼働率
+  unsigned long sum_util
+    ドメイン内のすべてのCPUの稼働率の合計
+  unsigned long allowed_cpu_cap
+    (熱量により)減少させた周波数を反映させた性能ドメインでのCPUの最大許容容量
 
-struct em_perf_domain *pd
+説明
+この関数はCPU機器にのみ使用されなければなりません。
+EMがCPUタイプで、cpumaskが割り当てられているかどうかの検証はありません。
+この関数はスケジューラから頻繁に呼び出されるため、チェックは行われません。
 
-    performance domain for which energy has to be estimated
-unsigned long max_util
+返り値
+ドメインの最大稼働率を満たす容量状態を仮定した場合の、ドメインのCPUによって消費されるエネルギーの合計。
 
-    highest utilization among CPUs of the domain
-unsigned long sum_util
+！！！！！！！ここまで(2024/3/30)！！！！！！！！！！
 
-    sum of the utilization of all CPUs in the domain
-unsigned long allowed_cpu_cap
-
-    maximum allowed CPU capacity for the pd, which might reflect reduced frequency (due to thermal)
-
-Description
-
-This function must be used only for CPU devices. There is no validation, i.e. if the EM is a CPU type and has cpumask allocated. It is called from the scheduler code quite frequently and that is why there is not checks.
-
-Return
-
-the sum of the energy consumed by the CPUs of the domain assuming a capacity state satisfying the max utilization of the domain.
 
 int em_pd_nr_perf_states(struct em_perf_domain *pd)
 
