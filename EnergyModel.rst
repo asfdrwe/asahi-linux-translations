@@ -306,7 +306,9 @@ state
     unsigned long cpus[];
   };
 
+
 メンバー
+
 em_table
     実行時に修正可能なem_perf_tableへのポインタ
 nr_perf_states
@@ -329,26 +331,23 @@ CPU機器の場合、『性能ドメイン』は、性能が一緒にスケー�
 
 引数
 
-.. code-block:: C
-
-  struct em_perf_state *table
+struct em_perf_state *table
     昇順に並べられた性能状態のリスト
-  int nr_perf_states
+int nr_perf_states
     性能状態数
-  unsigned long max_util
+unsigned long max_util
     EMでマップする最大稼働率
-  unsigned long pd_flags
+unsigned long pd_flags
     性能ドメインフラグ
 
 説明
+
 スケジューラーのコードから頻繁に呼び出されるため、チェック機能は実装されていません。
 
-戻り値
+返り値
 
 max_util要件を満たすのに十分な、効率的なパフォーマンス状態ID。
 
-返り値
-効率的な性能状態のidで、max_utilの要求に大変十分に適合
 
 .. code-block:: C
 
@@ -357,23 +356,23 @@ max_util要件を満たすのに十分な、効率的なパフォーマンス状
 
 引数
 
-.. code-block:: C
-
-  struct em_perf_domain *pd
+struct em_perf_domain *pd
     エネルギーが算出される性能ドメイン
-  unsigned long max_util
+unsigned long max_util
     ドメインのCPU内での最高稼働率
-  unsigned long sum_util
+unsigned long sum_util
     ドメイン内のすべてのCPUの稼働率の合計
-  unsigned long allowed_cpu_cap
+unsigned long allowed_cpu_cap
     (熱量により)減少させた周波数を反映させた性能ドメインでのCPUの最大許容容量
 
 説明
+
 この関数はCPU機器にのみ使用されなければなりません。
 EMがCPUタイプで、cpumaskが割り当てられているかどうかの検証はありません。
 この関数はスケジューラから頻繁に呼び出されるため、チェックは行われません。
 
 返り値
+
 ドメインの最大稼働率を満たす容量状態を仮定した場合の、ドメインのCPUによって消費されるエネルギーの合計。
 
 ！！！！！！！ここまで(2024/3/30)！！！！！！！！！！
