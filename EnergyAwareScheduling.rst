@@ -2,6 +2,7 @@
 ライセンスは原文のライセンス(カーネル付属文書だからGPL-2.0のはず)に従います。
 
 訳注:
+* 日本語訳が存在するカーネル文書へリンクは対応する日本語訳へのリンクに修正(2024/3/31)
 
 * Linuxの従来のスケジューラ CFS関連文書
 
@@ -37,7 +38,7 @@ EASは異種(heterogeneous)CPUトポロジー（Arm big.LITTLEなど）でのみ
 
 EASが実際に使用するEMは、スケジューラではなく、専用のフレームワークによって管理されます。
 このフレームワークの詳細と提供するものの詳細については対応する文書を参照してください
-( https://docs.kernel.org/power/energy-model.html を参照）。
+( https://github.com/asfdrwe/asahi-linux-translations/blob/main/EnergyModel.rst を参照）。
 
 2. 背景と用語
 -----------
