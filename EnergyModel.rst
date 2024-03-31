@@ -80,7 +80,7 @@ EMフレームワークは、変更可能なEMテーブルの新しいメモリ�
 安全に解放するためにEM APIを呼び出す必要があります。EMフレームワークは可能な場合にクリーンアップ処理します。
 
 EM値を変更しようとしているカーネルコードはmutexを使用することで同時アクセスから保護されます。したがって、
-デバイスドライバコードがEMを変更しようとするときはスリープコンテキスト(sleeping context)で実行されなければなりません
+デバイスドライバコードがEMを変更しようとするときはスリーピングコンテキスト(sleeping context)で実行されなければなりません
 (訳注: `たぶん排他制御機構に関するこの辺の話<https://docs.kernel.org/locking/mutex-design.html>`_)。
 
 実行時に変更可能なEMにより、『単一の、実行時全体にわたって静的なEM』（システム・プロパティ）設計から、
@@ -375,111 +375,137 @@ EMがCPUタイプで、cpumaskが割り当てられているかどうかの検�
 
 ドメインの最大稼働率を満たす容量状態を仮定した場合の、ドメインのCPUによって消費されるエネルギーの合計。
 
-！！！！！！！ここまで(2024/3/30)！！！！！！！！！！
+.. code-block:: C
 
+  int em_pd_nr_perf_states(struct em_perf_domain *pd)
+    性能ドメインの性能状態数を取得
 
-int em_pd_nr_perf_states(struct em_perf_domain *pd)
-
-    Get the number of performance states of a perf. domain
-
-Parameters
+引数
 
 struct em_perf_domain *pd
+    これがなされなければならない性能ドメイン
 
-    performance domain for which this must be done
+返り値
 
-Return
+性能ドメインテーブル内の性能状態数
 
-the number of performance states in the performance domain table
+.. code-block:: C
 
-struct em_perf_domain *em_pd_get(struct device *dev)
+  struct em_perf_state *em_perf_state_from_pd(struct em_perf_domain *pd)
+    性能ドメインの性能状態テーブルを取得
 
-    Return the performance domain for a device
+引数
 
-Parameters
+struct em_perf_domain *pd
+    これがなされなければならない性能ドメイン
+
+説明
+
+この関数を使用するにはrcu_read_lock()を保持しなければなりません。性能状態テーブルの使用が終わったら、rcu_read_unlock()を呼び出す必要があります。
+
+返り値
+
+性能ドメインの性能状態テーブルへのポインタ
+
+.. code-block:: C
+
+  int em_dev_update_perf_domain(struct device *dev, struct em_perf_table __rcu *new_table)
+    機器の実行時EMテーブルを更新
+
+引数
 
 struct device *dev
+    EMが更新される機器
+struct em_perf_table __rcu *new_table
+    これから使われるようになる新しいEMテーブル
 
-    Device to find the performance domain for
+説明
 
-Description
+提供されたテーブルを使う機器に対する実行時EM修正可能テーブルを更新します。
+この関数はシリアライズ書き込みに mutex を使うので、非スリーピングコンテキストから呼ばれてはいけません。
+成功時に 0、失敗時にエラーコードを返します。
 
-Returns the performance domain to which dev belongs, or NULL if it doesn't exist.
+.. code-block:: C
 
-struct em_perf_domain *em_cpu_get(int cpu)
+  struct em_perf_domain *em_pd_get(struct device *dev)
+    機器の性能ドメインを返す
 
-    Return the performance domain for a CPU
+引数
 
-Parameters
+struct device *dev
+    性能ドメインを探す対象の機器
+
+説明
+
+機器が属数する性能ドメインを返すか、存在しない場合はNULLを返します。
+
+.. code-block:: C
+
+  struct em_perf_domain *em_cpu_get(int cpu)
+    CPUの性能ドメインを返す
+
+引数
 
 int cpu
+    性能ドメインを探す対象のCPU
 
-    CPU to find the performance domain for
+説明
 
-Description
+cpuが属する性能ドメインを返すか、存在しない場合はNULLを返します。
 
-Returns the performance domain to which cpu belongs, or NULL if it doesn't exist.
+.. code-block:: C
 
-int em_dev_register_perf_domain(struct device *dev, unsigned int nr_states, struct em_data_callback *cb, cpumask_t *cpus, bool microwatts)
+  int em_dev_register_perf_domain(struct device *dev, unsigned int nr_states, struct em_data_callback *cb, cpumask_t *cpus, bool microwatts)
+    機器に対してエネルギーモデル(EM)を登録
 
-    Register the Energy Model (EM) for a device
-
-Parameters
+引数
 
 struct device *dev
-
-    Device for which the EM is to register
+    EMを登録する機器
 unsigned int nr_states
-
-    Number of performance states to register
+    登録する性能状態数
 struct em_data_callback *cb
-
-    Callback functions providing the data of the Energy Model
+    エネルギーモデルのデータを提供するコールバック関数
 cpumask_t *cpus
-
-    Pointer to cpumask_t, which in case of a CPU device is obligatory. It can be taken from i.e. 'policy->cpus'. For other type of devices this should be set to NULL.
+    cpumask_tへのポインタで、CPU機器の場合は必須。 『policy->cpus』などから取得可能。他のタイプの機器の場合、これは NULL に設定されるべき
 bool microwatts
+    電力値がマイクロワットか他の尺度かを示すフラグ。適切に設定すべき
 
-    Flag indicating that the power values are in micro-Watts or in some other scale. It must be set properly.
+説明
 
-Description
+cbで定義されたコールバックを使用して、性能ドメインのエネルギーモデルテーブルを作成します。
+microwattsを正しい値に設定することが重要です。一部のカーネル・サブシステムはこのフラグに依存するので、EM内のすべての機器が
+同じ尺度を使用しているかどうかをチェックする可能性があります。
 
-Create Energy Model tables for a performance domain using the callbacks defined in cb.
+複数のクライアントが同じ性能ドメインを登録した場合、最初の登録以外は無視されます。
 
-The microwatts is important to set with correct value. Some kernel sub-systems might rely on this flag and check if all devices in the EM are using the same scale.
+成功した場合は0を返します。
 
-If multiple clients register the same performance domain, all but the first registration will be ignored.
+.. code-block:: C
 
-Return 0 on success
+  void em_dev_unregister_perf_domain(struct device *dev)
+    機器に対してエネルギーモデル(EM)を登録解除
 
-void em_dev_unregister_perf_domain(struct device *dev)
-
-    Unregister Energy Model (EM) for a device
-
-Parameters
+引数
 
 struct device *dev
+    EMが登録された機器
 
-    Device for which the EM is registered
-
-Description
-
-Unregister the EM for the specified dev (but not a CPU device).
-
-
+説明
+指定した機器(CPU機器以外)へのエネルギーモデル(EM)を登録解除します。
 
 3. ドライバの例
 -----------------
 
-CPUFreqフレームワークは、与えられたCPU'policy'オブジェクトのEMを登録するための専用コールバックをサポートしています。
-cpufreq_driver::register_em()。
-このコールバックは、指定されたドライバに対して適切に実装されていなければなりません、
-なぜなら、フレームワークがセットアップ中に適切なタイミングでそれを呼び出すからである。
-このセクションでは、CPUFreqドライバがエネルギー・モデル・フレームワークにパフォーマ ンス・ドメインを登録する簡単な例を示します。
-(偽の)'foo'プロトコルを使用して、Energy Modelフレームワークでパフォーマンス・ドメインを登録する簡単な例を示します。
-プロトコルを使用しています。このドライバは、est_power()関数を実装し、EMフレームワークに提供します。
+3.1 EM登録のドライバ例
+^^^^^^^^^^^^^^^^^^^
 
-EMフレームワーク::
+CPUFreqフレームワークは、指定されたCPU『policy』 object: cpufreq_driver::register_em()に対するEMを登録するための
+専用コールバックに対応しています。このコールバックは、指定されたドライバに対して適切に実装されていなければなりません。
+なぜならば、フレームワークがセットアップ中に適切なタイミングでそれを呼び出すからです。
+この節では、(偽の)『foo』プロトコルを使用して、CPUFreqドライバがエネルギーモデルフレームワークに性能ドメインを登録する簡単な例を示します。
+
+このドライバは、est_power()関数を実装し、EMフレームワークに提供します::
 
   -> drivers/cpufreq/foo_cpufreq.c
 
@@ -524,3 +550,77 @@ EMフレームワーク::
   39	static struct cpufreq_driver foo_cpufreq_driver = {
   40		.register_em = foo_cpufreq_register_em,
   41	};
+
+3.2 EM修正のドライバ例
+^^^^^^^^^^^^^^^^^^^^
+
+この節ではEMを修正する熱量ドライバの簡単な例を提供します。
+ドライバはfoo_thermal_em_update()関数を実装します。
+ドライバーは定期的に起床し、温度をチェックし、EMデータを修正します::
+
+  -> drivers/soc/example/example_em_mod.c
+
+  01	static void foo_get_new_em(struct foo_context *ctx)
+  02	{
+  03		struct em_perf_table __rcu *em_table;
+  04		struct em_perf_state *table, *new_table;
+  05		struct device *dev = ctx->dev;
+  06		struct em_perf_domain *pd;
+  07		unsigned long freq;
+  08		int i, ret;
+  09
+  10		pd = em_pd_get(dev);
+  11		if (!pd)
+  12			return;
+  13
+  14		em_table = em_table_alloc(pd);
+  15		if (!em_table)
+  16			return;
+  17
+  18		new_table = em_table->state;
+  19
+  20		rcu_read_lock();
+  21		table = em_perf_state_from_pd(pd);
+  22		for (i = 0; i < pd->nr_perf_states; i++) {
+  23			freq = table[i].frequency;
+  24			foo_get_power_perf_values(dev, freq, &new_table[i]);
+  25		}
+  26		rcu_read_unlock();
+  27
+  28		/* Calculate 'cost' values for EAS */
+  29		ret = em_dev_compute_costs(dev, table, pd->nr_perf_states);
+  30		if (ret) {
+  31			dev_warn(dev, "EM: compute costs failed %d\n", ret);
+  32			em_free_table(em_table);
+  33			return;
+  34		}
+  35
+  36		ret = em_dev_update_perf_domain(dev, em_table);
+  37		if (ret) {
+  38			dev_warn(dev, "EM: update failed %d\n", ret);
+  39			em_free_table(em_table);
+  40			return;
+  41		}
+  42
+  43		/*
+  44		 * Since it's one-time-update drop the usage counter.
+  45		 * The EM framework will later free the table when needed.
+  46		 */
+  47		em_table_free(em_table);
+  48	}
+  49
+  50	/*
+  51	 * Function called periodically to check the temperature and
+  52	 * update the EM if needed
+  53	 */
+  54	static void foo_thermal_em_update(struct foo_context *ctx)
+  55	{
+  56		struct device *dev = ctx->dev;
+  57		int cpu;
+  58
+  59		ctx->temperature = foo_get_temp(dev, ctx);
+  60		if (ctx->temperature < FOO_EM_UPDATE_TEMP_THRESHOLD)
+  61			return;
+  62
+  63		foo_get_new_em(ctx);
+  64	}
