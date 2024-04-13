@@ -2,6 +2,8 @@
 
 訳注:
 - Energy Aware Schedulingの日本語訳への[リンク](https://github.com/asfdrwe/asahi-linux-translations/blob/main/EnergyAwareScheduling.rst)を追加(2024/3/23)
+- Energy Model of devicesの日本語訳への[リンク](https://github.com/asfdrwe/asahi-linux-translations/blob/main/EnergyModel.rst)を追加(2024/4/13)
+- Utilization Clampingの日本語訳への[リンク](https://github.com/asfdrwe/asahi-linux-translations/blob/main/UtilizationClamping.rst)を追加(2024/4/13)
 
 ---
 # Fedora Asahi Remixの新機能
