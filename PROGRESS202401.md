@@ -305,6 +305,7 @@ EASとUtilization Clampingを組み合わせることで、15インチM2 MacBook
 - [Energy-Aware Scheduling](https://docs.kernel.org/scheduler/sched-energy.html)
   - [非公式日本語訳](https://github.com/asfdrwe/asahi-linux-translations/blob/main/EnergyAwareScheduling.rst) (2024/3/23追加)
 - [Utilization Clamping](https://docs.kernel.org/scheduler/sched-util-clamp.html)
+  - [非公式日本語訳](https://github.com/asfdrwe/asahi-linux-translations/blob/main/UtilizationClamping.rst) (2024/4/13追加)
 - [Pipewire](https://wiki.archlinux.jp/index.php/PipeWire)
 
 ## ユーザースペースとディストリビューション
