@@ -301,7 +301,7 @@ EASはSMPと基本的に互換性がないわけではありませんが、SMP �
 
 EASは、プラットフォームのEMを使用して、スケジューリング決定がエネルギーに与える影響を推定します。
 そのため、EASを起動させるためには、プラットフォームがEMフレームワークに電力コストテーブルを提供する必要があります。
-これを行うために、https://docs.kernel.org/power/energy-model.html にある独立したEMフレームワークの文書を参照してください。
+これを行うために、https://github.com/asfdrwe/asahi-linux-translations/blob/main/EnergyModel.rst にある独立したEMフレームワークの文書を参照してください。
 
 また、EASを起動させるためには、EMが登録された後に、スケジューリングドメインを再構築する必要があることに注意してください。
 
