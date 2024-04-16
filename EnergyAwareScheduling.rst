@@ -289,7 +289,8 @@ CFSタスクだけでなく、他のスケジューリングクラスやIRQに�
 この要件は、スケジューリングドメインが構築されるときに SD_ASYM_CPUCAPACITY_FULL フラグがあるかどうかを
 調べることによって実行時にチェックされます。
 
-sched_domainヒエラルキー内でこのフラグがセットされる要件については　https://docs.kernel.org/power/energy-model.html　
+sched_domainヒエラルキー内でこのフラグがセットされる要件については　
+https://github.com/asfdrwe/asahi-linux-translations/blob/main/EnergyModel.rst
 を参照してください。
 
 EASはSMPと基本的に互換性がないわけではありませんが、SMP プラットフォームでの大幅な節約はまだ観測されていません。
