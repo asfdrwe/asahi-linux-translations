@@ -9,6 +9,7 @@
 # Fedora Asahi Remixの新機能
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202308.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202403.md)
 
 少し前に [Fedora Asahi Remix](https://github.com/asfdrwe/asahi-linux-translations/blob/main/fedora.md) の
 **最初**の安定版リリースをリリースできたことを大変誇りに思っています。そして今、これまでのすべてを振り返るときが来ました。
