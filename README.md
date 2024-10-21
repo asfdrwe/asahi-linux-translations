@@ -10,6 +10,9 @@
 - [行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
 - [著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
 - ブログ
+  - [Asahi Linux での AAA ゲーミング](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202410.md)
+  - [M1 の Vulkan 1.3 が1ヶ月で登場](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202406.md)
+  - [M1 が OpenGL 4.6 に準拠](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202402.md)
   - [Fedora Asahi Remixの新機能](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202401.md)
   - [新しいフラッグシップディストリビューション: Fedora Asahi Remix:2023年8月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202308.md)
   - [Asahi LinuxでのOpenGL 3.1:2023年6月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202306.md)
