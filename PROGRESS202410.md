@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/e739cdbb-6b41-41ad-a8c4-f6393a4fd976)[AAA gaming on Asahi Linux](https://asahilinux.org/2024/10/aaa-gaming-on-asahi-linux/)の非公式日本語訳です。
+[AAA gaming on Asahi Linux](https://asahilinux.org/2024/10/aaa-gaming-on-asahi-linux/)の非公式日本語訳です。
 
 訳注: DeepLの結果を貼っただけ(2024/10/19)
 
@@ -9,7 +9,6 @@
 
 M1でのLinuxでのゲームがここにあります！x86エミュレーションとWindows互換性を備えたVulkan 1.3ドライバを統合したAsahiゲームプレイツールキットをリリースできることを嬉しく思います。さらに、ボーナスとして、OpenCL 3.0に準拠しています。
 Asahi Linuxは現在、このハードウェアのための唯一の準拠OpenGL®、 OpenCL™、 Vulkan®ドライバを出荷しています。ゲームに関しては...本日のリリースはアルファ版ですが、Controlはよく動きます！
-
 ![image1](https://asahilinux.org/img/blog/2024/10/Control-small.avif)
 
 ## インストール
