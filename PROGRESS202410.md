@@ -1,7 +1,5 @@
 [AAA gaming on Asahi Linux](https://asahilinux.org/2024/10/aaa-gaming-on-asahi-linux/)の非公式日本語訳です。
 
-訳注: DeepLの結果を貼っただけ(2024/10/19)
-
 ---
 # Asahi Linux での AAA ゲーミング
 
@@ -11,7 +9,7 @@ M1でのLinuxでのゲームがここにあります！Asahi ゲームプレイ�
 x86エミュレーションとWindows互換性を備え、 Vulkan 1.3 ドライバを統合しています。追加ボーナスとして、OpenCL 3.0に準拠しています。
 
 Asahi Linuxは現在、このハードウェア向けで[OpenGL®](https://www.khronos.org/conformance/adopters/conformant-products/opengl#submission_3470)、
-[OpenCL™](https://www.khronos.org/conformance/adopters/conformant-products/opencl#submission_433)、 [Vulkan®](https://www.khronos.org/conformance/adopters/conformant-products#submission_7910)に準拠する唯一のドライバを公開しています。ゲームに関して...本日のリリースはアルファ版ですが、
+[OpenCL™](https://www.khronos.org/conformance/adopters/conformant-products/opencl#submission_433)、 [Vulkan®](https://www.khronos.org/conformance/adopters/conformant-products#submission_7910)に準拠する唯一のドライバを公開しています。ゲームに関して... 本日のリリースはアルファ版ですが、
 [Control](https://store.steampowered.com/app/870780/Control_Ultimate_Edition/)はよく動きます！
 
 ![control](https://asahilinux.org/img/blog/2024/10/Control-small.avif)
@@ -22,25 +20,25 @@ Asahi Linuxは現在、このハードウェア向けで[OpenGL®](https://www.k
 ため 16GB のメモリを必要とします。
 
 ## スタック(訳注: 使わているソフトウェア基盤)
-ゲームは通常、DirectX でレンダリングされる x86 Windows バイナリですが、私たちの標的はVulkanを搭載したArm Linuxです。それぞれの違いを処理する必要があります。
+ゲームは通常、DirectX でレンダリングされる x86 Windows バイナリですが、私たちの対象はVulkanを搭載したArm Linuxです。それぞれの違いを処理する必要があります。
 
 - [FEX](https://fex-emu.com/) が Arm 上で x86 をエミュレート
 - [Wine](https://www.winehq.org/) が Windows を Linux に変換
 - [DXVK](https://github.com/doitsujin/dxvk) と [vkd3d-proton](https://github.com/HansKristian-Work/vkd3d-proton) が DirectX を Vulkan に変換
 
-曲者がいます。ページサイズです。オペレーティングシステムは、固定サイズの『ページ』単位でメモリを割り当てます。アプリケーションが、システムが使用するよりも
-小さいページを想定すると、割り当てのアライメントが不十分なために壊れてしまいます。これは問題です。x86 は 4K ページを想定していますが、Apple システムは
+曲者がいます。ページサイズです。オペレーティングシステムは、固定サイズの『ページ』単位でメモリを割り当てます。アプリケーションがシステムが使用するよりも
+小さいページを想定していると、割り当てされたアライメントが不十分なために壊れてしまいます。これは問題です。x86 は 4K ページを想定していますが、Apple システムは
 16K　ページを使用しています。
 
-Linuxはプロセス間でページサイズを混在させることはできませんが、異なるページサイズの別の Arm Linux カーネルを仮想化することは``できます``。そのため、
-GPU やゲームコントローラーなどのデバイスを経由して、[muvm](https://github.com/AsahiLinux/muvm)を使用した小さな仮想マシン内でゲームを実行します。
+Linuxはプロセス間でページサイズを混在させることはできませんが、異なるページサイズの別の Arm Linux カーネルを仮想化することは *できます* 。そのため、
+GPU やゲームコントローラーなどのデバイスをパススルーして、[muvm](https://github.com/AsahiLinux/muvm)を使用した小さな仮想マシン内でゲームを実行します。
 システムが 16K なのでハードウェアは満足し、仮想マシンが 4K なのでゲームは満足し、[Fallout 4](https://store.steampowered.com/app/377160/Fallout_4/)を
 プレイできるのでみんな満足します。
 
 ![Fallout4](https://asahilinux.org/img/blog/2024/10/Fallout4-small.avif)
 
 ## Vulkan
-最後の1枚は成熟段階のVulkanドライバーです。DirectXを変換処理するには、多くの拡張機能を持つVulkan 1.3が必要だからです。4月にAppleハードウェア用の
+最後のピースは成熟段階のVulkanドライバーです。DirectXを変換処理するには、多くの拡張機能を持つVulkan 1.3が必要だからです。4月にAppleハードウェア用の
 唯一の Vulkan 1.3 ドライバである [Honeykrisp](https://rosenzweig.io/blog/vk13-on-the-m1-in-1-month.html) を書きました。それから、
 DXVKサポートを追加しました。いくつかの新機能を見てみましょう。
 
@@ -55,9 +53,9 @@ DXVKサポートを追加しました。いくつかの新機能を見てみま�
 ![Witcher3](https://asahilinux.org/img/blog/2024/10/Witcher3-small.avif)
 
 ### ジオメトリ・シェーダー
-ジオメトリ・シェーダーは(訳注:[解説](https://ja.wikipedia.org/wiki/%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC#%E3%82%B8%E3%82%AA%E3%83%A1%E3%83%88%E3%83%AA%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC)、
+ジオメトリ・シェーダーは(訳注:[解説](https://ja.wikipedia.org/wiki/%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC#%E3%82%B8%E3%82%AA%E3%83%A1%E3%83%88%E3%83%AA%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC))、
 ジオメトリを生成するための、より古く、より荒っぽい手法です。テッセレーションと同様に、M1にはジオメトリ・シェーダーのハードウェアがないため、コンピュート・シェーダーで
-エミュレートします。速いですか？いいえ。しかし、ジオメトリー・シェーダーは、[デスクトップ GPU でも](http://www.joshbarczak.com/blog/?p=667)遅いのです。
+エミュレートします。速いですか？いいえ。しかし、ジオメトリ・シェーダーは、[デスクトップ GPU でも](http://www.joshbarczak.com/blog/?p=667)遅いのです。
 高速である必要はなく、[Ghostrunner](https://store.steampowered.com/app/1139900/Ghostrunner/) のようなゲームに十分な速度があればいいのです。
 
 ![Ghostrunner](https://asahilinux.org/img/blog/2024/10/Ghostrunner-small.avif)
@@ -65,13 +63,13 @@ DXVKサポートを追加しました。いくつかの新機能を見てみま�
 ### 堅牢性の強化
 『堅牢性(robustness)』は、ハードウェアをクラッシュさせることなく、アプリケーションのシェーダーが境界外(out-of-bounds)のバッファにアクセスすることを許可します。
 OpenGL と Vulkan では、境界外ロードで任意の要素を返す可能性があり、境界外ストアはバッファを破損する可能性があります。私たちのOpenGLドライバは、
-M1上での効率的な堅牢性のために、[堅牢性の定義を悪用](https://rosenzweig.io/blog/conformant-gl46-on-the-m1.html)しています。
+M1上での効率的な堅牢性のために、[堅牢性の定義を悪用](https://rosenzweig.io/blog/conformant-gl46-on-the-m1.html)します。
 
 ゲームによってはより強力な保証が必要です。DirectX では、境界外ロードはゼロを返し、境界外ストアは無視されます。したがって、DXVK は、堅牢性を強化する Vulkan 拡張で
 ある`VK_EXT_robustness2`を必要とします。
 
-以前と同様に、比較選択命令で堅牢性を実装します。ナイーブな実装では、ロードされたインデックスとバッファサイズを比較し、範囲外の場合はゼロを選択します。しかし、
-GPU のロードはベクトルですが、演算はスカラーです。ページフォールトを無効にしたとしても、ロードごとに最大4つの比較と選択が必要になります。
+以前と同様に、比較選択命令で堅牢性を実装します。ナイーブな実装では、ロードされたインデックスとバッファサイズを *比較* し、範囲外の場合はゼロを *選択* します。
+しかしながら、GPU のロードはベクトルですが演算はスカラーです。ページフォールトを無効にしたとしても、ロードごとに最大4つの比較選択が必要になります。
 
 ```
 load R, buffer, index * 16
@@ -94,12 +92,12 @@ load R, buffer, index * 16
 4命令ではなく2命令で済みます。
 
 ## 次のステップ
-Honeykrispの次のステップはスパース・テクスチャ(訳注:[解説](https://docs.unity3d.com/ja/2019.4/Manual/SparseTextures.html)です。スパース・テクスチャにより
+Honeykrispの次のステップはスパース・テクスチャ(訳注:[解説](https://docs.unity3d.com/ja/2019.4/Manual/SparseTextures.html))です。スパース・テクスチャにより
 より多くのDX12ゲームが開放されます。アルファ版ではすでに[Cyberpunk 2077](https://store.steampowered.com/app/1091500/Cyberpunk_2077/)のようなスパースを必要としないDX12ゲームが動作しています。
 
 ![Cyberpunk2077](https://asahilinux.org/img/blog/2024/10/Cyberpunk2077-small.avif)
 
-多くのゲームはプレイ可能ですが、新しいAAAタイトルはまだ60fpsを達成していません。正確性が第一です。性能向上は次です。
+多くのゲームはプレイ可能ですが、新しいAAAタイトルはまだ60fpsを達成していません。正確性が第一です。性能向上はその次です。
 [Hollow Knight](https://store.steampowered.com/app/367520/Hollow_Knight/)のようなインディーズゲームはフルスピードで動きます。
 
 ![HollowKnight](https://asahilinux.org/img/blog/2024/10/HollowKnight-small.avif)
