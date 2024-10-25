@@ -3,7 +3,7 @@
 ---
 # 新しいフラッグシップディストリビューション: Fedora Asahi Remix
 
-- [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202306.md)
+- [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202308.md)
 - [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202401.md)
 
 みなさん、待ちに待っていました！多くの方が想像していたことでしょう。[Flock To Fedora](https://flocktofedora.org/)で発表しましたが、正式に発表する時が来ました。
