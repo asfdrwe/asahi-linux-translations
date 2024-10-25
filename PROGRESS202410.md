@@ -7,27 +7,44 @@
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202406.md)
 
-M1でのLinuxでのゲームがここにあります！x86エミュレーションとWindows互換性を備えたVulkan 1.3ドライバを統合したAsahiゲームプレイツールキットをリリースできることを嬉しく思います。さらに、ボーナスとして、OpenCL 3.0に準拠しています。
-Asahi Linuxは現在、このハードウェアのための唯一の準拠OpenGL®、 OpenCL™、 Vulkan®ドライバを出荷しています。ゲームに関しては...本日のリリースはアルファ版ですが、Controlはよく動きます！
-![image1](https://asahilinux.org/img/blog/2024/10/Control-small.avif)
+M1でのLinuxでのゲームがここにあります！Asahi ゲームプレイツールキットを公開できることを嬉しく思います。Asahi ゲームプレイツールキットは
+x86エミュレーションとWindows互換性を備え、 Vulkan 1.3 ドライバを統合しています。追加ボーナスとして、OpenCL 3.0に準拠しています。
+
+Asahi Linuxは現在、このハードウェア向けで[OpenGL®](https://www.khronos.org/conformance/adopters/conformant-products/opengl#submission_3470)、
+[OpenCL™](https://www.khronos.org/conformance/adopters/conformant-products/opencl#submission_433)、 [Vulkan®](https://www.khronos.org/conformance/adopters/conformant-products#submission_7910)に準拠する唯一のドライバを公開しています。ゲームに関して...本日のリリースはアルファ版ですが、
+[Control](https://store.steampowered.com/app/870780/Control_Ultimate_Edition/)はよく動きます！
+
+![control](https://asahilinux.org/img/blog/2024/10/Control-small.avif)
 
 ## インストール
-まず、Fedora Asahi Remixをインストールします。インストールしたら、dnf upgrade --refresh && reboot で最新のドライバを入手する。その後、dnf install steamして遊ぶ。すべてのM1/M2シリーズが動作するが、ほとんどのゲームはエミュレーションのオーバーヘッドのため16GBのメモリを必要とする。
+まず、Fedora Asahi Remix をインストールします。インストール後に、`dnf upgrade --refresh && reboot` で最新のドライバを入手してください。
+その後、`dnf install steam`し、プレイしてください。すべての M1/M2 シリーズで動作しますが、ほとんどのゲームはエミュレーションのオーバーヘッドの
+ため 16GB のメモリを必要とします。
 
-## スタック
-ゲームは通常、DirectXでレンダリングされるx86 Windowsバイナリですが、私たちのターゲットはVulkanを搭載したArm Linuxです。それぞれの違いを処理する必要がある：
-FEXはArm上でx86をエミュレートします。
-WineはWindowsをLinuxに変換します。
-DXVKと vkd3d-protonはDirectXをVulkanに変換する。
-ページサイズという曲者もある。オペレーティングシステムは、固定サイズの「ページ」でメモリを割り当てます。アプリケーションが、システムが使用するよりも小さいページを期待すると、割り当てのアライメントが不十分なために壊れてしまいます。x86は4Kページを想定しているが、Appleシステムは16Kページを使っている。
-Linuxはプロセス間でページ・サイズを混在させることはできないが、異なるページ・サイズの別のArm Linuxカーネルを仮想化することはできる。そのため、GPUやゲームコントローラーなどのデバイスを経由して、muvmを使用した小さな仮想マシン内でゲームを実行する。システムが16Kなのでハードウェアは満足し、仮想マシンが4Kなのでゲームは満足し、Fallout 4をプレイできるので満足する。
+## スタック(訳注: 使わているソフトウェア基盤)
+ゲームは通常、DirectX でレンダリングされる x86 Windows バイナリですが、私たちの標的はVulkanを搭載したArm Linuxです。それぞれの違いを処理する必要があります。
 
-![image2](https://asahilinux.org/img/blog/2024/10/Fallout4-small.avif)
+- [FEX](https://fex-emu.com/) が Arm 上で x86 をエミュレート
+- [Wine](https://www.winehq.org/) が Windows を Linux に変換
+- [DXVK](https://github.com/doitsujin/dxvk) と [vkd3d-proton](https://github.com/HansKristian-Work/vkd3d-proton) が DirectX を Vulkan に変換
+
+曲者がいます。ページサイズです。オペレーティングシステムは、固定サイズの『ページ』単位でメモリを割り当てます。アプリケーションが、システムが使用するよりも
+小さいページを想定すると、割り当てのアライメントが不十分なために壊れてしまいます。これは問題です。x86 は 4K ページを想定していますが、Apple システムは
+16K　ページを使用しています。
+
+Linuxはプロセス間でページサイズを混在させることはできませんが、異なるページサイズの別の Arm Linux カーネルを仮想化することは``できます``。そのため、
+GPU やゲームコントローラーなどのデバイスを経由して、[muvm](https://github.com/AsahiLinux/muvm)を使用した小さな仮想マシン内でゲームを実行します。
+システムが 16K なのでハードウェアは満足し、仮想マシンが 4K なのでゲームは満足し、[Fallout 4](https://store.steampowered.com/app/377160/Fallout_4/)を
+プレイできるのでみんな満足します。
+
+![Fallout4](https://asahilinux.org/img/blog/2024/10/Fallout4-small.avif)
 
 ## Vulkan
-DirectXを翻訳するには、多くの拡張機能を持つVulkan 1.3が必要だからだ。4月に、私はAppleハードウェア用の唯一のVulkan 1.3ドライバであるHoneykrispを書いた。その後、DXVKサポートを追加しました。いくつかの新機能を見てみよう。
+最後の1枚は成熟段階のVulkanドライバーです。DirectXを変換処理するには、多くの拡張機能を持つVulkan 1.3が必要だからです。4月にAppleハードウェア用の
+唯一の Vulkan 1.3 ドライバである [Honeykrisp](https://rosenzweig.io/blog/vk13-on-the-m1-in-1-month.html) を書きました。それから、
+DXVKサポートを追加しました。いくつかの新機能を見てみましょう。
 
-## テッセレーション
+### テッセレーション
 テッセレーションは、『ウィッチャー3』のようなゲームがジオメトリを生成することを可能にします。M1にはハードウェア・テッセレーションがありますが、DirectX、Vulkan、OpenGLでは制限されすぎています。その代わりに、今日のXDC2024での講演で詳しく説明するように、難解なコンピュート・シェーダーを使ってテッセレーションを行う必要があります。
 
 ![image3](https://asahilinux.org/img/blog/2024/10/Witcher3-small.avif)
