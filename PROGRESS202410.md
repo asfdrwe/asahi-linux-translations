@@ -45,19 +45,33 @@ GPU やゲームコントローラーなどのデバイスを経由して、[muv
 DXVKサポートを追加しました。いくつかの新機能を見てみましょう。
 
 ### テッセレーション
-テッセレーションは、『ウィッチャー3』のようなゲームがジオメトリを生成することを可能にします。M1にはハードウェア・テッセレーションがありますが、DirectX、Vulkan、OpenGLでは制限されすぎています。その代わりに、今日のXDC2024での講演で詳しく説明するように、難解なコンピュート・シェーダーを使ってテッセレーションを行う必要があります。
+テッセレーション(訳注:[解説](https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%83%E3%82%BB%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3))は、
+[Witcher 3](https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/) のようなゲームが
+ジオメトリを生成することを可能にします。M1にはハードウェア・テッセレーションがありますが、DirectX、Vulkan、OpenGLで使うには制限されすぎています。
+その代わりに、[2024年10月10日のXDC2024での講演](https://www.youtube.com/live/pDsksRBLXPk)で詳しく説明するように、難解なコンピュート・シェーダー
+(訳注:[解説](https://ja.wikipedia.org/wiki/%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC#%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%88%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC))を
+使ってテッセレーションを行う必要があります。
 
-![image3](https://asahilinux.org/img/blog/2024/10/Witcher3-small.avif)
+![Witcher3](https://asahilinux.org/img/blog/2024/10/Witcher3-small.avif)
 
-## ジオメトリ・シェーダー
-ジオメトリ・シェーダーは、ジオメトリを生成するための、より古く、より粗雑な方法です。テッセレーションと同様に、M1にはジオメトリ・シェーダーのハードウェアがないため、コンピュート・シェーダーでエミュレートします。それは速いか？いいえ。しかし、ジオメトリー・シェーダーは、デスクトップGPUでも遅いのです。高速である必要はなく、Ghostrunnerのようなゲームに十分な速度があればいいのです。
+### ジオメトリ・シェーダー
+ジオメトリ・シェーダーは(訳注:[解説](https://ja.wikipedia.org/wiki/%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC#%E3%82%B8%E3%82%AA%E3%83%A1%E3%83%88%E3%83%AA%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC)、
+ジオメトリを生成するための、より古く、より荒っぽい手法です。テッセレーションと同様に、M1にはジオメトリ・シェーダーのハードウェアがないため、コンピュート・シェーダーで
+エミュレートします。速いですか？いいえ。しかし、ジオメトリー・シェーダーは、[デスクトップ GPU でも](http://www.joshbarczak.com/blog/?p=667)遅いのです。
+高速である必要はなく、[Ghostrunner](https://store.steampowered.com/app/1139900/Ghostrunner/) のようなゲームに十分な速度があればいいのです。
 
-![image4](https://asahilinux.org/img/blog/2024/10/Ghostrunner-small.avif)
+![Ghostrunner](https://asahilinux.org/img/blog/2024/10/Ghostrunner-small.avif)
 
-## ロバストネスの強化
-「ロバスト性」は、ハードウェアをクラッシュさせることなく、アプリケーションのシェーダが境界外のバッファにアクセスすることを許可します。OpenGLとVulkanでは、アウトオブバウンズのロードは任意の要素を返す可能性があり、アウトオブバウンズのストアはバッファを破損する可能性があります。私たちのOpenGLドライバは、M1上での効率的なロバスト性のために、この定義を悪用しています。
-ゲームによっては、より強力な保証が必要です。DirectXでは、アウトオブバウンズロードはゼロを返し、アウトオブバウンズストアは無視されます。したがって、DXVKは、ロバスト性を強化するVulkan拡張であるVK_EXT_robustness2を必要とします。
-以前と同様に、比較と選択命令でロバストネスを実装します。ナイーブな実装では、ロードされたインデックスとバッファサイズを比較し、範囲外の場合はゼロを選択します。しかし、GPUのロードはベクトルであり、演算はスカラーです。ページフォールトを無効にしたとしても、ロードごとに最大4つの比較と選択が必要になります。
+### 堅牢性の強化
+『堅牢性(robustness)』は、ハードウェアをクラッシュさせることなく、アプリケーションのシェーダーが境界外(out-of-bounds)のバッファにアクセスすることを許可します。
+OpenGL と Vulkan では、境界外ロードで任意の要素を返す可能性があり、境界外ストアはバッファを破損する可能性があります。私たちのOpenGLドライバは、
+M1上での効率的な堅牢性のために、[堅牢性の定義を悪用](https://rosenzweig.io/blog/conformant-gl46-on-the-m1.html)しています。
+
+ゲームによってはより強力な保証が必要です。DirectX では、境界外ロードはゼロを返し、境界外ストアは無視されます。したがって、DXVK は、堅牢性を強化する Vulkan 拡張で
+ある`VK_EXT_robustness2`を必要とします。
+
+以前と同様に、比較選択命令で堅牢性を実装します。ナイーブな実装では、ロードされたインデックスとバッファサイズを比較し、範囲外の場合はゼロを選択します。しかし、
+GPU のロードはベクトルですが、演算はスカラーです。ページフォールトを無効にしたとしても、ロードごとに最大4つの比較と選択が必要になります。
 
 ```
 load R, buffer, index * 16
@@ -67,7 +81,9 @@ ulesel R[2], index, size, R[2], 0
 ulesel R[3], index, size, R[3], 0
 ```
 
-仮想メモリの魔術を使って64ギガバイトのゼロを確保するのだ。32ビットのインデックスに16を掛けると64ギガバイトに収まるので、この領域へのインデックスはすべてゼロをロードする。アウトオブバウンズのロードでは、インデックスを保持したまま、バッファアドレスを予約アドレスに置き換えるだけです。64ビットのアドレスを置き換えるには、32ビットのコンペア＆セレクトを2回行うだけです。
+トリックがあります。仮想メモリの魔術を使って64ギガバイトのゼロを確保します。32ビットのインデックスに16を掛けると64ギガバイトに収まるので、この領域への
+インデックスはすべてゼロをロードします。境界外ロードでは、インデックスを保持したまま、バッファアドレスを予約アドレスに置き換えてしまいます。
+64ビットのアドレスを置き換えるには、32ビットの比較選択を2回行うだけです。
 
 ```
 ulesel buffer.lo, index, size, buffer.lo, RESERVED.lo
@@ -75,48 +91,50 @@ ulesel buffer.hi, index, size, buffer.hi, RESERVED.hi
 load R, buffer, index * 16
 ```
 
-4命令ではなく2命令。
+4命令ではなく2命令で済みます。
 
 ## 次のステップ
-Honeykrispの次のステップはスパーステクスチャリングです。アルファ版では、Cyberpunk 2077のようなスパースを必要としないDX12ゲームがすでに動作しています。
+Honeykrispの次のステップはスパース・テクスチャ(訳注:[解説](https://docs.unity3d.com/ja/2019.4/Manual/SparseTextures.html)です。スパース・テクスチャにより
+より多くのDX12ゲームが開放されます。アルファ版ではすでに[Cyberpunk 2077](https://store.steampowered.com/app/1091500/Cyberpunk_2077/)のようなスパースを必要としないDX12ゲームが動作しています。
 
-![image4](https://asahilinux.org/img/blog/2024/10/Cyberpunk2077-small.avif)
+![Cyberpunk2077](https://asahilinux.org/img/blog/2024/10/Cyberpunk2077-small.avif)
 
+多くのゲームはプレイ可能ですが、新しいAAAタイトルはまだ60fpsを達成していません。正確性が第一です。性能向上は次です。
+[Hollow Knight](https://store.steampowered.com/app/367520/Hollow_Knight/)のようなインディーズゲームはフルスピードで動きます。
 
-多くのゲームはプレイ可能だが、新しいAAAタイトルはまだ60fpsを達成していない。正しさが第一。次にパフォーマンスが向上する。Hollow Knightのようなインディーズゲームはフルスピードで動きます。
+![HollowKnight](https://asahilinux.org/img/blog/2024/10/HollowKnight-small.avif)
 
-![image5](https://asahilinux.org/img/blog/2024/10/HollowKnight-small.avif)
+ゲーム以外にも、このスタックをベースにした汎用 x86 エミュレーションを追加する予定です。詳しくは[FAQをご覧ください](https://docs.fedoraproject.org/en-US/fedora-asahi-remix/x86-support/)。
 
+本日のアルファ版はその一端を示すものです。最終形ではありませんが、『1.0』に向けて作業している間、[Portal 2](https://store.steampowered.com/app/620/Portal_2/)を楽しむには十分です。
 
-ゲーム以外にも、このスタックをベースにした汎用x86エミュレーションを追加する予定です。詳しくはFAQをご覧ください。
-
-本日のアルファ版は、その一端を示すものだ。最終形ではありませんが、「1.0 」に向けて作業している間、Portal 2を楽しむには十分です。
-
-![image6](https://asahilinux.org/img/blog/2024/10/Portal2-small.avif)
+![Portal2](https://asahilinux.org/img/blog/2024/10/Portal2-small.avif)
 
 ## 謝辞
-本作品は、以下の方々の多大なご協力を得て、何年もかけて完成させたものである。
+今回の成果は、以下の方々の多大なご協力を得て、何年もかけて完成させたものです...
 
-- Alyssa Rosenzweig
-- Asahi Lina
-- chaos_princess
-- Davide Cavalca
-- Dougall Johnson
-- Ella Stanforth
-- Faith Ekstrand
-- Janne Grunau
-- Karol Herbst
-- marcan
-- Mary Guillemard
-- Neal Gompa
-- Sergio López
-- TellowKrinkle
-- Teoh Han Hui
-- Rob Clark
-- Ryan Houdek
+- [Alyssa Rosenzweig氏](https://rosenzweig.io/)
+- [Asahi Lina氏](https://lina.yt/me)
+- [chaos_princess氏](https://social.treehouse.systems/@chaos_princess)
+- [Davide Cavalca氏](https://github.com/davide125)
+- [Dougall Johnson氏](https://mastodon.social/@dougall)
+- [Ella Stanforth氏](https://ella.gay/)
+- [Faith Ekstrand氏](https://www.gfxstrand.net/faith/welcome/)
+- [Janne Grunau氏](https://social.treehouse.systems/@janne)
+- [Karol Herbst氏](https://chaos.social/@karolherbst)
+- [marcan氏](https://social.treehouse.systems/@marcan)
+- [Mary Guillemard氏](https://mary.zone/)
+- [Neal Gompa氏](https://neal.gompa.dev/)
+- [Sergio López氏](https://sinrega.org/)
+- [TellowKrinkle氏](https://github.com/TellowKrinkle)
+- [Teoh Han Hui氏](https://github.com/teohhanhui)
+- [Rob Clark氏](https://mastodon.gamedev.place/@robclark)
+- [Ryan Houdek氏](https://github.com/sonicadvance1)
 
-...さらに、Linux、Mesa、Wine、FEXの各プロジェクトにまたがる何百人もの開発者たち。今日のリリースは、オープンソースの魔法のおかげです。
-この魔法を楽しんでほしい。
-ゲームを楽しんでください。
+...加えて、Linux、Mesa、Wine、FEXの各プロジェクトにまたがる何百人もの開発者のみなさま。今日のリリースは、オープンソースの魔法のおかげです。
+
+この魔法を楽しんでほしいです。
+
+ゲームを楽しみましょう。
 
 #### Alyssa Rosenzweig - 2024-10-10
