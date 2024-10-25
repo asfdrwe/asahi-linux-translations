@@ -1,6 +1,6 @@
 [Vulkan 1.3 on the M1 in 1 month](https://asahilinux.org/2024/06/vk13-on-the-m1-in-1-month/)の非公式日本語訳です。
 
-訳注: まだDeepLの結果を貼っただけ(2024/10/19)
+訳注: 本家ブログへのリンクは対応する日本語訳へのリンクに変更
 
 ---
 # M1 の Vulkan 1.3 が1ヶ月で登場
@@ -9,7 +9,7 @@
 - [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202410.md)
 
 ついに、M1 用の規格準拠な Vulkanが登場しました！新しい『Honeykrisp』ドライバはあらゆるオペレーティングシステム上で Apple ハードウェア用の
-最初の[規格準拠の Vulkan®]https://www.khronos.org/conformance/adopters/conformant-products/vulkan#submission_780)です。
+最初の[規格準拠の Vulkan®](https://www.khronos.org/conformance/adopters/conformant-products/vulkan#submission_780)です。
 『移植性』の免除なしに 1.3 の完全な仕様を実装しています。Honeykrisp はまだエンドユーザー向けに*リリースされていません*。
 機能の追加や性能の向上やより多くのハードウェアへの移植を続けています。[ソースコード](https://gitlab.freedesktop.org/alyssa/mesa/-/tree/honeykrisp-20240506-2/src/asahi/vulkan?ref_type=heads)は開発者向けに公開されています。
 
