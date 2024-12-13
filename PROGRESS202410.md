@@ -4,6 +4,7 @@
 # Asahi Linux での AAA ゲーミング
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202406.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202412.md)
 
 M1でのLinuxでのゲームがここにあります！Asahi ゲームプレイツールキットを公開できることを嬉しく思います。Asahi ゲームプレイツールキットは
 x86エミュレーションとWindows互換性を備え、 Vulkan 1.3 ドライバを統合しています。追加ボーナスとして、OpenCL 3.0に準拠しています。
