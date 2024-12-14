@@ -1,27 +1,35 @@
 [Beyond Gaming: X11 bridging in muvm](https://asahilinux.org/2024/12/muvm-x11-bridging/)の非公式日本語訳です。
 
-まだDeepLの結果を貼っただけ
 訳注: 本家ブログへのリンクは対応する日本語訳へのリンクに変更
 
 ---
 # ゲームを超えて: muvmによる X11 ブリッジ
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202410.md)
 
-皆さん、こんにちは！Asahi Linuxのx86/x86-64エミュレーション・スタックにとてもクールなアップデートがありましたので、
-その内容をシェアしたいと思います。今日現在、ゲーム以外のアプリが使えるようになりました！
-
+みなさん、こんにちは！Asahi Linuxのx86/x86-64エミュレーション・スタックにとてもクールなアップデートがありましたので、
+その内容をシェアしたいと思います。今日、ゲーム以外のアプリでも使えるようになりました！
 
 ![cisco-pt](https://asahilinux.org/img/blog/2024/12/cisco-pt.png)
 
 Fedora Asahi Remix上で動作するCisco Packet Tracer
 
-## VMにおけるネイティブ・グラフィックス
+## VM でもネイティブグラフィックス
 
-[以前のブログ記事](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202410.md)を覚えているかもしれないが、Asahi Linuxは[muvm](https://github.com/AsahiLinux/muvm)によって駆動されるmicroVMですべてのx86/x86-64アプリケーションを実行している。ハードウェアGPUパススルーなしで、ネイティブに近いパフォーマンスで実際のVMでゲームを実行するにはどうすればいいのだろうか？
+[以前のブログ記事](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202410.md)を覚えているかもしれませんが、
+Asahi Linux は [muvm](https://github.com/AsahiLinux/muvm) が駆動する microVM ですべての x86/x86-64 アプリケーションを実行しています。
+ハードウェア GPU パススルーなしにネイティブに近い性能で実際の VM 上でゲームを実行するにはどうすればいいのでしょうか？
 
-AMD/Intelシステムでは（そして実際、Apple Silicon上のmacOSでも）、GPU仮想化は常にある種の制限を受けてきた。選択肢は、ハードウェアGPUを完全にパススルーするか、APIレベルのGPU準仮想化を使うかです。ハードウェアGPUを通すと、GPUデバイスを完全にゲストに割り当てます。これは、そのGPU用の本物のドライバを持つすべてのゲストOSで動作し、ネイティブなパフォーマンスを持ちますが、GPUがゲスト専用であることを意味し、ホストと共有したり、ゲストとホストのウィンドウを1つの画面に統合したりすることはできません。一方、APIレベルのGPU準仮想化は、基本的にOpenGL、Vulkan、またはMetalコマンドをゲストからホストに送信し、ホストのGPUドライバスタックによって処理されます。これはゲストに 「汎用 」準仮想化 GPU ドライバを必要とし、すべての高レベル GPU 描画コマンドがゲストからホストへの障壁を越え、ホスト上で処理されなければならないため、ネイティブ GPU の使用よりもはるかに遅くなります。これが macOS での GPU 仮想化の仕組みです。一部のGPU（例えば最近のNvidia GPU）はハードウェア仮想化サポートで真の共有をサポートしていますが、これはまだアップストリームではなく、ハードウェアのサポートが必要で、Apple GPUにはありません。
+AMD/Intel　システムでは（そして実際、Apple Silicon 上の macOS でも）、GPU 仮想化は常にある種の制限を受けてきました。
+選択肢は、ハードウェア GPU を完全にパススルーするか、API レベルの GPU 準仮想化(paravertualization)を使用するかです。ハードウェア GPU を
+パススルーすることで GPU 機器を完全にゲストに割り当てます。つまり、『本物』の GPU 機器のように見えることを意味します。これはその GPU 用の
+本物のドライバを持つすべてのゲスト OS上で動作し、ネイティブな性能になりますが、GPU　がゲスト専用であることを意味し、ホストと共有したり、ゲストと
+ホストのウィンドウを1つの画面に統合したりすることはできません。一方、API レベルの GPU 準仮想化は、基本的に OpenGL や Vulkan や Metalコマンドを
+ゲストからホストに送信し、ホストの GPU ドライバスタックによって処理されます。これはゲストに 『汎用(generic)』準仮想化 GPU ドライバを必要とし、
+すべての高レベル GPU 描画コマンドがゲストからホストへの障壁を越え、ホスト上で処理されなければならないため、ネイティブ GPU の使用よりもはるかに遅くなります。
+これが macOS での GPU 仮想化の仕組みです。一部の GPU(例えば最近の Nvidia GPU)はハードウェア仮想化サポートで真の共有に対応していますが、これは
+まだ上流にはなく、ハードウェア対応が必要で、Apple GPU にはありません。
 
-しかし、もっと良い方法があるとしたら？それがわかった！[DRMネイティブ・コンテキスト](https://indico.freedesktop.org/event/2/contributions/53/attachments/76/121/XDC2022_%20virtgpu%20drm%20native%20context.pdf)の登場だ。
+しかし、もっと良い方法があるとしたら？判明しました！[DRM Native Context](https://indico.freedesktop.org/event/2/contributions/53/attachments/76/121/XDC2022_%20virtgpu%20drm%20native%20context.pdf)です。
 
 コンセプトはとてもシンプルです： ゲスト上でGPUドライバスタック全体を実行し、ハードウェアGPU全体を通過させる代わりに（共有なし）、またはホスト上でGPUドライバスタック全体を実行し、高レベルAPIを通過させる代わりに（遅い）、それを真ん中で分割しませんか？DRM Native Contextは、ホスト上でGPUカーネルドライバを実行し、ゲスト上でGPUユーザースペースドライバ（Mesa）を実行し、ゲストからホストへカーネルUAPIインターフェイスを通過させます。
 
