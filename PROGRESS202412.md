@@ -2,13 +2,11 @@
 
 訳注: 本家ブログへのリンクは対応する日本語訳へのリンクに変更
 
-参考1: QEMU のような VM に関する資料: [GPU仮想化最前線 - KVMGTとvirtio-gpu -](https://www.slideshare.net/slideshow/gpu-kvmgtvirtiogpu/155641005)、ファイルシステム共有に関して [virtiofsについて](https://qiita.com/tmsn/items/120c6c2fb07cf32d2147)
-
-参考2: Waylandとに関する資料: [Waylandの構造](https://wayland.freedesktop.org/architecture.html)、[X WindowSystem プロトコルとアーキテクチャ]https://ja.wikipedia.org/wiki/X_Window_System%E3%83%97%E3%83%AD%E3%83%88%E3%82%B3%E3%83%AB%E3%81%A8%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3Wayland)、WaylandやXのクライアントとサーバが通信する仕組みの理解に必要な[ソケットやパイプとファイルディスクリプタの解説](https://zenn.dev/ganariya/articles/socket-slide-illustration-go-implement)
-
-参考3: 共有メモリと排他制御に関する資料: [メモリの仕組みと排他制御](https://zenn.dev/a3geek/articles/270d7946b80310)
-
-参考4: Futexに関する資料: [w_o’s diaryのfutex](https://w0.hatenablog.com/entry/20070323/p1)、[Ubuntuの日本語マニュアルでのFutex解説](https://manpages.ubuntu.com/manpages/focal/ja/man7/futex.7.html)、[futexシステムコール解説](https://manpages.ubuntu.com/manpages/focal/ja/man2/futex.2.html)、[Linuxのfutexの必要性について](https://togetter.com/li/41625)、
+参考資料
+- QEMU のような VM に関する資料: [GPU仮想化最前線 - KVMGTとvirtio-gpu -](https://www.slideshare.net/slideshow/gpu-kvmgtvirtiogpu/155641005)、ファイルシステム共有に関して [virtiofsについて](https://qiita.com/tmsn/items/120c6c2fb07cf32d2147)
+- Waylandとに関する資料: [Waylandの構造](https://wayland.freedesktop.org/architecture.html)、[X WindowSystem プロトコルとアーキテクチャ](https://ja.wikipedia.org/wiki/X_Window_System%E3%83%97%E3%83%AD%E3%83%88%E3%82%B3%E3%83%AB%E3%81%A8%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3Wayland)、WaylandやXのクライアントとサーバが通信する仕組みの理解に必要な[ソケットやパイプとファイルディスクリプタの解説](https://zenn.dev/ganariya/articles/socket-slide-illustration-go-implement)
+- 共有メモリと排他制御に関する資料: [メモリの仕組みと排他制御](https://zenn.dev/a3geek/articles/270d7946b80310)
+- Futexに関する資料: [w_o’s diaryのfutex](https://w0.hatenablog.com/entry/20070323/p1)、[Ubuntuの日本語マニュアルでのFutex解説](https://manpages.ubuntu.com/manpages/focal/ja/man7/futex.7.html)、[futexシステムコール解説](https://manpages.ubuntu.com/manpages/focal/ja/man2/futex.2.html)、[Linuxのfutexの必要性について](https://togetter.com/li/41625)、
 
 ---
 # ゲームを超えて: muvmによる X11 ブリッジ
