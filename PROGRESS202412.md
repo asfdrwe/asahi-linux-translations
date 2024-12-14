@@ -1,5 +1,6 @@
 [Beyond Gaming: X11 bridging in muvm](https://asahilinux.org/2024/12/muvm-x11-bridging/)の非公式日本語訳です。
 
+まだ途中
 訳注: 本家ブログへのリンクは対応する日本語訳へのリンクに変更
 
 ---
