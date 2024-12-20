@@ -10,6 +10,7 @@
 - [行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
 - [著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
 - ブログ
+  - [ゲームを超えて: muvmによる X11 ブリッジ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202412.md) 
   - [Asahi Linux での AAA ゲーミング](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202410.md)
   - [M1 の Vulkan 1.3 が1ヶ月で登場](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202406.md)
   - [M1 が OpenGL 4.6 に準拠](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202402.md)
