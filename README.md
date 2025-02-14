@@ -2,14 +2,15 @@
 [Asahi LinuxのWebページ](https://asahilinux.org/)と[文書Wiki](https://github.com/AsahiLinux/docs)の非公式の日本語訳です。
 
 - [Fedora Asahi Remix](https://github.com/asfdrwe/asahi-linux-translations/blob/main/fedora.md)
-
 - [概要](https://github.com/asfdrwe/asahi-linux-translations/blob/main/About.md)
 - [コミュニティ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/community.md)
 - [貢献](https://github.com/asfdrwe/asahi-linux-translations/blob/main/contribute.md)
+- [ガバナンス](https://github.com/asfdrwe/asahi-linux-translations/blob/main/governance.md)
 - [支援](https://github.com/asfdrwe/asahi-linux-translations/blob/main/support.md)
 - [行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
 - [著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
 - ブログ
+  - [Asahi Linux のバトンタッチ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202502.md)
   - [ゲームを超えて: muvmによる X11 ブリッジ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202412.md) 
   - [Asahi Linux での AAA ゲーミング](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202410.md)
   - [M1 の Vulkan 1.3 が1ヶ月で登場](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202406.md)
