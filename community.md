@@ -15,7 +15,7 @@
 
 - #asahi \[[logs](https://oftc.irclog.whitequark.org/asahi)\] プロジェクトに関する一般的な議論
 - #asahi-dev \[[logs](https://oftc.irclog.whitequark.org/asahi-dev)\] 開発に関する議論
-- #asahi-re \[[logs](https://oftc.irclog.whitequark.org/asahi-re)\] バイナリコンパイルやtainted(訳注:法的に問題になる可能性のあるリバースエンジニアリング)な議論
+- #asahi-re \[[logs](https://oftc.irclog.whitequark.org/asahi-re)\] バイナリ逆コンパイルやtainted(訳注:法的に問題になる可能性のあるリバースエンジニアリング)な議論
 - #asahi-gpu \[[logs](https://oftc.irclog.whitequark.org/asahi-gpu)\] GPU のリバースエンジニアリングと開発
 - #asahi-alt \[[logs](https://oftc.irclog.whitequark.org/asahi-alt)\] 非公式サードパーティ製ディストリビューションの移植に関する議論と対応
 - #asahi-stream 開発者のビデオストリーム中に会話するためのチャットルーム
