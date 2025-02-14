@@ -1,4 +1,4 @@
-[Asahi Linux Code of Conduct](https://asahilinux.org/code-of-conduct/)の2021年12月25日時点の非公式日本語訳です。
+[Asahi Linux Code of Conduct](https://asahilinux.org/code-of-conduct/)の2025年2月14日時点の非公式日本語訳です。
  
 ---
 # Asahi Linux 行動規範
@@ -17,8 +17,8 @@
 Twitter の議論、およびコミュニティ内のその他の直接的なやり取りです。いかなる違反行為、特に継続的あるいは重大な違反行為は、個人（あるいは組織）の
 Asahi Linuxコミュニティへの参加に影響を与える可能性があります。
 
-誰かが行動規範に違反していると感じた場合は、文面や精神面を問わず、違反内容と違反者・関係者をできるだけ詳細に記述して、conduct@asahilinux.org まで電子メールで
-お送りください。ご質問やご不明な点やその他のお問い合わせはプロジェクトリーダーまでお気軽にご連絡ください。
+誰かが行動規範に違反していると感じた場合は、文面や精神面を問わず、違反内容と違反者・関係者をできるだけ詳細に記述して、[理事会](mailto:alyssa@rosenzweig.io,davide@cavalca.name,neal@gompa.dev,jcalligeros99@gmail.com,j@jannau.net,fnkl.kernel@gmail.com,sven@svenpeter.dev)まで電子メールで
+お送りください。ご質問やご不明な点やその他のお問い合わせは理事会までお気軽にご連絡ください。
 
 Asahi Linux の大部分は上流プロジェクトへの貢献で構成されています。Asahi Linux の開発者は、上流プロジェクトへの貢献や上流への貢献を目的としたコードの
 開発において、それぞれの上流での行動規範を遵守することが求められています。
