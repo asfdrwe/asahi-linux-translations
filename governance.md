@@ -1,4 +1,4 @@
-[Governance](https://asahilinux.org/governance/)の非公式日本語訳です。
+[Governance](https://asahilinux.org/governance/)の2025年2月14日時点の非公式日本語訳です。
 
 ---
 # ガバナンス
