@@ -1,6 +1,6 @@
-[fedora](https://asahilinux.org/fedora/)の2023年12月23日時点の非公式日本語訳です。
+[fedora](https://asahilinux.org/fedora/)の2025年2月14日時点の非公式日本語訳です。
 
-訳注: 体裁は一致できていません。
+訳注: 体裁は一致できていません。また文書へのリンクは対応する日本語訳へのリンクに変更しています。
 
 ---
 # Fedora Asahi Remixの紹介
@@ -13,20 +13,20 @@ Apple Silicon Macのための最も洗練されたLinux®。
 curl https://alx.sh | sh
 ```
 
-## Fedora Linux 39 + Apple Silicon = Fedora Asahi Remix
+## Fedora Linux 41 + Apple Silicon = Fedora Asahi Remix
 ![fedora_remix.png](https://asahilinux.org/img/far_landing/fedora_remix.png)
 Fedora Asahi Remixは、Asahi LinuxプロジェクトとFedoraプロジェクトとの複数年にわたる緊密な協力の成果です。
 改善やバグフィックスをできるだけ早くユーザーに提供するために緊密に協力し、完全に統合されたディストリビューションを
 お届けするために努力してきました。Asahiプラットフォーム固有のパッケージはすべて上流Fedoraに存在し、
-Fedora Linux 39で完全に対応しています。
+Fedora Linux 41で完全に対応しています。
 
 Fedoraの優れた64ビットARMサポートと成熟した開発プロセスにより、望まぬ予想外のことがない、堅実で高品質な
-エクスペリエンスが期待できます。Fedora Asahi Remixは、最新のFedora LinuxリリースであるFedora Linux 39を
+エクスペリエンスが期待できます。Fedora Asahi Remixは、最新のFedora LinuxリリースであるFedora Linux 41を
 ベースにしています。すべてのM1、M2シリーズのMacBook、Mac Mini、Mac Studio、iMacに対応しています。
 
 ## Fedora Asahi Remix ❤️ KDE Plasma
 ![kde-logo-white-blue-rounded-source.svg](https://asahilinux.org/img/far_landing/kde-logo-white-blue-rounded-source.svg)
-KDE Plasmaをフラッグシップデスクトップ環境として提供できることを誇りに思っています。最先端のWaylandサポートと高度なカスタマイズ性、
+[KDE Plasma](https://kde.org/ja/plasma-desktop/)をフラッグシップデスクトップ環境として提供できることを誇りに思っています。最先端のWaylandサポートと高度なカスタマイズ性、
 Appleハードウェア機能への幅広い対応により、KDE PlasmaはApple Siliconで使う喜びを感じさせてくれます。
 
 Night Colorを使って、睡眠サイクルを妨げないようにしませんか？心配ありません、動作します。
@@ -35,15 +35,14 @@ Night Colorを使って、睡眠サイクルを妨げないようにしません
 KDEプロジェクトと協力して、プラットフォームサポートを改善するためのバグフィックスと改良を提供し、
 Calamaresベースのカスタム初期セットアップウィザードも構築しました。
 
-Fedora Linux 39には、最新のパッチと改良が加えられたKDE Plasma 5.27が付属しています。しかし、それだけではありません：
-さらに改良されたKDE Plasma 6が登場するFedora Linux 40にご期待ください。
+Fedora Linux 41には、最高のデスクトップ体験を提供する最新のパッチと改良が加えられた[KDE Plasma 6.2](https://kde.org/announcements/plasma/6/6.2.0/)が付属しています。
 
-[GNOME](https://www.gnome.org/)を使いたいですか？ご心配なく、GNOME 45 でカバーできます。また、独自のデスクトップ構成を
+[GNOME](https://www.gnome.org/)を使いたいですか？ご心配なく、[GNOME 47](https://release.gnome.org/47/)でカバーできます。また、独自のデスクトップ構成を
 ロールしたい場合やヘッドレス・サーバーをセットアップしたい場合、ServerとMinimalイメージを使えば、思い通りにセットアップできます。
 
 ## 100% Wayland 体験
 ![Wayland_Logo.svg](https://asahilinux.org/img/far_landing/Wayland_Logo.svg)
-KDEオタクであってもGNOME愛好家であっても、Fedora Asahi Remixは100%Wayland環境を提供します。Appleハードウェアに完璧に
+KDEオタクであってもGNOME愛好家であっても、Fedora Asahi Remixは100%[Wayland](https://wayland.freedesktop.org/)環境を提供します。Appleハードウェアに完璧に
 マッチする最新のデスクトップとディスプレイサーバーのテクノロジーをもたらします。macOSのように、ティアリングやグリッチの全くない、
 バターのように滑らかなデスクトップが手に入ります。KDE Plasmaビルドでは、ディスプレイのスケールが異なる複数のディスプレイでも、
 シームレスなHiDPI対応を体験できます。
@@ -53,10 +52,11 @@ KDEオタクであってもGNOME愛好家であっても、Fedora Asahi Remixは
 利用可能で、完全に対応しています。
 
 ## OpenGLは非推奨？違います
+![OpenGL_logo.svg](https://asahilinux.org/img/far_landing/OpenGL_logo.svg)
 ![OpenGL_ES_logo.svg](https://asahilinux.org/img/far_landing/OpenGL_ES_logo.svg)
-Fedora Asahi Remixは、GPUアクセラレーテッドジオメトリーシェーダーとトランスフォームフィードバックを含む非準拠のOpenGL 3.3対応と、
-Apple Silicon用の世界初で唯一の[認定準拠OpenGL ES 3.1実装](https://www.khronos.org/conformance/adopters/conformant-products/opengles#submission_1007)を
-持っています。
+![OpenCL_logo.svg](https://asahilinux.org/img/far_landing/OpenCL_logo.svg)
+![Vulkan_logo.svg](https://asahilinux.org/img/far_landing/Vulkan_logo.svg)
+Fedora Asahi Remixは、Apple Silicon用の世界初で唯一の規格準拠の [OpenGL 4.6](https://www.khronos.org/conformance/adopters/conformant-products/opengl#submission_347)と[OpenGL ES 3.2](https://www.khronos.org/conformance/adopters/conformant-products/opengles#submission_1045)、[OpenCL 3.0](https://www.khronos.org/conformance/adopters/conformant-products/opencl#submission_433)、[Vulkan 1.4](https://www.khronos.org/conformance/adopters/conformant-products/vulkan#submission_812)を提供します。
 
 オープンなグラフィックス標準に対応し、公式および業界標準のテスト・スイートでテストしています。つまり、アプリケーションや
 ゲームが正しく動作し、意図したとおりにレンダリングされることを確信できるのです。さらに、OpenGL 4.xとVulkan対応も準備中です。
