@@ -27,7 +27,7 @@ Asahi Linux は Apple Silicon にLinux を提供し、オーディオ、ウェ�
 Asahi Linux は主にボランティアの貢献者に依存しています。個人で Patreon や GitHub Sponsors のアカウントを持っている貢献者もいますが、個人の資金源では
 チームを維持することはできません。今後、新しい財政スポンサーである Open Source Collective は代わりにプロジェクト全体への寄付を推進してまいります。
 
-したがって、私たちの[Open Collective](https://opencollective.com/asahilinux)は、プロジェクトの主要な資金源として marcan氏の Patreon に
+したがって、私たちの[Open Collective](https://opencollective.com/asahilinux)がプロジェクトの主要な資金源として marcan氏の Patreon に
 取って代わります。Patreon はまもなく終了します。4年前、みなさまの Patreon の支援によってこのプロジェクトは実現しました。marcan 氏の
 Patreonが終了してしまうので、本日より今後何年にもわたってプロジェクトを可能にするためにみなさまの支援をお願いします。みなさまからのご支援により
 ハードウェアの購入や開発者の時間を確保することができます。プロジェクト継続のため、Open Collective への参加をご検討ください。
