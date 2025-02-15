@@ -30,7 +30,7 @@ Asahi Linux は主にボランティアの貢献者に依存しています。�
 したがって、私たちの[Open Collective](https://opencollective.com/asahilinux)がプロジェクトの主要な資金源として marcan氏の Patreon に
 取って代わります。Patreon はまもなく終了します。4年前、みなさまの Patreon の支援によってこのプロジェクトは実現しました。marcan 氏の
 Patreonが終了してしまうので、本日より今後何年にもわたってプロジェクトを可能にするためにみなさまの支援をお願いします。みなさまからのご支援により
-ハードウェアの購入や開発者の時間を確保することができます。プロジェクト継続のため、Open Collective への参加をご検討ください。
+ハードウェアの購入や開発者の時間を確保することができます。プロジェクト継続のため、[Open Collective](https://opencollective.com/asahilinux) への参加をご検討ください。
 
 2025年には何が期待できますか？
 
