@@ -1,4 +1,4 @@
-[Support(Donate)](https://asahilinux.org/support/)の2025年2月14日時点の非公式日本語訳です。
+[Support Asahi Linux(Donate)](https://asahilinux.org/support/)の2025年2月14日時点の非公式日本語訳です。
  
 ---
 # Asahi Linuxへの支援
