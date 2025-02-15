@@ -13,7 +13,7 @@ Asahi Linux はオープンソース開発者のコミュニティによって�
 - [Davide Cavalca氏](https://github.com/davide125) (管理者) [davide@cavalca.name](mailto:davide@cavalca.name)
 - [Neal Gompa氏](https://royalgeekworld.com/) (書記, 会計) [neal@gompa.dev](mailto:neal@gompa.dev)
 - [James Calligeros氏](https://social.treehouse.systems/@chadmed) [jcalligeros99@gmail.com](mailto:jcalligeros99@gmail.com)
-- [Janne Grunau](https://social.treehouse.systems/@janne)（管理者） [j@jannau.net](mailto:j@jannau.net)
+- [Janne Grunau氏](https://social.treehouse.systems/@janne)（管理者） [j@jannau.net](mailto:j@jannau.net)
 - Sasha Finkelstein氏 [fnkl.kernel@gmail.com](fnkl.kernel@gmail.com)
 - [Sven Peter氏](https://social.treehouse.systems/@sven)（管理者）[sven@svenpeter.dev](sven@svenpeter.dev)
 
