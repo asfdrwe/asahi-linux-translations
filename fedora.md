@@ -76,7 +76,7 @@ Metalのようなベンダー独自のAPIの上に重ねることで可能にな
 ## 機器対応
 | 機種       | チップ     | 対応機能      |対応作業中    |   備考          |
 |-----------|:---------:|:------------:|:------------:|:------------:|
-|MacBook Air|M1, M2     | ディスプレイ、キーボード (+バックライト)、トラックパッド、ヘッドセットジャック、スピーカー、カメラ、MagSafe*、USB Type C(USB 3.0)、Wi-Fi、Bluetooth|USB-C ディスプレイ、Thunderbolt / USB4、マイク、Touch ID| *M2モデルのみ)
+|MacBook Air|M1, M2     | ディスプレイ、キーボード (+バックライト)、トラックパッド、ヘッドセットジャック、スピーカー、カメラ、MagSafe*、USB Type C(USB 3.0)、Wi-Fi、Bluetooth|USB-C ディスプレイ、Thunderbolt / USB4、マイク、Touch ID| *M2モデルのみ
 |MacBook Pro|M1, M1 Pro, M1 Max, M2, M2 Pro, M2 Max| ディスプレイ*、キーボード (+バックライト)、トラックパッド、タッチバー†、ヘッドセットジャック、スピーカー、カメラ、MagSafe‡、USB Type C(USB 3.0)、HDMI‡、SD Card‡、Wi-Fi、Bluetooth|USB-C ディスプレイ、Thunderbolt / USB4、マイク、Touch ID|*14インチおよび16インチモデルではローカルディミングが可能、全モデル最大60HzリフレッシュレートでHDR/120Hzは未対応 †13インチモデルのみ ‡14インチおよび16インチモデルのみ
 |Mac Mini   |M1, M2,M2 Pro|ヘッドセットジャック、スピーカー、USB Type A (3.0),USB Type C(USB 3.0)、HDMI、イーサネット(1/10 Gbps)、Wi-Fi、Bluetooth|USB-C ディスプレイ、Thunderbolt / USB4| |
 |Mac Studio |M1 Max, M1 Ultra, M2 Max, M2 Ultra|ヘッドセットジャック、スピーカー、USB Type A (3.0),USB Type C(USB 3.0)、HDMI、SD Card、イーサネット(1/10 Gbps)、Wi-Fi、Bluetooth|USB-C ディスプレイ、Thunderbolt / USB4| |
