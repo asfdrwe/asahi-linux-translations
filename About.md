@@ -62,7 +62,7 @@ Apple Silicon Mac における線引きは、SEP ファームウェアが閉じ�
 非常に似ており、UEFI ファームウェアは OS ローダを起動するが、ME/PSP ファームウェアは閉じたままです。実際、メインストリームのx86 プラットフォームは、
 プロプライエタリな UEFI ファームウェアが SMM 割り込みを介していつでも OS からメイン CPU を奪うことが許されているため、間違いなくより侵入的です。
 Apple Silicon Mac ではそうなっていません。これは単なる哲学的な問題ではなくパフォーマンスや安定性に大きく影響します。
-さらなる情報は『[Apple Silicon MacでのオープンOSエコシステム](https://github.com/asfdrwe/asahi-linux-translations/wiki/Apple-Silicon-Mac%E3%81%A7%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3OS%E3%82%A8%E3%82%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0)』を参照してください。
+さらなる情報は[『Apple Silicon MacでのオープンOSエコシステム』](https://github.com/asfdrwe/asahi-linux-translations/wiki/Apple-Silicon-Mac%E3%81%A7%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3OS%E3%82%A8%E3%82%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0)を参照してください。
 
 ### Asahi Linuxは誰が作っているのですか？
 Asahi Linux はコミュニティであり、誰でも貢献することができます。
