@@ -43,7 +43,7 @@ Asahi LinuxはこれらのMacのサポートを開発するための全体的な
 さらに読む 「Apple Silicon入門」と「Apple Platform Security Crash Course」。
 AppleはApple Silicon Mac上で署名されていない/カスタムカーネルを脱獄せずに起動することを許可しています! これはハックや手抜きではなく、Appleがこれらの
 デバイスに組み込んだ実際の機能なのです。つまり、iOSデバイスとは異なり、AppleはMacで使用できるOSをロックダウンするつもりはないということです
-（おそらく開発には協力しないでしょうが）。さらなる情報は『[Apple Siliconの紹介](https://github.com/asfdrwe/asahi-linux-translations/wiki/Apple-Silicon%E3%81%AE%E7%B4%B9%E4%BB%8B)』と『[Appleプラットフォームセキュリティクラッシュコース](https://github.com/asfdrwe/asahi-linux-translations/wiki/Apple%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%82%AF%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5%E3%82%B3%E3%83%BC%E3%82%B9)』を参照してください。
+（おそらく開発には協力しないでしょうが）。さらなる情報は[『Apple Siliconの紹介』](https://github.com/asfdrwe/asahi-linux-translations/wiki/Apple-Silicon%E3%81%AE%E7%B4%B9%E4%BB%8B)と[『Appleプラットフォームセキュリティクラッシュコース』](https://github.com/asfdrwe/asahi-linux-translations/wiki/Apple%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%82%AF%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5%E3%82%B3%E3%83%BC%E3%82%B9)を参照してください。
 
 ### これは合法ですか？
 Linux対応の構築にmacOS からコードを取得しない限り、macOS の派生作品ではないので、配布やエンドユーザの使用は完全に合法です。
