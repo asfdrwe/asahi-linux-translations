@@ -1,4 +1,4 @@
-[Copyright policy](https://asahilinux.org/copyright/)の2025年2月14日時点の非公式日本語訳です。
+[Copyright policy](https://asahilinux.org/copyright/)の2025年2月15日時点の非公式日本語訳です。
 
 この著作権の方針等に関する翻訳はあくまでも参考のためのものなので、必ず[原文](https://asahilinux.org/copyright/)に従って著作物を扱ってください。
 
