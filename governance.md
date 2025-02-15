@@ -9,13 +9,13 @@ Asahi Linux はオープンソース開発者のコミュニティによって�
 
 理事会のメンバーは、一時的な欠員を除けば、7人で構成されます。現在のメンバーは以下の通りです。
 
-- [Alyssa Rosenzweig](https://rosenzweig.io/)(会計) [alyssa@rosenzweig.io](mailto:alyssa@rosenzweig.io)
-- [Davide Cavalca](https://github.com/davide125)(管理者) [davide@cavalca.name](mailto:davide@cavalca.name)
-- [Neal Gompa](https://royalgeekworld.com/)(書記, 会計) [neal@gompa.dev](mailto:neal@gompa.dev)
-- [James Calligeros](https://social.treehouse.systems/@chadmed) [jcalligeros99@gmail.com](mailto:jcalligeros99@gmail.com)
+- [Alyssa Rosenzweig氏](https://rosenzweig.io/) (会計) [alyssa@rosenzweig.io](mailto:alyssa@rosenzweig.io)
+- [Davide Cavalca氏](https://github.com/davide125) (管理者) [davide@cavalca.name](mailto:davide@cavalca.name)
+- [Neal Gompa氏](https://royalgeekworld.com/) (書記, 会計) [neal@gompa.dev](mailto:neal@gompa.dev)
+- [James Calligeros氏](https://social.treehouse.systems/@chadmed) [jcalligeros99@gmail.com](mailto:jcalligeros99@gmail.com)
 - [Janne Grunau](https://social.treehouse.systems/@janne)（管理者） [j@jannau.net](mailto:j@jannau.net)
-- Sasha Finkelstein [fnkl.kernel@gmail.com](fnkl.kernel@gmail.com)
-- [Sven Peter](https://social.treehouse.systems/@sven)（管理者）[sven@svenpeter.dev](sven@svenpeter.dev)
+- Sasha Finkelstein氏 [fnkl.kernel@gmail.com](fnkl.kernel@gmail.com)
+- [Sven Peter氏](https://social.treehouse.systems/@sven)（管理者）[sven@svenpeter.dev](sven@svenpeter.dev)
 
 理事会は、プロジェクトのガバナンス、インフラ、資金に責任を持ちます。また、行動規範の施行など、紛争が起きた場合の最終的な裁定者としての役割も果たします。理事会は、毎月1回、ビデオ通話でミーティングを行い業務を行っています。議事録は公開されています。
 
