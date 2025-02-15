@@ -17,7 +17,7 @@ Asahi Linux自体のために開発されたコードは、他のプロジェク
 慣例に従わなければなりません。ただし、Asahi Linuxの貢献者が開発した特定のモジュール（ドライバ全体やサブモジュールなど）は、他のプロジェクトへの移植や
 再利用を確実にするため、MITなどの寛容なライセンスのもとでデュアルライセンスされるべきです。
 
-オリジナルのコードについては、[SPDX license identifiers](https://spdx.github.io/spdx-spec/appendix-V-using-SPDX-short-identifiers-in-source-files/)を
+オリジナルのコードについては、[SPDX license identifiers](https://spdx.github.io/spdx-spec/appendix-V-using-SPDX-short-identifiers-in-source-files/)(訳注:2025/2/15時点でリンク切れです。[SPDX公式サイトの仕様ページ](https://spdx.dev/use/specifications/)を参照してください)を
 使用して、個々のファイルのライセンスを簡潔に記録します。ファイルは（適切なライセンス情報とともに）次の形式のヘッダーを持つ必要があります。
 
 `// SPDX-License-Identifier: GPL-2.0+ OR MIT`
