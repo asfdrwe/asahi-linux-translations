@@ -76,7 +76,7 @@ Asahi Linux はコミュニティであり、誰でも貢献することがで�
 - [Dougall Johnson氏(dougallj)](https://github.com/dougallj) 命令セットアーキテクチャの天才。Dougall氏はApple GPUの命令セットの多くをリバースエンジニアリングし、マイクロアーキテクチャの詳細を推測するためにApple M1のCPUコアのタイミングを分析しています。
 - [Eileen Yoon氏(eiln)](https://github.com/eiln) マルチメディアとアクセラレータを担当する信号処理の第一人者。Eileen氏は現在、ハードウェアのビデオコーデック・アクセラレーションに取り組んでおり、すでにニューラルエンジンとイメージ・シグナル・プロセッサー（カメラ）を完成させています。
 - [James Calligeros氏(chadmed)](https://github.com/chadmed) エネルギーを考慮したスケジューリング(EAS)を実装し、スピーカーのために派手なDSPをハンドチューニングし、派手なDSPが派手な電力を消費しないようにPipeWireに利用クランプを追加しました。また、asahi-gentooのメンテナンスも行っています。
-- [Janne Grunau氏](https://github.com/jannau)  M1シリーズのタッチパッド／キーボードサポートを実装し、最近HDMI出力サポートを追加したディスプレイコントローラ（DCP）ドライバをメンテナンスしています。また、DeviceTreeやサブミッションを含む、数え切れないほどの 他の項目にも関与しています。
+- [Janne Grunau氏](https://github.com/jannau)  M1シリーズのタッチパッド／キーボード対応を実装し、最近はHDMI出力サポートを追加したディスプレイコントローラ（DCP）ドライバをメンテナンスしています。また、DeviceTreeやサブミッションを含む、数え切れないほどの 他の項目にも関与しています。
 - [Mark Kettenis氏](https://github.com/kettenis) OpenBSDの開発者。Mark氏 は、PCIe および NVMe (ANS) に必要なブローアップを含む、Apple M1 コアペリフェラル用の m1n1 および U-Boot ドライバを書きました。また、Mark は、Linux への移植と並行して、Apple M1 用の OpenBSD ドライバも記述しています。
 - [Sven Peter氏](https://github.com/svenpeter42) USB、PCIe、イーサネット、Wi-Fi に必要な Apple の DART (Device Address Resolution Table) の上流Linux対応に精力的に取り組んできました。また、m1n1にUSBガジェット対応を追加し、現在はDisplayPortとThunderboltのサポートに取り組んでいます。
 
