@@ -74,11 +74,11 @@ Asahi Linux はコミュニティであり、誰でも貢献することがで�
 - [Alyssa Rosenzweig氏](https://rosenzweig.io/) Asahi GPU代表。Alyssa氏は、Arm Mali GPUをリバースエンジニアリングし、フリーのPanfrostドライバを構築したことで知られるLinuxグラフィックスハッカーです。現在、上流のMesa3D開発者として、AsahiのOpenGLとVulkanドライバのメンテナンスを行っています。
 - [Asahi Lina氏](https://github.com/asahilina) GPUカーネル魔術師。Lina氏は、M1 GPUカーネルインターフェイスのリバースエンジニアリングのためにチームに参加し、気がついたら世界初のRust Linux GPUカーネルドライバを書いていました。Asahi DRMカーネルドライバに取り組んでいないときは、オープンソースのVTuberツールやインフラをハックすることもあります。
 - [Dougall Johnson氏(dougallj)](https://github.com/dougallj) 命令セットアーキテクチャの天才。Dougall氏はApple GPUの命令セットの多くをリバースエンジニアリングし、マイクロアーキテクチャの詳細を推測するためにApple M1のCPUコアのタイミングを分析しています。
-- [Eileen Yoon氏 (eiln)](https://github.com/eiln) マルチメディアとアクセラレータを担当する信号処理の第一人者。Eileen氏は現在、ハードウェアのビデオコーデック・アクセラレーションに取り組んでおり、すでにニューラルエンジンとイメージ・シグナル・プロセッサー（カメラ）を完成させています。
-- [James Calligeros氏 (chadmed)](https://github.com/chadmed) エネルギーを考慮したスケジューリング(EAS)を実装し、スピーカーのために派手なDSPをハンドチューニングし、派手なDSPが派手な電力を消費しないようにPipeWireに利用クランプを追加しました。また、asahi-gentooのメンテナンスも行っています。
+- [Eileen Yoon氏(eiln)](https://github.com/eiln) マルチメディアとアクセラレータを担当する信号処理の第一人者。Eileen氏は現在、ハードウェアのビデオコーデック・アクセラレーションに取り組んでおり、すでにニューラルエンジンとイメージ・シグナル・プロセッサー（カメラ）を完成させています。
+- [James Calligeros氏(chadmed)](https://github.com/chadmed) エネルギーを考慮したスケジューリング(EAS)を実装し、スピーカーのために派手なDSPをハンドチューニングし、派手なDSPが派手な電力を消費しないようにPipeWireに利用クランプを追加しました。また、asahi-gentooのメンテナンスも行っています。
 - [Janne Grunau氏](https://github.com/jannau)  M1シリーズのタッチパッド／キーボードサポートを実装し、最近HDMI出力サポートを追加したディスプレイコントローラ（DCP）ドライバをメンテナンスしています。また、DeviceTreeやサブミッションを含む、数え切れないほどの 他の項目にも関与しています。
-- [Mark Kettenis](https://github.com/kettenis) OpenBSDの開発者。Mark氏 は、PCIe および NVMe (ANS) に必要なブローアップを含む、Apple M1 コアペリフェラル用の m1n1 および U-Boot ドライバを書きました。また、Mark は、Linux への移植と並行して、Apple M1 用の OpenBSD ドライバも記述しています。
-- [Sven Peter](https://github.com/svenpeter42) USB、PCIe、イーサネット、Wi-Fi に必要な Apple の DART (Device Address Resolution Table) の上流Linux対応に精力的に取り組んできました。また、m1n1にUSBガジェット対応を追加し、現在はDisplayPortとThunderboltのサポートに取り組んでいます。
+- [Mark Kettenis氏](https://github.com/kettenis) OpenBSDの開発者。Mark氏 は、PCIe および NVMe (ANS) に必要なブローアップを含む、Apple M1 コアペリフェラル用の m1n1 および U-Boot ドライバを書きました。また、Mark は、Linux への移植と並行して、Apple M1 用の OpenBSD ドライバも記述しています。
+- [Sven Peter氏](https://github.com/svenpeter42) USB、PCIe、イーサネット、Wi-Fi に必要な Apple の DART (Device Address Resolution Table) の上流Linux対応に精力的に取り組んできました。また、m1n1にUSBガジェット対応を追加し、現在はDisplayPortとThunderboltのサポートに取り組んでいます。
 
 過去の主な貢献者は以下の通りです。
 
@@ -89,4 +89,4 @@ Asahi Linux はコミュニティであり、誰でも貢献することがで�
 [AsbestOS](https://github.com/marcan/asbestos)、[The Homebrew Channel](https://wiibrew.org/wiki/Homebrew_Channel) と 
 [BootMii](https://wiibrew.org/wiki/BootMii) 開発チームの一員として [Wii Homebrew エコシステム](https://wiibrew.org/)に多くの貢献をし、
 多くのハードウェアを文書化してopen homebrew SDKツールに寄与しました。
-- [Martin Povišer (povik)](https://github.com/povik/) 私たちのオーディオカーネルドライバの取り組みをリードしてくれました。Martin氏は、Apple固有のSoCオーディオドライバと、Apple独自のコーデックおよびコーデックバリアント用のドライバを書きました。
+- [Martin Povišer氏(povik)](https://github.com/povik/) 私たちのオーディオカーネルドライバの取り組みをリードしてくれました。Martin氏は、Apple固有のSoCオーディオドライバと、Apple独自のコーデックおよびコーデックバリアント用のドライバを書きました。
