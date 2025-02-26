@@ -52,7 +52,7 @@ rootアクセスが可能だがAppleの署名入りのソフトウェアのみ�
 
 ### G
 * **GPT**: GUID Partition Table。EFI/UEFI 用に作成されたパーティションテーブルフォーマットで、現在ほとんどの最新システムで使用される
-* **GXF**: 恐らくGuarded Execution Function。ページテーブルや同様に重要な構造体をXNU自身から保護するために、低オーバーヘッドのハイパーバイザを作成するために使用される横方向の例外レベル。[Sven's writ-up](https://blog.svenpeter.dev/posts/m1_sprr_gxf/)や[[HW:-SPRR-and-GXF]]などを参照
+* **GXF**: 恐らくGuarded Execution Function。ページテーブルや同様に重要な構造体をXNU自身から保護するために、低オーバーヘッドのハイパーバイザを作成するために使用される横方向の例外レベル。[Sven's writ-up](https://blog.svenpeter.dev/posts/m1_sprr_gxf/)や[HW-SPRR-and-GXF](HW-SPRR-and-GXF.md)などを参照
 
 ### H
 * **HFS+**: Hierarchical Filesystem+ (階層型ファイルシステム) 。Apple の従来のファイルシステムで外部ストレージに使用。M1 Macの内部ストレージでは未使用
