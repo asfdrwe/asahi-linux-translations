@@ -16,13 +16,12 @@
 
 手順はウェブサイトをご覧ください: https://asahilinux.org/
 
-(訳注: 
+訳注: 
 macOSから
 ```
 curl https://alx.sh | sh
 ```
-としてください。その他文書の日本語訳は https://github.com/asfdrwe/asahi-linux-translations
-)
+としてください。その他文書の日本語訳は https://github.com/asfdrwe/asahi-linux-translations を参照してください。
 
 ## どのようにアンインストールするかと失敗したインストールをクリーンアップをどのようにしますか？
 
