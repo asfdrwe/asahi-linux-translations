@@ -2,7 +2,7 @@
 
 訳注: 
 - 文書へのリンクは対応する日本語訳へのリンクに書き換え
-  セキュリティモードの訳語は[Appleの文書](https://support.apple.com/ja-jp/guide/security/sec7d92dc49f/web)の訳語に従う
+- セキュリティモードの訳語は[Appleの文書](https://support.apple.com/ja-jp/guide/security/sec7d92dc49f/web)の訳語に従う
 
 ---
 ## はじめに
