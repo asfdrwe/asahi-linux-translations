@@ -1,4 +1,4 @@
-2025/2/12時点の[Distro-Boot-process-guide](https://github.com/AsahiLinux/docs/blob/main/docs/Distro-Boot-process-guide.md)の翻訳
+2025/2/20時点の[Distro-Boot-process-guide](https://github.com/AsahiLinux/docs/blob/main/docs/Distro-Boot-process-guide.md)の翻訳
 
 ---
 このページでは、起動可能な Asahi Linux システムに含まれるパッケージ/コンポーネントと、それらがどのように相互作用するかを説明します。
