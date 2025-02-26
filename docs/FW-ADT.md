@@ -1,4 +1,4 @@
-2025/2/時点の[FW:ADT](https://github.com/AsahiLinux/docs/blob/main/docs/FW-ADT.md))の翻訳
+2025/2/17時点の[FW:ADT](https://github.com/AsahiLinux/docs/blob/main/docs/FW-ADT.md)の翻訳
 
 ---
 
