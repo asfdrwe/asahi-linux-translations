@@ -60,7 +60,7 @@ Apple Siliconデバイスは現在のiOSデバイスと非常によく似たブ�
 
 このステージはOSレベルのローダーで、OSパーティションの中にありmacOSの一部として出荷されています。システムの残りの部分をロードします。
 
-# [DFU](Glossary#d)の流れ
+# [DFU](Glossary.md#d)の流れ
 
 ## Stage 1 (iBSS)
 
