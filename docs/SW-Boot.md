@@ -50,7 +50,7 @@ Apple Siliconデバイスは現在のiOSデバイスと非常によく似たブ�
   - ブートディレクトリはターゲットパーティションのPreboot subvolumeのパス `/<volume-uuid>/boot/<local-policy.metadata.nsih>` に存在
   - <boot-dir>/usr/standalone/firmware/iBoot.img4` を同じディレクトリにあるデバイス・ツリーや他のファームウェア・ファイルと一緒に復号、検証、実行。他のメタデータ記述子についてはまだ根拠なし
 
-* カスタムステージ([fuOS](Glossary.mdF))を読み込む場合:
+* カスタムステージ([fuOS](Glossary.md#F))を読み込む場合:
 
   - ...
 
