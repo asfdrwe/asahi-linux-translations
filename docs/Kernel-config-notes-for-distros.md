@@ -69,7 +69,7 @@ CONFIG_IIO_AOP_SENSOR_ALS=m
 多くモジュールとしてビルドする傾向があります。問題ありませんが、信頼性の観点からは、NVME_APPLEとSPI_HID_APPLE_OFをカーネル内にビルドする方が
 もっとうまくいきます)。
 
-~~(また、上記のコンフィギュレーションオプションは、asahi-scriptsが提供する標準的なdracutコンフィギュレーションとは一致しないことに注意してください)~~。 最近のasahi-scriptsの変更により、モジュールの選択はあまり重要ではなくなったようです: https://github.com/AsahiLinux/asahi-scripts/commit/4acd310cd8c394f9ec2e7e7506d89b7bb3c3ca39
+~~(また、上記のコンフィギュレーションオプションは、asahi-scriptsが提供する標準的なdracutコンフィギュレーションとは一致しないことに注意してください)~~。 最近のasahi-scriptsの変更により、モジュールの選択はあまり重要ではなくなったようです: <https://github.com/AsahiLinux/asahi-scripts/commit/4acd310cd8c394f9ec2e7e7506d89b7bb3c3ca39>
 
 それと以下のコンフィギュレーションオプションが設定されていることを再確認してください：
 
