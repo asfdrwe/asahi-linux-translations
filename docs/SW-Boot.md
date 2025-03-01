@@ -5,8 +5,8 @@ Apple Siliconデバイスは現在のiOSデバイスと非常によく似たブ�
 
 # Stage 0 (SecureROM)
 
-このステージは、ブート[ROM](Glossary.md#R)内にあります。とりわけ、[NOR](Glossary.md#N)から通常のステージ1を検証、ロード、実行します。
-失敗した場合は、[DFU](Glossary.md#D)にフォールバックし、[iBSS](Glossary.md#I)ローダーが送られてくるのを待ってから、ステージ1の[DFU](Glossary.md#D)のフローを続行します。
+このステージは、ブート[ROM](Glossary.md#r)内にあります。とりわけ、[NOR](Glossary.md#n)から通常のステージ1を検証、ロード、実行します。
+失敗した場合は、[DFU](Glossary.md#d)にフォールバックし、[iBSS](Glossary.md#i)ローダーが送られてくるのを待ってから、ステージ1の[DFU](Glossary.md#d)のフローを続行します。
 
 # 通常の流れ
 
