@@ -1,4 +1,4 @@
-2023/12/2時点の[SW-Speakers-Test-Cases](https://github.com/AsahiLinux/docs/blob/main/docs/SW-Speakers-Test-Cases.md)の翻訳
+2025/3/1時点の[SW-Speakers-Test-Cases](https://github.com/AsahiLinux/docs/blob/main/docs/SW-Speakers-Test-Cases.md)の翻訳
 
 ---
 * [Laufey - From The Start](https://www.youtube.com/watch?v=lSD_L-xic9o) - bankstown(訳注:[これ](https://github.com/chadmed/bankstown/))の良いテストケース。ベースとギターが本当に動作に圧力を掛ける
