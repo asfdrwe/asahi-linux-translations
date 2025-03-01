@@ -1,4 +1,4 @@
-2025/3/1時点の[HW-ACE3](HW-ACE3.md)の翻訳
+2025/3/1時点の[HW-ACE3](https://github.com/AsahiLinux/docs/blob/main/docs/HW-ACE3.md)の翻訳
 
 ---
 ACE3 は M3 製品の新しい USB-C / USB-PD コントローラーです。ADT に sn201202x 互換値があります。
