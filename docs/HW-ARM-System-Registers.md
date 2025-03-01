@@ -1,7 +1,7 @@
 2025/3/1時点の[HW-ARM System Registers](https://github.com/AsahiLinux/docs/blob/main/docs/HW-ARM-System-Registers.md)の翻訳
 
 ---
-網羅的な列挙と調査は[HW-ARM System Registers Dumps](HW-ARM-System-Registers-Dumps.md)を参照してください。
+網羅的な列挙と調査は[HW-ARM-System-Registers-Dumps](HW-ARM-System-Registers-Dumps.md)を参照してください。
 
 ## 用語集
 
@@ -668,7 +668,7 @@ Apple固有の浮動小数点関連ビット。
 
 SSEと等価のモードビットを実装しています。意味があるようにするためにはACTLR_EL1.AFPとともに有効化する必要があります。
 
-AArch64のFEAT_AFT機能が同様の対応を実装しているが、標準化前にAppleが実装しました。標準版では、FPSCR[1](AH)を1にして、FPCR[0](FIZ)はDAZ、FPCR[24](FZ)はFTZのようにする必要があります。
+AArch64のFEAT_AFT機能が同様の対応を実装しているが、標準化前にAppleが実装しました。標準版では、FPSCR[1] (AH)を1にして、FPCR[0] (FIZ)はDAZ、FPCR[24] (FZ)はFTZのようにする必要があります。
 
 ### IDレジスター
 
