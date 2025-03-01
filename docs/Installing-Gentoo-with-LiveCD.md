@@ -4,7 +4,7 @@
 ## 目次
 - [はじめに](#はじめに)
 - [前提](#重要な前提条件)
-- [インストール](#手順1-asahi-linux-minimalをセットアップ)
+- [インストール](#手順1-Asahi-U-Boot-環境をセットアップ)
   * [手順1: Asahi U-Boot 環境をセットアップ](#手順1-Asahi-U-Boot-環境をセットアップ)
   * [手順2: Gentoo Asahi LiveCD イメージを入手](#手順2-Gentoo-Asahi-LiveCD-イメージを入手)
   * [手順3: LiveCD にブート](#手順3-LiveCD-にブート)
