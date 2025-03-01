@@ -1,6 +1,6 @@
 2025/3/1時点の[SW-Keyboard-Layouts](https://github.com/AsahiLinux/docs/blob/main/docs/SW-Keyboard-Layouts.md)の翻訳
 
-訳注: キーボードの問題を報告するときは翻訳元のwikiページに英語で行ってください。
+訳注: キーボードの問題を報告するときは英語でAsahi Linuxの文書サイトにPRを送ってください。
 
 ---
 つまるところ、Linux上でのMacのキーボードレイアウトは完全にめちゃくちゃです。私たちは直したいと思っています。
