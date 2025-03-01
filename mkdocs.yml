@@ -1,0 +1,93 @@
+site_name: Asahi Linux 文書非公式日本語訳
+site_url: https://asfdrwe.github.io/asahi-linux-translations/
+
+repo_url: https://github.com/asfdrwe/asahi-linux-translations
+repo_name: asfdrwe/asahi-linux-translations
+
+nav:
+  - 概要: index.md
+  - 機能対応:
+    - 概要: Feature-Support.md
+    - M1シリーズ機能対応: M1-Series-Feature-Support.md
+    - M2シリーズ機能対応: M2-Series-Feature-Support.md
+    - M3シリーズ機能対応: M3-Series-Feature-Support.md
+    - M4シリーズ機能対応: M4-Series-Feature-Support.md
+  - プロジェクト関連:
+    - 用語集: Glossary.md
+    - FAQ: FAQ.md
+    - Asahi-Linuxはいつ完成するの？: When-will-Asahi-Linux-be-done.md
+    - 参考資料: Project-References.md
+  - プラットフォーム文書:
+    - Apple Silicon サブシステム: Apple-Silicon-Subsystems.md
+    - Appleプラットフォームセキュリティクラッシュコース: Apple-Platform-Security-Crash-Course.md
+    - 機器: Devices.md
+    - コードネーム: Codenames.md
+    - ディスプレイコントローラー: Display-Controllers.md
+  - ユーザ向け:
+    - Fedora Asahi Remix文書 <i class="fa-solid fa-arrow-up-right-from-square"></i>: https://docs.fedoraproject.org/en-US/fedora-asahi-remix/
+    - 問題があるソフトウェア: Broken-Software.md
+    - 代替ディストリビューション: SW-Alternative-Distros.md
+  - 開発者向け:
+    - 毛刈りが必要なヤク (助っ人募集！): Yaks-in-need-of-shaving.md
+    - テザーブートセットアップ(開発者向け): Tethered-Boot-Setup-For-Developers.md
+    - m1n1:ユーザガイド ブートローダー: m1n1-User-Guide.md
+    - Hypervisor: SW-Hypervisor.md
+    - U-Boot: U-Boot.md
+    - Devicetree bindings: SW-DT-bindings.md
+    - Apple Silicon MacでのオープンOSエコシステム: Open-OS-Ecosystem-on-Apple-Silicon-Macs.md
+
+theme:
+  name: material
+  language: ja
+  palette:
+    - media: "(prefers-color-scheme)"
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    - media: "(prefers-color-scheme: light)"
+      primary: custom
+      accent: custom
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      primary: custom
+      accent: custom
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  features:
+    - navigation.expand
+    - navigation.instant
+    - navigation.sections
+    - navigation.tracking
+    - navigation.top
+    - toc.integrate
+
+markdown_extensions:
+  - toc:
+      baselevel: 4
+      permalink: true
+  - admonition
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - redirects:
+      redirect_maps:
+        Software-known-to-have-issues-with-16k-page-size.md: Broken-Software.md
+  - search:
+      lang: ja
+  - social:
+      cards_layout_options:
+        background_color: '#F4EAEA'
+        color: '#2C2C2C'
