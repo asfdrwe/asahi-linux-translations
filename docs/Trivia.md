@@ -48,7 +48,7 @@ Mac Miniと14インチ/16インチMacBook Proに搭載されているDisplayPort
 # 細部へのこだわり
 
 ## 助けて!
-Mac の [SecureROM](SW-Boot.md#%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B80-securerom) は
+Mac の [SecureROM](SW-Boot.md#stage-0-securerom) は
 小さく、それ自身では大したことは
 できません。Mac mini では画面に画像を表示することはできません。しかし電源LEDを制御することはできます。
 [DFUモード](Glossary.md#d)でMacを起動すると、
