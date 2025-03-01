@@ -1,7 +1,7 @@
 2025/3/1時点の[HW-ARM System Registers](https://github.com/AsahiLinux/docs/blob/main/docs/HW-ARM-System-Registers.md)の翻訳
 
 ---
-網羅的な列挙と調査は(HW-ARM System Registers Dumps)[HW-ARM-System-Registers-Dumps.md]を参照してください。
+網羅的な列挙と調査は[HW-ARM System Registers Dumps](HW-ARM-System-Registers-Dumps.md)を参照してください。
 
 ## 用語集
 
