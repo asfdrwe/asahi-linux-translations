@@ -3,14 +3,14 @@
 ---
 Apple Siliconデバイスは現在のiOSデバイスと非常によく似たブートフローをたどるようです。
 
-# stage 0 (SecureROM)
+# Stage 0 (SecureROM)
 
 このステージは、ブート[ROM](Glossary.md#R)内にあります。とりわけ、[NOR](Glossary.md#N)から通常のステージ1を検証、ロード、実行します。
 失敗した場合は、[DFU](Glossary.md#D)にフォールバックし、[iBSS](Glossary.md#I)ローダーが送られてくるのを待ってから、ステージ1の[DFU](Glossary.md#D)のフローを続行します。
 
 # 通常の流れ
 
-## stage 1 (LLB/iBoot)
+## Stage 1 (LLB/iBoot)
 
 このステージはオンボードの[NOR](Glossary.md#N)にあるプライマリアーリーローダー(primary early loader)です。このブートステージでは、非常に大まかに以下のような流れになります:
 
@@ -56,17 +56,17 @@ Apple Siliconデバイスは現在のiOSデバイスと非常によく似たブ�
 
 この段階で失敗すると、エラーになるか、[DFU](Glossary.md#D)にフォールバックし、iBECローダーの送信を待ってから、[DFU](Glossary.md#D)の流れでステージ2に進みます。
 
-## stage 2 (iBoot2)
+## Stage 2 (iBoot2)
 
 このステージはOSレベルのローダーで、OSパーティションの中にありmacOSの一部として出荷されています。システムの残りの部分をロードします。
 
 # [DFU](Glossary#D)の流れ
 
-## stage 1 (iBSS)
+## Stage 1 (iBSS)
 
 このステージは『復元』ホストからデバイスに送られます。このステージでは、2つ目のステージであるiBECのブートストラップ、検証、実行が行われます。
 
-## stage 2 (iBEC)
+## Stage 2 (iBEC)
 
 # モード
 
