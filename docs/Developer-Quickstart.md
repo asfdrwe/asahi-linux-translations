@@ -72,6 +72,7 @@ M1 MacにLinuxを導入しようとしている私たちを手伝いたいと考
 詳しくは[SW:Boot](SW-Boot.md)や[M1 vs. PC Boot](M1-vs.-PC-Boot.md]をお読みください。
 
 ミニ用語集:
+
 * 1TR: One True Recovery: 信頼されたシステムレベルのリカバリ、すべてのブートユーザとの対話（ブートピッカー）も含む、独自のAPFSコンテナ（最終パーティション）に格納
 * APFS: Apple's fancypants filesystem (Appleの気取ったファイルシステム)
     * APFS コンテナ: ≒ ZFS プール (通常は GPT パーティションで保持)
