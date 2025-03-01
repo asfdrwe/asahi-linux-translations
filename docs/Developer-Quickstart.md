@@ -298,7 +298,7 @@ Exiting DBMa mode... OK
 
 ### 柔軟な USB-PD デバッグインターフェース (プロジェクト名未定)
 
-今後数週間内にM1シリアルポートに接続するためのオープンハードウェアインターフェースを設計します(Apple機器の他のデバック用ピンセットやある種のAndroidフォンなど他の機器のUARTにも対応)。今後の情報にご期待ください。初期のプロトタイプを入手したい既存のカーネル開発者は[marcan](mailto:marcan@marcan.st)までご連絡ください。
+今後数週間内にM1シリアルポートに接続するためのオープンハードウェアインターフェースを設計します(Apple機器の他のデバック用ピンセットやある種のAndroidフォンなど他の機器のUARTにも対応)。今後の情報にご期待ください。初期のプロトタイプを入手したい既存のカーネル開発者は[marcan氏](mailto:marcan@marcan.st)までご連絡ください。
 
 ### 標準的なUSBケーブルを使ったUSBガジェットモード
 
@@ -341,7 +341,7 @@ picocom /dev/ttyACM1
 
 なお、この方法は Linux のearlyconとしては(まだ)使えませんし、USB ガジェットのサポートもまだ Linux のメインツリーにはありません。
 
-* 詳細は [USBケーブルでLinuxを実行](SW-Linux.md#running-linux-via-usb-cable) を参照
+* 詳細は [USBケーブルでLinuxを実行](SW-Linux.md#USBケーブルでLinuxを実行) を参照
 
 ## m1n1の使用
 
