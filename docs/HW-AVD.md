@@ -5,4 +5,4 @@ Apple Video Decoder(アップルビデオデコーダー)。
 
 AVC, HEVC, AV1, VP9に対応。
 
-注: https://web.archive.org/web/20240105073841/https://eiln.net/avd-notes.html
+注: <https://web.archive.org/web/20240105073841/https://eiln.net/avd-notes.html>
