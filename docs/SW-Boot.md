@@ -12,12 +12,12 @@ Apple Siliconデバイスは現在のiOSデバイスと非常によく似たブ�
 
 ## Stage 1 (LLB/iBoot)
 
-このステージはオンボードの[NOR](Glossary.md#N)にあるプライマリアーリーローダー(primary early loader)です。このブートステージでは、非常に大まかに以下のような流れになります:
+このステージはオンボードの[NOR](Glossary.md#n)にあるプライマリアーリーローダー(primary early loader)です。このブートステージでは、非常に大まかに以下のような流れになります:
 
-* [NVRAM](Glossary.md#N)から `boot-volume` 変数を読み込み: そのフォーマットは `<gpt-partition-type-uuid>:<gpt-partition-uuid>:<volume-group-uuid>` 。その他の関連する変数は`update-volume`と`upgrade-boot-volume`のようで、おそらく`boot-info-payload`変数内のメタデータによって選択される
+* [NVRAM](Glossary.md#n)から `boot-volume` 変数を読み込み: そのフォーマットは `<gpt-partition-type-uuid>:<gpt-partition-uuid>:<volume-group-uuid>` 。その他の関連する変数は`update-volume`と`upgrade-boot-volume`のようで、おそらく`boot-info-payload`変数内のメタデータによって選択される
 * ローカルポリシーのハッシュを取得:
-  - 最初にローカルで提案されているハッシュ（[SEP](Glossary.md#S) コマンド11）を試みる
-  - それが利用できない場合は、ローカルのブレスドハッシュ(blessed hash)を取得 ([SEP](Glossary.md#S)(コマンド14))
+  - 最初にローカルで提案されているハッシュ（[SEP](Glossary.md#s) コマンド11）を試みる
+  - それが利用できない場合は、ローカルのブレスドハッシュ(blessed hash)を取得 ([SEP](Glossary.md#s)(コマンド14))
 * iSCPreboot パーティションの `/<volume-group-uuid>/LocalPolicy/<policy-hash>.img4` にあるローカルブートポリシーを読む。
 このブートポリシーには次のメタデータキー:
   - `vuid`: UUID: Volume group UUID - 上記と同じ
@@ -50,11 +50,11 @@ Apple Siliconデバイスは現在のiOSデバイスと非常によく似たブ�
   - ブートディレクトリはターゲットパーティションのPreboot subvolumeのパス `/<volume-uuid>/boot/<local-policy.metadata.nsih>` に存在
   - <boot-dir>/usr/standalone/firmware/iBoot.img4` を同じディレクトリにあるデバイス・ツリーや他のファームウェア・ファイルと一緒に復号、検証、実行。他のメタデータ記述子についてはまだ根拠なし
 
-* カスタムステージ([fuOS](Glossary.md#F))を読み込む場合:
+* カスタムステージ([fuOS](Glossary.md#f))を読み込む場合:
 
   - ...
 
-この段階で失敗すると、エラーになるか、[DFU](Glossary.md#D)にフォールバックし、iBECローダーの送信を待ってから、[DFU](Glossary.md#D)の流れでステージ2に進みます。
+この段階で失敗すると、エラーになるか、[DFU](Glossary.md#d)にフォールバックし、iBECローダーの送信を待ってから、[DFU](Glossary.md#d)の流れでステージ2に進みます。
 
 ## Stage 2 (iBoot2)
 
@@ -70,7 +70,7 @@ Apple Siliconデバイスは現在のiOSデバイスと非常によく似たブ�
 
 # モード
 
-起動すると、[AP](Glossary.md#A)は[SEP](Glossary.md#S)で確認できるようにブートモードのいずれかになります:
+起動すると、[AP](Glossary.md#a)は[SEP](Glossary.md#s)で確認できるようにブートモードのいずれかになります:
 
 |  ID | Name                                      |
 |----:|-------------------------------------------|
@@ -81,4 +81,4 @@ Apple Siliconデバイスは現在のiOSデバイスと非常によく似たブ�
 |   4 | restoreOS                                 |
 | 255 | unknown                                   |
 
-[SEP](Glossary.md#S)では、[1TR](Glossary.md#1)で特定のコマンド(ブートポリシーの編集など)の実行を許可していないと、エラー11『AP boot mode』で失敗します。
+[SEP](Glossary.md#s)では、[1TR](Glossary.md#1)で特定のコマンド(ブートポリシーの編集など)の実行を許可していないと、エラー11『AP boot mode』で失敗します。
