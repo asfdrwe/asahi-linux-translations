@@ -7,7 +7,7 @@
 # Linuxのビルド
 * M1対応のためにパッチを当てた最新のAsahiカーネルはgithub linux [Asahi Kernel](https://github.com/AsahiLinux/linux)を参照
 * 特に [2021年12月の進捗報告](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20211011.md) によると、
-[asahi brach](https://github.com/AsahiLinux/linux/tree/asahi) は「...最先端のカーネルであり...十分に使える状態なので...ぜひ試していただきたい」
+[asahi brache](https://github.com/AsahiLinux/linux/tree/asahi) は「...最先端のカーネルであり...十分に使える状態なので...ぜひ試していただきたい」
 * AsahiLinuxのrepoで開発が行われているが、M1対応のための変更はすでにlinuxのカーネルでメインライン化（
 詳細は[進捗報告](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20211011.md)の表を参照）されているので
 公式のLinuxカーネルミラーをcloneすることが可能
