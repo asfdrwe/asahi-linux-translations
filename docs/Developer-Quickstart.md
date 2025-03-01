@@ -69,7 +69,7 @@ M1 MacにLinuxを導入しようとしている私たちを手伝いたいと考
 4. OS カーネル（XNU/Darwin）を起動
     * ルートファイルシステムのマウント等
 
-詳しくは[SW:Boot](SW-Boot.md)や[M1 vs. PC Boot](M1-vs.-PC-Boot.md]をお読みください。
+詳しくは[SW-Boot](SW-Boot.md)や[M1 vs. PC Boot](M1-vs.-PC-Boot.md)をお読みください。
 
 ミニ用語集:
 
