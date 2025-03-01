@@ -1,0 +1,1297 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asfdrwe.github.io/asahi-linux-translations/SW-AGX-driver-notes/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>SW AGX driver notes - Asahi Linux 文書非公式日本語訳</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="SW AGX driver notes - Asahi Linux 文書非公式日本語訳" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/SW-AGX-driver-notes.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://asfdrwe.github.io/asahi-linux-translations/SW-AGX-driver-notes/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="SW AGX driver notes - Asahi Linux 文書非公式日本語訳" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/SW-AGX-driver-notes.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="Asahi Linux 文書非公式日本語訳" class="md-header__button md-logo" aria-label="Asahi Linux 文書非公式日本語訳" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Asahi Linux 文書非公式日本語訳
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SW AGX driver notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/asfdrwe/asahi-linux-translations" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    asfdrwe/asahi-linux-translations
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Asahi Linux 文書非公式日本語訳" class="md-nav__button md-logo" aria-label="Asahi Linux 文書非公式日本語訳" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Asahi Linux 文書非公式日本語訳
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/asfdrwe/asahi-linux-translations" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    asfdrwe/asahi-linux-translations
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概要
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    機能対応
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            機能対応
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Feature-Support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概要
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M1-Series-Feature-Support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M1シリーズ機能対応
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M2-Series-Feature-Support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M2シリーズ機能対応
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M3-Series-Feature-Support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M3シリーズ機能対応
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M4-Series-Feature-Support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M4シリーズ機能対応
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    プロジェクト関連
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            プロジェクト関連
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    用語集
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../When-will-Asahi-Linux-be-done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asahi-Linuxはいつ完成するの？
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project-References/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    参考資料
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    プラットフォーム文書
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            プラットフォーム文書
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Apple-Silicon-Subsystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon サブシステム
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Apple-Platform-Security-Crash-Course/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Appleプラットフォームセキュリティクラッシュコース
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Devices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    機器
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Codenames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    コードネーム
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Display-Controllers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ディスプレイコントローラー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    ユーザ向け
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            ユーザ向け
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.fedoraproject.org/en-US/fedora-asahi-remix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fedora Asahi Remix文書 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Broken-Software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    問題があるソフトウェア
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SW-Alternative-Distros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代替ディストリビューション
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    開発者向け
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            開発者向け
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Yaks-in-need-of-shaving/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    毛刈りが必要なヤク (助っ人募集！)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tethered-Boot-Setup-For-Developers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    テザーブートセットアップ(開発者向け)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m1n1-User-Guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    m1n1:ユーザガイド ブートローダー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SW-Hypervisor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypervisor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U-Boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U-Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SW-DT-bindings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devicetree bindings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Open-OS-Ecosystem-on-Apple-Silicon-Macs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon MacでのオープンOSエコシステム
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>SW AGX driver notes</h1>
+
+<p>2025/3/1時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/SW-AGX-driver-notes.md">AGX-driver-notes</a>の翻訳</p>
+<hr />
+<h5 id="_1">一般的な文書<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
+<ul>
+<li><a href="https://rosenzweig.io/AlyssasDriverSurvivalGuide.txt">Alyssa氏のドライバサバイバルガイド</a></li>
+<li><a href="../HW-AGX/">HW-AGX</a> (やや時代遅れ)</li>
+</ul>
+<h5 id="git">Gitリンク<a class="headerlink" href="#git" title="Permanent link">&para;</a></h5>
+<ul>
+<li><a href="https://gitlab.freedesktop.org/mesa/mesa">上流のMesa</a>（<a href="https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests?label_name%5B%5D=asahi">マージリクエスト</a>）</li>
+<li><a href="https://gitlab.freedesktop.org/asahi/mesa">Asahi Mesa</a> (ここから<code>mesa-asahi-edge</code>のリリースカット)</li>
+<li><a href="https://github.com/AsahiLinux/linux/tree/gpu/rust-wip">リナ氏のWIP kernel branch</a> (UAPI は mesa と同期していない可能性)</li>
+</ul>
+<h5 id="uapi">UAPIデザイン<a class="headerlink" href="#uapi" title="Permanent link">&para;</a></h5>
+<p><a href="https://github.com/AsahiLinux/linux/blob/asahi-wip/include/uapi/drm/asahi_drm.h">UAPI</a>のデザインは、今後公開される<a href="https://cgit.freedesktop.org/drm/drm-xe/tree/include/uapi/drm/xe_drm.h?h=drm-xe-next">Intel Xe UAPI</a>に触発されています。</p>
+<ul>
+<li>ファイル：DRMデバイスへのオープンファイル記述子</li>
+<li>VM: GPUのアドレス空間</li>
+<li>バインド: GEMオブジェクトからVMへのマッピング</li>
+<li>キュー: GPU上の論理的な実行キュー（複数のファームウェアキューが背後に存在)</li>
+</ul>
+<h6 id="gem-vm">GEM オブジェクトと VM<a class="headerlink" href="#gem-vm" title="Permanent link">&para;</a></h6>
+<p>GEMオブジェクトは、あるVMに対してプライベートで作成することができます。つまり、そのオブジェクトは決してエクスポートすることができず、そのVMにのみ
+バインドすることが可能です。これにより、ドライバはオブジェクトのロックを最適化することができます（まだ実装されていませんが、shrinkerを
+導入すれば必要になるでしょう。）</p>
+<ul>
+<li>TODO：プライベートオブジェクトを共有オブジェクトに変換するioctlを提供することは意味ある？ドライバはいくつかのGLフローでこれを必要だが、
+今は理想的ではない再割り当てとコピーに従事...</li>
+</ul>
+<p>VMバインドioctlはGEMオブジェクトの任意の範囲をVMにバインド/アンバインドすることに対応しますが、ドライバはまだこれを実装していません
+（オブジェクト全体をVMの空き領域にバインドする必要があり、オブジェクトはVMA範囲ではなく、オブジェクト名によってのみ完全にアンバインド
+することができます）。これは将来的に変更されるでしょう。UAPIはすでに準備済みです。</p>
+<h6 id="_2">キュー<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h6>
+<p>読者のみなさまご注意ください。これはトリッキーです！！</p>
+<p>UAPI は任意の数のユーザー・キューを公開します。各ユーザー・キューは親VMを持ちます。ユーザー・キューは実行のためのジョブを受け取り、
+（特定のファームウェアの制限を超えないことを保証するため）各ジョブは最大64個のGPUコマンドで構成することが可能です。ジョブは <code>drm_sched</code> 
+スケジューラによってスケジューリングされ、明示的な同期を行うために、任意のイン/アウト同期オブジェクトリストに対応します。ジョブは
+すべての同期オブジェクトがシグナルされるまで実行を開始せず、ジョブ内のすべてのコマンドが完全に完了した時点ですべての同期オブジェクトがシグナルされます。
+ジョブはすべての同期オブジェクトがシグナルされるとすぐにファームウェアに送信されます。ジョブ間に直接的な依存関係がない場合、ジョブの境界は
+CPUラウンドトリップを意味しません（ただし、カーネルがリソースをクリーンアップする必要があるため、GPUは各ジョブの完了を非同期にシグナルします）。
+けれども、ジョブは常に順番に<em>投入されます</em>。あるジョブの同期オブジェクトが満たされていないと、ファームウェアへの後続のすべてのジョブの投入が
+ブロックされます（これは <code>drm_sched</code> によって暗示され、また現在のドライバー設計のハード要件でもあります）。真の意味での任意の同時実行/並べ替えには、
+複数のキューを使用する必要があります。</p>
+<p>ジョブ内でコマンドはCPUが関与することなくファームウェアによる実行のために直接キューに入れられます。各ユーザーキューは、
+2つの論理的なキューから構成されています。レンダーとコンピュートです。レンダーコマンドとコンピュートコマンドは順番に送信されますが、
+1つのユーザーキュー内で並列に実行できます。</p>
+<p>論理的なレンダーキューは、2つのファームウェアキュー（頂点とフラグメント）が背後に存在します。カーネルはそれらの間にバリアを設けて、
+ファームウェアコマンドを常にペアにして提出します。このバリアは、部分的なレンダリングとプリエンプションが部分的な頂点とフラグメントの実行を
+インターリーブできるという点で、透過性を備えています（ここに手垢のついたファームウェアのマジックを挿入✨）。個々の描画コマンド間の
+頂点/フラグメントバリアは、必要であれば（GPU コマンドストリーム内の）VDM レベルで処理され、特定のキャッシュ関連バリアと同様に処理されます。</p>
+<p>ユーザーキュー内では、オプションでコマンドの依存関係を追加することができます。これらは、各論理キュー（コンピュート、レンダー）ごとに、
+コマンドごとに待機するコマンドの境界インデックス（Pythonスライスインデックスを考えてください）として指定されます。インデックスは0
+（このサブミッションからのコマンドの前のポイント）から始まり、与えられたタイプのサブミッションのコマンドごとに1つずつ増えていきます。
+将来的にコマンドの境界で待機することは許されません。与えられた論理キューのインデックス0（ジョブの始まり）で待つことは、そのタイプの
+<em>先行</em>ジョブのすべてのコマンド部分の完了を待つことを意味し、つまり、それは先行提出の終了境界で待つことと同等です。論理キューは
+常に順番にコマンドを開始・完了するので、与えられたインデックスで待つことは、その論理キューに対するすべての先行コマンドを待つことを意味します。</p>
+<p>明示的なバリアがない限り、レンダーコマンドの頂点部分は、先行コマンドのフラグメント部分と同時に実行することができます。つまり、頂点処理が
+フラグメント処理より『先に実行』されてしまうことがあります。これを防ぐには、以前のコマンドのインデックスのコマンドバリアを指定します。
+この場合、直列化されたファームウェアキューが1つしかないためコンピュートでは無意味ですが、レンダーコマンドでは意味があり、将来
+より多くの並列化が可能になった場合に備えて、コンピュートコマンドで推奨されています。</p>
+<p>次のサブミッションを考えてみましょう。</p>
+<pre><code>#0  R1 barrier=[__, C0]
+#1  C1 barrier=[__, __]
+#2  C2 barrier=[__, __]
+#3  R2 barrier=[R1, C2]
+#4  R3 barrier=[__, __] # [R1, C2] implied
+#5  R4 barrier=[R3, __] # [R3, C2] implied
+</code></pre>
+<p>これは、次のような依存関係グラフを記述しています。</p>
+<pre><code>[C*]-&gt;[R1]----+----\
+   [C1]------+|---vv
+   [C2]-----+||-&gt;[R3]-v
+            vvv      [R4]
+            [R2]------^
+</code></pre>
+<p>なお、キューの直列化により、実際にはC1&lt;-C2の順序が存在しますが(訳注:コンピュートキューが1本で直列化されているからC1の次にC2の順のはず)、
+これはバリアで明示的に指定されたものではありません。しかし、R2とR3は、C2と、C1を含むすべての先行するコンピュートコマンドの後に
+順序付けられ、さらにR1の後に順序付けられます。また、R2/R3は同時に実行することができますが（つまり、R3の頂点処理はR2の
+フラグメント処理と重ねたり先行することが可能）、R4はR3が完全に完了するまで頂点処理を開始しません（これは、キューの順序により、
+R2も完了したことを意味します）。</p>
+<p><code>[C*]</code>は、（前のジョブから）最後に投入されたコンピュートコマンドです。0バリアを指定することは、まだコマンドが投入されていない場合でも
+有効であることに注意してください（先行するすべてのコマンドがドライバで完全に完了し、関連する順序付けプリミティブが
+解放された場合と同等であるため、無視されます）。この場合、R1 は、前のサブミッションのフラグメント処理が完了する前に頂点処理を
+開始することができますが（レンダーバリアなし）、前のコンピュートコマンドの完了を待つことになります（C0 バリア）。</p>
+<p>同じジョブのファームウェアキュービューは以下の通りです。</p>
+<pre><code>コンピュート   頂点    フラグメント
+RUN C1     WAIT C0   WAIT R1v
+RUN C2     RUN  R1v  RUN R1f
+           WAIT R1f  WAIT R2v
+           WAIT C2   RUN R2f
+           RUN  R2v  WAIT R3v
+           RUN  R3v  RUN R3f
+           WAIT R3f  WAIT R4v
+           RUN  R4v  RUN R4f
+</code></pre>
+<p>言い換えれば、すべてのレンダーコマンドに対して、明示的なバリアのよる待機は頂点部分の前に頂点キューに行き、それから
+フラグメントキューは常にフラグメント部分の前に暗黙のバリアを取得します。</p>
+<p>Blitコマンドのサポートは、将来のドライバで追加される予定です。これらは事実上フラグメントのみのレンダーコマンドであるため、
+明示的なバリアと実行の両方がフラグメントキュー内に存在することになります。</p>
+<p>現在、Galliumドライバはシングルコマンドのサブミッションを発行するだけで、常に<code>[C0, R0]</code> バリアを使用してすべてを完全に
+直列化しています。これは将来的に改善されるかもしれませんが、このすべての主なユースケースはVulkanキューです。</p>
+<h6 id="_3">結果<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h6>
+<p>ユーザ空間は、オプションでコマンド実行のフィードバックを要求することができます。これは、結果バッファBOを指定し、
+そのバッファにコマンドごとにオフセットとサイズを指定することによって行われます。カーネルは、コマンドが完了すると、
+そこにコマンドの結果情報を書き込みます。現在、これには基本的なタイミング情報、タイル状頂点バッファ統計と
+部分的なレンダリングカウント（レンダーコマンド用）、詳細なフォルト情報（フォルトコマンド用、mesa の 
+BO ルックアップ論理と組み合わせると非常に便利！）などがあります。</p>
+<h6 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h6>
+<ul>
+<li><code>構造体 drm_asahi_cmd_render</code> がゴチャゴチャなのはどうなっているのでしょうか？
+ファームウェアのコマンドはこれらの低レベルのレンダリングの詳細をすべて直接指定しそれらの構造体を
+ユーザー空間に直接公開することはできないので、そうするのは安全ではありません。他に方法はありませんし、
+macOS も同じことをしています...（少なくとも PowerVR よりはゴチャゴチャではないです！）。</li>
+</ul>
+<h6 id="todo">TODO<a class="headerlink" href="#todo" title="Permanent link">&para;</a></h6>
+<p>上流へのブロッカー（現在のドラフトUAPIに影響を与えます）:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> アタッチメントフラグを把握し、これが何をするしどのように機能するのかを正確に確認</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> compute preemption kernel のものと、それが使用するコマンドフィールドを整理 (あるいは、取り下げて将来の rev/feature flag のために残す)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> 未知のバッファが1つか2つあり、UAPI に入るべきか把握 (02345 の件...)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> mmu.rs (memremap 関連)に不足している抽象化を追加</li>
+</ul>
+<p>その他</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <code>DRM_IOCTL_ASAHI_GET_TIME</code>を実装</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> RTKit runtime-PMを実装（GPUがアイドル状態の時にASCをスリープさせる、macOSはノートPCでこれを実現）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Blit コマンドのリバースエンジニアリングと実装</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> ファームウェア KTrace を Linux のトレース用にフックアップ</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> VM管理（任意のサブレンジマップ/アンマップ）を完了</li>
+<li>[ ]パフォーマンスカウンター</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> M2 Pro/Max対応</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>

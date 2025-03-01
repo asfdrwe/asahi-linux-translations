@@ -1,0 +1,1456 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asfdrwe.github.io/asahi-linux-translations/Apple-Platform-Security-Crash-Course/">
+      
+      
+        <link rel="prev" href="../Apple-Silicon-Subsystems/">
+      
+      
+        <link rel="next" href="../Devices/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Appleプラットフォームセキュリティクラッシュコース - Asahi Linux 文書非公式日本語訳</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Appleプラットフォームセキュリティクラッシュコース - Asahi Linux 文書非公式日本語訳" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/Apple-Platform-Security-Crash-Course.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://asfdrwe.github.io/asahi-linux-translations/Apple-Platform-Security-Crash-Course/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Appleプラットフォームセキュリティクラッシュコース - Asahi Linux 文書非公式日本語訳" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/Apple-Platform-Security-Crash-Course.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="Asahi Linux 文書非公式日本語訳" class="md-header__button md-logo" aria-label="Asahi Linux 文書非公式日本語訳" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Asahi Linux 文書非公式日本語訳
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Appleプラットフォームセキュリティクラッシュコース
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/asfdrwe/asahi-linux-translations" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    asfdrwe/asahi-linux-translations
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Asahi Linux 文書非公式日本語訳" class="md-nav__button md-logo" aria-label="Asahi Linux 文書非公式日本語訳" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Asahi Linux 文書非公式日本語訳
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/asfdrwe/asahi-linux-translations" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    asfdrwe/asahi-linux-translations
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概要
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    機能対応
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            機能対応
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Feature-Support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概要
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M1-Series-Feature-Support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M1シリーズ機能対応
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M2-Series-Feature-Support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M2シリーズ機能対応
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M3-Series-Feature-Support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M3シリーズ機能対応
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M4-Series-Feature-Support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M4シリーズ機能対応
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    プロジェクト関連
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            プロジェクト関連
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    用語集
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../When-will-Asahi-Linux-be-done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asahi-Linuxはいつ完成するの？
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project-References/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    参考資料
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    プラットフォーム文書
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            プラットフォーム文書
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Apple-Silicon-Subsystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon サブシステム
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Appleプラットフォームセキュリティクラッシュコース
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Appleプラットフォームセキュリティクラッシュコース
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      はじめに
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="はじめに">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      目次
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      システムデータの完全性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      コンテナ単位のセキュリティポリシー
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ユーザートラストルート
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      ペアリング・リカバリ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      ディスクの暗号化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appleでの暗黙の了解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appleでの暗黙の了解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      私たちはどのようにこの契約を守っているか
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Devices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    機器
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Codenames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    コードネーム
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Display-Controllers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ディスプレイコントローラー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    ユーザ向け
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            ユーザ向け
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.fedoraproject.org/en-US/fedora-asahi-remix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fedora Asahi Remix文書 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Broken-Software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    問題があるソフトウェア
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SW-Alternative-Distros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代替ディストリビューション
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    開発者向け
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            開発者向け
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Yaks-in-need-of-shaving/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    毛刈りが必要なヤク (助っ人募集！)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tethered-Boot-Setup-For-Developers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    テザーブートセットアップ(開発者向け)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m1n1-User-Guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    m1n1:ユーザガイド ブートローダー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SW-Hypervisor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypervisor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U-Boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U-Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SW-DT-bindings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devicetree bindings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Open-OS-Ecosystem-on-Apple-Silicon-Macs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon MacでのオープンOSエコシステム
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Appleプラットフォームセキュリティクラッシュコース</h1>
+
+<p>2025/2/17時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/Apple-Platform-Security-Crash-Course.md">Apple Platform Security Crash Course</a>の翻訳</p>
+<p>訳注: 
+- 文書へのリンクは対応する日本語訳へのリンクに書き換え
+- セキュリティモードの訳語は<a href="https://support.apple.com/ja-jp/guide/security/sec7d92dc49f/web">Appleの文書</a>の訳語に従う</p>
+<hr />
+<h4 id="_1">はじめに<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>Apple Siliconプラットフォームは、適切に構成されたシステムを提供するために、1から設計されました。
+セキュリティモデルは『スイスチーズモデル(訳注:<a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%A4%E3%82%B9%E3%83%81%E3%83%BC%E3%82%BA%E3%83%A2%E3%83%87%E3%83%AB">スイスチーズモデル</a>)』に基づいています。つまり、単一のセキュリティメカニズムだけでは
+許容できるレベルのセキュリティを保証できないため、メカニズムを重ねて互いの穴をカバーしています。</p>
+<p>プラットフォームのセキュリティ機能は、『Secure Enclave Processor（SEP）』によって統括されています。SEPの機能の概要やさまざまなブートポリシー、
+ブートピッカー自体の概要は、<a href="../Introduction-to-Apple-Silicon/">Apple Siliconの紹介</a> にあります。
+このページでは、ユーザやシステム管理者が興味を持ちそうな概念を推測し、明らかにすることを試みます。
+ユーザやシステムメンテナの興味を引くような概念を拡張して、明らかにすることを目的としています。</p>
+<p>高レベルでは、完全なセキュリティモードにおけるApple Siliconのセキュリティモデルは、6つの重要な概念で構成されています。</p>
+<ol>
+<li>システムとブートクリティカルデータの完全性を常に保証</li>
+<li>セキュリティポリシーはコンテナごとに設定可能</li>
+<li>ハードウェアとユーザはすべてのセキュリティ操作のためのトラストルートを形成</li>
+<li>あるコンテナのセキュリティとブートポリシーは他のコンテナに影響を与えない</li>
+<li>すべてのデータは静止状態で透過的に暗号化</li>
+<li>ユーザーデータの復号は認証の後ろに門を設置することが可能</li>
+</ol>
+<p>この文書では、完全なセキュリティモード(Full Security mode)の標準的な macOS コンテナにおけるセキュリティモデルの実装について説明し、
+Appleがフルセキュリティモードで提供しているmacOSの保証を侵害することなく、ユーザーが任意のコード (サードパーティの
+オペレーティングシステムなど) を実行できるようどのようにシステムが設計されているか説明します。
+これは、非常に賢い方法でPCのセキュアブートの『全てか無か』のアプローチから離れたこのプラットフォーム独自のセールスポイントで
+す。PCとmacOSを同様のことをするときに、なぜ注意しなければならないかを説明するのに最適な方法です。</p>
+<h5 id="_2">目次<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
+<ul>
+<li><a href="#はじめに">はじめに</a></li>
+<li><a href="#システムデータの完全性">システムデータの完全性</a></li>
+<li><a href="#コンテナ単位のセキュリティポリシー">コンテナ単位のセキュリティポリシー</a></li>
+<li><a href="#ユーザートラストルート">ユーザートラストルート</a></li>
+<li><a href="#ペアリング・リカバリ">ペアリング・リカバリ</a></li>
+<li><a href="#ディスクの暗号化">ディスクの暗号化</a></li>
+<li><a href="#Appleでの暗黙の了解">Appleでの暗黙の了解</a></li>
+<li><a href="#私たちがどのようにこの合意を守っているか">私たちがどのようにこの合意を守っているか</a></li>
+</ul>
+<h5 id="_3">システムデータの完全性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
+<p>このプラットフォームは、システムデータの完全性を検証し、維持するために多大な努力を払っています。すべてのシステムファイルは、
+最低でもAppleによって署名され、ハッシュ化されています。sepOS(や古いバージョンではiBoot)などの重要なファームウェアコンポーネントは暗号化もされています。
+システムは、これらのコンポーネントの実行を許可する前に、すべてのコンポーネントの整合性を検証します。これらのコンポーネントのいずれかが
+何らかの理由で検証に失敗した場合、システムは起動に失敗し、ユーザーに機器を復元するよう指示します。</p>
+<p>このモデルは、ファームウェアとブートローダから、macOS 自体にまで及びます。SEPは、各APFSコンテナのブートポリシーを維持し、
+ブートが許可されるmacOS kernelcacheとシステムデータボリュームを登録します。
+kernelcacheはAppleによって署名され、そのハッシュはSEPのBoot Policyに記録されます。
+提供された kernelcache のハッシュが SEP のブートポリシー内のものと不一致であるか、
+Apple によって署名されていない場合、システムはその APFS コンテナのブートを拒否します。</p>
+<p>OSスナップショット自体は、ハッシュ化されたディスクイメージです。その中の各ファイルもハッシュ化され、これらのハッシュのマークル木
+(訳注:<a href="https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%9C%A8">マークル木</a>)は、
+ボリューム・シールと呼ばれる最終的なハッシュを計算するために使用され、ボリュームに署名するために使用されます。もし、イメージ自体の
+ハッシュやシールがSEPのブートポリシーと一致しない場合、システムは起動しません。
+変更可能なユーザーデータは、コンテナ上のまったく別のボリュームに保存され、スナップショットと統合され、1つのファイルシステムとして
+スナップショットが検証された後にのみ、単一のファイルシステムとしてユーザーに表示されます。どのファイルも、OSスナップショットと
+ユーザーデータボリュームを交差させることはできず、フルセキュリティモードではスナップショットを変更することは一切不可能です。
+この機能はSealed System Volume (SSV)として知られています。</p>
+<p>登録されたカーネルキャッシュは、信頼されていないルートに方向転換するために使用することもできません。kernelcacheは
+ブートポリシーで登録されているOSスナップショットをマウントして起動するためにのみ使用できます。
+SEPは、kernelcacheがマウントすることを許可されていないOSスナップショットをマウントしようとした場合、ブートを停止します。
+これにより、侵害された1つのコンテナがシステム全体を取得することを防ぎます。</p>
+<h5 id="_4">コンテナ単位のセキュリティポリシー<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
+<p>Appleは、このレベルのロックダウンがすべてのユーザにとってのすべてのケースに適しているわけではないことを知っています。もし誰かが
+例えば、カーネル拡張を開発し、テストしたい場合はどうでしょうか？Intel Mac では、System Integrity Protectionを無効にすれば、
+システムファイルの改ざんは可能です。Apple Siliconでは、Appleはより粒度の細かいアプローチを取っており、
+SEP はコンテナ単位でセキュリティポリシーを追跡することができます。
+これにより、ユーザーは完全に安全なmacOSのインストールを維持しながら、より制限の弱いな環境を試すことができます。</p>
+<p>Appleは、この機能の意図はmacOSのセキュリティ保証に妥協することなくサードパーティ製OSのインストールを許可することであると
+言及しており、Microsoft が Windows をこのプラットフォームに移植することを歓迎するとさえ述べています。</p>
+<p>有効な macOS システムとして認識された APFS コンテナ (特定のファイルシステム構造が存在する必要あり) は
+セキュリティ制限なしモード(Permissive Security mode)にすることができます。これはしばしば、ユーザーが任意の
+コードを『実行』できるようになると宣伝されますが、ここにはいくつかのニュアンスがあります。
+<em>実際に</em>許可されているのは、Apple によって署名されていない macOS カーネルキャッシュ
+をコンテナのブートポリシーに登録し、SSV を無効にすることです。
+ユーザーはカーネルキャッシュをSEPに提供し、SEPはそれをハッシュ化し、署名し、コンテナ用のBoot Policyを作成します。</p>
+<p>他のシステム整合性保証は、セキュリティ制限なしコンテナにも適用されます。システムは、ファームウェアまたはブート
+ファームウェアまたはブートローダが侵害された場合と同様に、ユーザー提供のカーネルキャッシュが登録後に改ざんされた場合にも、
+システムはブートを拒否します。ペアリングされたrecoveryOSスナップショットは、Appleによって署名されている必要があります。
+もしユーザが登録後にカーネルキャッシュを再び変更したい場合は、別のものを登録する必要があります。
+これにより、プラットフォームはバイナリを信頼していることが保証されます。</p>
+<p>しかし、悪意のあるものがあなたのセキュリティ制限なしコンテナに入り込んだらどうでしょうか？新しいkernelcacheを登録できるのではないでしょうか？
+新しい kernelcache を登録し、鼻の下から黙ってコンテナを取得することはできないでしょうか？当然のことながら、Appleはこのことを考えており、
+この攻撃ベクトルを軽減する非常にシンプルな方法を持っています。</p>
+<h5 id="_5">ユーザートラストルート<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
+<p>SEP は暗号化操作のハードウェアトラストルートですが、実はもう 1 つのコンポーネントがあり、
+コンテナのセキュリティやブート設定を変更する操作のトラストルートを形成しています。ユーザーです。</p>
+<p>ユーザーとSEPとのやり取りが、プラットフォームのセキュリティモデルに対する究極のトラストルートを形成します。
+Apple Silicon 機器の初期セットアップ時に、SEP は一連の『機器所有者』資格情報を登録します。
+これは、完全なセキュリティコンテナ内のマシンに設定された最初の macOS アカウントの資格情報です。
+この機器所有者資格情報のセットは、
+コンテナのセキュリティまたはブートポリシーの状態を変更するあらゆる操作の認証と署名に使用されます。これだけでは、
+ユーザーから『真の』ハードウェアトラストルートが作成されるわけではありません。誰かが機器所有者の資格情報を
+取得する可能性があるためです。
+しかし、SEP は十分に賢いので、機器所有者が本人であることを確認するために、もう 1 つチェックを行います。</p>
+<p>Apple Silicon 機器はさまざまな状態で起動することができ、SEPやiBootによって制御されます。その状態のうちの1つ
+1TRは、物理的な電源ボタンを押しながら、機器所有者の資格情報で認証することによってのみ、コールドブート から移行できます。
+これらの条件の両方が意図的に満たされたことをSEPが満足しない場合（例えば、電源ボタンが早期に離された場合）、1TRに移行することはできません。
+セキュリティ操作コンテナをセキュリティ制限なしに降格させるなどのセキュリティ操作は、1TRから<em>しか</em>行えません。
+SEP は、要求が有効な 1TR 環境から発生したことを確認できない場合、トランザクションの完了を拒否します。
+カスタムブートオブジェクトのインストールなど、一部の操作では、機器所有者の資格情報を2回目に入力する必要があります。</p>
+<p>これにより、SEPは、セキュリティポリシーに署名するために、ユーザー自身からハードウェアトラストルートを形成し、機
+器所有者が要求される操作を明示的に信頼することを自分自身に保証します。
+これは、あらゆるコンテナのブートプロセスを危険にさらす可能性のある、ローカルで実行されるかリモートで実行されるかにかかわらず、
+ほとんどのクラスの攻撃を軽減するのに十分です。</p>
+<h5 id="_6">ペアリング・リカバリ<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
+<p>こちらは非常にシンプルです。macOS 12 からは、1TR で起動すると、blessされた APFS コンテナのペアードリカバリースナップショットが表示されます。
+SEPではblessされたコンテナに対してのみ変更を加えることができます。
+これは、悪意のあるものが物理的な存在と機器所有者の両方のチェックを迂回できる程度までコンテナが侵害された場合に、被害の拡大を抑えることができます。</p>
+<h5 id="_7">ディスクの暗号化<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
+<p>T2 の導入以来、Mac にはかなり強固で透過的なボリュームごとの暗号化が備わっています。このため
+Apple が T2 以降の Mac の欠陥 SSD を完全なデータ損失なしに交換できません。
+このシステムのデフォルトの状態は、データが静止状態で暗号化された状態です。
+機器は動作中のデータを独自のキーで透過的に復号化しますが、データはディスク上では暗号化されたままです。
+これによるパフォーマンスの低下はほとんどありません。Apple Siliconマシンでは、SEPは、各 APFS ボリュームごとに
+ボリューム暗号化キー（VEK）と eXtended Anti-Replay Token（xART）を生成します。xARTは、replay攻撃によるVEKの取得を防止します。
+VEK は SEP 自身のエアギャップメモリ(訳注: <a href="https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%A2%E3%82%AE%E3%83%A3%E3%83%83%E3%83%97">エアギャップ</a> )に格納され、アプリケーションコアからは決して読み取ることができません。</p>
+<p>ボリューム上のデータは動作中に暗号化/復号化されます。sepOSは鍵を直接NVMeコントローラに渡し、
+鍵のキャプチャに対する防御を強化するために、アプリケーションコアを迂回します。重要なのは、機器の電源が入り、
+SEP が iBoot とシステムファームウェアの状態に満足すると、鍵はラップされなくなり、 <strong>すべてのデータにアクセスできる</strong>ようになります。
+ここで、macOSのFileVaultが登場します。</p>
+<p>APFS ボリュームで FileVault が有効な場合、VEK と xART は鍵暗号化鍵 (KEK) でラップされ、
+この鍵は、該当する macOS コンテナのユーザー資格情報によってバックアップされます。
+保護されたコンテナのユーザーデータボリュームは、起動時にこれらの認証情報が提供されるまで、機器は読み取ることができません。
+Apple Silicon 機器でこれを有効にすると、必要な操作は KEKとリカバリーキー を生成することだけなので、瞬時に実行できます。
+システムスナップショット、プリブート、およびリカバリの各ボリュームは、FileVault では保護されません。
+これらのパーティションは、SEPによってバックアップされた不変のものであり、ユーザーデータは含まれないので、
+FileVault のメリットは特にありません。すべての暗号化キーは、機器所有者が機器を要求したときに、SEPによって破棄され、
+データ復旧プログラムによっても、残存データを解読できないことが保証されます。</p>
+<p>LVMの上にLUKSを乗せることで、これを非常にうまくエミュレートでき、効果的なフルディスク暗号化を実現できます。
+APFSスタブを無視する余裕もあります。というのは、APFSスタブで気になるのはm1n1とrecoveryOSだけで、どちらも検証済み、
+署名済み、改ざん防止済みだからです。既存の弱点は <code>/boot</code> が平文で保存されなければならないことです。
+セキュアブートやメジャーブート(訳注:<a href="https://learn.microsoft.com/ja-jp/windows/security/information-protection/secure-the-windows-10-boot-process">Measured Boot</a>)の類似品で、カーネルやinitramfsの整合性を保証できるものは、今のところありません。
+ユーザはブートローダをリムーバブルメディアに向けるという選択肢があり、この問題を軽減するのに役立ちます。
+それ以外では、LUKS と LVM をサポートするブートローダなら、ユーザが自分の好きなようにパーティションを セットアップしたら、
+標準的な <code>cryptsetup</code> ワークフローで動作するでしょう。</p>
+<h5 id="apple">Appleでの暗黙の了解<a class="headerlink" href="#apple" title="Permanent link">&para;</a></h5>
+<p>セキュリティモデルを文書化するときに、AppleはXNUカーネル開発者が自分の変更を2つ目のmacOSでテストすることを例にしています。
+ですが、このプラットフォームのセキュリティモデルは、
+AppleがmacOS自体に保証しているセキュリティを一切損なわない形で、サードパーティ製OSがmacOSと共存できるように設計されていることは明らかです。
+Appleのまわりでこのような取り組みに積極的に敵対しているとか、信頼できないコードを実行するためにはセキュリティを回避したり、
+脱獄(訳注:<a href="https://ja.wikipedia.org/wiki/Jailbreak">jailbreak</a>)しなければならないといった噂が流れていますが、根拠がなく誤りです。
+実際、macOS以外のバイナリの実行を向上させる<em>だけ</em>の方法で、Appleは彼らのセキュリティツールを<em>向上</em>させるために労力と時間を費やしてきました。
+その一例としてmacOS 12.1以降Boot Policy設定ツールに、生のAArch64コードを適切なMach-Oフォーマットでラップする機能を提供しています。
+これはmacOSのカーネルキャッシュでないブートオブジェクトを登録するためにのみ必要です。</p>
+<p>とはいえ約束事は必然的に2つに分かれます。Apple Silicon Macが本質的にiDeviceをスケールアップしたものであることを考えると、
+Appleはわざわざそのセキュリティモデルをより柔軟なものに変更したのであり、その理由を推測するのは難しいことではありません。
+Asahiのようなプロジェクトが不可避であることを、会社のどこかのレベルでは、同意によるものであろうとなかろうと、
+誰かが十分に認識していたはずです。
+脱獄コミュニティが任意のコードを実行させようとすることで、Appleのプライバシーとセキュリティのマーケティング保証に
+恥をかかせるリスクを冒すよりも、Appleは私たちにサンドボックスに触れる必要なく簡単にそれを行うためのツールを与えてくれました。
+よって、私たちはこの機能が1つの簡単な条件付きで提供されていると考えています。
+どんな状況でも、macOSのコンテナを汚染しようとしないことです。</p>
+<h6 id="_8">私たちはどのようにこの契約を守っているか<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h6>
+<p>Asahi Linuxは、有効なOSとして認識されるような正しいファイル構造を持つ小さなAPFSコンテナとボリュームセットを作成します。
+そして、Appleのツールを使ってセキュリティを制限なしに設定し、m1n1をその署名されたブートオブジェクトとして登録します。
+私たちは<em>他のどの</em>OSボリュームのセキュリティ設定も変更することはありませんし、今後も変更することはありません。
+AppleのセキュリティポリシーがAsahiボリュームに影響を与えることはありません。
+詳しくは <a href="../Open-OS-Ecosystem-on-Apple-Silicon-Macs/">Apple Silicon MacでのオープンOSエコシステム</a>をご覧ください。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
