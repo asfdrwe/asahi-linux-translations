@@ -1,4 +1,4 @@
-2025/3/1時点の[HW-AGX](HW-AGX.md)の翻訳
+2025/3/1時点の[HW-AGX](https://github.com/AsahiLinux/docs/blob/main/docs/HW-AGX.md)の翻訳
 
 ---
 # Lina氏のAGXノート
