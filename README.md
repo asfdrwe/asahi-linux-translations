@@ -30,7 +30,7 @@
   - [進捗報告:2021年8月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202108.md)
   - [進捗報告:2021年1月2月](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS20210102.md)
 
- -[文書の日本語訳](https://asfdrwe.github.io/asahi-linux-translations/)
+- [文書の日本語訳](https://asfdrwe.github.io/asahi-linux-translations/)
 - [文書Wiki](https://github.com/asfdrwe/asahi-linux-translations/wiki)
 - [本家GitHub](https://github.com/AsahiLinux)
 
