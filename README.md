@@ -32,7 +32,9 @@
 
 - [文書の日本語訳](https://asfdrwe.github.io/asahi-linux-translations/)
 - [文書Wiki](https://github.com/asfdrwe/asahi-linux-translations/wiki)
+
 - [本家GitHub](https://github.com/AsahiLinux)
+- [本家文書のコミット履歴](https://github.com/AsahiLinux/docs/commits/main)
 
 この日本語訳は元の文書の[ライセンス](https://github.com/AsahiLinux/docs/blob/main/LICENSE)と同様にCC BY-SA 4.0に従います。
 
