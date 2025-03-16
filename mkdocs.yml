@@ -5,36 +5,36 @@ repo_url: https://github.com/asfdrwe/asahi-linux-translations
 repo_name: asfdrwe/asahi-linux-translations
 
 nav:
-  - 概要: index.md
+  - ホーム: index.md
   - 機能対応:
-    - 概要: Feature-Support.md
-    - M1シリーズ機能対応: M1-Series-Feature-Support.md
-    - M2シリーズ機能対応: M2-Series-Feature-Support.md
-    - M3シリーズ機能対応: M3-Series-Feature-Support.md
-    - M4シリーズ機能対応: M4-Series-Feature-Support.md
+    - 概要: platform/feature-support/overview.md
+    - M1シリーズ機能対応: platform/feature-support/m1.md
+    - M2シリーズ機能対応: platform/feature-support/m2.md
+    - M3シリーズ機能対応: platform/feature-support/m3.md
+    - M4シリーズ機能対応: platform/feature-support/m4.md
   - プロジェクト関連:
-    - 用語集: Glossary.md
-    - FAQ: FAQ.md
-    - Asahi-Linuxはいつ完成するの？: When-will-Asahi-Linux-be-done.md
-    - 参考資料: Project-References.md
+    - 用語集: project/glossary.md
+    - FAQ: project/faq.md
+    - Asahi-Linuxはいつ完成するの？: project/when-will-asahi-be-done.md
+    - 参考資料: project/references.md
   - プラットフォーム文書:
-    - Apple Silicon サブシステム: Apple-Silicon-Subsystems.md
-    - Appleプラットフォームセキュリティクラッシュコース: Apple-Platform-Security-Crash-Course.md
-    - 機器: Devices.md
-    - コードネーム: Codenames.md
-    - ディスプレイコントローラー: Display-Controllers.md
+    - Apple Silicon サブシステム: platform/subsystems.md
+    - Appleプラットフォームセキュリティクラッシュコース: platform/security.md
+    - 機器: hw/devices/device-list.md
+    - コードネーム: hw/soc/soc-codenames.md
+    - ディスプレイコントローラー: hw/soc/display-controllers.md
   - ユーザ向け:
     - Fedora Asahi Remix文書 <i class="fa-solid fa-arrow-up-right-from-square"></i>: https://docs.fedoraproject.org/en-US/fedora-asahi-remix/
-    - 問題があるソフトウェア: Broken-Software.md
-    - 代替ディストリビューション: SW-Alternative-Distros.md
+    - 問題があるソフトウェア: sw/broken-software.md
+    - 代替ディストリビューション: alt/alt-distros.md
   - 開発者向け:
-    - 毛刈りが必要なヤク (助っ人募集！): Yaks-in-need-of-shaving.md
-    - テザーブートセットアップ(開発者向け): Tethered-Boot-Setup-For-Developers.md
-    - m1n1:ユーザガイド ブートローダー: m1n1-User-Guide.md
-    - Hypervisor: SW-Hypervisor.md
-    - U-Boot: U-Boot.md
-    - Devicetree bindings: SW-DT-bindings.md
-    - Apple Silicon MacでのオープンOSエコシステム: Open-OS-Ecosystem-on-Apple-Silicon-Macs.md
+    - 助っ人募集！: project/help-wanted.md
+    - テザーブートセットアップ(開発者向け): sw/tethered-boot.md
+    - m1n1:ユーザガイド ブートローダー: sw/m1n1-user-guide.md
+    - Hypervisor: sw/m1n1-hypervisor.md
+    - U-Boot: sw/u-boot.md
+    - Devicetree bindings: sw/devicetree-bindings.md
+    - Apple Silicon MacでのオープンOSエコシステム: platform/open-os-interop.md
 
 theme:
   name: material
@@ -82,9 +82,6 @@ markdown_extensions:
   - pymdownx.tilde
 
 plugins:
-  - redirects:
-      redirect_maps:
-        Software-known-to-have-issues-with-16k-page-size.md: Broken-Software.md
   - search:
       lang: ja
   - social:
