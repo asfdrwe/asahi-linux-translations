@@ -1,0 +1,1389 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asfdrwe.github.io/asahi-linux-translations/sw/partitioning-cheatsheet/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>パーティションチートシート - Asahi Linux 文書非公式日本語訳</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="パーティションチートシート - Asahi Linux 文書非公式日本語訳" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/sw/partitioning-cheatsheet.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://asfdrwe.github.io/asahi-linux-translations/sw/partitioning-cheatsheet/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="パーティションチートシート - Asahi Linux 文書非公式日本語訳" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/sw/partitioning-cheatsheet.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#apple_apfs_recovery" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="Asahi Linux 文書非公式日本語訳" class="md-header__button md-logo" aria-label="Asahi Linux 文書非公式日本語訳" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Asahi Linux 文書非公式日本語訳
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              パーティションチートシート
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/asfdrwe/asahi-linux-translations" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    asfdrwe/asahi-linux-translations
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Asahi Linux 文書非公式日本語訳" class="md-nav__button md-logo" aria-label="Asahi Linux 文書非公式日本語訳" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Asahi Linux 文書非公式日本語訳
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/asfdrwe/asahi-linux-translations" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    asfdrwe/asahi-linux-translations
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ホーム
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    機能対応
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            機能対応
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概要
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M1シリーズ機能対応
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M2シリーズ機能対応
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M3シリーズ機能対応
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/feature-support/m4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    M4シリーズ機能対応
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    プロジェクト関連
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            プロジェクト関連
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    用語集
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/when-will-asahi-be-done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asahi-Linuxはいつ完成するの？
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    参考資料
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    プラットフォーム文書
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            プラットフォーム文書
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/subsystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon サブシステム
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Appleプラットフォームセキュリティクラッシュコース
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/devices/device-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    機器
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/soc-codenames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    コードネーム
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw/soc/display-controllers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ディスプレイコントローラー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    ユーザ向け
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            ユーザ向け
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.fedoraproject.org/en-US/fedora-asahi-remix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fedora Asahi Remix文書 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../broken-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    問題があるソフトウェア
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alt/alt-distros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代替ディストリビューション
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    開発者向け
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            開発者向け
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/help-wanted/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    助っ人募集！
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tethered-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    テザーブートセットアップ(開発者向け)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m1n1-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    m1n1:ユーザガイド ブートローダー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m1n1-hypervisor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypervisor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u-boot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U-Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devicetree-bindings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devicetree bindings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/open-os-interop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apple Silicon MacでのオープンOSエコシステム
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>パーティションチートシート</h1>
+
+<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/partitioning-cheatsheet.md">partitioning-cheatsheet</a>の翻訳</p>
+<hr />
+<h4 id="apple_apfs_recovery">警告: <code>Apple_APFS_Recovery</code> パーティションは絶対に削除しないでください。<a class="headerlink" href="#apple_apfs_recovery" title="Permanent link">&para;</a></h4>
+<p>diskutil で `Apple_APFS_Recoveryと表示されるディスクの最後のパーティションには重要なシステム回復コンポーネントが含まれています。
+** 誤ってこのパーティションを削除してしまうと、macOS のアップグレードは機能しなくなり、システムに関するその他の問題は起動不能のままとなり、工場出荷時の復元と完全なワイプが必要となります。** マシンを完全にワイプせずにこのパーティションを復元するのは、<a href="https://www.reddit.com/r/AsahiLinux/comments/1fmnzm5/guide_how_to_fix_failed_to_find_sfr_recovery/">非常に面倒</a>です。どんなことがあっても、このパーティションはいじらないでください。</p>
+<p>Asahi Linux のインストーラーにはパーティション削除コードが一切含まれておらず、また未加工のパーティションテーブルにアクセスすることもないため、インストーラーが単独でこのような事態を引き起こすことは<strong>あり得ません</strong>。このような状況に陥った場合、（Linux や macOS/recoveryOS から）知らないうちに自分でパーティションを
+削除してしまったか、Appleのバグが原因です。</p>
+<p>注意: 私たちは近いうちにインストーラにアンインストール/クリーンアップのオプションを追加する予定ですが、定義上、常に
+Asahi Linuxのバニラインストールという共通のケースに対してのみ動作が保証される簡易ツールです。もし自身でパーティション管理を
+したり、他のディストリビューションをインストールする場合は、正しくクリーンアップするためにはこのような手動での方法を
+知っておく必要があります。</p>
+<h5 id="_1">はじめに<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
+<p>macOS でのパーティション管理は混乱しやすいです。これが説明の助けになれば幸いです。</p>
+<p>注意: 近いうちにインストーラにアンインストール/クリーンアップのオプションを追加する予定ですが、定義上、常に Asahi Linuxのバニラインストールと
+いう共通のケースに対してのみ動作が保証される簡易ツールです。もし自身でパーティション管理を したり、他のディストリビューションをインストールする場合は、
+正しくクリーンアップするためにはこのような手動での方法を知っておく必要があります。</p>
+<p>注意：Asahi Linuxを削除する場合、macOS をデフォルトの起動OSとして設定し直す必要があります。 macOS自体のシステム設定から行うか、 
+スタートアップオプションで Option キーを押しながら選択することで可能です。先にやっておかなくてもパソコンが壊れることはありませんが、
+設定するまでは自動起動ができなくなるでしょう。スタートアップオプションの画面に正常に入れない場合は、ダブルタップ
+（電源ボタンを押す→離す→押し続ける）で起動してみてください。</p>
+<h5 id="_2"><strong>ディスクユーティリティ</strong>は使わないでください<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
+<p>macOS に同梱されているグラフィカルなディスクユーティリティは、1つ以上の APFS コンテナがあり、未パーティション領域がなく、すべての
+パーティションが正しい順序で並んでいて、外部パーティションがない、という些細な場合のみかろうじて機能します。FAT32/HFS パーティションの作成など、
+表向きは『対応している』ことであっても、バグがあります。使わないでください。混乱させ、ありえない数字を表示し、間違ったことをします。
+これは適切なディスク管理ツールとして意図されたものではありません。最も単純なタスクや状況しか処理できず、それ以外は完全に崩壊する、
+薄っぺらなユーザーインターフェイスのフロントエンドなのです。</p>
+<p>コマンドラインの <code>diskutil</code> は奇妙なインターフェースを持っており、理解するのが 難しいですが、少なくとも通常は正しく動作します。</p>
+<h5 id="_3">全てがうまくいかなくなったら<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
+<p>Apple Silicon機器はbrick(訳注:起動不能,いわゆる文鎮化)できませんが、システムリカバリーを壊すと起動不能になることがあります。
+これを解決するには、別のマシンを接続し、特別なDFUリカバリ手順を使ってUSB経由で復元する必要があります。
+手元に別のMac(Intel動作)がある場合は、Appleの
+<a href="https://support.apple.com/guide/apple-configurator-2/revive-or-restore-a-mac-with-apple-silicon-apdd5f3c75ad/mac">公式文書</a>に従ってください。ない場合は、代わりに<a href="https://github.com/libimobiledevice/idevicerestore">idevicerestore</a>を使用することができます。そのための
+簡単な<a href="https://tg.st/u/idevicerestore_quickstart.txt">ガイド</a>を紹介します。</p>
+<p>OSのリカバリを壊してしまった場合、電源ボタンを押しながらでもブートループに陥ることがあります。この場合、マシンをシャットダウンし、電源ボタンを素早く<em>ダブルタップホールド(double-tap-hold)</em> (押して、放して、押し続ける)をして起動してください。ノートパソコンの場合、起動ループから強制的にシャットダウンすることが
+できない場合があります。このような場合は、ループサイクル中にAppleロゴが消えた時点から3秒を数え、2連続で押して(double tap)してください。
+これでシステムリカバリに入り、完全なDFUフラッシュを使わずにそこから修正することができます。</p>
+<h5 id="apple-silicon">Apple Silicon の物理ディスクレイアウト<a class="headerlink" href="#apple-silicon" title="Permanent link">&para;</a></h5>
+<ul>
+<li>NVMe ドライブには名前空間があります。macOSでは <code>disk0</code>、Linuxでは <code>nvme0n1</code> が主なものです。</li>
+<li>他のものは、カーネルパニックログなどに使用。これはかなり低レベルのものなので、気にする必要なし。これはNVMeのことで『ローレベルパーティション』みたいなもの。あまり深く考えないで</li>
+<li>プライマリ名前空間はGPTパーティションテーブルとしてフォーマットされ、最近のほとんどのLinux/Windows/Intel Macシステムと同じ</li>
+<li>GPTには、従来のパーティション（FAT32、HFS+、Linux...）またはAPFSコンテナが含まれる</li>
+<li>APFSコンテナには、ディスク領域を共有する複数の論理ボリュームが含まれる</li>
+<li>各 Apple Silicon 機器は、2つの特別なシステム APFS コンテナ、ディスク上の最初のもの（iBoot システムコンテナ）およびディスク上の
+最後のもの（システムリカバリー）を保持。これらは決して触らないように。これらの間にあるパーティションの作成/削除のみを行う</li>
+</ul>
+<p>警告: Apple のツールの中には GPT パーティションテーブル内の未ソートパーティションを好まないものがあります。最初と最後のパーティションは
+そのままにしておく必要があります。なので、Linux からのほとんどのディスク管理操作は GPT にパーティションを追加してしまい、順番を
+狂わせてしまいます。必ず修正してください。Linux の <code>fdisk</code> コマンドでは、<code>x</code> (エキスパートモードへ) → <code>f</code> (パーティションの順序を修正) → <code>r</code> (メインメニューへ) → <code>w</code> (変更を書き込んで終了) という手順で行うことができます。</p>
+<h5 id="macos">macOS ディスク管理の基本<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h5>
+<p><code>disk0</code>はNVMeドライブです。<code>disk0sN</code> はその中の GPT パーティションです。<code>N</code> は安定したもの<em>ではなく</em>、macOS カーネルによって動的に
+割り当てられます。GPT の物理的なスロットインデックスには <em>対応していません</em>し、ドライブ内のパーティションデータの物理的な順序にも対応していません。
+パーティションを作成するときはいつでも、N は異なる番号に割り当てることができ、再起動時にすべての番号を変更することができます。</p>
+<p><code>diskN</code> (<code>N</code> &gt;= 1) はディスクイメージや外部ディスクの可能性もありますが、より可能性が高いのは <em>APFS コンテナ</em> でしょう。
+これはAppleがサブボリュームを表現するために考え出したハックです。このようなディスク内の『パーティション』は実際のパーティションではなく、
+1つのAPFSコンテナ内のボリュームを表しているだけです。コンテナ自体は <code>disk0</code> 内の物理パーティションに存在します。つまり、APFSの操作では、
+例えば<code>disk0s2</code>と<code>disk1</code>は同じ意味になり、前者はコンテナを物理パーティションで参照し、後者は仮想（<em>合成</em>）ディスク番号で参照することになります。</p>
+<p>複数の macOS インストールで 1 つの APFS コンテナを共有することができます。各 OS は、<em>System</em> ボリュームと <em>Data</em> ボリュームの 2 つの
+対になるサブボリュームからなる <em>ボリュームグループ</em> を持ちます。追加のボリュームがあり、<code>Preboot</code>、<code>Recovery</code>、<code>VM</code>、<code>Update</code>です。
+これらは、そのコンテナ内のすべてのOSで共有されます。必ずしもすべてが存在するわけではありません。</p>
+<p>macOSのインストールはそれぞれ、<em>recoveryOSの独自のコピーを持っています</em>。それから、グローバルなシステムリカバリーOSと、（まれに）追加の
+システムフォールバックリカバリーOSがあります。</p>
+<h5 id="asahi-linux">Asahi Linux のインストール<a class="headerlink" href="#asahi-linux" title="Permanent link">&para;</a></h5>
+<p>Asahi Linuxの場合、同じコンテナにmacOSと一緒にインストールすることはありません。なぜなら、そうするとLinux用のAPFS（まだ安定しておらず、
+メインライン化もされていない）を使う必要があるからです。Linux用の通常のGPTパーティションを作成するだけです。Asahi LinuxもmacOSと
+同じように、APFSコンテナにボリュームグループとしてインストールし、実際に起動できるようにする必要があります。これが『スタブmacOS』と
+呼ばれるもので、Appleの世界とLinuxの世界を繋ぐものです。ブートローダパーティションとでも思ってください。このために macOS とコンテナを
+共有することも<em>できます</em>が、エラーの可能性が低くなり削除も簡単になるので、<em>そうしないことにしています</em>し、どのみちディスクのパーティションは既に切ってあります。</p>
+<p>インストーラは(通常の Asahi Linux = Arch Linux ARM インストールの場合)3つのパーティションを作成します:</p>
+<ul>
+<li>2.5GB APFS コンテナ、マシンを起動するのに必要な iBoot/macOS の断片と recoveryOS のコピーが含まる</li>
+<li>m1n1 stage 1 はここにインストール</li>
+<li>500MBのEFIシステムパーティション</li>
+<li>m1n1 ステージ2、U-Boot、GRUB コアイメージはここ</li>
+<li>Linux ext4 パーティションが残りの領域を埋める</li>
+<li>GRUBモジュールとLinuxカーネル/initramfsはここ</li>
+</ul>
+<p>アンインストールするには、この3つをすべて削除する必要があります。</p>
+<p>Asahi Linux は、従来の UEFI システムとは異なり、<em>インストールするインスタンスごとに</em> EFI System Partition を作成するのが特徴です。
+これを処理するために、OS がインストール/起動する正しい ESP を見つけるための特注のメカニズムがあります。これは、各 ESP が 2.5G スタブに
+論理的に結びついており、すべてを 1 つのユニットとして扱い、ネイティブのブートピッカーを使って異なる OS (つまり ESP) を選択できるように
+すると、OS 管理が容易になるためです。2.5GB の APFS スタブコンテナとEFI システムパーティションとその後に作成されるルート/...パーティションを、
+Apple Silicon システム内のオープンソース OS 用の論理的な『コンテナ』と考えるべきでしょう。ある意味、m1n1+U-Boot はあなたのマシンを 
+UEFI システムに変え、インストールするたびに Apple Silicon Mac の中に新しい『仮想 UEFI 環境』 を作ることになります（注：これは VM ではありません）。</p>
+<h5 id="asahi-linux_1">Asahi Linuxインストーラでパーティションを一覧表示<a class="headerlink" href="#asahi-linux_1" title="Permanent link">&para;</a></h5>
+<p><code>diskutil</code> は非常にバロック的で、インストールされているOSを列挙するのは苦痛です。そこで、Asahi Linuxインストーラ自身が、最も重要なディスク情報を
+理解しやすい形式に凝縮しようとします。通常通り実行し(<code>curl https://alx.sh | sh</code>)、この情報を見るだけなら何もせずに終了させることもできます。</p>
+<p>以下は、Asahi Linuxをインストールした直後、まだインストールの第二段階を完了する前の例です:</p>
+<pre><code>Partitions in system disk (disk0):
+  1: APFS [Macintosh HD] (380.00 GB, 6 volumes)
+    OS: [B ] [Macintosh HD] macOS v12.3 [disk3s1, D44D4ED9-B162-4542-BF50-9470C7AFDA43]
+  2: APFS [Asahi Linux] (2.50 GB, 4 volumes)
+    OS: [ *] [Asahi Linux] incomplete install (macOS 12.3 stub) [disk4s2, 53F853CF-4851-4E82-933C-2AAEB247B372]
+  3: EFI (500.17 MB)
+  4: Linux Filesystem (54.19 GB)
+  5: (free space: 57.19 GB)
+  6: APFS (System Recovery) (5.37 GB, 2 volumes)
+    OS: [  ] recoveryOS v12.3 [Primary recoveryOS]
+
+  [B ] = Booted OS, [R ] = Booted recovery, [? ] = Unknown
+  [ *] = Default boot volume
+</code></pre>
+<p>これが示すもの:</p>
+<ul>
+<li>1つのAPFSコンテナ（380GB）には、1つのmacOS 12.3インストール（「Macintosh HD」）を構成する6つのボリューム（リストされていない）が含まれる。注：『Macintosh HD』は実際にはシステムサブボリュームの名前で、これは macOS 自身がボリュームを表示する方法</li>
+<li>もし、同じコンテナで他の macOS インストールがスペースを共有している場合、それは同じパーティションにある別の <code>OS:</code> 行として表示</li>
+<li>disk3s1 はこの macOS システムの <em>ボリューム</em> であり、<code>disk3</code> がこの APFS コンテナパーティションを表す仮想ディスクであることを意味</li>
+<li>UUID はこの OS のボリュームグループ ID で、この OS の主要な識別子 (例えば、機器が見つけて起動する方法、<code>bputil</code> プロンプトでそれを選択する方法、Preboot と Recovery サブボリューム内の関連サブディレクトリ名、その他)</li>
+<li>4つのボリュームを含む1つのAPFSコンテナ（2.5GB）は実際にはAsahi Linuxブートローダーのスタブで、macOS 12.3をベースバージョンとして使用し、名前は 『Asahi Linux 』</li>
+<li>インストールが完了していれば、m1n1ステージ1のバージョンが表示されるはず。しかし、そうではないので、電源ボタンを押して再起動し、インストールの第二段階を完了するまで、<code>incomplete install</code>と表示</li>
+<li>disk4s2 はこのスタブのシステムの <em>ボリューム</em> で、つまり <code>disk4</code> はこの APFS コンテナパーティションを表す仮想ディスク</li>
+<li>EFIシステムパーティション(FAT32)</li>
+<li>Linuxファイルシステムパーティション（今回はext4ですが、特定のFSは特定/表示されない）</li>
+<li>いくつかの空き領域（パーティションされていない） - インストーラはこれを独自の 『パーティション』 として表現していることに注意</li>
+<li>代わりに <code>diskutil</code> は、物理ディスクの順番に従い直前のパーティションのパーティション識別子で空き領域を参照しようとするが、これは言うまでもなく非常に紛らわしく、エラーが発生しやすい。それ自身の番号を与えることがより理にかなっていると思っている</li>
+<li>システムリカバリーパーティション（常に最後に存在）は、2つの APFS ボリュームを含み、recoveryOS（バージョン 12.3）のインスタンスが1つインストールされている</li>
+<li>これに触れたくないですが、recoveryOSのバージョンを知ることは有用であるためこれを表示。フォールバックバージョンもあるかもしれない</li>
+</ul>
+<p>現在、<em>Macintosh HD</em> OS (<code>[B ]</code>) で起動しているが、デフォルトの起動OSはAsahi Linux (<code>[ *]</code>) に設定されていることを知らせていることに注意して
+ください。もし、recoveryOSから起動した場合は、<code>[R*]</code> (デフォルトブートOSの一部であるrecoveryOSを起動)と表示されますが、最終的にシステムリカバリーへフ
+ォールバックした場合は、最後の行で <code>[R ] recoveryOS...</code> から起動マークが表示されます。</p>
+<p>Asahi Linux のインストーラは iBoot システムコンテナパーティションを表示<em>しません</em>が、システムリカバリーパーティションは表示<em>される</em>ことに注意
+してください。どのシステムリカバリーバージョンがあるかはわかります（ただし、何もできません）。また、物理ディスクパーティション番号も表示されません。</p>
+<h5 id="diskutil"><code>diskutil</code> でパーティションの一覧を表示<a class="headerlink" href="#diskutil" title="Permanent link">&para;</a></h5>
+<p><code>diskutil list</code>を使用します。上記と同じ設定だと、このようになります。</p>
+<pre><code>/dev/disk0 (internal):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                         500.3 GB   disk0
+   1:             Apple_APFS_ISC ⁨⁩                        524.3 MB   disk0s1
+   2:                 Apple_APFS ⁨Container disk3⁩         380.0 GB   disk0s2
+   3:                 Apple_APFS ⁨Container disk4⁩         2.5 GB     disk0s5
+   4:                        EFI ⁨EFI - ASAHI⁩             500.2 MB   disk0s4
+   5:           Linux Filesystem ⁨⁩                        54.2 GB    disk0s7
+                    (free space)                         57.2 GB    -
+   6:        Apple_APFS_Recovery ⁨⁩                        5.4 GB     disk0s3
+
+/dev/disk3 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +380.0 GB   disk3
+                                 Physical Store disk0s2
+   1:                APFS Volume ⁨Macintosh HD⁩            15.2 GB    disk3s1
+   2:              APFS Snapshot ⁨com.apple.os.update-...⁩ 15.2 GB    disk3s1s1
+   3:                APFS Volume ⁨Preboot⁩                 887.6 MB   disk3s2
+   4:                APFS Volume ⁨Recovery⁩                798.7 MB   disk3s3
+   5:                APFS Volume ⁨Data⁩                    157.1 GB   disk3s5
+   6:                APFS Volume ⁨VM⁩                      20.5 KB    disk3s6
+
+/dev/disk4 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +2.5 GB     disk4
+                                 Physical Store disk0s5
+   1:                APFS Volume ⁨Asahi Linux - Data⁩      884.7 KB   disk4s1
+   2:                APFS Volume ⁨Asahi Linux⁩             1.1 MB     disk4s2
+   3:                APFS Volume ⁨Preboot⁩                 63.6 MB    disk4s3
+   4:                APFS Volume ⁨Recovery⁩                1.8 GB     disk4s4
+</code></pre>
+<p>これは、まずdisk0に存在する物理パーティションを順番に表示しています。</p>
+<ul>
+<li><code>disk0</code> (タイプ "GUID_partition_scheme" として表示) は実際にはディスク全体 (500GB) を表しす</li>
+<li><code>disk0s1</code> は iBoot システムコンテナ (タイプ <code>Apple_APFS_ISC</code>) で、インストーラーの出力には表示されない</li>
+<li>これは実際にはもっとサブボリュームのあるAPFSコンテナですが、<code>diskutil</code>自身はその詳細も隠す</li>
+<li>このコンテナにはシステムクリティカルな情報がたくさん入っているので、いじらない方がいい</li>
+<li><code>disk0s2</code>は最初のAPFSコンテナで、macOSのボリューム 『Macintosh HD』を格納</li>
+<li>『Container disk3』と表示されているのは、これが仮想/合成されたディスク <code>disk3</code> として表示されていることを示す</li>
+<li><code>disk0s5</code> は Asahi Linux のブートローダスタブ</li>
+<li>パーティションインデックスの順番がおかしい！ 論理的には <code>disk0s2</code> の後にあり、GPT でもその位置に存在。このパーティション番号は何の意味もなく、macOSがその日に割り当てたいと思ったものを使用</li>
+<li>これは仮想ディスク <code>disk4</code></li>
+<li><code>disk0s4</code> は FAT32 EFI System Partition (タイプは <code>EFI</code> で、名前は <code>EFI - ASAHI</code> で表示: これらは切り捨てられるから)</li>
+<li><code>disk0s7</code> はLinuxのルートパーティション（タイプは <code>Linux filesystem</code> と表示）</li>
+<li>次に空き容量</li>
+<li><code>disk0s3</code>はシステムリカバリーパーティション（タイプ <code>Apple_APFS_Recovery</code> ）</li>
+<li>本当に、これはいじらないで。これはOSが壊れたときにローカルで復旧する唯一の方法</li>
+</ul>
+<p>この後、2つのAPFSコンテナがボリュームに分割され、それぞれが仮想ディスクとして存在することがわかります。<code>disk3</code> と <code>disk4</code> です。実際には、さらに2つあります。<code>disk1</code> は iBoot システムコンテナ (バックは <code>disk0s1</code>) で、<code>disk2</code> はシステムリカバリー (バックは <code>disk0s3</code>) ですが、これらは diskutil 出力では
+隠されています。しかし、これらは diskutil の出力には表示されません。この番号付けはあなたにとって異なるかもしれませんし、実際にそうなることを忘れないでください。</p>
+<h4 id="_4"><strong>これらのコマンドをやみくもにコピー＆ペーストしないでください</strong><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>以下のすべての例では、<em>上記の出力からディスク/パーティション番号を使用しています</em>。自身のシステムに適した番号に置き換える必要があります。
+<em>これらはあなたにとって異なるもの</em>でしょう。警告されています。</p>
+<h5 id="diskutil_1"><code>diskutil</code> でパーティションを削除する<a class="headerlink" href="#diskutil_1" title="Permanent link">&para;</a></h5>
+<p>パーティションの削除は、APFS パーティションと非 APFS パーティションで <em>異なる</em> 動作をします。</p>
+<h6 id="apfs">APFS コンテナの削除<a class="headerlink" href="#apfs" title="Permanent link">&para;</a></h6>
+<p>Asahi Linux* の APFS コンテナを削除するには、以下のいずれかの形式を使用します:</p>
+<p><code>diskutil apfs deleteContainer disk4</code> </p>
+<p><code>diskutil apfs deleteContainer disk0s5</code> </p>
+<p>最初のものは<em>仮想ディスク</em>で、2番目のものは<em>物理パーティション</em>で識別されます。正しい番号を使用している限り、これらは全く同等であり同じ結果になります。</p>
+<h6 id="_5">他のパーティションの削除<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h6>
+<p>EFIとLinuxのパーティションを削除するには、次のようにします:</p>
+<pre><code>diskutil eraseVolume free free disk0s4
+diskutil eraseVolume free free disk0s7
+</code></pre>
+<p>これが『eraseVolume free free』と呼ばれているのは、diskutilの驚くほど直感的なインターフェースが、パーティションの削除という概念を
+『空き領域としてフォーマットする』と表現しているからです（APFSを除く）。はい、本当です。</p>
+<h5 id="apfs_1">APFS コンテナのサイズ変更<a class="headerlink" href="#apfs_1" title="Permanent link">&para;</a></h5>
+<p>Asahi Linuxを削除した後、再度インストールすることも可能です（インストーラのリサイズオプションを使用する必要はありません）。しかし、再びmacOSを
+大きくしてディスクのサイズいっぱいまで使いたい場合は、以下のどちらかを使います。</p>
+<p><code>diskutil apfs resizeContainer disk0s2 0</code></p>
+<p><code>diskutil apfs resizeContainer disk3 0</code></p>
+<p>ここでも、物理パーティション識別子または論理ディスク番号を使用できます。これらは等価です。<code>0</code> は、パーティションの後にある利用可能な空き領域を
+すべて埋めるようにサイズを変更することを意味します。もし、任意のサイズに拡張/縮小したい場合は、<code>100GB</code>のように指定します。</p>
+<p>このコマンドを実行すると、macOSのターミナルが一瞬フリーズすることがありますので、ご注意ください。慌てずに数分間実行させてください。</p>
+<h6 id="storage-system-verify-or-repair-failed"><code>Storage system verify or repair failed</code> (ストレージシステムの検証または修復に失敗しました)<a class="headerlink" href="#storage-system-verify-or-repair-failed" title="Permanent link">&para;</a></h6>
+<p>APFS のリサイズ操作中にこのエラーが発生した場合、APFS ファイルシステムが潜在的に破損していることを意味します。この問題は Apple の
+APFS ドライバのバグが原因であり、Asahi Linuxでは発生しません（APFS パーティションには全く触れません）。この問題を解決するには、
+<strong>recoveryOSで起動し</strong>（macOS からは動作しません）、以下のコマンドを実行してください（上記のように、disk0s2 を APFS コンテナディスク名に置き換えてください）:</p>
+<p><code>diskutil repairVolume disk0s2</code></p>
+<p>もしこれが『encrypted and locked volumes(暗号化されロックされたボリューム)』について文句を言うなら、システム内の FileVault で保護された macOS 
+ボリューム全てに対して <code>diskutil apfs unlockVolume &lt;diskName&gt;</code>  を実行する必要があります。<code>diskutil apfs list</code> を実行し、
+<code>FileVault: Yes (locked)</code> を探し、それらを特定してください。システムボリュームはスキップしてかまいません（ロック解除が必要なのはデータボリュームだけです）。
+それから <code>diskutil repairVolume</code> 操作をもう一度実行してください。</p>
+<p>最後に、修復が正常に完了してからリサイズ操作を再試行してください。</p>
+<p>これでもボリュームの修復がうまくいかず、リサイズ操作にも失敗する場合は、残念ながら macOS ボリュームを完全に消去して再フォーマットする（すべてのデータを失う）
+以外に解決策はありません。Asahi Linu xプロジェクトでは、Apple 独自のシステムドライバやツールのバグフィックスやサポートを提供することはできません。
+APFS の破損を引き起こす再現可能な方法を見つけた場合は、Apple に直接報告してください。</p>
+<h5 id="efi">付録:EFIパーティションのマウント<a class="headerlink" href="#efi" title="Permanent link">&para;</a></h5>
+<p>EFIパーティションをマウントする方法は2つあります。1つ目はこちらです:</p>
+<pre><code>diskutil list
+diskutil mount disk0s4
+mount
+cd /Volumes/...
+</code></pre>
+<p>2つ目はこちらです:</p>
+<pre><code>mkdir /Volumes/efi
+mount -t msdos /dev/disk0s4 /Volumes/efi
+</code></pre>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
