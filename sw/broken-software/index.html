@@ -596,6 +596,28 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/board/asahi-board/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asahi Linux 理事会
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -948,6 +970,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="バグ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      オープンバグ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      クローズドバグ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1213,7 +1259,7 @@
 
   <h1>問題があるソフトウェア</h1>
 
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md">broken-software</a>の翻訳</p>
+<p>2025/3/16時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md">broken-software</a>の翻訳</p>
 <hr />
 <p>このページでは、Apple Silicon 機器では正しく動作しないことが知られているソフトウェアをリストアップしています。
 これを公開することで、コミュニティのメンバーが影響を受けるパッケージの修正を上流に提供する動機となり、AArch64ソフトウェアの
@@ -1301,11 +1347,6 @@ Program Headers:
 </thead>
 <tbody>
 <tr>
-<td>Chromium</td>
-<td><a href="https://issues.chromium.org/issues/378017037">https://issues.chromium.org/issues/378017037</a></td>
-<td>kGuardPageSizeのハードコートが原因で 16KiB ページの Linux で cppgc がクラッシュ</td>
-</tr>
-<tr>
 <td>hardened_malloc</td>
 <td><a href="https://github.com/GrapheneOS/hardened_malloc/issues/183">https://github.com/GrapheneOS/hardened_malloc/issues/183</a></td>
 <td>16kページ対応する前にhardened_mallocに多くの変更が必要。MTEが必要でkこの時点では高優先度ではない</td>
@@ -1369,9 +1410,14 @@ Program Headers:
 <td>Linux 5.19以降で修正<a href="https://social.treehouse.systems/@marcan/111493984306764821">注意事項</a>)</td>
 </tr>
 <tr>
-<td>Chromium</td>
+<td>chromium</td>
 <td><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1301788">https://bugs.chromium.org/p/chromium/issues/detail?id=1301788</a></td>
 <td>Electronアプリを含む<br>102以降で修正</td>
+</tr>
+<tr>
+<td>chromium</td>
+<td>[cppgc crashes on Linux w/ 16KiB pages because of hardcoded kGuardPageSize]<a href="https://issues.chromium.org/issues/378017037">https://issues.chromium.org/issues/378017037</a> kGuardPageSizeのハードコートが原因で 16KiB ページの Linux で cppgc がクラッシュ</td>
+<td>Chromium 133.0.6943.141 で修正</td>
 </tr>
 <tr>
 <td>Emacs</td>
@@ -1477,6 +1523,69 @@ Program Headers:
 </table>
 <h5 id="_4">バグ<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
 <p>サードパーティソフトウェアの問題（ページサイズやアーキテクチャ上の問題を除く）で、Asahiのコアチームメンバーによって報告または追跡されているもの：</p>
+<h6 id="_5">オープンバグ<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h6>
+<table>
+<thead>
+<tr>
+<th>パッケージ</th>
+<th>問題</th>
+<th>注釈</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>firefox</td>
+<td><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1831051">wayland:起動時の最初のフレームが一瞬初期化されない場合あり(x11でも)(wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11))</a></td>
+<td></td>
+</tr>
+<tr>
+<td>gnome-bluetooth/bluez</td>
+<td>A2DP 出力の音声が頻繁に途切れたり、接続が切れたりする (blueman を使えば問題なし)</td>
+<td>バグはまだ未記入</td>
+</tr>
+<tr>
+<td>hyprland</td>
+<td><a href="https://github.com/hyprwm/Hyprland/issues/8158">明示的な同期タイムラインのインポートに失敗し、クライアントが強制終了する(Explicit Sync timelines fail importing, killing the client)</a></td>
+<td></td>
+</tr>
+<tr>
+<td>kwin</td>
+<td><a href="https://bugs.kde.org/show_bug.cgi?id=477454">マルチスクリーンでルートバックグラウンドダメージ領域が正しく計算されない(Root background damage regions are calculated incorrectly with multiscreen)</a></td>
+<td></td>
+</tr>
+<tr>
+<td>plasmashell</td>
+<td><a href="https://bugs.kde.org/show_bug.cgi?id=491579">startplasmaがprofile.dとenvironment.d間の変数統合を破壊(startplasma breaks variable merging between profile.d and environment.d)</a></td>
+<td></td>
+</tr>
+<tr>
+<td>systemsettings</td>
+<td><a href="https://bugs.kde.org/show_bug.cgi?id=475435">デフォルトのシステムキーボードモデルがWayland上で正しく設定されていない(default system keyboard model is not correctly set on Wayland)</a></td>
+<td></td>
+</tr>
+<tr>
+<td>wireplumber</td>
+<td><a href="https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/538">luaからPWモジュールへ引数を渡せない(Cannot pass args to PW modules from lua)</a></td>
+<td></td>
+</tr>
+<tr>
+<td>wlroots</td>
+<td><a href="https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/1078">DRM 色変換行列対応を追加（redshift などで有効）(Add support for DRM Color Transformation Matrix (Useful for e.g. redshift))</a></td>
+<td><a href="https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4815">関連 PR</a></td>
+</tr>
+<tr>
+<td>wlroots</td>
+<td><a href="https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/3911">seatd使用時にマスターとしてレンダーを開けない(cannot open render as master when using seatd)</a></td>
+<td></td>
+</tr>
+<tr>
+<td>xkeyboard-config</td>
+<td><a href="https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/379">xkyboardでのMac Fnキーの扱い(Handling Mac Fn keys in xkeyboard)</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h6 id="_6">クローズドバグ<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h6>
 <table>
 <thead>
 <tr>
@@ -1502,14 +1611,14 @@ Program Headers:
 <td>Chromium 121.0.6167.85 で修正</td>
 </tr>
 <tr>
+<td>chromium</td>
+<td>[cppgc crashes on Linux w/ 16KiB pages because of hardcoded kGuardPageSize]<a href="https://issues.chromium.org/issues/378017037">https://issues.chromium.org/issues/378017037</a> kGuardPageSizeのハードコートが原因で 16KiB ページの Linux で cppgc がクラッシュ</td>
+<td>Chromium 133.0.6943.141 で修正</td>
+</tr>
+<tr>
 <td>dracut</td>
 <td><a href="https://github.com/dracut-ng/dracut-ng/pull/408">Memoize find_kmod_module_from_sysfs_node(find_kmod_module_from_sysfs_nodeをメモ)</a></td>
 <td>dracut 103で修正</td>
-</tr>
-<tr>
-<td>firefox</td>
-<td><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1831051">wayland:起動時の最初のフレームが一瞬初期化されない場合あり(x11でも)(wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11))</a></td>
-<td></td>
 </tr>
 <tr>
 <td>firefox</td>
@@ -1527,19 +1636,14 @@ Program Headers:
 <td>glibc 2.39で修正</td>
 </tr>
 <tr>
-<td>gnome-bluetooth/bluez</td>
-<td>A2DP出力の音声が頻繁に途切れたり接続が切れたりする（bluemanでは問題なし）</td>
-<td>まだバグは未記入</td>
-</tr>
-<tr>
 <td>gtk</td>
 <td><a href="https://gitlab.gnome.org/GNOME/gtk/-/issues/7146">GSK が Wayland の小数スケーリング時に load=dont-care と blend=over を使用した不正なレンダリング操作を行い、グラフィックの破損を引き起こす問題(GSK issues illegal render ops with load=dont-care and blend=over with Wayland fractional scaling, causing graphical corruption)</a></td>
-<td></td>
+<td>gtk 4.17.6 で修正</td>
 </tr>
 <tr>
 <td>gtk</td>
 <td><a href="https://gitlab.gnome.org/GNOME/gtk/-/issues/7229">GSK/vulkan がフォーマットをチェックせず<code>VkImageFormatProperties.maxMipLevels</code> というチルティングせずにミップマップを使用(GSK/vulkan uses mipmaps without checking the formats/tiling <code>VkImageFormatProperties.maxMipLevels</code>)</a></td>
-<td></td>
+<td>gtk 4.17.5 で修正</td>
 </tr>
 <tr>
 <td>hyprland</td>
@@ -1547,19 +1651,9 @@ Program Headers:
 <td>hyprland 0.43.0 で修正</td>
 </tr>
 <tr>
-<td>hyprland</td>
-<td><a href="https://github.com/hyprwm/Hyprland/issues/8158">Explicit Sync timelines fail importing, killing the client</a></td>
-<td></td>
-</tr>
-<tr>
 <td>kpipewire</td>
 <td><a href="https://bugs.kde.org/show_bug.cgi?id=475472">Spectacleが特定の大きさでh264のウィンドウを録画するのに失敗(Spectacle fails to record a window with h264 in specific dimensions)</a></td>
 <td>問題解決</td>
-</tr>
-<tr>
-<td>kpipewire</td>
-<td><a href="https://bugs.kde.org/show_bug.cgi?id=476186">画面録画品質がひどい(Screen recording quality is terrible)</a></td>
-<td></td>
 </tr>
 <tr>
 <td>kpipewire</td>
@@ -1570,11 +1664,6 @@ Program Headers:
 <td>kwin</td>
 <td><a href="https://bugs.kde.org/show_bug.cgi?id=477451">ハードウェアカーソル未対応時にマルチスクリーン上で出力がフリーズ(Outputs freeze on multi-screen when hardware cursors are not supported)</a></td>
 <td>Plasma 6.0で修正</td>
-</tr>
-<tr>
-<td>kwin</td>
-<td><a href="https://bugs.kde.org/show_bug.cgi?id=477454">マルチスクリーンでルートバックグラウンドダメージ領域が正しく計算されない(Root background damage regions are calculated incorrectly with multiscreen)</a></td>
-<td></td>
 </tr>
 <tr>
 <td>kwin</td>
@@ -1592,44 +1681,14 @@ Program Headers:
 <td>lsp-dsp-lib 1.0.20 で修正</td>
 </tr>
 <tr>
-<td>plasmashell</td>
-<td><a href="https://bugs.kde.org/show_bug.cgi?id=491579">startplasmaがprofile.dとenvironment.d間の変数統合を破壊(startplasma breaks variable merging between profile.d and environment.d)</a></td>
-<td></td>
-</tr>
-<tr>
 <td>qqc2-desktop-style</td>
 <td><a href="https://bugs.kde.org/show_bug.cgi?id=479891">小数倍率を使用すると QML ソフトウェア内のテキストグリフの一部が垂直方向にずれたりつぶれたりする(Some text glyphs in QML software are vertically mis-aligned or squished when using a fractional scale factor)</a></td>
 <td>KDE Frameworks 6.9.0 で修正</td>
 </tr>
 <tr>
-<td>systemsettings</td>
-<td><a href="https://bugs.kde.org/show_bug.cgi?id=475435">デフォルトのシステムキーボードモデルがWayland上で正しく設定されていない(default system keyboard model is not correctly set on Wayland)</a></td>
-<td></td>
-</tr>
-<tr>
-<td>wireplumber</td>
-<td><a href="https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/538">luaからPWモジュールへ引数を渡せない(Cannot pass args to PW modules from lua)</a></td>
-<td></td>
-</tr>
-<tr>
 <td>wireplumber</td>
 <td><a href="https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/655#">Wireplumber ignores default playback volume(wireplumberがデフォルトプレイバックボリュームを無視</a></td>
 <td>wireplumber 0.5.3 で修正</td>
-</tr>
-<tr>
-<td>wlroots</td>
-<td><a href="https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/1078">DRM 色変換行列対応を追加（redshift などで有効）(Add support for DRM Color Transformation Matrix (Useful for e.g. redshift))</a></td>
-<td><a href="https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4815">関連 PR</a></td>
-</tr>
-<tr>
-<td>wlroots</td>
-<td><a href="https://gitlab.freedesktop.org/wlroots/wlroots/-/issues/3911">seatd使用時にマスターとしてレンダーを開けない(cannot open render as master when using seatd)</a></td>
-<td></td>
-</tr>
-<tr>
-<td>xkeyboard-config</td>
-<td><a href="https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/379">xkyboardでのMac Fnキーの扱い(Handling Mac Fn keys in xkeyboard)</a></td>
-<td></td>
 </tr>
 </tbody>
 </table>
