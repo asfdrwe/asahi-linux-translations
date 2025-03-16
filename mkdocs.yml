@@ -17,7 +17,7 @@ nav:
     - FAQ: project/faq.md
     - Asahi-Linuxはいつ完成するの？: project/when-will-asahi-be-done.md
     - 参考資料: project/references.md
-    -  Asahi Linux 理事会: project/board/asahi-board.md
+    - Asahi Linux 理事会: project/board/asahi-board.md
   - プラットフォーム文書:
     - Apple Silicon サブシステム: platform/subsystems.md
     - Appleプラットフォームセキュリティクラッシュコース: platform/security.md
