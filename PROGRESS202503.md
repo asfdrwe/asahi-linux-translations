@@ -107,7 +107,7 @@ Davide氏 のビルド検証作業のおかげで、Fedora Asahi Remix 42 がベ
 次のサイクルでは、Fedora Asahi Remix 43 が Fedora Linux 43 と同日にリリースされることを願っています。
 
 ## Asahi Linux @ SCaLE
-[SCaLE](https://www.socallinuxexpo.org/scale/22x)で、Neal 氏と Davide 氏は展示ホールで M2 Mac mini と M1 Mac Studio 上で Asahi Linux を動作させるデモンストレーションを成功させました。
+[SCaLE](https://www.socallinuxexpo.org/scale/22x)(訳注: Southern California Linux Expo)で、Neal 氏と Davide 氏は展示ホールで M2 Mac mini と M1 Mac Studio 上で Asahi Linux を動作させるデモンストレーションを成功させました。
 反応は非常に好評で、参加者は muvm と FEX を通じて多くの Steam ゲームを楽しんでいました。
 特に子供たちには『Nidhogg』が大人気で、イベントで最も注目されたゲームとなりました。
 
