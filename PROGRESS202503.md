@@ -9,7 +9,7 @@
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202502.md)
 
-3月が終わりを迎え、Linux 6.14のリリースが近づく中、[プロジェクトのリードを引き継いで](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202502.md)以来、初めての大きな進捗報告を皆さんに提供する良いタイミングがやってきました。
+3月が終わりを迎え、Linux 6.14のリリースが近づく中、[プロジェクトのリードを引き継いで](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202502.md)以来、初めての大きな進捗報告をみなさまに提供する良いタイミングがやってきました。
 今後は、これらの更新をアップストリームのカーネルリリースに同期させていくことを目指します。
 上流への注力を考えると、これが自然なペースであり、投稿の間に注目すべき下流の変更が十分に蓄積される時間があると感じています。
 marcan氏の退任後に必要なすべての事務作業をこなし、プロジェクトを継続させるための基盤を整えた後、私たちは上流へのパッチ提出を本格的に開始しました。
