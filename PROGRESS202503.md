@@ -87,7 +87,7 @@ Mastodonで助けを求める呼びかけをしましたが、誰も名乗り出
 Minimum Variance Distortionless Response（MVDR）ビームフォーマーは、時間領域の複素サンプルデータを取得し、固定点（通常はアレイ内の特定のマイク）に対して特定の方向に重み付けされた最適化技術を使用します。
 ある時点で、これが実は統計学にすぎないと気づきました！
 
-Rustの未熟な科学計算ライブラリと数週間格闘し、高校の数学と大学の統計学の教科書をさらに読み込んだ結果、[Triforce](https://crates.io/crates/triforce-lv2()が生まれました。
+Rustの未熟な科学計算ライブラリと数週間格闘し、高校の数学と大学の統計学の教科書をさらに読み込んだ結果、[Triforce](https://crates.io/crates/triforce-lv2)が生まれました。
 これはAppleラップトップのマイク向けのMVDRビームフォーマーです。
 
 PipeWireとWirePlumberでスピーカー対応のために築かれた基盤のおかげで、Triforceを含むマイクのDSPチェーンを接続するのは本当に簡単でした。
