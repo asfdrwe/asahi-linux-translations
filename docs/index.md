@@ -33,6 +33,7 @@ Asahi Linux の文書へようこそ！
 対応しているデバイスや機能については、[機能対応](platform/feature-support/overview.md)を調べてください。具体的な文書をお探しの場合は、ページ上部の検索機能をご利用いただくか、サイドバーをご覧ください！
 
 ## 最新の Asahi Linux ブログ投稿
+* [進捗報告: Linux 6.14](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202503.md)
 * [Asahi Linux のバトンタッチ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202502.md)
 * [ゲームを超えて: muvmによる X11 ブリッジ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202412.md)
 * [Asahi Linux での AAA ゲーミング](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202410.md)

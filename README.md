@@ -10,6 +10,7 @@
 - [行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
 - [著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
 - ブログ
+  - [進捗報告: Linux 6.14](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202503.md)
   - [Asahi Linux のバトンタッチ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202502.md)
   - [ゲームを超えて: muvmによる X11 ブリッジ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202412.md) 
   - [Asahi Linux での AAA ゲーミング](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202410.md)
@@ -38,4 +39,4 @@
 
 この日本語訳は元の文書の[ライセンス](https://github.com/AsahiLinux/docs/blob/main/LICENSE)と同様にCC BY-SA 4.0に従います。
 
-[DeepL](https://www.deepl.com/)を下訳や参考にして翻訳しています。
+[DeepL](https://www.deepl.com/)及びに[Grok]()https://x.com/を下訳や参考にして翻訳しています。

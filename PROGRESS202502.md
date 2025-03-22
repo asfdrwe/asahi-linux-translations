@@ -6,6 +6,7 @@
 # Asahi Linux のバトンタッチ
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202412.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202503.md)
 
 謹んでAsahi Linuxの創設者であるHector Martin(marcan)氏の辞任を発表します。
 marcan氏の声明は[marcan氏ブログ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/marcan.md)に掲載されています。
