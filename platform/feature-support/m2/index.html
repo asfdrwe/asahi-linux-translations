@@ -1247,7 +1247,7 @@
 
   <h1>M2シリーズ機能対応</h1>
 
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/feature-support/m2.md">m2</a>の翻訳</p>
+<p>2025/3/21時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/feature-support/m2.md">m2</a>の翻訳</p>
 <hr />
 <p>このページでは、現存するすべてのM2シリーズ(M2, M2 Pro, M2 Max, M2 Ultra)のApple Silicon Macで現在対応してている機能と、
 その上流の状況について詳しく説明します。表は次のように解釈されます:</p>
@@ -1272,21 +1272,21 @@
 <p>これらは、指定されたSoCを搭載したすべてのデバイスに存在する機能/ハードウェアブロックです。
 |                  | M2<br>(T8112)        | M2 Pro/Max/Ultra<br>(T602x) |
 |------------------|:--------------------:|:---------------------------:|
-| DCP              | linux-asahi          | linux-asahi                  |
+| DCP              | linux-asahi          | linux-asahi                 |
 | USB2 (TB ports)  | linux-asahi          | linux-asahi                 |
 | USB3 (TB ports)  | linux-asahi          | linux-asahi                 |
-| Thunderbolt      | 未着手               | 未着手                       |
-| DP Alt Mode      | 作業中               | 作業中                       |
+| Thunderbolt      | 未着手               | 未着手                      |
+| DP Alt Mode      | 作業中               | 作業中                      |
 | GPU              | linux-asahi          | linux-asahi                 |
-| Video Decoder    | 作業中         　      | 作業中                       | 
+| Video Decoder    | 作業中               | 作業中                      | 
 | NVMe             | 5.19                 | 5.19                        |
 | PCIe             | 5.16 / 6.4 (dts)     | linux-asahi                 |
-| PCIe (GE)        | -                    | 未着手                       |
+| PCIe (GE)        | -                    | 未着手                      |
 | cpufreq          | 6.2                  | 6.2                         |
 | cpuidle          | linux-asahi(<a href="#cpuidleの状況">注釈参照</a>) | linux-asahi(<a href="#cpuidleの状況">注釈参照</a>) |
-| サスペンド・スリープ | linux-asahi          | linux-asahi                    |
-| Video Encoder    | 作業中                | 作業中                       |
-| ProRes Codec     | 未着手                | 未着手                       |
+| サスペンド・スリープ | linux-asahi      | linux-asahi                 |
+| Video Encoder    | 作業中               | 作業中                      |
+| ProRes Codec     | 未着手               | 未着手                      |
 | AICv2            | 5.18                 | 5.18                        |
 | DART             | 6.3                  | linux-asahi                 |
 | PMU              | 6.4                  | 6.4                         |
@@ -1301,7 +1301,7 @@
 | SMC              | linux-asahi          | linux-asahi                 |
 | SPMI             | linux-asahi          | linux-asahi                 |
 | RTC              | linux-asahi          | linux-asahi                 |
-| SEP              | 作業中                | 作業中                       |
+| SEP              | 作業中               | 作業中                      |
 | Neural Engine    | ツリー外(<a href="#ANEドライバ">注釈参照</a>)  | <a href="#ANEドライバ">注釈参照</a>  |</p>
 <h6 id="m2">M2機器<a class="headerlink" href="#m2" title="Permanent link">&para;</a></h6>
 <table>
@@ -1415,8 +1415,8 @@
 </tr>
 <tr>
 <td>マイク</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">linux-asashi</td>
+<td style="text-align: center;">linux-asahi</td>
 <td style="text-align: center;">作業中</td>
 <td style="text-align: center;">-</td>
 </tr>
@@ -1577,7 +1577,7 @@
 <tr>
 <td>マイク</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 </tr>
