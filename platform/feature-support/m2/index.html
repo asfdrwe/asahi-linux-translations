@@ -1269,173 +1269,40 @@
 <li><a href="#注釈">注釈</a></li>
 </ul>
 <h5 id="soc">SoCブロック<a class="headerlink" href="#soc" title="Permanent link">&para;</a></h5>
-<p>これらは、指定されたSoCを搭載したすべてのデバイスに存在する機能/ハードウェアブロックです。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align: center;">M2<br>(T8112)</th>
-<th style="text-align: center;">M2 Pro/Max/Ultra<br>(T602x)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DCP</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>USB2 (TB ports)</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>USB3 (TB ports)</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>Thunderbolt</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-</tr>
-<tr>
-<td>DP Alt Mode</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
-</tr>
-<tr>
-<td>GPU</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>Video Decoder</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
-</tr>
-<tr>
-<td>NVMe</td>
-<td style="text-align: center;">5.19</td>
-<td style="text-align: center;">5.19</td>
-</tr>
-<tr>
-<td>PCIe</td>
-<td style="text-align: center;">5.16 / 6.4 (dts)</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>PCIe (GE)</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
-</tr>
-<tr>
-<td>cpufreq</td>
-<td style="text-align: center;">6.2</td>
-<td style="text-align: center;">6.2</td>
-</tr>
-<tr>
-<td>cpuidle</td>
-<td style="text-align: center;">linux-asahi(<a href="#cpuidleの状況">注釈参照</a>)</td>
-<td style="text-align: center;">linux-asahi(<a href="#cpuidleの状況">注釈参照</a>)</td>
-</tr>
-<tr>
-<td>サスペンド・スリープ</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>Video Encoder</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
-</tr>
-<tr>
-<td>ProRes Codec</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-</tr>
-<tr>
-<td>AICv2</td>
-<td style="text-align: center;">5.18</td>
-<td style="text-align: center;">5.18</td>
-</tr>
-<tr>
-<td>DART</td>
-<td style="text-align: center;">6.3</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>PMU</td>
-<td style="text-align: center;">6.4</td>
-<td style="text-align: center;">6.4</td>
-</tr>
-<tr>
-<td>UART</td>
-<td style="text-align: center;">5.13</td>
-<td style="text-align: center;">5.13</td>
-</tr>
-<tr>
-<td>Watchdog</td>
-<td style="text-align: center;">5.17</td>
-<td style="text-align: center;">5.17</td>
-</tr>
-<tr>
-<td>I<sup>2</sup>C</td>
-<td style="text-align: center;">5.16</td>
-<td style="text-align: center;">5.16</td>
-</tr>
-<tr>
-<td>GPIO</td>
-<td style="text-align: center;">5.16</td>
-<td style="text-align: center;">5.16</td>
-</tr>
-<tr>
-<td>USB-PD</td>
-<td style="text-align: center;">5.16</td>
-<td style="text-align: center;">5.16</td>
-</tr>
-<tr>
-<td>MCA</td>
-<td style="text-align: center;">6.1 / 6.4 (dts)</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>SPI</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>SPI NOR</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>SMC</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>SPMI</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>RTC</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>SEP</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
-</tr>
-<tr>
-<td>Neural Engine</td>
-<td style="text-align: center;">ツリー外(<a href="#ANEドライバ">注釈参照</a>)</td>
-<td style="text-align: center;"><a href="#ANEドライバ">注釈参照</a></td>
-</tr>
-</tbody>
-</table>
+<p>これらは、指定されたSoCを搭載したすべてのデバイスに存在する機能/ハードウェアブロックです。
+|                  | M2<br>(T8112)        | M2 Pro/Max/Ultra<br>(T602x) |
+|------------------|:--------------------:|:---------------------------:|
+| DCP              | linux-asahi          | linux-asahi                 |
+| USB2 (TB ports)  | linux-asahi          | linux-asahi                 |
+| USB3 (TB ports)  | linux-asahi          | linux-asahi                 |
+| Thunderbolt      | 未着手               | 未着手                      |
+| DP Alt Mode      | 作業中               | 作業中                      |
+| GPU              | linux-asahi          | linux-asahi                 |
+| Video Decoder    | 作業中               | 作業中                      | 
+| NVMe             | 5.19                 | 5.19                        |
+| PCIe             | 5.16 / 6.4 (dts)     | linux-asahi                 |
+| PCIe (GE)        | -                    | 未着手                      |
+| cpufreq          | 6.2                  | 6.2                         |
+| cpuidle          | linux-asahi(<a href="#cpuidleの状況">注釈参照</a>) | linux-asahi(<a href="#cpuidleの状況">注釈参照</a>) |
+| サスペンド・スリープ | linux-asahi      | linux-asahi                 |
+| Video Encoder    | 作業中               | 作業中                      |
+| ProRes Codec     | 未着手               | 未着手                      |
+| AICv2            | 5.18                 | 5.18                        |
+| DART             | 6.3                  | linux-asahi                 |
+| PMU              | 6.4                  | 6.4                         |
+| UART             | 5.13                 | 5.13                        |
+| Watchdog         | 5.17                 | 5.17                        |
+| I<sup>2</sup>C   | 5.16                 | 5.16                        |
+| GPIO             | 5.16                 | 5.16                        |
+| USB-PD           | 5.16                 | 5.16                        |
+| MCA              | 6.1 / 6.4 (dts)      | linux-asahi                 |
+| SPI              | linux-asahi          | linux-asahi                 |
+| SPI NOR          | linux-asahi          | linux-asahi                 |
+| SMC              | linux-asahi          | linux-asahi                 |
+| SPMI             | linux-asahi          | linux-asahi                 |
+| RTC              | linux-asahi          | linux-asahi                 |
+| SEP              | 作業中               | 作業中                      |
+| Neural Engine    | ツリー外(<a href="#ANEドライバ">注釈参照</a>)  | <a href="#ANEドライバ">注釈参照</a>  |</p>
 <h6 id="m2">M2機器<a class="headerlink" href="#m2" title="Permanent link">&para;</a></h6>
 <table>
 <thead>
