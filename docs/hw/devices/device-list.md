@@ -44,7 +44,9 @@ Asahi Linuxが対応しようとしている機器の一覧です。製品とSoC
 | MacBook Pro (14インチ, M3 Max, Nov 2023) | Mac15,8 | J514cAP | T6031
 | MacBook Pro (16インチ, M3 Max, Nov 2023) | Mac15,9 | J516cAP | T6031
 | MacBook Pro (14インチ, M3 Max, Nov 2023) | Mac15,10 | J514mAP | T6034
+| MacBook Air (13インチ, M3, 2024) | Mac15,12 | J615AP | T8122
 | MacBook Air (15インチ, M3, 2024) | Mac15,13 | J615AP | T8122
+| Mac Studio (M3 Ultra, 2025) | Mac15,4 | J575dAP | T6032
 | iMac (24-inch (2ポート), M4, 2024) | Mac16,2 | J623AP | T8132
 | iMac (24-inch (4ポート), M4, 2024) | Mac16,3 | J624AP | T8132
 | Mac mini (M4, 2024) | Mac16,10 | J773gAP | T8132
@@ -56,3 +58,4 @@ Asahi Linuxが対応しようとしている機器の一覧です。製品とSoC
 | MacBook Pro (16インチ, M4 Max, Nov 2024) | Mac16,5 | J616cAP | T6041
 | MacBook Air (13インチ, M4, 2025) | Mac16,12 | J713AP | T8132
 | MacBook Air (15インチ, M4, 2025) | Mac16,13 | J715AP | T8132
+| Mac Studio (M4 Max, 2025) | Mac16,9 | J575cAP | T6041
