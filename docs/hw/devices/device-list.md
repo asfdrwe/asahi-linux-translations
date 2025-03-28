@@ -4,7 +4,7 @@ summary:
   Asahi Linux が対応済みもしくは対応する意図のある機器の一覧
 ---
 
-2025/3/9時点の[Devices](https://github.com/AsahiLinux/docs/blob/main/docs/hw/devices/device-list.md)の翻訳
+2025/3/22時点の[Devices](https://github.com/AsahiLinux/docs/blob/main/docs/hw/devices/device-list.md)の翻訳
 
 ---
 Asahi Linuxが対応しようとしている機器の一覧です。製品とSoCはDeviceTreeと適合しているかに使用されます。
