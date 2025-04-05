@@ -1,4 +1,4 @@
-2025/3/9時点の[Asahi Linux documentation](https://github.com/AsahiLinux/docs/blob/main/docs/index.md)の翻訳
+2025/4/5時点の[Asahi Linux documentation](https://github.com/AsahiLinux/docs/blob/main/docs/index.md)の翻訳
 
 訳注:
 - Asahi Linux内のページへのリンクは対応する日本語訳に置き換え
