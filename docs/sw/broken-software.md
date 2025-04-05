@@ -2,7 +2,7 @@
 title: 問題のあるソフトウェア
 ---
 
-2025/3/16時点の[broken-software](https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md)の翻訳
+2025/4/5時点の[broken-software](https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md)の翻訳
 
 ---
 このページでは、Apple Silicon 機器では正しく動作しないことが知られているソフトウェアをリストアップしています。
@@ -110,7 +110,7 @@ Fedora Linux Asahi Remix の `muvm` パッケージは標準で 4K カーネル�
 | 1Password | _プロプライエタリ_ | 8.8.0-119 betaで修正 |
 | Android Cuttlefish | <https://android-review.googlesource.com/c/device/google/cuttlefish/+/2545951> | muslに切り替えたことによりAOSPメインブランチで修正 |
 | box64 | <https://github.com/ptitSeb/box64/issues/384> | 0.2.8以降修正 |
-| btrfs | <https://lore.kernel.org/lkml/cover.1653327652.git.dsterba@suse.com/> | Linux 5.19以降で修正[注意事項](https://social.treehouse.systems/@marcan/111493984306764821)) |
+| btrfs | <https://lore.kernel.org/lkml/cover.1653327652.git.dsterba@suse.com/> | Linux 5.19以降で修正[注意事項](https://web.archive.org/web/20241204022740/https://social.treehouse.systems/@marcan/111493984306764821)) |
 | chromium | <https://bugs.chromium.org/p/chromium/issues/detail?id=1301788> | Electronアプリを含む<br>102以降で修正 |
 | chromium | [cppgc crashes on Linux w/ 16KiB pages because of hardcoded kGuardPageSize]<https://issues.chromium.org/issues/378017037> kGuardPageSizeのハードコートが原因で 16KiB ページの Linux で cppgc がクラッシュ | Chromium 133.0.6943.141 で修正 |
 | Emacs | <https://lists.gnu.org/archive/html/bug-gnu-emacs/2021-03/msg01260.html> | 28.0以降で修正 |

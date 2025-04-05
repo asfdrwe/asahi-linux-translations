@@ -2,7 +2,7 @@
 title: 用語集
 ---
 
-2025/3/9時点の[glossary](https://github.com/AsahiLinux/docs/blob/main/docs/project/glossary.md)の翻訳
+2025/3/31時点の[glossary](https://github.com/AsahiLinux/docs/blob/main/docs/project/glossary.md)の翻訳
 
 ---
 知っておくと役立つ用語
@@ -19,19 +19,20 @@ rootアクセスが可能だがAppleの署名入りのソフトウェアのみ�
 ### A
 * **AGX**: Apple の GPU シリーズの内部名称
 * **AIC**: Apple Interrupt Controller。標準のGICではAppleにとって標準的すぎるためAppleがカスタムしたARM割り込みコントローラ
+* **AMX**: Apple Matrix eXtensions(Apple行列拡張)。 ISAに部分的に統合された行列コプロセッサ
+* **ANE**: Apple Neural Engine (Appleニューラルエンジン)。 FP16 積和装置
 * **ANS**: NVME/ストレージコプロセッサ？
-* **AP**: Application Processor。OSの大部分を実行するメインCPU。SEPとは対照的
 * **AOP**: Always On Processor。 macOSで『Hey Siri』などを有効にするAppleのSoC コプロセッサ/DSP
+* **AP**: Application Processor。OSの大部分を実行するメインCPU。SEPとは対照的
 * **APFS**。Apple File System（アップルファイルシステム）。ZFSやbtrfsのように、Appleが開発したコンテナやボリュームを重視した「モダン」なファイルシステム
 * **APFSコンテナ**: ディスク上の物理的なパーティションで、それ自体に複数のファイルシステム（ボリューム）を格納することができ、すべてのファイルシステムが動的に領域を共有
 * **APFSスナップショット**: APFSボリュームの読み取り専用のコピーオンライトのスナップショット
 * **APFSボリューム**: APFSコンテナ内の論理ファイルシステムでディレクトリにマウント可能
+* **APR**: APR ProRes。 ProResビデオエンコーディング＋デコーディング制御
 * **APSC**: Automatic Power State Controller。自動電源状態制御装置
 * **ASC**: * **ASC**: コプロセッサの総称？例：gfx-asc。おそらくApple Silicon Silicon Coprocessor
 * **AVD**: Apple Video Decoder(Appleビデオデコーダ)
 * **AVE**: Apple Video Encoder(Appleビデオエンコーダ)
-* **AMX**: Apple Matrix eXtensions(Apple行列拡張)。 ISAに部分的に統合された行列コプロセッサ
-* **APR**: APR ProRes。 ProResビデオエンコーディング＋デコーディング制御
 
 ### B
 * **BootROM**:  M1などのチップに内蔵された読み取り専用のメモリで、起動時に最初に実行されるコード。SecureROMを参照
@@ -51,8 +52,8 @@ rootアクセスが可能だがAppleの署名入りのソフトウェアのみ�
 * **EEPROM**：Electrically Erasable Programmable Read Only Memory。 再書き込み可能なメモリの一種で、一般的には最大でも数キロバイトのサイズ。NORフラッシュよりも堅牢。設定やブートコードの最初の部分に使用
 
 ### F
-* **fuOS**：カスタムOS、『fully untrusted OS(完全に信頼されていないOS)』という意味と推測
 * **Fallback Recovery OS**: 電源ボタンをダブルクリックしたまま起動することでアクセスできるリカバリーOSの2つ目のコピー。1TRとは異なり、セキュリティ状態(設定)を変更することは不可能。リカバリ OS 1TR とは、ユーティリティーの『Start Security Utility』オプションがないことで区別可能
+* **fuOS**：カスタムOS、『fully untrusted OS(完全に信頼されていないOS)』という意味と推測
 
 ### G
 * **GPT**: GUID Partition Table。EFI/UEFI 用に作成されたパーティションテーブルフォーマットで、現在ほとんどの最新システムで使用される
@@ -63,6 +64,7 @@ rootアクセスが可能だがAppleの署名入りのソフトウェアのみ�
 
 ### I
 * **I²C**: Inter-Integrated Circuit。基板上のチップ間を低速で通信するための2線式の規格
+* **iBEC**: iBoot Epoch Change。DFUブートフローでロードされる2段目のiBootの代替品
 * **iBoot**: Apple のブートローダ。OSのPrebootパーティションにある特定のセカンドステージローダ（しばしばiBoot2と呼ばれる）、
 またはLLB、iBSS、iBEC、SecureROM（これらはすべて異なる機能を持つiBootのビルド）のいずれかを指す。iBoot1 は LLB の新しい名称
 OS の Preboot パーティションにある特定のセカンドステージローダーまたはLLB、iBSS、iBECを指す
@@ -70,9 +72,8 @@ OS の Preboot パーティションにある特定のセカンドステージ�
 * **iBoot1**: NORに位置する第1段のiBootで、SecureROMによってロード。初期化の最初にOSに依存しないファームウェアのロードを行った後、OSプレブートパーティションにある第2ステージiBoot（iBoot2）をチェーンロード。LLBはiBoot1の古い名称
 * **iBoot2**: OSのPrebootパーティションにある第2ステージiBoot。インストールされるOSごとに固有のバージョンでありで、OSが動作するために必要なランタイムファームウェアのバンドルと一緒にパッケージ化
 * **iBSS**: iBoot Single Stage。ファーストステージのiBoot(iBoot1/LLB)の代替品で、NORが破損している場合にDFUブートフローでロード
-* **iBEC**: iBoot Epoch Change。DFUブートフローでロードされる2段目のiBootの代替品
-* **IOMMU**: I/O Memory Management Unit。アップル社のDARTの総称
 * **IOKit**: I/O KitはAppleのXNU(AppleのOSカーネル)用のデバイスドライバフレームワーク
+* **IOMMU**: I/O Memory Management Unit。アップル社のDARTの総称
 * **IPI**: Inter-processor interupt。あるプロセッサが別のプロセッサに割り込みする際の割り込み
 * **iSC**: iBoot System Container。システム全体のブートデータを格納するディスクパーティション(通常内蔵SSDの最初のパーティション)([既製品パーティションレイアウト](../platform/stock-partition-layout.md)を参照）
 * **ISP**： Image Signal Processor。Mシリーズのラップトップのウェブカメラ。センサーからストロボやコプロセッサまでカメラユニット全体を表す
@@ -90,8 +91,8 @@ OS の Preboot パーティションにある特定のセカンドステージ�
 * **LLB**: Low Level Bootloader。iOSプラットフォーム由来のiBoot1の旧名称
 
 ### M
-* **Mux**: Multiplexer。USB、UART、SWDの各モードを切り替えるピンのセットなど複数のものを1つの接続で接続できるデバイス
 * **Mini**: 内部調査用のカスタムブートローダ。SSDからの起動に対応する場合と非対応の場合あり。このプロジェクトではM1N1と呼ばれる派生を使用
+* **Mux**: Multiplexer。USB、UART、SWDの各モードを切り替えるピンのセットなど複数のものを1つの接続で接続できるデバイス
 
 ### N
 * **NAND**:Not-AND。論理ゲートの一種だが通常はフラッシュメモリの一種を指す。SDカードやSSDなど最近の大容量フラッシュベースのストレージに使われているが、生のチップもあり
@@ -132,8 +133,8 @@ recoveryOS を使用
 
 ### U
 * **UART**: Universal Asynchronous Receiver Transmitter。シリアルポートの背後のハードウェア
-* **USC**: Unified Shader Core。すべてのシェーダタイプ（バーテックス、フラグメント、コンピュート）に対応するシェーダコア。AGXはユニファイドアーキテクチャであるため、単にシェーダーコアのことを指す
 * **USB-PD**:USB Power Delivery。USB Type Cでのサイドバンド通信の規格（古い規格は我々の健全性のため触れない）。ケーブルの種類やコネクタの向きの検出、電源電圧の設定、非USBモードへの切り替えなどに使用
+* **USC**: Unified Shader Core。すべてのシェーダタイプ（バーテックス、フラグメント、コンピュート）に対応するシェーダコア。AGXはユニファイドアーキテクチャであるため、単にシェーダーコアのことを指す
 
 ### V
 * **VBUS**: 電源を供給するUSB端子。デフォルトは5Vだが、USB-PDでは20Vにもなることが可能
