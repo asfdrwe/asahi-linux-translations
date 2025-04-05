@@ -1361,7 +1361,7 @@
 
   <h1>用語集</h1>
 
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/project/glossary.md">glossary</a>の翻訳</p>
+<p>2025/3/31時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/project/glossary.md">glossary</a>の翻訳</p>
 <hr />
 <p>知っておくと役立つ用語</p>
 <p>ハードウェアやリバースエンジニアリングやアップルのエコシステムに特有の用語で、関連性のあるものを追加します。誰もが知っていると思われるもの（CPU、GPU、HDD、SSD、OSX、USB、HDMI、RAMなど）やこのプロジェクトには関係なさそうなものは加えないでください。対象者は『ランダムなLinux開発者』と考えてください。</p>
@@ -1376,19 +1376,20 @@ rootアクセスが可能だがAppleの署名入りのソフトウェアのみ�
 <ul>
 <li><strong>AGX</strong>: Apple の GPU シリーズの内部名称</li>
 <li><strong>AIC</strong>: Apple Interrupt Controller。標準のGICではAppleにとって標準的すぎるためAppleがカスタムしたARM割り込みコントローラ</li>
+<li><strong>AMX</strong>: Apple Matrix eXtensions(Apple行列拡張)。 ISAに部分的に統合された行列コプロセッサ</li>
+<li><strong>ANE</strong>: Apple Neural Engine (Appleニューラルエンジン)。 FP16 積和装置</li>
 <li><strong>ANS</strong>: NVME/ストレージコプロセッサ？</li>
-<li><strong>AP</strong>: Application Processor。OSの大部分を実行するメインCPU。SEPとは対照的</li>
 <li><strong>AOP</strong>: Always On Processor。 macOSで『Hey Siri』などを有効にするAppleのSoC コプロセッサ/DSP</li>
+<li><strong>AP</strong>: Application Processor。OSの大部分を実行するメインCPU。SEPとは対照的</li>
 <li><strong>APFS</strong>。Apple File System（アップルファイルシステム）。ZFSやbtrfsのように、Appleが開発したコンテナやボリュームを重視した「モダン」なファイルシステム</li>
 <li><strong>APFSコンテナ</strong>: ディスク上の物理的なパーティションで、それ自体に複数のファイルシステム（ボリューム）を格納することができ、すべてのファイルシステムが動的に領域を共有</li>
 <li><strong>APFSスナップショット</strong>: APFSボリュームの読み取り専用のコピーオンライトのスナップショット</li>
 <li><strong>APFSボリューム</strong>: APFSコンテナ内の論理ファイルシステムでディレクトリにマウント可能</li>
+<li><strong>APR</strong>: APR ProRes。 ProResビデオエンコーディング＋デコーディング制御</li>
 <li><strong>APSC</strong>: Automatic Power State Controller。自動電源状態制御装置</li>
 <li><strong>ASC</strong>: * <strong>ASC</strong>: コプロセッサの総称？例：gfx-asc。おそらくApple Silicon Silicon Coprocessor</li>
 <li><strong>AVD</strong>: Apple Video Decoder(Appleビデオデコーダ)</li>
 <li><strong>AVE</strong>: Apple Video Encoder(Appleビデオエンコーダ)</li>
-<li><strong>AMX</strong>: Apple Matrix eXtensions(Apple行列拡張)。 ISAに部分的に統合された行列コプロセッサ</li>
-<li><strong>APR</strong>: APR ProRes。 ProResビデオエンコーディング＋デコーディング制御</li>
 </ul>
 <h6 id="b">B<a class="headerlink" href="#b" title="Permanent link">&para;</a></h6>
 <ul>
@@ -1413,8 +1414,8 @@ rootアクセスが可能だがAppleの署名入りのソフトウェアのみ�
 </ul>
 <h6 id="f">F<a class="headerlink" href="#f" title="Permanent link">&para;</a></h6>
 <ul>
-<li><strong>fuOS</strong>：カスタムOS、『fully untrusted OS(完全に信頼されていないOS)』という意味と推測</li>
 <li><strong>Fallback Recovery OS</strong>: 電源ボタンをダブルクリックしたまま起動することでアクセスできるリカバリーOSの2つ目のコピー。1TRとは異なり、セキュリティ状態(設定)を変更することは不可能。リカバリ OS 1TR とは、ユーティリティーの『Start Security Utility』オプションがないことで区別可能</li>
+<li><strong>fuOS</strong>：カスタムOS、『fully untrusted OS(完全に信頼されていないOS)』という意味と推測</li>
 </ul>
 <h6 id="g">G<a class="headerlink" href="#g" title="Permanent link">&para;</a></h6>
 <ul>
@@ -1428,6 +1429,7 @@ rootアクセスが可能だがAppleの署名入りのソフトウェアのみ�
 <h6 id="i">I<a class="headerlink" href="#i" title="Permanent link">&para;</a></h6>
 <ul>
 <li><strong>I²C</strong>: Inter-Integrated Circuit。基板上のチップ間を低速で通信するための2線式の規格</li>
+<li><strong>iBEC</strong>: iBoot Epoch Change。DFUブートフローでロードされる2段目のiBootの代替品</li>
 <li><strong>iBoot</strong>: Apple のブートローダ。OSのPrebootパーティションにある特定のセカンドステージローダ（しばしばiBoot2と呼ばれる）、
 またはLLB、iBSS、iBEC、SecureROM（これらはすべて異なる機能を持つiBootのビルド）のいずれかを指す。iBoot1 は LLB の新しい名称
 OS の Preboot パーティションにある特定のセカンドステージローダーまたはLLB、iBSS、iBECを指す</li>
@@ -1435,9 +1437,8 @@ OS の Preboot パーティションにある特定のセカンドステージ�
 <li><strong>iBoot1</strong>: NORに位置する第1段のiBootで、SecureROMによってロード。初期化の最初にOSに依存しないファームウェアのロードを行った後、OSプレブートパーティションにある第2ステージiBoot（iBoot2）をチェーンロード。LLBはiBoot1の古い名称</li>
 <li><strong>iBoot2</strong>: OSのPrebootパーティションにある第2ステージiBoot。インストールされるOSごとに固有のバージョンでありで、OSが動作するために必要なランタイムファームウェアのバンドルと一緒にパッケージ化</li>
 <li><strong>iBSS</strong>: iBoot Single Stage。ファーストステージのiBoot(iBoot1/LLB)の代替品で、NORが破損している場合にDFUブートフローでロード</li>
-<li><strong>iBEC</strong>: iBoot Epoch Change。DFUブートフローでロードされる2段目のiBootの代替品</li>
-<li><strong>IOMMU</strong>: I/O Memory Management Unit。アップル社のDARTの総称</li>
 <li><strong>IOKit</strong>: I/O KitはAppleのXNU(AppleのOSカーネル)用のデバイスドライバフレームワーク</li>
+<li><strong>IOMMU</strong>: I/O Memory Management Unit。アップル社のDARTの総称</li>
 <li><strong>IPI</strong>: Inter-processor interupt。あるプロセッサが別のプロセッサに割り込みする際の割り込み</li>
 <li><strong>iSC</strong>: iBoot System Container。システム全体のブートデータを格納するディスクパーティション(通常内蔵SSDの最初のパーティション)(<a href="../../platform/stock-partition-layout/">既製品パーティションレイアウト</a>を参照）</li>
 <li><strong>ISP</strong>： Image Signal Processor。Mシリーズのラップトップのウェブカメラ。センサーからストロボやコプロセッサまでカメラユニット全体を表す</li>
@@ -1459,8 +1460,8 @@ OS の Preboot パーティションにある特定のセカンドステージ�
 </ul>
 <h6 id="m">M<a class="headerlink" href="#m" title="Permanent link">&para;</a></h6>
 <ul>
-<li><strong>Mux</strong>: Multiplexer。USB、UART、SWDの各モードを切り替えるピンのセットなど複数のものを1つの接続で接続できるデバイス</li>
 <li><strong>Mini</strong>: 内部調査用のカスタムブートローダ。SSDからの起動に対応する場合と非対応の場合あり。このプロジェクトではM1N1と呼ばれる派生を使用</li>
+<li><strong>Mux</strong>: Multiplexer。USB、UART、SWDの各モードを切り替えるピンのセットなど複数のものを1つの接続で接続できるデバイス</li>
 </ul>
 <h6 id="n">N<a class="headerlink" href="#n" title="Permanent link">&para;</a></h6>
 <ul>
@@ -1506,8 +1507,8 @@ recoveryOS を使用</li>
 <h6 id="u">U<a class="headerlink" href="#u" title="Permanent link">&para;</a></h6>
 <ul>
 <li><strong>UART</strong>: Universal Asynchronous Receiver Transmitter。シリアルポートの背後のハードウェア</li>
-<li><strong>USC</strong>: Unified Shader Core。すべてのシェーダタイプ（バーテックス、フラグメント、コンピュート）に対応するシェーダコア。AGXはユニファイドアーキテクチャであるため、単にシェーダーコアのことを指す</li>
 <li><strong>USB-PD</strong>:USB Power Delivery。USB Type Cでのサイドバンド通信の規格（古い規格は我々の健全性のため触れない）。ケーブルの種類やコネクタの向きの検出、電源電圧の設定、非USBモードへの切り替えなどに使用</li>
+<li><strong>USC</strong>: Unified Shader Core。すべてのシェーダタイプ（バーテックス、フラグメント、コンピュート）に対応するシェーダコア。AGXはユニファイドアーキテクチャであるため、単にシェーダーコアのことを指す</li>
 </ul>
 <h6 id="v">V<a class="headerlink" href="#v" title="Permanent link">&para;</a></h6>
 <ul>
