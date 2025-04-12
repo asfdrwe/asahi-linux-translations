@@ -2,7 +2,7 @@
 title: FAQ
 ---
 
-2025/3/9時点の[faq](https://github.com/AsahiLinux/docs/blob/main/docs/project/faq.md)の翻訳
+2025/4/7時点の[faq](https://github.com/AsahiLinux/docs/blob/main/docs/project/faq.md)の翻訳
 
 訳注: Asahi Linux内のページへのリンクは対応する日本語訳に置き換え、Arch Linux wikiへのリンクは対応する日本語Arch Linux wikiへのリンクへ置き換え
 
@@ -119,3 +119,17 @@ GPUドライバがインストールされていることを確認してくだ�
 フレームワークに影響する [Chromium 上流のバグ](https://bugs.chromium.org/p/chromium/issues/detail?id=1442633) です。
 シェーダーキャッシュを手動で削除する必要があります（例えば：`~/.config/Slack/GPUCache`）。修正がバックポートされ、
 ユーザーにリリースされるまで、こちら側では何もできません。
+
+## 停電後の自動起動
+この設定は `/sys/bus/platform/devices/macsmc-reboot/ac_power_mode` で利用できます。
+有効なオプションは `off` と `restore` です。`restore` は macOS のシステム設定の切り替えと同等です。電源が接続されたときに無条件にマシンを起動するように設定することはできません。
+
+## ネットワークアクセスによる起床 （WoL/WoWLAN）
+- Wake on LAN は機能しない。 BCM57762 ギガビットイーサネットコントローラーは
+マジックパケットを介した WoL をサポートしており、`ethtool -s REPLACE_WITH_YOUR_INTERFACE wol g` で有効にできるが、機器はマジックパケットを受信しても起床しない
+- Wake on Wireless LAN は未テスト
+
+## ライトアウトマネジメント（LOM）
+LOM は、モバイルデバイス管理（MDM）ソリューションに登録された [10Gbps イーサネットカード](https://support.apple.com/guide/deployment/dep580cf25bc/web) を搭載したデバイスのみ対応しています。この機能はまだリバースエンジニアリングされていません。
+
+

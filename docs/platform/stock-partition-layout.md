@@ -2,7 +2,7 @@
 title: 既製品 SSD パーティションレイアウト
 ---
 
-2025/3/9時点の[stock-partition-layout](https://github.com/AsahiLinux/docs/blob/main/docs/platform/stock-partition-layout.md)の翻訳
+2025/4/7時点の[stock-partition-layout](https://github.com/AsahiLinux/docs/blob/main/docs/platform/stock-partition-layout.md)の翻訳
 
 ---
 # まとめ
@@ -535,7 +535,7 @@ OSのルートを含むメインのAPFSボリュームです。スナップシ�
 |       Name:                      Data
 |       Volume UUID:               DCBCA6BD-BFF1-4F8F-AE1A-6E937D2D4BDC
 |       Capacity Consumed:         15799300096 B (15.8 GB)
-````
+```
 </details>
 
 ### disk3s2 (Preboot)

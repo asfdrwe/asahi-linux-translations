@@ -2,7 +2,7 @@
 title: Asahi Linux Board
 ---
 
-2025/3/15時点の[asahi-board](https://github.com/AsahiLinux/docs/blob/main/docs/project/board/asahi-board.md)の翻訳
+2025/4/9時点の[asahi-board](https://github.com/AsahiLinux/docs/blob/main/docs/project/board/asahi-board.md)の翻訳
 
 ---
 
@@ -21,3 +21,4 @@ Asahi Linux 理事会は Asahi Linux プロジェクトの運営組織です。
 
 ## 会議議事録 (米国/東部時間)
 - [2025年3月7日16:00](minutes/20250307.md)
+- [2025年4月4日16:00](minutes/20250404.md)

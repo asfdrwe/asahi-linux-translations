@@ -2,7 +2,7 @@
 title: オープン OS プラットフォーム相互運用性 
 ---
 
-2025/3/9時点の[open-os-interop](https://github.com/AsahiLinux/docs/blob/main/docs/platform/open-os-interop.md)の翻訳
+2025/4/7時点の[open-os-interop](https://github.com/AsahiLinux/docs/blob/main/docs/platform/open-os-interop.md)の翻訳
 
 訳注: プロジェクトページへのリンクは対応する日本語訳のページに置き換え
 
@@ -289,7 +289,7 @@ linux-firmwareでインストールされたファームウェアを上書きす
 それから、initramfsはこのファームウェアを最終的なrootファイルシステムに転送しなければなりません。このために推奨される仕組みは、
 対象のrootファイルシステムツリーの下の `/lib/firmware/vendor` に tmpfs をマウントして、そこにファームウェアをコピーすることです。
 
-Linux 用の実装例は [asahi-scripts](https://github.com/AsahiLinux/asahi-scripts/blob/main/initcpio/hooks/asahi) リポジトリで見ることができます。
+Linux 用の実装例は [asahi-scripts](https://github.com/AsahiLinux/asahi-scripts/tree/main/dracut/modules.d/99asahi-firmware) リポジトリで見ることができます。
 
 もし `/boot` が ESP のマウントポイントであれば (つまり GRUB とカーネルが ESP に直接インストールされていれば)、 純正 GRUB で直接 CPIO ロードすることが可能で、
 `/etc/default/grub` で `GRUB_EARLY_INITRD_LINUX_STOCK=vendorfw/firmware.cpio` を使用します。
