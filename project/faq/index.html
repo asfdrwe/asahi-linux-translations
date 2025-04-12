@@ -766,6 +766,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      停電後の自動起動
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wolwowlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      ネットワークアクセスによる起床 （WoL/WoWLAN）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lom" class="md-nav__link">
+    <span class="md-ellipsis">
+      ライトアウトマネジメント（LOM）
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1349,7 +1376,7 @@
 
   <h1>FAQ</h1>
 
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/project/faq.md">faq</a>の翻訳</p>
+<p>2025/4/7時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/project/faq.md">faq</a>の翻訳</p>
 <p>訳注: Asahi Linux内のページへのリンクは対応する日本語訳に置き換え、Arch Linux wikiへのリンクは対応する日本語Arch Linux wikiへのリンクへ置き換え</p>
 <hr />
 <h5 id="asahi-linux">Asahi Linuxはいつ『完成』しますか？<a class="headerlink" href="#asahi-linux" title="Permanent link">&para;</a></h5>
@@ -1423,6 +1450,17 @@ Apple Silicon機器に存在するような最新のディスプレイハード�
 フレームワークに影響する <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1442633">Chromium 上流のバグ</a> です。
 シェーダーキャッシュを手動で削除する必要があります（例えば：<code>~/.config/Slack/GPUCache</code>）。修正がバックポートされ、
 ユーザーにリリースされるまで、こちら側では何もできません。</p>
+<h5 id="_8">停電後の自動起動<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h5>
+<p>この設定は <code>/sys/bus/platform/devices/macsmc-reboot/ac_power_mode</code> で利用できます。
+有効なオプションは <code>off</code> と <code>restore</code> です。<code>restore</code> は macOS のシステム設定の切り替えと同等です。電源が接続されたときに無条件にマシンを起動するように設定することはできません。</p>
+<h5 id="wolwowlan">ネットワークアクセスによる起床 （WoL/WoWLAN）<a class="headerlink" href="#wolwowlan" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Wake on LAN は機能しない。 BCM57762 ギガビットイーサネットコントローラーは
+マジックパケットを介した WoL をサポートしており、<code>ethtool -s REPLACE_WITH_YOUR_INTERFACE wol g</code> で有効にできるが、機器はマジックパケットを受信しても起床しない</li>
+<li>Wake on Wireless LAN は未テスト</li>
+</ul>
+<h5 id="lom">ライトアウトマネジメント（LOM）<a class="headerlink" href="#lom" title="Permanent link">&para;</a></h5>
+<p>LOM は、モバイルデバイス管理（MDM）ソリューションに登録された <a href="https://support.apple.com/guide/deployment/dep580cf25bc/web">10Gbps イーサネットカード</a> を搭載したデバイスのみ対応しています。この機能はまだリバースエンジニアリングされていません。</p>
 
 
 

@@ -1122,7 +1122,7 @@
 
   <h1>既製品 SSD パーティションレイアウト</h1>
 
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/stock-partition-layout.md">stock-partition-layout</a>の翻訳</p>
+<p>2025/4/7時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/stock-partition-layout.md">stock-partition-layout</a>の翻訳</p>
 <hr />
 <h4 id="_1">まとめ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1655,17 +1655,16 @@ Number  Start (sector)    End (sector)  Size       Code  Name
 |       Name:                      Data
 |       Volume UUID:               DCBCA6BD-BFF1-4F8F-AE1A-6E937D2D4BDC
 |       Capacity Consumed:         15799300096 B (15.8 GB)
-````
-&lt;/details&gt;
-
-### disk3s2 (Preboot)
-
-&lt;details&gt;
-  &lt;summary&gt;diskutil情報&lt;/summary&gt;
-
 </code></pre>
 
-# diskutil info /dev/disk3s2
+</details>
+
+<h6 id="disk3s2-preboot">disk3s2 (Preboot)<a class="headerlink" href="#disk3s2-preboot" title="Permanent link">&para;</a></h6>
+<details>
+  <summary>diskutil情報</summary>
+
+
+<pre><code># diskutil info /dev/disk3s2
    Device Identifier:         disk3s2
    Device Node:               /dev/disk3s2
    Whole:                     No
@@ -1716,44 +1715,54 @@ Number  Start (sector)    End (sector)  Size       Code  Name
    Sealed:                    No
    Locked:                    No
 
-
-<pre><code>&lt;/details&gt;
-
-Mountpoint: /System/Volumes/Preboot
-
-このパーティションにはカーネルを含むブート関連のデータが入っています。ルートにある唯一のディレクトリはAPFSの`Data`ボリュームのUUID/ボリュームグループのUUIDの後に名付けられています。
-
-ファイルは次のようになります:
-
-* /(Data UUID)/
-    * usr/standalone/i386/EfiLoginUI/ - preboot UI 用の &quot;EFI&quot; (?) リソース
-    * PreLoginData/ - uuidtext (翻訳？)やログやその他のジャンク
-    * boot/
-        * active - 以下のlong hashを含むファイル
-        * (long hash)/
-            * usr/standalone/firmware
-                * iBoot.img4 - iBoot2 (OS ローダー)
-                * base_system_root_hash.img4, root_hash.img4 - 封印(sealing)関連
-                * FUD/ - iBootでロードされるファームウエア
-                * devicetree.img4 - devicetree
-            * System/Library/Caches/com.apple.kernelcaches/
-                * kernelcache - Darwinのkernelcache
-    * var/db/ - ユーザーリストおよび認証関連情報、preboot UI 用
-    * Library/Preferences/ - ネットワークインターフェース情報、その他preboot UIのための雑多な設定
-    * System/Library/
-        * CoreServices/
-            * boot.efi - EFI macのbooter。ここには0バイトのみ
-        * Caches/com.apple.corestorage/ - FileVault関連？
-    * restore/ - システムファームウェアアップデートバンドル？
-
-
-### disk3s3 (Recovery)
-
-&lt;details&gt;
-  &lt;summary&gt;diskutil情報&lt;/summary&gt;
 </code></pre>
 
-# diskutil info /dev/disk3s3
+</details>
+
+<p>Mountpoint: /System/Volumes/Preboot</p>
+<p>このパーティションにはカーネルを含むブート関連のデータが入っています。ルートにある唯一のディレクトリはAPFSの<code>Data</code>ボリュームのUUID/ボリュームグループのUUIDの後に名付けられています。</p>
+<p>ファイルは次のようになります:</p>
+<ul>
+<li>/(Data UUID)/<ul>
+<li>usr/standalone/i386/EfiLoginUI/ - preboot UI 用の "EFI" (?) リソース</li>
+<li>PreLoginData/ - uuidtext (翻訳？)やログやその他のジャンク</li>
+<li>boot/<ul>
+<li>active - 以下のlong hashを含むファイル</li>
+<li>(long hash)/<ul>
+<li>usr/standalone/firmware<ul>
+<li>iBoot.img4 - iBoot2 (OS ローダー)</li>
+<li>base_system_root_hash.img4, root_hash.img4 - 封印(sealing)関連</li>
+<li>FUD/ - iBootでロードされるファームウエア</li>
+<li>devicetree.img4 - devicetree</li>
+</ul>
+</li>
+<li>System/Library/Caches/com.apple.kernelcaches/<ul>
+<li>kernelcache - Darwinのkernelcache</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>var/db/ - ユーザーリストおよび認証関連情報、preboot UI 用</li>
+<li>Library/Preferences/ - ネットワークインターフェース情報、その他preboot UIのための雑多な設定</li>
+<li>System/Library/<ul>
+<li>CoreServices/<ul>
+<li>boot.efi - EFI macのbooter。ここには0バイトのみ</li>
+</ul>
+</li>
+<li>Caches/com.apple.corestorage/ - FileVault関連？</li>
+</ul>
+</li>
+<li>restore/ - システムファームウェアアップデートバンドル？</li>
+</ul>
+</li>
+</ul>
+<h6 id="disk3s3-recovery">disk3s3 (Recovery)<a class="headerlink" href="#disk3s3-recovery" title="Permanent link">&para;</a></h6>
+<details>
+  <summary>diskutil情報</summary>
+
+<pre><code># diskutil info /dev/disk3s3
    Device Identifier:         disk3s3
    Device Node:               /dev/disk3s3
    Whole:                     No
@@ -1801,21 +1810,20 @@ Mountpoint: /System/Volumes/Preboot
    FileVault:                 No
    Sealed:                    No
    Locked:                    No
+</code></pre>
 
-<pre><code>&lt;/details&gt;
+</details>
 
-### disk3s4 (Update)
-
-&lt;details&gt;
-  &lt;summary&gt;diskutil情報&lt;/summary&gt;
+<h6 id="disk3s4-update">disk3s4 (Update)<a class="headerlink" href="#disk3s4-update" title="Permanent link">&para;</a></h6>
+<details>
+  <summary>diskutil情報</summary>
 
 OSのリカバリーパーティション。下記のSystem RecoveryOSとほぼ同じレイアウト/内容です。現在のデフォルトの起動OSがmacOS 12以降の場合、
 起動時に電源ボタンを長押しするとそのRecoveryOSパーティションがOne True RecoveryOSとして起動します。それ以外場合、macOS 11.xでは、
 代わりにSystem RecoveryOSが使用されます。
 
-</code></pre>
 
-# diskutil info /dev/disk3s4
+<pre><code># diskutil info /dev/disk3s4
    Device Identifier:         disk3s4
    Device Node:               /dev/disk3s4
    Whole:                     No
@@ -1866,19 +1874,17 @@ OSのリカバリーパーティション。下記のSystem RecoveryOSとほぼ�
    Sealed:                    No
    Locked:                    No
 
-
-<pre><code>&lt;/details&gt;
-
-これにはOSアップデータの一時ファイルやログなどが格納されています。
-
-### disk3s5 (Data)
-
-&lt;details&gt;
-  &lt;summary&gt;diskutil情報&lt;/summary&gt;
-
 </code></pre>
 
-# diskutil info /dev/disk3s5
+</details>
+
+<p>これにはOSアップデータの一時ファイルやログなどが格納されています。</p>
+<h6 id="disk3s5-data">disk3s5 (Data)<a class="headerlink" href="#disk3s5-data" title="Permanent link">&para;</a></h6>
+<details>
+  <summary>diskutil情報</summary>
+
+
+<pre><code># diskutil info /dev/disk3s5
    Device Identifier:         disk3s5
    Device Node:               /dev/disk3s5
    Whole:                     No
@@ -1928,22 +1934,19 @@ OSのリカバリーパーティション。下記のSystem RecoveryOSとほぼ�
    FileVault:                 No
    Sealed:                    No
    Locked:                    No
-
-<pre><code>&lt;/details&gt;
-
-Mountpoint: /System/Volumes/Data
-
-The main user data partition, which is overlaid on top of the OS root with firmlinks.
-メインのユーザーデータパーティションです。OS rootの上にfirmlinksで重ねられています。
-
-### disk3s6 (VM)
-
-&lt;details&gt;
-  &lt;summary&gt;diskutil情報&lt;/summary&gt;
-
 </code></pre>
 
-# diskutil info /dev/disk3s6
+</details>
+
+<p>Mountpoint: /System/Volumes/Data</p>
+<p>The main user data partition, which is overlaid on top of the OS root with firmlinks.
+メインのユーザーデータパーティションです。OS rootの上にfirmlinksで重ねられています。</p>
+<h6 id="disk3s6-vm">disk3s6 (VM)<a class="headerlink" href="#disk3s6-vm" title="Permanent link">&para;</a></h6>
+<details>
+  <summary>diskutil情報</summary>
+
+
+<pre><code># diskutil info /dev/disk3s6
    Device Identifier:         disk3s6
    Device Node:               /dev/disk3s6
    Whole:                     No
@@ -1991,19 +1994,17 @@ The main user data partition, which is overlaid on top of the OS root with firml
    FileVault:                 No
    Sealed:                    No
    Locked:                    No
-
-<pre><code>&lt;/details&gt;
-
-スワップパーティション。必要なければ空になるようです。
-
-## disk0s3: System RecoveryOS
-
-&lt;details&gt;
-  &lt;summary&gt;diskutil apfs list&lt;/summary&gt;
-
 </code></pre>
 
-# diskutil apfs list /dev/disk2
+</details>
+
+<p>スワップパーティション。必要なければ空になるようです。</p>
+<h5 id="disk0s3-system-recoveryos">disk0s3: System RecoveryOS<a class="headerlink" href="#disk0s3-system-recoveryos" title="Permanent link">&para;</a></h5>
+<details>
+  <summary>diskutil apfs list</summary>
+
+
+<pre><code># diskutil apfs list /dev/disk2
 |
 +-- Container disk5 160EFEBB-B539-42EE-800D-2FE4723FB25F
     ====================================================
@@ -2012,12 +2013,12 @@ The main user data partition, which is overlaid on top of the OS root with firml
     Capacity In Use By Volumes:   1919692800 B (1.9 GB) (35.8% used)
     Capacity Not Allocated:       3448971264 B (3.4 GB) (64.2% free)
     |
-    +-< Physical Store disk2 (No UUID)
+    +-&lt; Physical Store disk2 (No UUID)
     |   ------------------------------
     |   APFS Physical Store Disk:   disk0s3
     |   Size:                       5368664064 B (5.4 GB)
     |
-    +-> Volume disk2s1 DDD6CA1C-2FAC-4990-B20E-89F5323DAABB
+    +-&gt; Volume disk2s1 DDD6CA1C-2FAC-4990-B20E-89F5323DAABB
         ---------------------------------------------------
         APFS Volume Disk (Role):   disk2s1 (Recovery)
         Name:                      Recovery (Case-insensitive)
@@ -2025,21 +2026,18 @@ The main user data partition, which is overlaid on top of the OS root with firml
         Capacity Consumed:         1899917312 B (1.9 GB)
         Sealed:                    No
         FileVault:                 No
-
-<pre><code>&lt;/details&gt;
-
-これはSystem RecoveryOS パーティションで、1つまたは2つのバージョンのRecoveryOSが入っています。
-
-隠れた*Update*ボリューム(disk2s2)があります。
-
-## disk2s1: Recovery
-
-&lt;details&gt;
-  &lt;summary&gt;diskutil情報&lt;/summary&gt;
-
 </code></pre>
 
-# diskutil info /dev/disk2s1
+</details>
+
+<p>これはSystem RecoveryOS パーティションで、1つまたは2つのバージョンのRecoveryOSが入っています。</p>
+<p>隠れた<em>Update</em>ボリューム(disk2s2)があります。</p>
+<h5 id="disk2s1-recovery">disk2s1: Recovery<a class="headerlink" href="#disk2s1-recovery" title="Permanent link">&para;</a></h5>
+<details>
+  <summary>diskutil情報</summary>
+
+
+<pre><code># diskutil info /dev/disk2s1
    Device Identifier:         disk2s1
    Device Node:               /dev/disk2s1
    Whole:                     No
@@ -2088,34 +2086,37 @@ The main user data partition, which is overlaid on top of the OS root with firml
    FileVault:                 No
    Sealed:                    No
    Locked:                    No
-
-<pre><code>&lt;/details&gt;
-
-これはRecovertyOSの1つまたは複数のバージョンを含んでいます。
-
-ファイル:
-
-* /(unknown UUID)/boot/(long hash)/.
-    * usr/standalone/firmware
-        * arm64eBaseSystem.dmg - rootfs ramdisk image (単一のボリュームと単一のAPFSコンテナを持つGPTディスクイメージ)
-        * iBoot.img4 - iBoot2 (OS ローダー)
-        * base_system_root_hash.img4, root_hash.img4 - 封印(sealing)関連
-        * sep-firmware.img4 - SEPのファームウェア
-        * FUD/ - iBootでロードされるファームウェア
-        * devicetree.img4 - devicetree
-    * System/Library/Caches/com.apple.kernelcaches/
-        * kernelcache - Darwinのkernelcache
-
-RecoveryOSがロードされると、このパーティションは全体的にtmpfsにコピーされ、arm64eBaseSystem.dmgが添付されます。
-
-## disk2s2: Update
-
-&lt;details&gt;
-  &lt;summary&gt;diskutil情報&lt;/summary&gt;
-
 </code></pre>
 
-   Device Identifier:         disk2s2
+</details>
+
+<p>これはRecovertyOSの1つまたは複数のバージョンを含んでいます。</p>
+<p>ファイル:</p>
+<ul>
+<li>/(unknown UUID)/boot/(long hash)/.<ul>
+<li>usr/standalone/firmware<ul>
+<li>arm64eBaseSystem.dmg - rootfs ramdisk image (単一のボリュームと単一のAPFSコンテナを持つGPTディスクイメージ)</li>
+<li>iBoot.img4 - iBoot2 (OS ローダー)</li>
+<li>base_system_root_hash.img4, root_hash.img4 - 封印(sealing)関連</li>
+<li>sep-firmware.img4 - SEPのファームウェア</li>
+<li>FUD/ - iBootでロードされるファームウェア</li>
+<li>devicetree.img4 - devicetree</li>
+</ul>
+</li>
+<li>System/Library/Caches/com.apple.kernelcaches/<ul>
+<li>kernelcache - Darwinのkernelcache</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>RecoveryOSがロードされると、このパーティションは全体的にtmpfsにコピーされ、arm64eBaseSystem.dmgが添付されます。</p>
+<h5 id="disk2s2-update">disk2s2: Update<a class="headerlink" href="#disk2s2-update" title="Permanent link">&para;</a></h5>
+<details>
+  <summary>diskutil情報</summary>
+
+
+<pre><code>   Device Identifier:         disk2s2
    Device Node:               /dev/disk2s2
    Whole:                     No
    Part of Whole:             disk2
@@ -2163,7 +2164,8 @@ RecoveryOSがロードされると、このパーティションは全体的にt
    FileVault:                 No
    Sealed:                    No
    Locked:                    No
-```
+</code></pre>
+
 </details>
 
 <p>一時的なシステムファームウェアの更新データとログが入っています。</p>
