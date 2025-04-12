@@ -1256,40 +1256,173 @@
 <p>注 これらのマシンはまだ一般発売されていないため(訳注:2025/3/1時点で発売済みです)、対応している機能と不足している機能は、Appleが過去にSoCごと、機器ごとに変更した内容に基づいた
 予測です。これらの機器への対応に関する作業が始まれば、このページは迅速に変更されるでしょう。</p>
 <h5 id="soc">SoCブロック<a class="headerlink" href="#soc" title="Permanent link">&para;</a></h5>
-<p>これらは、指定されたSoCを搭載したすべてのデバイスに存在する機能/ハードウェアブロックです。
-|                  | M3<br>(T8122)        | M3 Pro/Max<br>(T603x)       |
-|------------------|:--------------------:|:---------------------------:|
-| DCP              | 未着手                 | 未着手                      |
-| USB2 (TB ports)  | linux-asahi          | linux-asahi                 |
-| USB3 (TB ports)  | linux-asahi          | linux-asahi                 |
-| Thunderbolt      | 未着手                 | 未着手                      |
-| DP Alt Mode      | 作業中                | 作業中                       |
-| GPU              | 未着手                 | 未着手                      |
-| Video Decoder    | 未着手                 | 未着手                      |
-| NVMe             | 5.19                 | 5.19                        |
-| PCIe             | 未着手                 | 未着手                      |
-| PCIe (GE)        | -                    | -                           |
-| cpufreq          | 6.2                  | 6.2                         |
-| cpuidle          | linux-asahi (<a href="#cpuidleの状況">注釈参照</a>) | linux-asahi (<a href="#cpuidleの状況">注釈参照</a>)       |
-| Suspend/sleep    | asahi-edge           | asahi-edge                  |
-| Video Encoder    | 未着手                 | 未着手                      |
-| ProRes Codec     | 未着手                 | 未着手                      |
-| AICv3            | 未着手                 | 未着手                      |
-| DART             | 未着手                 | 未着手                      |
-| PMU              | 未着手                 | 未着手                      |
-| UART             | 5.13                 | 5.13                        |
-| Watchdog         | 5.17                 | 5.17                        |
-| I<sup>2</sup>C   | 5.16                 | 5.16                        |
-| GPIO             | 5.16                 | 5.16                        |
-| USB-PD           | 5.16                 | 5.16                        |
-| MCA              | 6.1 / 6.4 (dts)      | linux-asahi                 |
-| SPI              | linux-asahi          | linux-asahi                 |
-| SPI NOR          | linux-asahi          | linux-asahi                 |
-| SMC              | linux-asahi          | linux-asahi                 |
-| SPMI             | linux-asahi          | linux-asahi                 |
-| RTC              | linux-asahi          | linux-asahi                 |
-| SEP              | 作業中                | 作業中                       |
-| Neural Engine    | ツリー外(<a href="#ANEドライバ">注釈参照</a>)     | ツリー外(<a href="#ANEドライバ">注釈参照</a>)             |</p>
+<p>これらは、指定されたSoCを搭載したすべてのデバイスに存在する機能/ハードウェアブロックです。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">M3 (T8122)</th>
+<th style="text-align: center;">M3 Pro/Max (T603x)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DCP</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>USB2 (TB ports)</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+</tr>
+<tr>
+<td>USB3 (TB ports)</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+</tr>
+<tr>
+<td>Thunderbolt</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>DP Alt Mode</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Video Decoder</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>NVMe</td>
+<td style="text-align: center;">5.19</td>
+<td style="text-align: center;">5.19</td>
+</tr>
+<tr>
+<td>PCIe</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>PCIe (GE)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td>cpufreq</td>
+<td style="text-align: center;">6.2</td>
+<td style="text-align: center;">6.2</td>
+</tr>
+<tr>
+<td>cpuidle</td>
+<td style="text-align: center;">linux-asahi (<a href="#cpuidleの状況">注釈参照</a>)</td>
+<td style="text-align: center;">linux-asahi (<a href="#cpuidleの状況">注釈参照</a>)</td>
+</tr>
+<tr>
+<td>Suspend/sleep</td>
+<td style="text-align: center;">asahi-edge</td>
+<td style="text-align: center;">asahi-edge</td>
+</tr>
+<tr>
+<td>Video Encoder</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>ProRes Codec</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>AICv3</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>DART</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>PMU</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>UART</td>
+<td style="text-align: center;">5.13</td>
+<td style="text-align: center;">5.13</td>
+</tr>
+<tr>
+<td>Watchdog</td>
+<td style="text-align: center;">5.17</td>
+<td style="text-align: center;">5.17</td>
+</tr>
+<tr>
+<td>I<sup>2</sup>C</td>
+<td style="text-align: center;">5.16</td>
+<td style="text-align: center;">5.16</td>
+</tr>
+<tr>
+<td>GPIO</td>
+<td style="text-align: center;">5.16</td>
+<td style="text-align: center;">5.16</td>
+</tr>
+<tr>
+<td>USB-PD</td>
+<td style="text-align: center;">5.16</td>
+<td style="text-align: center;">5.16</td>
+</tr>
+<tr>
+<td>MCA</td>
+<td style="text-align: center;">6.1 / 6.4 (dts)</td>
+<td style="text-align: center;">linux-asahi</td>
+</tr>
+<tr>
+<td>SPI</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+</tr>
+<tr>
+<td>SPI NOR</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+</tr>
+<tr>
+<td>SMC</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+</tr>
+<tr>
+<td>SPMI</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+</tr>
+<tr>
+<td>RTC</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+</tr>
+<tr>
+<td>SEP</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
+</tr>
+<tr>
+<td>Neural Engine</td>
+<td style="text-align: center;">ツリー外(<a href="#ANEドライバ">注釈参照</a>)</td>
+<td style="text-align: center;">ツリー外(<a href="#ANEドライバ">注釈参照</a>)</td>
+</tr>
+</tbody>
+</table>
 <h5 id="m3-devices">M3 devices<a class="headerlink" href="#m3-devices" title="Permanent link">&para;</a></h5>
 <table>
 <thead>
