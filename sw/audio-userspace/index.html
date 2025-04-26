@@ -11,10 +11,12 @@
         <link rel="canonical" href="https://asfdrwe.github.io/asahi-linux-translations/sw/audio-userspace/">
       
       
+        <link rel="prev" href="../devicetree-bindings/">
+      
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
     
     
       
@@ -901,8 +903,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -912,13 +916,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
@@ -933,7 +935,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             開発者向け
@@ -1076,19 +1078,173 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../platform/open-os-interop/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ユーザー空間音声スタック
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Apple Silicon MacでのオープンOSエコシステム
+    ユーザー空間音声スタック
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#asahi-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asahi Linuxでのスピーカー対応
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asahi Linuxでのスピーカー対応">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      現状
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      既知のバグ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      プロジェクトの目標
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      『スマート・アンプ』 / 安全対応
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ディストリビューション統合メモ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      マイク対応
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="マイク対応">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      既知のバグ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="既知のバグ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os-fw-version-135" class="md-nav__link">
+    <span class="md-ellipsis">
+      os-fw-version &gt; 13.5 が必要
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macbook-pro-14-m2-j414" class="md-nav__link">
+    <span class="md-ellipsis">
+      MacBook Pro 14インチ M2 (J414) のプローブ問題
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      マイクインジケーターが常時点灯
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1120,9 +1276,9 @@
   
 
 
-  <h1>ユーザスペースオーディオスタック</h1>
+  <h1>ユーザー空間音声スタック</h1>
 
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/audio-userspace.md">audio-userspace</a>の翻訳</p>
+<p>2025/4/26時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/audio-userspace.md">audio-userspace</a>の翻訳</p>
 <p>訳注:
 - 英語版Wikipediaへのリンクは対応する日本語Wikipediaへのリンクに変更
 - このページに関しては<a href="https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202211.md#%E3%82%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%82%AA%E3%81%AE%E9%80%B2%E6%AD%A9-%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF">進捗報告2022年11月のスピーカー対応</a>も参照しておくとよいです(2023/11/12追加)</p>
@@ -1207,6 +1363,45 @@ EQ/空間/その他のものの方が好きだ』ということではありま�
 <p>正しいデプロイ順は asahi-audio/speakersafetyd → (メタパッケージなどユーザーがこれらのインストールに使用するもの)　→ kernel です。 
 asahi-audioの前にカーネルを先に入れると、機能しないスピーカー機器（speakersafetydがない場合）や機能するが音が悪いDSPのない生の 
 スピーカー機器（speakersafetydがインストールされている場合）をユーザーが手にすることになります。</p>
+<h4 id="_6">マイク対応<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>現在対応しているモデル:</p>
+<ul>
+<li>MacBook Pro 13 インチ (M1/M2)  </li>
+<li>MacBook Air 13 インチ (M1/M2)  </li>
+<li>MacBook Pro 14 インチ (M1 Pro/Max, M2 Pro/Max)  </li>
+<li>MacBook Pro 16 インチ (M1 Pro/Max, M2 Pro/Max)  </li>
+<li>MacBook Air 15 インチ (M2)</li>
+</ul>
+<p>MacBook は AOP 内の ADC とデシメータに接続された 3 つのパルス密度変調
+(Pulse Density Modulation, PDM) マイクを搭載しています。
+3 つのマイクはすべて、事前の増幅なしで、個別のチャンネルを通じて
+ユーザースペースに直接接続されています。</p>
+<p>これらのマイクは、非常に感度が高く、無指向性であるため、使用するには
+何らかのビームフォーミングを適用する必要があります。</p>
+<p>そのために、<a href="https://github.com/chadmed/triforce">Triforce</a>が開発され、
+最小分散無歪応答(Minimum Variance Distortionless Response, MVDR）適応
+ビームフォーマーを実装しています。</p>
+<p><code>asahi-audio</code> には、これを設定するために必要な wirePlumber の設定が含まれています。</p>
+<h5 id="_7">既知のバグ<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
+<h6 id="os-fw-version-135"><code>os-fw-version</code> &gt; 13.5 が必要<a class="headerlink" href="#os-fw-version-135" title="Permanent link">&para;</a></h6>
+<p>マイク対応は、現在、<code>asahi,os-fw-version</code> が 13.5 以上である場合にのみ機能します。
+これは、<code>12.4</code> では <code>BOOTARGS_OFFSET</code> と <code>BOOTARGS_SIZE</code>が異なるためです。</p>
+<p><code>/proc/device-tree/chosen/asahi,os-fw-version</code> が古いバージョンを表す場合、
+dmesg に</p>
+<pre><code>apple_aop 24ac00000.aop: probe with driver apple_aop failed with error -22
+</code></pre>
+<p>というメッセージが表示され、APFSコンテナの更新が必要となります
+（もしくはカーネルドライバに古いバージョンへの対応を追加する必要があります）。</p>
+<h6 id="macbook-pro-14-m2-j414">MacBook Pro 14インチ M2 (J414) のプローブ問題<a class="headerlink" href="#macbook-pro-14-m2-j414" title="Permanent link">&para;</a></h6>
+<p>MacBook Pro 14インチ M2において、AOPが正しくプローブされず、マイク対応が
+機能しないという報告があります。</p>
+<h6 id="_8">マイクインジケーターが常時点灯<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h6>
+<p>マイク対応設定時に、<code>gnome-shell</code> や <code>plasma</code> はマイクが使用中であると
+常時報告します。</p>
+<p>これは、wirePlumberが『マイクデバイス』に対するハンドルが開いていると
+報告するためです。</p>
+<p>この問題を修正するには Pipewire / WirePlumber のノードやハンドルなどの
+コンセプトを大幅に再設計する必要があるかもしれません。</p>
 
 
 
@@ -1265,7 +1460,7 @@ asahi-audioの前にカーネルを先に入れると、機能しないスピー
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>

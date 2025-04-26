@@ -2,358 +2,358 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/alt/alt-distros/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/alt/boot-process-guide/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/alt/installing-gentoo/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/alt/ubuntu-gambas/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/alt/ubuntu-godot/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/alt/ubuntu-qemu/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/fw/adt/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/fw/boot/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/fw/macho-boot-protocol/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/fw/nvram/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/cpu/apple-instructions/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/cpu/debug-registers/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/cpu/smp/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/cpu/sprr-gxf/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/cpu/system-register-dumps/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/cpu/system-registers/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/devices/device-list/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/peripherals/camera/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/peripherals/keyboard-backlight/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/accelerators/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/ace3/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/agx/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/aic/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/aop/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/apcie/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/asc/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/avd/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/clocks/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/display-controllers/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/gpio/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/memmap/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/sep/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/serial-debug/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/smc/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/soc-codenames/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/usb-debug/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/usb-pd/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/hw/soc/wdt/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/dev-quickstart/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/introduction/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/kb-layout-issues/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/open-os-interop-old/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/open-os-interop/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/pc-boot--differences/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/quirks/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/security/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/stock-partition-layout/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/subsystems/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/feature-support/m1/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/feature-support/m2/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/feature-support/m3/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/feature-support/m4/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/platform/feature-support/overview/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/project/faq/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/project/glossary/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/project/help-wanted/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/project/references/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/project/trivia/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/project/when-will-asahi-be-done/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/project/board/asahi-board/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/project/board/minutes/20250307/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/project/board/minutes/20250404/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/agx-driver-notes/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/audio-userspace/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/broken-software/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/deleting-an-install/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/devicetree-bindings/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/getting-started/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/kernel-config/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/linux-bringup-nvme/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/linux-bringup-usb-keyboard/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/linux-bringup-usb/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/linux-bringup-wifi/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/linux-bringup-x11/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/linux-bringup/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/m1n1-dev-guide/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/m1n1-hypervisor/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/m1n1-user-guide/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/macos-kernelcache/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/partitioning-cheatsheet/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/profiling/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/sonoma-display-bug/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/speaker-stress-tests/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/standard-kernel-config/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/tethered-boot-macos-host/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/tethered-boot/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/u-boot/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
     <url>
          <loc>https://asfdrwe.github.io/asahi-linux-translations/sw/undoing-early-speaker-hacks/</loc>
-         <lastmod>2025-04-12</lastmod>
+         <lastmod>2025-04-26</lastmod>
     </url>
 </urlset>
