@@ -5,6 +5,7 @@ title: ユーザスペースオーディオスタック
 2025/4/26時点の[audio-userspace](https://github.com/AsahiLinux/docs/blob/main/docs/sw/audio-userspace.md)の翻訳
 
 訳注:
+
 - 英語版Wikipediaへのリンクは対応する日本語Wikipediaへのリンクに変更
 - このページに関しては[進捗報告2022年11月のスピーカー対応](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202211.md#%E3%82%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%82%AA%E3%81%AE%E9%80%B2%E6%AD%A9-%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF)も参照しておくとよいです(2023/11/12追加)
 
