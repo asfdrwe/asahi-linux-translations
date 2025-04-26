@@ -35,7 +35,7 @@ nav:
     - Hypervisor: sw/m1n1-hypervisor.md
     - U-Boot: sw/u-boot.md
     - Devicetree bindings: sw/devicetree-bindings.md
-    - Apple Silicon MacでのオープンOSエコシステム: platform/open-os-interop.md
+    - ユーザー空間音声スタック: sw/audio-userspace.md
 
 theme:
   name: material

@@ -2,7 +2,7 @@
 title: 問題のあるソフトウェア
 ---
 
-2025/4/5時点の[broken-software](https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md)の翻訳
+2025/4/26時点の[broken-software](https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md)の翻訳
 
 ---
 このページでは、Apple Silicon 機器では正しく動作しないことが知られているソフトウェアをリストアップしています。
@@ -100,7 +100,6 @@ Fedora Linux Asahi Remix の `muvm` パッケージは標準で 4K カーネル�
 | jemalloc | <https://github.com/archlinuxarm/PKGBUILDs/pull/1914> | ページサイズ≧システムに対してコンパイルしたときだけ動作 |
 | MEGAsync | <https://github.com/meganz/MEGAsync/pull/801> |
 | notion-app(-enhancer) | <https://github.com/notion-enhancer/notion-repackaged/issues/107> | electron + 壊れたビルドフラグ |
-| Wine | <https://bugs.winehq.org/show_bug.cgi?id=52715> |
 
 \* x86-64 ソフトウェアの実行は FEX を実行している 4k ページサイズの microVM 経由で対応します。
 
@@ -131,6 +130,7 @@ Fedora Linux Asahi Remix の `muvm` パッケージは標準で 4K カーネル�
 | Rust | <https://github.com/archlinuxarm/PKGBUILDs/commit/19a1393> | ALARM/extraの`rust-1.62.1-1.1`で修正 |  
 | Telegram Desktop | <https://github.com/telegramdesktop/tdesktop/issues/26103> | 4.1.1以降で修正|
 | Visual Studio Code | <https://aur.archlinux.org/packages/visual-studio-code-bin> | 1.71.0以降で修正(Electron 19を使用) |
+| Wine | <https://bugs.winehq.org/show_bug.cgi?id=52715> | 10.5 以降で修正 |
 | WebKitGTK | <https://github.com/WebKit/WebKit/commit/0a4a03da45f774> | 2.34.6以降で修正 |
 | Zig | <https://github.com/ziglang/zig/issues/11308> | [0.14.0](https://ziglang.org/download/0.14.0/release-notes.html#Runtime-Page-Size) 以降で修正 |
 

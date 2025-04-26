@@ -2,7 +2,7 @@
 title: ユーザスペースオーディオスタック
 ---
 
-2025/3/9時点の[audio-userspace](https://github.com/AsahiLinux/docs/blob/main/docs/sw/audio-userspace.md)の翻訳
+2025/4/26時点の[audio-userspace](https://github.com/AsahiLinux/docs/blob/main/docs/sw/audio-userspace.md)の翻訳
 
 訳注:
 - 英語版Wikipediaへのリンクは対応する日本語Wikipediaへのリンクに変更
@@ -105,3 +105,60 @@ DSP処理に加えて、世界初（私たちが知る限り）のオープン�
 正しいデプロイ順は asahi-audio/speakersafetyd → (メタパッケージなどユーザーがこれらのインストールに使用するもの)　→ kernel です。 
 asahi-audioの前にカーネルを先に入れると、機能しないスピーカー機器（speakersafetydがない場合）や機能するが音が悪いDSPのない生の 
 スピーカー機器（speakersafetydがインストールされている場合）をユーザーが手にすることになります。
+
+# マイク対応
+
+現在対応しているモデル:
+
+ * MacBook Pro 13 インチ (M1/M2)  
+ * MacBook Air 13 インチ (M1/M2)  
+ * MacBook Pro 14 インチ (M1 Pro/Max, M2 Pro/Max)  
+ * MacBook Pro 16 インチ (M1 Pro/Max, M2 Pro/Max)  
+ * MacBook Air 15 インチ (M2)
+
+MacBook は AOP 内の ADC とデシメータに接続された 3 つのパルス密度変調
+(Pulse Density Modulation, PDM) マイクを搭載しています。
+3 つのマイクはすべて、事前の増幅なしで、個別のチャンネルを通じて
+ユーザースペースに直接接続されています。
+
+これらのマイクは、非常に感度が高く、無指向性であるため、使用するには
+何らかのビームフォーミングを適用する必要があります。
+
+そのために、[Triforce](https://github.com/chadmed/triforce)が開発され、
+最小分散無歪応答(Minimum Variance Distortionless Response, MVDR）適応
+ビームフォーマーを実装しています。
+
+`asahi-audio` には、これを設定するために必要な wirePlumber の設定が含まれています。
+
+## 既知のバグ
+
+### `os-fw-version` > 13.5 が必要
+
+マイク対応は、現在、`asahi,os-fw-version` が 13.5 以上である場合にのみ機能します。
+これは、`12.4` では `BOOTARGS_OFFSET` と `BOOTARGS_SIZE `が異なるためです。
+
+`/proc/device-tree/chosen/asahi,os-fw-version` が古いバージョンを表す場合、
+dmesg に
+
+```
+apple_aop 24ac00000.aop: probe with driver apple_aop failed with error -22
+```
+
+というメッセージが表示され、APFSコンテナの更新が必要となります
+（もしくはカーネルドライバに古いバージョンへの対応を追加する必要があります）。
+
+### MacBook Pro 14インチ M2 (J414) のプローブ問題
+
+MacBook Pro 14インチ M2において、AOPが正しくプローブされず、マイク対応が
+機能しないという報告があります。
+
+### マイクインジケーターが常時点灯
+
+マイク対応設定時に、`gnome-shell` や `plasma` はマイクが使用中であると
+常時報告します。
+
+これは、wirePlumberが『マイクデバイス』に対するハンドルが開いていると
+報告するためです。
+
+この問題を修正するには Pipewire / WirePlumber のノードやハンドルなどの
+コンセプトを大幅に再設計する必要があるかもしれません。
