@@ -10,6 +10,7 @@
 - [行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
 - [著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
 - ブログ
+  - [進捗報告: Linux 6.15](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202505.md) 
   - [進捗報告: Linux 6.14](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202503.md)
   - [Asahi Linux のバトンタッチ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202502.md)
   - [ゲームを超えて: muvmによる X11 ブリッジ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202412.md) 
