@@ -8,6 +8,7 @@
 # 進捗報告: Linux 6.14
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202502.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202505.md)
 
 3月が終わりを迎え、Linux 6.14のリリースが近づく中、[プロジェクトのリードを引き継いで](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202502.md)以来、初めての大きな進捗報告をみなさまに提供する良いタイミングがやってきました。
 今後は、これらの更新をアップストリームのカーネルリリースに同期させていくことを目指します。
