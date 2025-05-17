@@ -2,7 +2,7 @@
 title: Asahi Linux Board
 ---
 
-2025/4/9時点の[asahi-board](https://github.com/AsahiLinux/docs/blob/main/docs/project/board/asahi-board.md)の翻訳
+2025/5/15時点の[asahi-board](https://github.com/AsahiLinux/docs/blob/main/docs/project/board/asahi-board.md)の翻訳
 
 ---
 
