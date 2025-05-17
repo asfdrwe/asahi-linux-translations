@@ -2,7 +2,7 @@
 title: Das U-Boot
 ---
 
-2025/3/9時点の[u-boot](https://github.com/AsahiLinux/docs/blob/main/docs/sw/u-boot.md)の翻訳
+2025/5/15時点の[u-boot](https://github.com/AsahiLinux/docs/blob/main/docs/sw/u-boot.md)の翻訳
 
 訳注: 
 - このページの内容は失敗するとM1 Macが起動しなくなったりリカバリーできなくなる可能性があります。
@@ -12,12 +12,11 @@ title: Das U-Boot
 U-Bootはm1n1の第2ステージのデフォルトペイロードで、Arch64開発者におなじみの標準的なプリブート環境を提供するために使われます。
 Apple Siliconのブートツールでは外部ブートはサポートされていないため、U-BootはPCライクなブート環境を提供するために必須です。
 このページでは、U-Bootの使い方と、手動でビルドしてインストールする方法について説明します。
-Apple Silicon機器でよくサポートされているディストリビューション、つまりAsahi 自身か [SW:代替ディストリビューション](../alt/alt-distros.md) にリストされているものを
-使用していることを前提としています。
+Apple Silicon機器できちんと対応しているディストリビューションを使用していることを
+前提としています。
 
 ここに記載されている U-Boot のビルドとインストールの手順は、文書化と開発目的のためのものであることに注意してください。
 もしあなたが Asahi ユーザーで、U-Boot や m1n1 をハックすることに興味がなければ、`pacman` を使って自動的に管理されます。 
-[代替ディストリビューション](../alt/alt-distros.md)にリストされている（ほとんど）全てのディストリビューションについても同じことが言えるはずです。
 
 ## 標準的なブートフロー
 U-Boot の UEFI 実装を利用して ペアになった EFI システム上で`/EFI/BOOT/BOOTAA64.EFI` にある UEFI バイナリをロードして実行します。
@@ -34,7 +33,7 @@ Asahi インストールのデフォルトのペイロードは GRUB です。U-
 * SDカードリーダーを内蔵したUSBハブは、スロットが空の場合、機器がハードリセット。この問題は修正される予定
 
 ## 前提条件
-* Asahi または [代替ディストリビューション](../alt/alt-distros.md) にリストされたディストリビューションが動作する Apple Silicon 機器
+* Asahi が動作する Apple Silicon 機器
 * m1n1 のクリーンなビルド、[m1n1 ユーザガイド](m1n1-user-guide.md) を参照
 * `AsahiLinux/linux` にある Apple DTB。これらをコンパイルすることは、この文書の範囲外
 * Asahi EFIシステムパーティションは、`/boot/efi/`にマウント

@@ -27,7 +27,6 @@ nav:
   - ユーザ向け:
     - Fedora Asahi Remix文書 <i class="fa-solid fa-arrow-up-right-from-square"></i>: https://docs.fedoraproject.org/en-US/fedora-asahi-remix/
     - 問題があるソフトウェア: sw/broken-software.md
-    - 代替ディストリビューション: alt/alt-distros.md
   - 開発者向け:
     - 助っ人募集！: project/help-wanted.md
     - テザーブートセットアップ(開発者向け): sw/tethered-boot.md
@@ -36,6 +35,9 @@ nav:
     - U-Boot: sw/u-boot.md
     - Devicetree bindings: sw/devicetree-bindings.md
     - ユーザー空間音声スタック: sw/audio-userspace.md
+  - ディストリビューション・OS 向け:
+    - ディストリビューションガイドライン: alt/policy.md
+
 
 theme:
   name: material
