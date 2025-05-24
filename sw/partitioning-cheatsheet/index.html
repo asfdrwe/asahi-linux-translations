@@ -1406,7 +1406,7 @@
 <p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/partitioning-cheatsheet.md">partitioning-cheatsheet</a>の翻訳</p>
 <hr />
 <h4 id="apple_apfs_recovery">警告: <code>Apple_APFS_Recovery</code> パーティションは絶対に削除しないでください。<a class="headerlink" href="#apple_apfs_recovery" title="Permanent link">&para;</a></h4>
-<p>diskutil で `Apple_APFS_Recoveryと表示されるディスクの最後のパーティションには重要なシステム回復コンポーネントが含まれています。
+<p>diskutil で <code>Apple_APFS_Recovery</code>と表示されるディスクの最後のパーティションには重要なシステム回復コンポーネントが含まれています。
 ** 誤ってこのパーティションを削除してしまうと、macOS のアップグレードは機能しなくなり、システムに関するその他の問題は起動不能のままとなり、工場出荷時の復元と完全なワイプが必要となります。** マシンを完全にワイプせずにこのパーティションを復元するのは、<a href="https://www.reddit.com/r/AsahiLinux/comments/1fmnzm5/guide_how_to_fix_failed_to_find_sfr_recovery/">非常に面倒</a>です。どんなことがあっても、このパーティションはいじらないでください。</p>
 <p>Asahi Linux のインストーラーにはパーティション削除コードが一切含まれておらず、また未加工のパーティションテーブルにアクセスすることもないため、インストーラーが単独でこのような事態を引き起こすことは<strong>あり得ません</strong>。このような状況に陥った場合、（Linux や macOS/recoveryOS から）知らないうちに自分でパーティションを
 削除してしまったか、Appleのバグが原因です。</p>
