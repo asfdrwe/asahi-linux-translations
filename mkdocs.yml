@@ -27,6 +27,7 @@ nav:
   - ユーザ向け:
     - Fedora Asahi Remix文書 <i class="fa-solid fa-arrow-up-right-from-square"></i>: https://docs.fedoraproject.org/en-US/fedora-asahi-remix/
     - 問題があるソフトウェア: sw/broken-software.md
+    - パーティションチートシート: sw/partitioning-cheatsheet.md
   - 開発者向け:
     - 助っ人募集！: project/help-wanted.md
     - テザーブートセットアップ(開発者向け): sw/tethered-boot.md
