@@ -1331,7 +1331,7 @@
 
   <h1>問題があるソフトウェア</h1>
 
-<p>2025/4/26時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md">broken-software</a>の翻訳</p>
+<p>2025/6/2時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md">broken-software</a>の翻訳</p>
 <hr />
 <p>このページでは、Apple Silicon 機器では正しく動作しないことが知られているソフトウェアをリストアップしています。
 これを公開することで、コミュニティのメンバーが影響を受けるパッケージの修正を上流に提供する動機となり、AArch64ソフトウェアの
@@ -1442,6 +1442,11 @@ Program Headers:
 <td>notion-app(-enhancer)</td>
 <td><a href="https://github.com/notion-enhancer/notion-repackaged/issues/107">https://github.com/notion-enhancer/notion-repackaged/issues/107</a></td>
 <td>electron + 壊れたビルドフラグ</td>
+</tr>
+<tr>
+<td>Waydroid</td>
+<td><a href="https://github.com/waydroid/waydroid/issues/373">https://github.com/waydroid/waydroid/issues/373</a></td>
+<td>上流の AOSP は 16k ページに対応して動作 <a href="https://developer.android.com/guide/practices/page-sizes">https://developer.android.com/guide/practices/page-sizes</a></td>
 </tr>
 </tbody>
 </table>
@@ -1617,7 +1622,7 @@ Program Headers:
 </tr>
 <tr>
 <td>hyprland</td>
-<td><a href="https://github.com/hyprwm/Hyprland/issues/8158">明示的な同期タイムラインのインポートに失敗し、クライアントが強制終了する(Explicit Sync timelines fail importing, killing the client)</a></td>
+<td><a href="https://github.com/hyprwm/Hyprland/issues/10401">split-node GPU ドライバで明示的な同期が動作しない (Explicit sync doesn't work on split-node gpu drivers)</a></td>
 <td></td>
 </tr>
 <tr>
