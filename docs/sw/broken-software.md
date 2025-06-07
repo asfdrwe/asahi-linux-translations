@@ -2,7 +2,7 @@
 title: 問題のあるソフトウェア
 ---
 
-2025/4/26時点の[broken-software](https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md)の翻訳
+2025/6/2時点の[broken-software](https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md)の翻訳
 
 ---
 このページでは、Apple Silicon 機器では正しく動作しないことが知られているソフトウェアをリストアップしています。
@@ -100,6 +100,7 @@ Fedora Linux Asahi Remix の `muvm` パッケージは標準で 4K カーネル�
 | jemalloc | <https://github.com/archlinuxarm/PKGBUILDs/pull/1914> | ページサイズ≧システムに対してコンパイルしたときだけ動作 |
 | MEGAsync | <https://github.com/meganz/MEGAsync/pull/801> |
 | notion-app(-enhancer) | <https://github.com/notion-enhancer/notion-repackaged/issues/107> | electron + 壊れたビルドフラグ |
+| Waydroid | <https://github.com/waydroid/waydroid/issues/373> | 上流の AOSP は 16k ページに対応して動作 <https://developer.android.com/guide/practices/page-sizes> |
 
 \* x86-64 ソフトウェアの実行は FEX を実行している 4k ページサイズの microVM 経由で対応します。
 
@@ -143,7 +144,7 @@ Fedora Linux Asahi Remix の `muvm` パッケージは標準で 4K カーネル�
 | ---------------- | ----- | ----- |
 | firefox        | [wayland:起動時の最初のフレームが一瞬初期化されない場合あり(x11でも)(wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11))](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
 | gnome-bluetooth/bluez | A2DP 出力の音声が頻繁に途切れたり、接続が切れたりする (blueman を使えば問題なし) | バグはまだ未記入 |
-| hyprland         | [明示的な同期タイムラインのインポートに失敗し、クライアントが強制終了する(Explicit Sync timelines fail importing, killing the client)](https://github.com/hyprwm/Hyprland/issues/8158) |
+| hyprland         | [split-node GPU ドライバで明示的な同期が動作しない (Explicit sync doesn't work on split-node gpu drivers)](https://github.com/hyprwm/Hyprland/issues/10401) |
 | kwin           | [マルチスクリーンでルートバックグラウンドダメージ領域が正しく計算されない(Root background damage regions are calculated incorrectly with multiscreen)](https://bugs.kde.org/show_bug.cgi?id=477454) |
 | plasmashell      | [startplasmaがprofile.dとenvironment.d間の変数統合を破壊(startplasma breaks variable merging between profile.d and environment.d)](https://bugs.kde.org/show_bug.cgi?id=491579) |
 | systemsettings | [デフォルトのシステムキーボードモデルがWayland上で正しく設定されていない(default system keyboard model is not correctly set on Wayland)](https://bugs.kde.org/show_bug.cgi?id=475435) |

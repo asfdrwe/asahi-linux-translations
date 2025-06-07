@@ -2,7 +2,7 @@
 title: GPIO コントローラ
 ---
 
-2025/3/9時点の[gpio](https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/gpio.md)の翻訳
+2025/6/2時点の[gpio](https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/gpio.md)の翻訳
 
 ---
 ## DT binding
