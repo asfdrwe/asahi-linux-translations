@@ -2,25 +2,25 @@
 title: 既製品 SSD パーティションレイアウト
 ---
 
-2025/4/7時点の[stock-partition-layout](https://github.com/AsahiLinux/docs/blob/main/docs/platform/stock-partition-layout.md)の翻訳
+2025/6/30時点の[stock-partition-layout](https://github.com/AsahiLinux/docs/blob/main/docs/platform/stock-partition-layout.md)の翻訳
 
 ---
 # まとめ
 
 * **disk0**：メインSSD
-  * **disk0s1 = disk1**: 『iBootSystemContainer』 - システム全体のブートデータ
+    * **disk0s1 = disk1**: 『iBootSystemContainer』 - システム全体のブートデータ
     * **disk1s1**: 『iSCPreboot』 - ブートポリシー、システムファームウェア(NOR)バージョンメタデータ、SEPファームウェア(時々)、APチケット
     * **disk1s2**: 『xARTS』 - SEPの信頼できるストレージ
     * **disk1s3**: 『ハードウェア』 - ログ、ファクトリーデータキャッシュ、アクティベーション関連ファイル
     * **disk1s4**: 『Recovery』 - 空
-  * **disk0s2 = disk3**: 『コンテナ』 - macOSインストール
+    * **disk0s2 = disk3**: 『コンテナ』 - macOSインストール
     * **disk3s1**: 『System』 - OS (root filesystem、封印(seal)されている)
     * **disk3s2**: 『Preboot』 - iBoot2 (OSローダー)、iBootにロードされたファームウェア、Darwinのカーネルキャッシュ、ファームウェア、DeviceTree、その他preboot用情報
     * **disk3s3**: 『Recovery』 - ペアのRecoveryOS: iBoot2、 ファームウェア、 Darwinのカーネルキャッシュ、ラムディスクイメージ
     * **disk3s4**: 『Update』 - macOSアップデート用の一時ストレージとログ
     * **disk3s5**: 『Data』 - ユーザーデータ（root filesystem、統合）。このボリュームのUUIDはOSインストールのアイデンティティを定義
     * **disk3s6**: 『VM』 - スワップパーティション(必要時)
-  * **disk0s3 = disk2**: 『RecoveryOSContainer』 - System RecoveryOS
+    * **disk0s3 = disk2**: 『RecoveryOSContainer』 - System RecoveryOS
     * **disk2s1**: 『Recovery』- 1つまたは複数の{iBoot2 (OSローダー)、Darwinのカーネルキャッシュ、ファームウェア、DeviceTree、その他のpreboot用情報}のセット
     * **disk2s2**: 『Update』 - システムのファームウェアアップデート用の一時ストレージとログ
 

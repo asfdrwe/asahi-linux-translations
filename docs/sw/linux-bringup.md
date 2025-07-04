@@ -2,7 +2,7 @@
 title: Linux Bringup
 ---
 
-2025/3/9時点の[linux-bringup](https://github.com/AsahiLinux/docs/blob/main/docs/sw/linux-bringup.md)の翻訳
+2025/6/30時点の[linux-bringup](https://github.com/AsahiLinux/docs/blob/main/docs/sw/linux-bringup.md)の翻訳
 
 訳注:
 - ブログへのリンクは対応する日本語訳へのリンクに変更
@@ -51,23 +51,23 @@ cp .../linux/arch/arm64/boot/dts/apple/t8103-j274.dtb t8103-j274.dtb
 [これ](https://raw.githubusercontent.com/amworsley/asahi-wiki/main/images/config-keyboard+nvme)のような設定
 
 ## USBケーブルを挿したままの起動
-  * m1n1/linux は USB の低レベル PHY のセットアップをまだ行っていないので、Mac を起動する**前**に USB ケーブル/ハブ/アダプタを接続。 
+* m1n1/linux は USB の低レベル PHY のセットアップをまだ行っていないので、Mac を起動する**前**に USB ケーブル/ハブ/アダプタを接続。 
 [m1n1のブートのセットアップ](../platform/dev-quickstart.md#セットアップ)
 でインストールしたm1n1を起動する際にiBootに実行させる
-  * セットアップ後に m1n1 の C コードが更新された場合は、新しい .macho イメージをチェーンロードする必要あり
+* セットアップ後に m1n1 の C コードが更新された場合は、新しい .macho イメージをチェーンロードする必要あり
 
 ```
 python3.9 proxyclient/tools/chainload.py build/m1n1.macho
 ```
 
 # USBケーブルでLinuxを実行
-  * M1 Macに
+* M1 Macに
 [USB Type-C to Type A/Cケーブル](../platform/dev-quickstart.md#標準的なUSBケーブルを使ったUSBガジェットモード)
 を接続すると、もう一方のコンピュータに2つのUSBシリアルインターフェースが提供される
 
 ![M1 MacBookAirと2012 MacBootAir Proを接続するUSB Type-C to Type Aケーブル](https://github.com/AsahiLinux/docs/blob/main/docs/assets/usb-setup.png)
 
-  * pythonのプロキシツールで接続し、Linuxを直接起動したり、m1n1のアップデート版などのmachoなバイナリをロードしたり、Linuxイメージと組み合わせたりすることが可能
+* pythonのプロキシツールで接続し、Linuxを直接起動したり、m1n1のアップデート版などのmachoなバイナリをロードしたり、Linuxイメージと組み合わせたりすることが可能
 * debian arm64 インストーラから 27Mb の initrd を取得
 
 ```
@@ -104,13 +104,13 @@ find . | cpio -o -H newc | gzip -c -9 >| /pathto/initrd-new.gz
 ```
 
 # ハイパーバイザー下での実行
-  * m1n1 ハイパーバイザで Linux を実行すると、メモリの検査、停止、起動のほかスタックトレースを行うことも可能
-  * .macho を組み合わせたイメージを作成(run_guest.py は .macho のみ受け付ける) 
+* m1n1 ハイパーバイザで Linux を実行すると、メモリの検査、停止、起動のほかスタックトレースを行うことも可能
+* .macho を組み合わせたイメージを作成(run_guest.py は .macho のみ受け付ける) 
 ```
 cat build/m1n1.macho Image.gz build/dtb/apple-j274.dtb initramfs.cpio.gz > m1n1-payload.macho
 ```
 
- * run_guest でロード
+* run_guest でロード
 ```
 python3.9 proxyclient/tools/run_guest.py -S m1n1-payload.machao
 ```
@@ -178,7 +178,7 @@ Entering hypervisor shell. Type `start` to start the guest.
 
 </details>
 
- * デバッグシェルでプロンプトが表示され、startコマンドでロードポイントから実行を開始:
+* デバッグシェルでプロンプトが表示され、startコマンドでロードポイントから実行を開始:
 <details>
 <summary>ブートアップログを見る</summary>
 
@@ -227,7 +227,7 @@ Skip: msr ACC_CFG_EL1, x1 = d
 
 </details>
 
-  *  実行中に **^C** を使用して、デバッグシェルを取得
+*  実行中に **^C** を使用して、デバッグシェルを取得
 
 ```
 ...
@@ -238,7 +238,7 @@ Skip: msr ACC_CFG_EL1, x1 = d
 Entering debug shell
 >>> 
 ```
-  *  カーネルのSystem.mapファイルを読み込み、PAC_MASK（ポインタ保護マスク）を設定した後のスタックトレース（シンボル付き）を取得
+*  カーネルのSystem.mapファイルを読み込み、PAC_MASK（ポインタ保護マスク）を設定した後のスタックトレース（シンボル付き）を取得
 
 ```
 >>> load_system_map('../linux/System.map')
@@ -255,7 +255,7 @@ Stack trace:
  - 0xffff8000103d11f0 (start_kernel+0x528)
 ```
 
-  * プログラムカウンタより前のアドレスをディスアセンブル
+* プログラムカウンタより前のアドレスをディスアセンブル
 
 ```
 >>> disassemble_at(p.hv_translate(hv.ctx.elr, True) - 32, 64)
@@ -277,7 +277,7 @@ Stack trace:
     81f6fdc40:  a8c17bfd        ldp     x29, x30, [sp], #16
 ```
 
-  * ハイパーバイザーへの最後の例外からレジスタ %0 をダンプアウト
+* ハイパーバイザーへの最後の例外からレジスタ %0 をダンプアウト
 
 ```
 >>> hv.ctx.regs[0]
@@ -427,14 +427,14 @@ Still running 21
 </details>
 
 # rootファイルシステムオプション
- * [initrd + USBキーボード](linux-bringup-usb-keyboard.md#linux-usb-keyboard)
- * [USBドライブブート](linux-bringup-usb.md)
- * [USBドライブをNVMEパーティションに](linux-bringup-nvme.md)
+* [initrd + USBキーボード](linux-bringup-usb-keyboard.md#linux-usb-keyboard)
+* [USBドライブブート](linux-bringup-usb.md)
+* [USBドライブをNVMEパーティションに](linux-bringup-nvme.md)
 
 # その他の機能
- * [WiFi対応](linux-bringup-wifi.md)
- * [X11対応](linux-bringup-x11.md)
+* [WiFi対応](linux-bringup-wifi.md)
+* [X11対応](linux-bringup-x11.md)
 
 # 欠けているもの
- * サウンド
- * 電源管理 - 蓋を『閉めないで』
+* サウンド
+* 電源管理 - 蓋を『閉めないで』

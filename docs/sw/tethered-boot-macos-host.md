@@ -2,7 +2,7 @@
 title: テザーブート: macOS ホストマシン
 ---
 
-2025/3/9時点の[tethered-boot-macos-host](https://github.com/AsahiLinux/docs/blob/main/docs/sw/tethered-boot-macos-host.md)の翻訳
+2025/6/30時点の[tethered-boot-macos-host](https://github.com/AsahiLinux/docs/blob/main/docs/sw/tethered-boot-macos-host.md)の翻訳
 
 訳注:原文のスペルミスやリンクミスは正しいものに修正
 
@@ -16,10 +16,10 @@ title: テザーブート: macOS ホストマシン
 ホストの要件:
 
 * 最新版の MacOS が動作する Apple のコンピュータ
-  * ホスト上にソフトウェアのインストールやコンパイルに十分なディスクスペース
-  * ホストに空き USB ポート
-  * USB-A/USB-C または USB-C/USB-C ケーブル
-  * [前提条件となるソフトウェアのインストール](#前提条件となるソフトウェアのインストール)
+    * ホスト上にソフトウェアのインストールやコンパイルに十分なディスクスペース
+    * ホストに空き USB ポート
+    * USB-A/USB-C または USB-C/USB-C ケーブル
+    * [前提条件となるソフトウェアのインストール](#前提条件となるソフトウェアのインストール)
 
 テスト環境:
 

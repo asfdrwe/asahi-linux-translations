@@ -2,7 +2,7 @@
 title: macOS カーネルキャッシュ
 ---
 
-2025/3/9時点の[macos-kernelcache](https://github.com/AsahiLinux/docs/blob/main/docs/macos-kernelcache.md)の翻訳
+2025/6/30時点の[macos-kernelcache](https://github.com/AsahiLinux/docs/blob/main/docs/macos-kernelcache.md)の翻訳
 
 訳注: プロジェクトページへのリンクは対応する日本語訳へのリンクに置き換え
 
@@ -36,9 +36,9 @@ title: macOS カーネルキャッシュ
 * **davidrysk氏** の提案により、いくつかの MacOS カーネルイメージが **/System/Library/Kernels/kernel.release.t8020** で既に利用可能
 * 下記は、コードを逆アセンブルするためのオフセットを得るために、Marcan氏のスクリプト 
 [machodump.py](https://gist.github.com/marcan/e1808a2f4a5e1fc562357550a770afb1) でmachoヘッダーをダンプしたもの
- * 注：これは **construct** python パッケージを必要とするが、debian buster パッケージは動作しなかった（python 3 または 2）、
+    * 注：これは **construct** python パッケージを必要とするが、debian buster パッケージは動作しなかった（python 3 または 2）、
 あるいは github バージョンも動作しない
- * pip3経由のpypiインストールを使用する必要あり
+    * pip3経由のpypiインストールを使用する必要あり
 
 ```
  apt install python3-pip
