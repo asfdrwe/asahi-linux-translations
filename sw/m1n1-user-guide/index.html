@@ -1421,7 +1421,7 @@
 
   <h1>m1n1:ユーザガイド ブートローダー</h1>
 
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-user-guide.md">m1n1-user-guide</a>の翻訳</p>
+<p>2025/6/30時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-user-guide.md">m1n1-user-guide</a>の翻訳</p>
 <hr />
 <p>m1n1は、Apple（XNU）ブートエコシステムとLinuxブートエコシステムの橋渡しをするために、Asahi Linuxプロジェクトが開発したブートローダです。</p>
 <p>GitHub: <a href="https://github.com/AsahiLinux/m1n1">AsahiLinux/m1n1</a></p>
@@ -1429,11 +1429,13 @@
 <ul>
 <li>ハードウェアの初期化</li>
 <li>きれいなロゴを表示</li>
-<li>ペイロードをロード</li>
+<li>ペイロードをロード<ul>
 <li>DeviceTree(FDT)、プラットフォームに応じて自動選択</li>
 <li>Initramfsイメージ(CPIO圧縮アーカイブ)</li>
 <li>Linux ARM64ブートフォーマットのカーネルイメージ（オプションで圧縮可）</li>
 <li>Configuration statement</li>
+</ul>
+</li>
 <li>FAT32パーティションから自身の別バージョンをチェーンロード可能</li>
 </ul>
 <p>プロキシモードでは、Linux カーネルのテストサイクルを 7 秒に短縮したり、ハードウェアのライブプローブや実験を行ったり、

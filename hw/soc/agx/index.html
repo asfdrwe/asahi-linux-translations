@@ -1194,7 +1194,7 @@
 
   <h1>Apple GPU (AGX)</h1>
 
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/agx.md">agx</a>の翻訳</p>
+<p>2025/6/30時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/agx.md">agx</a>の翻訳</p>
 <hr />
 <h4 id="linaagx">Lina氏のAGXノート<a class="headerlink" href="#linaagx" title="Permanent link">&para;</a></h4>
 <p>読者注意、ここにドラゴン(dragon)がいます。ポインター型のドラゴン。たくさんいます
@@ -1260,10 +1260,12 @@ ASCファームウェアが乗っ取りに対して強化されることなの�
 <p>データ構造: <a href="https://github.com/AsahiLinux/m1n1/blob/main/proxyclient/m1n1/fw/agx/channels.py">channels.py</a>を参照</p>
 <h6 id="cpu-gpu">CPU-&gt;GPU チャンネル<a class="headerlink" href="#cpu-gpu" title="Permanent link">&para;</a></h6>
 <ul>
-<li>ワークチャンネル: 4つのグループ(0-3)、それぞれ3つのチャンネル、GPUワークタイプごとに1つ</li>
+<li>ワークチャンネル: 4つのグループ(0-3)、それぞれ3つのチャンネル、GPUワークタイプごとに1つ<ul>
 <li>TA (Tile Accelator、頂点処理)</li>
 <li>3D (3D、ピクセル処理)</li>
 <li>CP (Compute)</li>
+</ul>
+</li>
 </ul>
 <p>TODO: 異なるチャンネルに送られたワークにはおそらく何らかの優先順位スキームがあるはず</p>
 <ul>
@@ -1271,19 +1273,21 @@ ASCファームウェアが乗っ取りに対して強化されることなの�
 </ul>
 <h6 id="gpu-cpu">GPU-&gt;CPU チャンネル<a class="headerlink" href="#gpu-cpu" title="Permanent link">&para;</a></h6>
 <ul>
-<li>イベント：作業関連のイベント通知</li>
-<li>作業完了フラグイベント<ul>
+<li>イベント：作業関連のイベント通知<ul>
+<li>作業完了フラグイベント</li>
 <li>これらはどのイベントインデックスが発火しているかを示す128ビットの配列を持つ</li>
-</ul>
-</li>
-<li>フォールト通知<ul>
+<li>フォールト通知</li>
 <li>GPUのフォールトはStop-the-Worldの処理としてはかなり貧弱に見える。macOS は実際に GPU MMIO レジスタを直接ダンプするようになり、ファームウェアは何をすべきかについてとても無知であるように思われる</li>
 </ul>
 </li>
-<li>統計メッセージ</li>
+<li>統計メッセージ<ul>
 <li>私たちはこれらを無視。バッファがオーバーフローした場合、ファームウェアは一度だけ文句を言うが、無害</li>
-<li>ファームウェアのsyslog</li>
+</ul>
+</li>
+<li>ファームウェアのsyslog<ul>
 <li>これは、何らかの理由で複数のサブチャンネルが存在し、制御構造が連続的にレイアウトされているという点で奇妙</li>
+</ul>
+</li>
 <li>未知のチャネル(トレース?)</li>
 </ul>
 <h6 id="gpu">GPU コンテキスト<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h6>
@@ -1369,17 +1373,15 @@ GPU ファームウェアが任意に割り当てるヒープによって行わ�
 <li>タイムスタンプ 2 ptr</li>
 <li>タイムスタンプ 3 ptr</li>
 <li>未知のバッファ 2 (空)</li>
-<li>組み込みの構造体:</li>
+<li>組み込みの構造体:<ul>
 <li>Tilerパラメータ(タイル数など)</li>
-<li>TAワーク構造体2<ul>
+<li>TAワーク構造体2</li>
 <li>TVB タイルマップ ptr</li>
 <li>TVB リスト ptr</li>
 <li>ユーザースペースから渡される3つの小さなバッファ（aryssa氏はこれらを『deflake』と呼ぶ）</li>
 <li>コマンドエンコーダーptr (つまりユーザー空間から実際に実行されるgfxパイプライン)</li>
 <li>パイプラインウィンドウのベース（32ビットシェーダのポインタに使用されるVAへの4GiBウィンドウ）</li>
-</ul>
-</li>
-<li>TAワーク構造体3<ul>
+<li>TAワーク構造体3</li>
 <li>deflake ptrの1つ</li>
 <li>エンコーダーID（ユニークなID、GPUはおそらく触れない）</li>
 <li>『未知のバッファ』（ユーザースペースからの数字が増加）</li>
@@ -1459,8 +1461,8 @@ GPU ファームウェアが任意に割り当てるヒープによって行わ�
 <li>タイムスタンプ 1  ptr</li>
 <li>タイムスタンプ 2 ptr</li>
 <li>タイムスタンプ 3 ptr</li>
-<li>組み込みの構造体</li>
-<li>3Dワーク構造体1<ul>
+<li>組み込みの構造体<ul>
+<li>3Dワーク構造体1</li>
 <li>いくつかのフロート？</li>
 <li>デプスクリア値</li>
 <li>ステンシルクリア値</li>

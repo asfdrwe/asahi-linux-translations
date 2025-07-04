@@ -1196,7 +1196,7 @@
 
 <hr />
 <h5 id="title-linux-bringup-usb">title: Linux Bringup: USB キーボード<a class="headerlink" href="#title-linux-bringup-usb" title="Permanent link">&para;</a></h5>
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/linux-bringup-usb-keyboard.md">linux-bringup-usb-keyboard</a>の翻訳</p>
+<p>2025/6/30時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/linux-bringup-usb-keyboard.md">linux-bringup-usb-keyboard</a>の翻訳</p>
 <hr />
 <h4 id="linux-usb">Linux USBキーボード<a class="headerlink" href="#linux-usb" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1205,8 +1205,10 @@
 <li>この <a href="https://github.com/amworsley/asahi-wiki/blob/main/images/config-jannau-iso9660-noR.gz">M1 MacBook Air with USB 用 Linux config file</a> をベースにすることが可能 (ガジェットモードは有効にならない)</li>
 <li>initrd を変更して /bin/sh を実行するのみに (/init を編集) </li>
 <li><code>python3.9 proxyclient/tools/linux.py -b 'earlycon console=tty0 console=tty0 debug' Image-dwc3.gz t8103-j274.dtb initrd-be2.gz</code> で
-直接起動させた場合</li>
+直接起動させた場合<ul>
 <li>Image-dwc3.gz は Asahi dart/dev カーネル、そのカーネルでビルドした t8103.j274.dtb は <strong>linux/arch/arm64/boot/dts/apple/t8103-j274.dtb</strong> 、 initrd-be2.gz はセットアップ後に <strong>/bin/sh</strong> だけ実行するよう修正した debian Bullseye initrd </li>
+</ul>
+</li>
 <li>
 <p>それから、Type-C to Type-A アダプタを使って、普通の古い USB Dell キーボードを接続し、実行中の /bin/sh にコマンドを入力
 <img alt="M1 macbook で外付け USB キーボードから入力した Linux が動作している様子" src="https://github.com/AsahiLinux/docs/blob/main/docs/assets/linuxOnM1.png" /></p>

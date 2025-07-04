@@ -1403,7 +1403,7 @@
 
   <h1>パーティションチートシート</h1>
 
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/partitioning-cheatsheet.md">partitioning-cheatsheet</a>の翻訳</p>
+<p>2025/6/30時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/partitioning-cheatsheet.md">partitioning-cheatsheet</a>の翻訳</p>
 <hr />
 <h4 id="apple_apfs_recovery">警告: <code>Apple_APFS_Recovery</code> パーティションは絶対に削除しないでください。<a class="headerlink" href="#apple_apfs_recovery" title="Permanent link">&para;</a></h4>
 <p>diskutil で <code>Apple_APFS_Recovery</code>と表示されるディスクの最後のパーティションには重要なシステム回復コンポーネントが含まれています。
@@ -1441,8 +1441,10 @@ Asahi Linuxのバニラインストールという共通のケースに対して
 これでシステムリカバリに入り、完全なDFUフラッシュを使わずにそこから修正することができます。</p>
 <h5 id="apple-silicon">Apple Silicon の物理ディスクレイアウト<a class="headerlink" href="#apple-silicon" title="Permanent link">&para;</a></h5>
 <ul>
-<li>NVMe ドライブには名前空間があります。macOSでは <code>disk0</code>、Linuxでは <code>nvme0n1</code> が主なものです。</li>
+<li>NVMe ドライブには名前空間があります。macOSでは <code>disk0</code>、Linuxでは <code>nvme0n1</code> が主なものです。<ul>
 <li>他のものは、カーネルパニックログなどに使用。これはかなり低レベルのものなので、気にする必要なし。これはNVMeのことで『ローレベルパーティション』みたいなもの。あまり深く考えないで</li>
+</ul>
+</li>
 <li>プライマリ名前空間はGPTパーティションテーブルとしてフォーマットされ、最近のほとんどのLinux/Windows/Intel Macシステムと同じ</li>
 <li>GPTには、従来のパーティション（FAT32、HFS+、Linux...）またはAPFSコンテナが含まれる</li>
 <li>APFSコンテナには、ディスク領域を共有する複数の論理ボリュームが含まれる</li>
@@ -1473,12 +1475,18 @@ Asahi Linuxのバニラインストールという共通のケースに対して
 共有することも<em>できます</em>が、エラーの可能性が低くなり削除も簡単になるので、<em>そうしないことにしています</em>し、どのみちディスクのパーティションは既に切ってあります。</p>
 <p>インストーラは(通常の Asahi Linux = Arch Linux ARM インストールの場合)3つのパーティションを作成します:</p>
 <ul>
-<li>2.5GB APFS コンテナ、マシンを起動するのに必要な iBoot/macOS の断片と recoveryOS のコピーが含まる</li>
+<li>2.5GB APFS コンテナ、マシンを起動するのに必要な iBoot/macOS の断片と recoveryOS のコピーが含まる<ul>
 <li>m1n1 stage 1 はここにインストール</li>
-<li>500MBのEFIシステムパーティション</li>
+</ul>
+</li>
+<li>500MBのEFIシステムパーティション<ul>
 <li>m1n1 ステージ2、U-Boot、GRUB コアイメージはここ</li>
-<li>Linux ext4 パーティションが残りの領域を埋める</li>
+</ul>
+</li>
+<li>Linux ext4 パーティションが残りの領域を埋める<ul>
 <li>GRUBモジュールとLinuxカーネル/initramfsはここ</li>
+</ul>
+</li>
 </ul>
 <p>アンインストールするには、この3つをすべて削除する必要があります。</p>
 <p>Asahi Linux は、従来の UEFI システムとは異なり、<em>インストールするインスタンスごとに</em> EFI System Partition を作成するのが特徴です。
@@ -1507,19 +1515,27 @@ UEFI システムに変え、インストールするたびに Apple Silicon Mac
 </code></pre>
 <p>これが示すもの:</p>
 <ul>
-<li>1つのAPFSコンテナ（380GB）には、1つのmacOS 12.3インストール（「Macintosh HD」）を構成する6つのボリューム（リストされていない）が含まれる。注：『Macintosh HD』は実際にはシステムサブボリュームの名前で、これは macOS 自身がボリュームを表示する方法</li>
+<li>1つのAPFSコンテナ（380GB）には、1つのmacOS 12.3インストール（「Macintosh HD」）を構成する6つのボリューム（リストされていない）が含まれる。注：『Macintosh HD』は実際にはシステムサブボリュームの名前で、これは macOS 自身がボリュームを表示する方法<ul>
 <li>もし、同じコンテナで他の macOS インストールがスペースを共有している場合、それは同じパーティションにある別の <code>OS:</code> 行として表示</li>
 <li>disk3s1 はこの macOS システムの <em>ボリューム</em> であり、<code>disk3</code> がこの APFS コンテナパーティションを表す仮想ディスクであることを意味</li>
 <li>UUID はこの OS のボリュームグループ ID で、この OS の主要な識別子 (例えば、機器が見つけて起動する方法、<code>bputil</code> プロンプトでそれを選択する方法、Preboot と Recovery サブボリューム内の関連サブディレクトリ名、その他)</li>
-<li>4つのボリュームを含む1つのAPFSコンテナ（2.5GB）は実際にはAsahi Linuxブートローダーのスタブで、macOS 12.3をベースバージョンとして使用し、名前は 『Asahi Linux 』</li>
+</ul>
+</li>
+<li>4つのボリュームを含む1つのAPFSコンテナ（2.5GB）は実際にはAsahi Linuxブートローダーのスタブで、macOS 12.3をベースバージョンとして使用し、名前は 『Asahi Linux 』<ul>
 <li>インストールが完了していれば、m1n1ステージ1のバージョンが表示されるはず。しかし、そうではないので、電源ボタンを押して再起動し、インストールの第二段階を完了するまで、<code>incomplete install</code>と表示</li>
 <li>disk4s2 はこのスタブのシステムの <em>ボリューム</em> で、つまり <code>disk4</code> はこの APFS コンテナパーティションを表す仮想ディスク</li>
+</ul>
+</li>
 <li>EFIシステムパーティション(FAT32)</li>
 <li>Linuxファイルシステムパーティション（今回はext4ですが、特定のFSは特定/表示されない）</li>
-<li>いくつかの空き領域（パーティションされていない） - インストーラはこれを独自の 『パーティション』 として表現していることに注意</li>
+<li>いくつかの空き領域（パーティションされていない） - インストーラはこれを独自の 『パーティション』 として表現していることに注意<ul>
 <li>代わりに <code>diskutil</code> は、物理ディスクの順番に従い直前のパーティションのパーティション識別子で空き領域を参照しようとするが、これは言うまでもなく非常に紛らわしく、エラーが発生しやすい。それ自身の番号を与えることがより理にかなっていると思っている</li>
-<li>システムリカバリーパーティション（常に最後に存在）は、2つの APFS ボリュームを含み、recoveryOS（バージョン 12.3）のインスタンスが1つインストールされている</li>
+</ul>
+</li>
+<li>システムリカバリーパーティション（常に最後に存在）は、2つの APFS ボリュームを含み、recoveryOS（バージョン 12.3）のインスタンスが1つインストールされている<ul>
 <li>これに触れたくないですが、recoveryOSのバージョンを知ることは有用であるためこれを表示。フォールバックバージョンもあるかもしれない</li>
+</ul>
+</li>
 </ul>
 <p>現在、<em>Macintosh HD</em> OS (<code>[B ]</code>) で起動しているが、デフォルトの起動OSはAsahi Linux (<code>[ *]</code>) に設定されていることを知らせていることに注意して
 ください。もし、recoveryOSから起動した場合は、<code>[R*]</code> (デフォルトブートOSの一部であるrecoveryOSを起動)と表示されますが、最終的にシステムリカバリーへフ
@@ -1562,19 +1578,27 @@ UEFI システムに変え、インストールするたびに Apple Silicon Mac
 <p>これは、まずdisk0に存在する物理パーティションを順番に表示しています。</p>
 <ul>
 <li><code>disk0</code> (タイプ "GUID_partition_scheme" として表示) は実際にはディスク全体 (500GB) を表しす</li>
-<li><code>disk0s1</code> は iBoot システムコンテナ (タイプ <code>Apple_APFS_ISC</code>) で、インストーラーの出力には表示されない</li>
+<li><code>disk0s1</code> は iBoot システムコンテナ (タイプ <code>Apple_APFS_ISC</code>) で、インストーラーの出力には表示されない<ul>
 <li>これは実際にはもっとサブボリュームのあるAPFSコンテナですが、<code>diskutil</code>自身はその詳細も隠す</li>
 <li>このコンテナにはシステムクリティカルな情報がたくさん入っているので、いじらない方がいい</li>
-<li><code>disk0s2</code>は最初のAPFSコンテナで、macOSのボリューム 『Macintosh HD』を格納</li>
+</ul>
+</li>
+<li><code>disk0s2</code>は最初のAPFSコンテナで、macOSのボリューム 『Macintosh HD』を格納<ul>
 <li>『Container disk3』と表示されているのは、これが仮想/合成されたディスク <code>disk3</code> として表示されていることを示す</li>
-<li><code>disk0s5</code> は Asahi Linux のブートローダスタブ</li>
+</ul>
+</li>
+<li><code>disk0s5</code> は Asahi Linux のブートローダスタブ<ul>
 <li>パーティションインデックスの順番がおかしい！ 論理的には <code>disk0s2</code> の後にあり、GPT でもその位置に存在。このパーティション番号は何の意味もなく、macOSがその日に割り当てたいと思ったものを使用</li>
 <li>これは仮想ディスク <code>disk4</code></li>
+</ul>
+</li>
 <li><code>disk0s4</code> は FAT32 EFI System Partition (タイプは <code>EFI</code> で、名前は <code>EFI - ASAHI</code> で表示: これらは切り捨てられるから)</li>
 <li><code>disk0s7</code> はLinuxのルートパーティション（タイプは <code>Linux filesystem</code> と表示）</li>
 <li>次に空き容量</li>
-<li><code>disk0s3</code>はシステムリカバリーパーティション（タイプ <code>Apple_APFS_Recovery</code> ）</li>
+<li><code>disk0s3</code>はシステムリカバリーパーティション（タイプ <code>Apple_APFS_Recovery</code> ）<ul>
 <li>本当に、これはいじらないで。これはOSが壊れたときにローカルで復旧する唯一の方法</li>
+</ul>
+</li>
 </ul>
 <p>この後、2つのAPFSコンテナがボリュームに分割され、それぞれが仮想ディスクとして存在することがわかります。<code>disk3</code> と <code>disk4</code> です。実際には、さらに2つあります。<code>disk1</code> は iBoot システムコンテナ (バックは <code>disk0s1</code>) で、<code>disk2</code> はシステムリカバリー (バックは <code>disk0s3</code>) ですが、これらは diskutil 出力では
 隠されています。しかし、これらは diskutil の出力には表示されません。この番号付けはあなたにとって異なるかもしれませんし、実際にそうなることを忘れないでください。</p>

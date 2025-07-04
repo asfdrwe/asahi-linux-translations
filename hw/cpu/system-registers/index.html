@@ -1194,7 +1194,7 @@
 
   <h1>システムレジスタ</h1>
 
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/hw/cpu/system-registers.md">System Registers</a>の翻訳</p>
+<p>2025/6/30時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/hw/cpu/system-registers.md">System Registers</a>の翻訳</p>
 <hr />
 <p>網羅的な列挙と調査は<a href="system-registers-dumps.md">システムレジスタダンプ</a>を参照してください。</p>
 <h5 id="_1">用語集<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
@@ -1807,7 +1807,9 @@
 <h6 id="id">IDレジスター<a class="headerlink" href="#id" title="Permanent link">&para;</a></h6>
 <h6 id="midr_el1-arm">MIDR_EL1 (ARM標準)<a class="headerlink" href="#midr_el1-arm" title="Permanent link">&para;</a></h6>
 <ul>
-<li>[15:4] PartNum</li>
+<li>
+<p>[15:4] PartNum</p>
+<ul>
 <li>1: Alcatraz Cyclone (A7 / H6P)</li>
 <li>2: Fiji Typhoon (A8 / H7P)</li>
 <li>3: Capri Typhoon (A8X / H7G)</li>
@@ -1826,8 +1828,8 @@
 <li>19: Cebu Thunder (A13 / H12 e-core)</li>
 <li>34: M1 Icestorm (H13G e-core)</li>
 <li>35: M1 Firestorm (H13G p-core)</li>
-<li>
-<p>38: Turks (S6 / M10)</p>
+<li>38: Turks (S6 / M10)</li>
+</ul>
 </li>
 <li>
 <p>[31:24] Implementer (0x61 = 'a' = Apple)</p>

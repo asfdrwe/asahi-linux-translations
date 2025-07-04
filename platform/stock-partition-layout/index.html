@@ -1194,28 +1194,24 @@
 
   <h1>既製品 SSD パーティションレイアウト</h1>
 
-<p>2025/4/7時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/stock-partition-layout.md">stock-partition-layout</a>の翻訳</p>
+<p>2025/6/30時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/stock-partition-layout.md">stock-partition-layout</a>の翻訳</p>
 <hr />
 <h4 id="_1">まとめ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>disk0</strong>：メインSSD</li>
-<li><strong>disk0s1 = disk1</strong>: 『iBootSystemContainer』 - システム全体のブートデータ<ul>
+<li><strong>disk0</strong>：メインSSD<ul>
+<li><strong>disk0s1 = disk1</strong>: 『iBootSystemContainer』 - システム全体のブートデータ</li>
 <li><strong>disk1s1</strong>: 『iSCPreboot』 - ブートポリシー、システムファームウェア(NOR)バージョンメタデータ、SEPファームウェア(時々)、APチケット</li>
 <li><strong>disk1s2</strong>: 『xARTS』 - SEPの信頼できるストレージ</li>
 <li><strong>disk1s3</strong>: 『ハードウェア』 - ログ、ファクトリーデータキャッシュ、アクティベーション関連ファイル</li>
 <li><strong>disk1s4</strong>: 『Recovery』 - 空</li>
-</ul>
-</li>
-<li><strong>disk0s2 = disk3</strong>: 『コンテナ』 - macOSインストール<ul>
+<li><strong>disk0s2 = disk3</strong>: 『コンテナ』 - macOSインストール</li>
 <li><strong>disk3s1</strong>: 『System』 - OS (root filesystem、封印(seal)されている)</li>
 <li><strong>disk3s2</strong>: 『Preboot』 - iBoot2 (OSローダー)、iBootにロードされたファームウェア、Darwinのカーネルキャッシュ、ファームウェア、DeviceTree、その他preboot用情報</li>
 <li><strong>disk3s3</strong>: 『Recovery』 - ペアのRecoveryOS: iBoot2、 ファームウェア、 Darwinのカーネルキャッシュ、ラムディスクイメージ</li>
 <li><strong>disk3s4</strong>: 『Update』 - macOSアップデート用の一時ストレージとログ</li>
 <li><strong>disk3s5</strong>: 『Data』 - ユーザーデータ（root filesystem、統合）。このボリュームのUUIDはOSインストールのアイデンティティを定義</li>
 <li><strong>disk3s6</strong>: 『VM』 - スワップパーティション(必要時)</li>
-</ul>
-</li>
-<li><strong>disk0s3 = disk2</strong>: 『RecoveryOSContainer』 - System RecoveryOS<ul>
+<li><strong>disk0s3 = disk2</strong>: 『RecoveryOSContainer』 - System RecoveryOS</li>
 <li><strong>disk2s1</strong>: 『Recovery』- 1つまたは複数の{iBoot2 (OSローダー)、Darwinのカーネルキャッシュ、ファームウェア、DeviceTree、その他のpreboot用情報}のセット</li>
 <li><strong>disk2s2</strong>: 『Update』 - システムのファームウェアアップデート用の一時ストレージとログ</li>
 </ul>

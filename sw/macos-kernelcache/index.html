@@ -1194,7 +1194,7 @@
 
   <h1>macOS カーネルキャッシュ</h1>
 
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/macos-kernelcache.md">macos-kernelcache</a>の翻訳</p>
+<p>2025/6/30時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/macos-kernelcache.md">macos-kernelcache</a>の翻訳</p>
 <p>訳注: プロジェクトページへのリンクは対応する日本語訳へのリンクに置き換え</p>
 <hr />
 <h4 id="_1">先に進む前にこれをお読みください<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
@@ -1219,10 +1219,12 @@
 <ul>
 <li><strong>davidrysk氏</strong> の提案により、いくつかの MacOS カーネルイメージが <strong>/System/Library/Kernels/kernel.release.t8020</strong> で既に利用可能</li>
 <li>下記は、コードを逆アセンブルするためのオフセットを得るために、Marcan氏のスクリプト 
-<a href="https://gist.github.com/marcan/e1808a2f4a5e1fc562357550a770afb1">machodump.py</a> でmachoヘッダーをダンプしたもの</li>
+<a href="https://gist.github.com/marcan/e1808a2f4a5e1fc562357550a770afb1">machodump.py</a> でmachoヘッダーをダンプしたもの<ul>
 <li>注：これは <strong>construct</strong> python パッケージを必要とするが、debian buster パッケージは動作しなかった（python 3 または 2）、
 あるいは github バージョンも動作しない</li>
 <li>pip3経由のpypiインストールを使用する必要あり</li>
+</ul>
+</li>
 </ul>
 <pre><code> apt install python3-pip
  pip3 install construct
