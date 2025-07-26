@@ -15,12 +15,14 @@ nav:
   - プロジェクト関連:
     - 用語集: project/glossary.md
     - FAQ: project/faq.md
-    - Asahi-Linuxはいつ完成するの？: project/when-will-asahi-be-done.md
+    - Asahi-Linux はいつ完成するの？: project/when-will-asahi-be-done.md
     - 参考資料: project/references.md
     - Asahi Linux 理事会: project/board/asahi-board.md
-  - プラットフォーム文書:
+    - 方針:
+      -  生成 AI: project/policies/slop.md
+   - プラットフォーム文書:
     - Apple Silicon サブシステム: platform/subsystems.md
-    - Appleプラットフォームセキュリティクラッシュコース: platform/security.md
+    - Apple プラットフォームセキュリティクラッシュコース: platform/security.md
     - 機器: hw/devices/device-list.md
     - コードネーム: hw/soc/soc-codenames.md
     - ディスプレイコントローラー: hw/soc/display-controllers.md

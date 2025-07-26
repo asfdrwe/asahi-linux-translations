@@ -2,7 +2,7 @@
 title: FAQ
 ---
 
-2025/4/7時点の[faq](https://github.com/AsahiLinux/docs/blob/main/docs/project/faq.md)の翻訳
+2025/7/26時点の[faq](https://github.com/AsahiLinux/docs/blob/main/docs/project/faq.md)の翻訳
 
 訳注: Asahi Linux内のページへのリンクは対応する日本語訳に置き換え、Arch Linux wikiへのリンクは対応する日本語Arch Linux wikiへのリンクへ置き換え
 
@@ -26,6 +26,11 @@ macOSから
 curl https://alx.sh | sh
 ```
 としてください。その他文書の日本語訳は https://github.com/asfdrwe/asahi-linux-translations を参照してください。
+
+## Asahi Linuxを外部のmacOSインストールからインストールできますか？
+[いいえ](https://github.com/AsahiLinux/asahi-installer/issues/250)。
+Asahi Linux をインストールしたり、m1n1 を更新・修復したり、アクティブな Asahi Linux
+インストールのサイズを変更するには、*内部*の macOS インストールを保持する必要があります。
 
 ## どのようにアンインストールするかと失敗したインストールをクリーンアップをどのようにしますか？
 
