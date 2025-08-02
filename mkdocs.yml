@@ -1,7 +1,7 @@
 site_name: Asahi Linux 文書非公式日本語訳
 site_url: https://asfdrwe.github.io/asahi-linux-translations/
 
-repo_url: https://github.com/asfdrwe/asahi-linux-translations
+repo_url: https://github.com/asfdrwe/asahi-linux-translations/
 repo_name: asfdrwe/asahi-linux-translations
 
 nav:
@@ -20,7 +20,7 @@ nav:
     - Asahi Linux 理事会: project/board/asahi-board.md
     - 方針:
       -  生成 AI: project/policies/slop.md
-   - プラットフォーム文書:
+  - プラットフォーム文書:
     - Apple Silicon サブシステム: platform/subsystems.md
     - Apple プラットフォームセキュリティクラッシュコース: platform/security.md
     - 機器: hw/devices/device-list.md
