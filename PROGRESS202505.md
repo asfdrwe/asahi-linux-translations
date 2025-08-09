@@ -8,6 +8,7 @@
 # 進捗報告: Linux 6.15
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202503.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202508.md)
 
 Linux 6.15が間もなくリリースされます。つまり、最新の進捗報告をお届けする時間が来ました！
 影で非常に忙しかったです。みなさまに共有できるエキサイティングな進展がありますよ。
