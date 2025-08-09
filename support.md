@@ -3,7 +3,7 @@
 ---
 # Asahi Linuxへの支援
 Asahi Linuxプロジェクトは、あなたのような個人によって運営されています。私たちを資金面で支援したい方は、プロジェクトの[Open Collective](https://opencollective.com/asahilinux)、
-[GitHub Sponsors](https://github.com/sponsors/AsahiLinux)にアクセスしてください。また、 [Asahi Linux merchで購入]()することで、
+[GitHub Sponsors](https://github.com/sponsors/AsahiLinux)にアクセスしてください。また、 [Asahi Linux merchで購入](https://github.com/asfdrwe/asahi-linux-translations/blob/main/merch.md)することで、
 プロジェクトをサポートできます。
 
 Linux を Apple Silicon に移植することは、決して小さな仕事ではありません。空き時間のハッキングだけで達成できるものではありません。
