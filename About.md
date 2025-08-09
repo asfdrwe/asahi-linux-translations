@@ -1,4 +1,4 @@
-[About Asahi Linux](https://asahilinux.org/about/)の2025年2月14日時点の非公式日本語訳です。
+[About Asahi Linux](https://asahilinux.org/about/)の2025年8月9日時点の非公式日本語訳です。
 
 訳注: プロジェクトページへのリンクは対応する日本語訳へのリンクに置き換え
 
@@ -72,7 +72,6 @@ Asahi Linux はコミュニティであり、誰でも貢献することがで�
 
 現在の主な貢献者は以下の通りです。
 - [Alyssa Rosenzweig氏](https://rosenzweig.io/) Asahi GPU代表。Alyssa氏は、Arm Mali GPUをリバースエンジニアリングし、フリーのPanfrostドライバを構築したことで知られるLinuxグラフィックスハッカーです。現在、上流のMesa3D開発者として、AsahiのOpenGLとVulkanドライバのメンテナンスを行っています。
-- [Asahi Lina氏](https://github.com/asahilina) GPUカーネル魔術師。Lina氏は、M1 GPUカーネルインターフェイスのリバースエンジニアリングのためにチームに参加し、気がついたら世界初のRust Linux GPUカーネルドライバを書いていました。Asahi DRMカーネルドライバに取り組んでいないときは、オープンソースのVTuberツールやインフラをハックすることもあります。
 - [Dougall Johnson氏(dougallj)](https://github.com/dougallj) 命令セットアーキテクチャの天才。Dougall氏はApple GPUの命令セットの多くをリバースエンジニアリングし、マイクロアーキテクチャの詳細を推測するためにApple M1のCPUコアのタイミングを分析しています。
 - [Eileen Yoon氏(eiln)](https://github.com/eiln) マルチメディアとアクセラレータを担当する信号処理の第一人者。Eileen氏は現在、ハードウェアのビデオコーデック・アクセラレーションに取り組んでおり、すでにニューラルエンジンとイメージ・シグナル・プロセッサー（カメラ）を完成させています。
 - [James Calligeros氏(chadmed)](https://github.com/chadmed) エネルギーを考慮したスケジューリング(EAS)を実装し、スピーカーのために派手なDSPをハンドチューニングし、派手なDSPが派手な電力を消費しないようにPipeWireに利用クランプを追加しました。また、asahi-gentooのメンテナンスも行っています。
@@ -81,7 +80,8 @@ Asahi Linux はコミュニティであり、誰でも貢献することがで�
 - [Sven Peter氏](https://github.com/svenpeter42) USB、PCIe、イーサネット、Wi-Fi に必要な Apple の DART (Device Address Resolution Table) の上流Linux対応に精力的に取り組んできました。また、m1n1にUSBガジェット対応を追加し、現在はDisplayPortとThunderboltのサポートに取り組んでいます。
 
 過去の主な貢献者は以下の通りです。
-
+- [Asahi Lina氏](https://github.com/asahilina) GPUカーネル魔術師。Lina 氏は、M1 GPUカーネルインターフェイスのリバースエンジニアリングのためにチームに参加し、気がついたら世界初のRust Linux GPUカーネルドライバを書いていました。Asahi DRMカーネルドライバに取り組んでいないときは、オープンソースのVTuberツールやインフラをハックすることもあります。
+- 
 - [Hector Martin氏(marcan)](https://github.com/marcan) Asahiプロジェクトの創設者。marcan氏は熟練のリバースエンジニア兼デベロッパーで、15年以上の間、Linuxを移植したり、文書化
 されていないデバイスやクローズドデバイスで非公式ソフトウェアを実行した経験を持っています。Asahi Linuxはmarcan氏にとって最も野心的なプロジェクトでした。
 これまでのプロジェクトには、PS4上の独自のハードウェアに Linux を移植し、OpenGL と Vulkan (radeon/amdgpu ドライバー) を使用して完全な 3D アクセラレーションを可能にした 
@@ -89,4 +89,5 @@ Asahi Linux はコミュニティであり、誰でも貢献することがで�
 [AsbestOS](https://github.com/marcan/asbestos)、[The Homebrew Channel](https://wiibrew.org/wiki/Homebrew_Channel) と 
 [BootMii](https://wiibrew.org/wiki/BootMii) 開発チームの一員として [Wii Homebrew エコシステム](https://wiibrew.org/)に多くの貢献をし、
 多くのハードウェアを文書化してopen homebrew SDKツールに寄与しました。
+
 - [Martin Povišer氏(povik)](https://github.com/povik/) 私たちのオーディオカーネルドライバの取り組みをリードしてくれました。Martin氏は、Apple固有のSoCオーディオドライバと、Apple独自のコーデックおよびコーデックバリアント用のドライバを書きました。
