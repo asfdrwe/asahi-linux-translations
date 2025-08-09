@@ -7,6 +7,7 @@
 - [貢献](https://github.com/asfdrwe/asahi-linux-translations/blob/main/contribute.md)
 - [ガバナンス](https://github.com/asfdrwe/asahi-linux-translations/blob/main/governance.md)
 - [支援](https://github.com/asfdrwe/asahi-linux-translations/blob/main/support.md)
+- [グッツ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/merch.md)
 - [行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
 - [著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
 - ブログ
