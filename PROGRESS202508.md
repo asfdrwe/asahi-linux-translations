@@ -42,7 +42,7 @@ Mesa ドライバが完全に上流に統合されたことで、改善作業が
 
 現在、ゲームを可能にするために出荷しているスタックはかなりのものです。一番下には muvm があり、（想像しているように）4K メモリページで設定されたカーネルを使用してマイクロ VM を起動します。
 現在の FEX はこれを必要とします。x86 アーキテクチャは 4K ページしか対応しておらず、メモリページをより小さなページに『分割』することはできず、大きなサイズのページを作成するために
-結合することしかできません(訳注: ほとんど使われていませんが 32bit x86も [4Kページ以外に対応している](https://qiita.com/akachochin/items/6e38f89f9421f3e7cbcf)と思います。[Physical Address Extension](https://en.wikipedia.org/wiki/Physical_Address_Extension)(参考資料2025/8/10 追加))。
+結合することしかできません(訳注: ほとんど使われていませんが 32bit x86も [4Kページ以外に対応している](https://qiita.com/akachochin/items/6e38f89f9421f3e7cbcf)と思います。[Physical Address Extension](https://en.wikipedia.org/wiki/Physical_Address_Extension#Page_table_structures)(参考資料2025/8/10 追加))。
 その上には FEX があり、x86 バイナリを翻訳して 64 ビットの ARM 機器で実行できるようにします。しかし、バイナリアプリケーションは自己完結型の一枚板であることはほとんどありません。
 システムコールを介してカーネル関数にアクセスしたり、glibc のようなシステムライブラリにアクセスしたり、Vulkan のような API を介して GPU にアクセスする必要があります。
 
