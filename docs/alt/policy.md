@@ -2,7 +2,7 @@
 title: Asahi Linux ディストリビューションガイドライン
 ---
 
-2025/5/15時点の[policy](https://github.com/AsahiLinux/docs/blob/main/docs/alt/policy.md)の翻訳
+2025/8/22時点の[policy](https://github.com/AsahiLinux/docs/blob/main/docs/alt/policy.md)の翻訳
 
 ---
 Asahi Linux は、Apple Silicon プラットフォーム向けに Linux を対応させるよう

@@ -2,7 +2,7 @@
 title: ASC
 ---
 
-2025/3/9時点の[ASC](https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/asc.md)の翻訳
+2025/8/22時点の[ASC](https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/asc.md)の翻訳
 
 ---
 ## ASC レジスタ

@@ -4,7 +4,7 @@ summary:
 m1n1 を MachO バイナリとして起動するときに Apple Silicon 機器で使われるブートプロトコル
 ---
 
-2025/3/9時点の[macho-boot-protocol](https://github.com/AsahiLinux/docs/blob/main/docs/fw/macho-boot-protocol.md)の翻訳
+2025/8/22時点の[macho-boot-protocol](https://github.com/AsahiLinux/docs/blob/main/docs/fw/macho-boot-protocol.md)の翻訳
 
 ---
 ## ブートプロトコル

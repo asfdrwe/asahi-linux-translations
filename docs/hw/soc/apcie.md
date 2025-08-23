@@ -2,7 +2,7 @@
 title: Apple PCIe コントローラー
 ---
 
-2025/3/9時点の[apcie](https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/apcie.md)の翻訳
+2025/8/22時点の[apcie](https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/apcie.md)の翻訳
 
 ---
 PCIeホスト・ブリッジには少なくとも一部のSynopsys DesignWare由来のロジックが含まれています。 
@@ -71,6 +71,7 @@ PCIEコンフィグスペースのオフセット0x8f8/0x8fcにエンコード�
 
 ### pcie-rc-tunables
 2020 M1 miniでは、この一連のレジスタ書き込みはその他のレジスタと同様に標準化されたケイパビリティ構造のいくつかのビットを変更します。
+
 | レジスタ | ケイパビリティ | 効果 |
 |----------|------------|--------|
 | 0x194    | L1 PM Substates | Port Common_Mode_Restore_Timeをクリア |

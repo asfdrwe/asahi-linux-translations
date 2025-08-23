@@ -2,7 +2,7 @@
 title: 用語集
 ---
 
-2025/3/31時点の[glossary](https://github.com/AsahiLinux/docs/blob/main/docs/project/glossary.md)の翻訳
+2025/8/22時点の[glossary](https://github.com/AsahiLinux/docs/blob/main/docs/project/glossary.md)の翻訳
 
 ---
 知っておくと役立つ用語
@@ -74,7 +74,7 @@ OS の Preboot パーティションにある特定のセカンドステージ�
 * **iBSS**: iBoot Single Stage。ファーストステージのiBoot(iBoot1/LLB)の代替品で、NORが破損している場合にDFUブートフローでロード
 * **IOKit**: I/O KitはAppleのXNU(AppleのOSカーネル)用のデバイスドライバフレームワーク
 * **IOMMU**: I/O Memory Management Unit。アップル社のDARTの総称
-* **IPI**: Inter-processor interupt。あるプロセッサが別のプロセッサに割り込みする際の割り込み
+* **IPI**: Inter-processor interrupt。あるプロセッサが別のプロセッサに割り込みする際の割り込み
 * **iSC**: iBoot System Container。システム全体のブートデータを格納するディスクパーティション(通常内蔵SSDの最初のパーティション)([既製品パーティションレイアウト](../platform/stock-partition-layout.md)を参照）
 * **ISP**： Image Signal Processor。Mシリーズのラップトップのウェブカメラ。センサーからストロボやコプロセッサまでカメラユニット全体を表す
 

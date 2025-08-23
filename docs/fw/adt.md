@@ -4,7 +4,7 @@ summary:
 Apple Device Tree, Apple Silicon 機器で使われるハードウェア検出・初期化システム
 ---
 
-2025/3/9時点の[adt](https://github.com/AsahiLinux/docs/blob/main/docs/fw/adt.md)の翻訳
+2025/8/22時点の[adt](https://github.com/AsahiLinux/docs/blob/main/docs/fw/adt.md)の翻訳
 
 ---
 
@@ -64,7 +64,7 @@ im4pファイルを下記ディレクトリからコピーしてください。M
 `/System/Volumes/Preboot/[UUID]/restore/Firmware/all_flash/DeviceTree.{model}.im4p`
 
 ディレクトリが存在しない場合、リカバリーモードでcsrutilを無効化し、設定からターミナルですべてのファイルにアクセスできるようにするか、
-シンボリックリンクされている可能性があるので `Volumes/Macintosh HD/` から起動してみてください。
+またはシンボリックリンクされている可能性があるので `Volumes/Macintosh HD/` から起動してみてください。
 それでもアクセスできない場合は、以前からの`sudo find . -type f -name '*.im4p'`を試してみてください。
 
 そして、img4tool を使って dt.bin を抽出します。

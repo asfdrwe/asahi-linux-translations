@@ -143,6 +143,7 @@ $ sw_vers
           -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
 
 ## m1n1 ハイパーバイザツリーの更新
+
 ハイパーバイザー/m1n1 ABI は * 安定していません* 。上記のように新しい m1n1 ビルドをインストールした場合、時間を節約するために 
 `run_guest.py` を直接使用できます。ただし、m1n1 の git ツリーを更新したらすぐに、 `run_guest.py` の前に更新した m1n1 をビルドし
 
@@ -154,6 +155,7 @@ python tools/chainload.py -r ../build/m1n1.bin
 これを行わないと、ABIの不整合によるランダムなエラーやクラッシュが発生します。
 
 ## GDB/LLDBの使用
+
 `gdbserver` コマンドは GDB または LLDB に接続できるサーバーの実装を起動します。LLDBがより推奨されます。というのは
 ポインタ認証とDarwinカーネルdyldに対応しているからです。
 LLDBでシンボルを取得するには、カーネル拡張をロードする必要があります。以下のシェルスクリプトは `target.lldb` を生成します。

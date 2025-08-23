@@ -2,7 +2,7 @@
 title: テザーブート: macOS ホストマシン
 ---
 
-2025/6/30時点の[tethered-boot-macos-host](https://github.com/AsahiLinux/docs/blob/main/docs/sw/tethered-boot-macos-host.md)の翻訳
+2025/8/22時点の[tethered-boot-macos-host](https://github.com/AsahiLinux/docs/blob/main/docs/sw/tethered-boot-macos-host.md)の翻訳
 
 訳注:原文のスペルミスやリンクミスは正しいものに修正
 
@@ -137,8 +137,8 @@ pyserial-ports is /usr/local/bin/pyserial-ports
 
 ### picocomをインストール
 
-m1n1プロキシとの通信を確立するには、シリアルポート通信ソフトウェアが必要です。シリアルターミナルとして使用するために、
-homebrewで利用可能な `picocom` のインストールをおすすめします:
+m1n1 プロキシとの通信を確立するには、シリアルポート通信ソフトウェアが必要です。シリアルターミナルとして使用するために、
+homebrew で利用可能な `picocom` のインストールをおすすめします:
 
 ```shell
 brew install picocom
