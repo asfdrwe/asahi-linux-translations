@@ -1264,7 +1264,7 @@
 
   <h1>Apple GPU (AGX)</h1>
 
-<p>2025/6/30時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/agx.md">agx</a>の翻訳</p>
+<p>2025/8/22時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/agx.md">agx</a>の翻訳</p>
 <hr />
 <h4 id="linaagx">Lina氏のAGXノート<a class="headerlink" href="#linaagx" title="Permanent link">&para;</a></h4>
 <p>読者注意、ここにドラゴン(dragon)がいます。ポインター型のドラゴン。たくさんいます
@@ -1377,7 +1377,7 @@ CPU が初期化し GPU が管理するメイン構造体と、コンテキス�
 想定しているので、レイアウトは尊重されなければなりません）。</p>
 <p>データ構造: <a href="https://github.com/AsahiLinux/m1n1/blob/main/proxyclient/m1n1/fw/agx/cmdqueue.py">cmdqueue.py</a> を参照</p>
 <h6 id="_6">マイクロシーケンサー<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h6>
-<p>ASCファームウェアは、作業コマンドの一部としてかなり複雑な『スクリプト』を実行できるコマンドシーケンサーを含んでいますが、
+<p>ASC ファームウェアは、作業コマンドの一部としてかなり複雑な『スクリプト』を実行できるコマンドシーケンサーを含んでいますが、
 通常は明らかに基本的な方法で使用されます。これらのシーケンスは、ワークアイテムの一部として実行されるコマンドのバッファを
 パックしたものです。典型的なシーケンスは:</p>
 <ul>
@@ -1388,7 +1388,7 @@ CPU が初期化し GPU が管理するメイン構造体と、コンテキス�
 <li>終了(3D/TA/CP)</li>
 </ul>
 <p>データ構造: <a href="https://github.com/AsahiLinux/m1n1/blob/main/proxyclient/m1n1/fw/agx/microsequence.py">microsequence.py</a> を参照</p>
-<h6 id="tiler">Tilerバッファの管理<a class="headerlink" href="#tiler" title="Permanent link">&para;</a></h6>
+<h6 id="tiler">Tiler バッファの管理<a class="headerlink" href="#tiler" title="Permanent link">&para;</a></h6>
 <p>GPU Tiler は頂点属性とプリミティブデータを格納するバッファを必要とします。これはドライバが提供するいくつかの固定サイズのバッファと、
 GPU ファームウェアが任意に割り当てるヒープによって行われます。ヒープはバッファマネージャオブジェクトと、それが指す
 いくつかのバッファを介して管理され、CPUはブロック（4ページ）とページ（各32KでVA空間（！）内でアライン）のリストを提供します。</p>
@@ -1413,7 +1413,7 @@ GPU ファームウェアが任意に割り当てるヒープによって行わ�
 <li>Tiler ヒープマネージャと関連するバッファ/リスト</li>
 <li>4つのスタンプオブジェクト</li>
 </ul>
-<h6 id="tiler_1">Tilerバッファ<a class="headerlink" href="#tiler_1" title="Permanent link">&para;</a></h6>
+<h6 id="tiler_1">Tiler バッファ<a class="headerlink" href="#tiler_1" title="Permanent link">&para;</a></h6>
 <ul>
 <li>(U) TVB タイル配列 (タイル数に依存)</li>
 <li>(U) TVB リスト配列 (タイル数に依存?)</li>
@@ -1429,7 +1429,7 @@ GPU ファームウェアが任意に割り当てるヒープによって行わ�
 <h6 id="ta">TAワーク<a class="headerlink" href="#ta" title="Permanent link">&para;</a></h6>
 <p>TAワークは通常このような感じです:</p>
 <h6 id="_9">ヒープマネージャの初期化<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h6>
-<p>初回またはヒープサイズが変更されたときに必要です。CPUが管理ストラクタを再初期化したことをGPUに伝えます。</p>
+<p>初回またはヒープサイズが変更されたときに必要です。CPUが管理構造を再初期化したことをGPUに伝えます。</p>
 <p>未知のコンテキスト関連IDが含まれます。これはヒープマネージャのIDかも？新しい）TAスタンプの値も渡されます。</p>
 <h6 id="ta_1">TAを実行<a class="headerlink" href="#ta_1" title="Permanent link">&para;</a></h6>
 <p>注：これはすべて要約であり、大量の未知/固定/マジックナンバーを無視</p>

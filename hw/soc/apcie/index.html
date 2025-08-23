@@ -1264,7 +1264,7 @@
 
   <h1>Apple PCIe コントローラー</h1>
 
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/apcie.md">apcie</a>の翻訳</p>
+<p>2025/8/22時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/apcie.md">apcie</a>の翻訳</p>
 <hr />
 <p>PCIeホスト・ブリッジには少なくとも一部のSynopsys DesignWare由来のロジックが含まれています。 
 PCIEコンフィグスペースのオフセット0x8f8/0x8fcにエンコードされているリリースバージョンはバージョン530*-ea15（5.30a-ea15）を示しています。</p>
@@ -1533,16 +1533,53 @@ PCIEコンフィグスペースのオフセット0x8f8/0x8fcにエンコード�
 <h5 id="_3">調整項目<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
 <p>以下の調整項目はポートごとにPCIeブリッジデバイスのコンフィグ空間で動作します。</p>
 <h6 id="pcie-rc-tunables">pcie-rc-tunables<a class="headerlink" href="#pcie-rc-tunables" title="Permanent link">&para;</a></h6>
-<p>2020 M1 miniでは、この一連のレジスタ書き込みはその他のレジスタと同様に標準化されたケイパビリティ構造のいくつかのビットを変更します。
-| レジスタ | ケイパビリティ | 効果 |
-|----------|------------|--------|
-| 0x194    | L1 PM Substates | Port Common_Mode_Restore_Timeをクリア |
-|          |                 | Port T_POWER_ON Scaleをクリア |
-|          |                 | Port T_POWER_ON Valueをクリア|
-| 0x2a4    | Data Link Feature | データリンク機能エクスチェンジイネーブルをクリア|
-| 0xb80    |             | （拡張）ケイパビリティ構造の一部ではない |
-| 0xb84    |             | （拡張）ケイパビリティ構造の一部ではない |
-| 0x78     | PCI Express |  Max_Read_Request_Sizeをクリア|</p>
+<p>2020 M1 miniでは、この一連のレジスタ書き込みはその他のレジスタと同様に標準化されたケイパビリティ構造のいくつかのビットを変更します。</p>
+<table>
+<thead>
+<tr>
+<th>レジスタ</th>
+<th>ケイパビリティ</th>
+<th>効果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x194</td>
+<td>L1 PM Substates</td>
+<td>Port Common_Mode_Restore_Timeをクリア</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Port T_POWER_ON Scaleをクリア</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Port T_POWER_ON Valueをクリア</td>
+</tr>
+<tr>
+<td>0x2a4</td>
+<td>Data Link Feature</td>
+<td>データリンク機能エクスチェンジイネーブルをクリア</td>
+</tr>
+<tr>
+<td>0xb80</td>
+<td></td>
+<td>（拡張）ケイパビリティ構造の一部ではない</td>
+</tr>
+<tr>
+<td>0xb84</td>
+<td></td>
+<td>（拡張）ケイパビリティ構造の一部ではない</td>
+</tr>
+<tr>
+<td>0x78</td>
+<td>PCI Express</td>
+<td>Max_Read_Request_Sizeをクリア</td>
+</tr>
+</tbody>
+</table>
 <h6 id="pcie-rc-gen3-shadow-tunables">pcie-rc-gen3-shadow-tunables<a class="headerlink" href="#pcie-rc-gen3-shadow-tunables" title="Permanent link">&para;</a></h6>
 <table>
 <thead>

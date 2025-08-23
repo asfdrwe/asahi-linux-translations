@@ -1269,7 +1269,7 @@
 summary:
 Apple Device Tree, Apple Silicon 機器で使われるハードウェア検出・初期化システム</p>
 <hr />
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/fw/adt.md">adt</a>の翻訳</p>
+<p>2025/8/22時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/fw/adt.md">adt</a>の翻訳</p>
 <hr />
 <p>Appleのファームウェアはカーネルを起動するときにバイナリ形式のDeviceTreeを渡します。このフォーマットは、Linuxが想定する
 Open Firmware標準に非常に似ていますが、異なります。</p>
@@ -1307,7 +1307,7 @@ make install
 <p>im4pファイルを下記ディレクトリからコピーしてください。Machine 'j' モデルの詳細については、<a href="../../hw/devices/device-list/">デバイス</a>を参照してください。</p>
 <p><code>/System/Volumes/Preboot/[UUID]/restore/Firmware/all_flash/DeviceTree.{model}.im4p</code></p>
 <p>ディレクトリが存在しない場合、リカバリーモードでcsrutilを無効化し、設定からターミナルですべてのファイルにアクセスできるようにするか、
-シンボリックリンクされている可能性があるので <code>Volumes/Macintosh HD/</code> から起動してみてください。
+またはシンボリックリンクされている可能性があるので <code>Volumes/Macintosh HD/</code> から起動してみてください。
 それでもアクセスできない場合は、以前からの<code>sudo find . -type f -name '*.im4p'</code>を試してみてください。</p>
 <p>そして、img4tool を使って dt.bin を抽出します。</p>
 <pre><code>img4tool -e DeviceTree.j274ap.im4p -o j274.bin
