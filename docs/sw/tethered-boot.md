@@ -2,7 +2,7 @@
 title: テザーブート
 ---
 
-2025/6/30時点の[tethered-boot](https://github.com/AsahiLinux/docs/blob/main/docs/sw/tethered-boot.md)の翻訳
+2025/9/27時点の[tethered-boot](https://github.com/AsahiLinux/docs/blob/main/docs/sw/tethered-boot.md)の翻訳
 
 訳注: Asahi LinuxではM1 Macとは別にもう一台PCを用意してそのPCからM1 Macを制御することをテザー(tether)と呼び、M1 Macのみで行うことを 
 テザーなし(untether)と呼んでいます。このページは開発者向けに別なPCを用意してM1 Macでの開発を行うための作業に関する解説です。
@@ -21,6 +21,7 @@ m1n1 は gzip されたカーネルイメージ、対象マシンのDeviceTree�
 
 * 少なくとも **macOS 12.3** がインストールされ、設定された Apple Silicon Mac
     * パスワードで保護された管理者アカウントを持っている必要あり。通常これはマシンを初めてセットアップする際に作成した最初のアカウント
+    * 最近は特定のバージョンのmacOSをインストールするのがやや複雑。新しいバージョンから古いバージョンのインストーラを起動することはできず、USBからのリカバリインストールを行うと、自動的にそのメジャーバージョンの最新マイナーバージョンに更新されてしまう。特定のバージョンをインストールしたい場合は、USBリカバリを使用して以前のメジャーバージョンのいずれかのリリースをインストールし、その後ターゲットのバージョンに更新する必要あり
     * GNU/Linux ディストリビューションが動作するあらゆるアーキテクチャのホストマシン(macOSにも対応するがよくテストされていない、[macOS上でのテザーブートセットアップ](tethered-boot-macos-host.md)を参照)
     * GCCとClang/LLVM AArch64の両方のクロスツールチェーンに対応
 
