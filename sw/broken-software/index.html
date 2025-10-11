@@ -1401,7 +1401,7 @@
 
   <h1>問題があるソフトウェア</h1>
 
-<p>2025/6/2時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md">broken-software</a>の翻訳</p>
+<p>2025/10/11時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md">broken-software</a>の翻訳</p>
 <hr />
 <p>このページでは、Apple Silicon 機器では正しく動作しないことが知られているソフトウェアをリストアップしています。
 これを公開することで、コミュニティのメンバーが影響を受けるパッケージの修正を上流に提供する動機となり、AArch64ソフトウェアの
@@ -1517,6 +1517,11 @@ Program Headers:
 <td>Waydroid</td>
 <td><a href="https://github.com/waydroid/waydroid/issues/373">https://github.com/waydroid/waydroid/issues/373</a></td>
 <td>上流の AOSP は 16k ページに対応して動作 <a href="https://developer.android.com/guide/practices/page-sizes">https://developer.android.com/guide/practices/page-sizes</a></td>
+</tr>
+<tr>
+<td>trezord</td>
+<td><a href="https://github.com/trezor/trezord-go/issues/306">https://github.com/trezor/trezord-go/issues/306</a></td>
+<td>ウォレットが接続される前にデーモンが起動するとクラッシュ。ワークアラウンドはウォレットに接続してからデーモンを再起動</td>
 </tr>
 </tbody>
 </table>

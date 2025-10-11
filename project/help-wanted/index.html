@@ -1271,7 +1271,7 @@
 
   <h1>助っ人募集！</h1>
 
-<p>2025/8/2時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/project/help-wanted.md">help-wanted</a>の翻訳</p>
+<p>2025/10/11時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/project/help-wanted.md">help-wanted</a>の翻訳</p>
 <hr />
 <p>このページは、やらなければならないけれども、より大きな魚を揚げることに集中するために優先順位が下げられているような
 雑多なタスクのリストです。これらのタスクのほとんどは、低い費用と低い労力で済むので、カーネル開発や一般的な
@@ -1290,27 +1290,27 @@
 <tbody>
 <tr>
 <td>libgnome-volume-control 修正</td>
-<td>手付かず</td>
+<td><strong>手付かず</strong></td>
 <td>GNOME の音量ミキサーは<code>libgnome-volume-control</code>プラグインで実装。残念ながら、これはWirePlumber/Pipewireとのやりとりが悪く、ノードグラフのパーミッションを尊重しない。このため、デフォルトのsinkが GNOME の『生の(raw)』ハードウェアデバイスになり、DSP をバイパスしてしまう。<code>libgnome-volume-control</code> を修正して、生のハードウェアsinkを非表示にし、正しいデフォルトのsinkを選択するようにする必要あり</td>
 <td>chadmed氏</td>
 </tr>
 <tr>
-<td>Extend tipd driver</td>
-<td>手付かず</td>
-<td>他の Apple Silicon 機器をリセットするための対応と、シリアルを有効にするためのサポートを <a href="https://github.com/AsahiLinux/linux/blob/asahi/drivers/usb/typec/tipd/core.c">tipd</a> に追加。Mac では、USB 仕様の一部が、<a href="https://www.ti.com/lit/ds/symlink/tps65982.pdf">TPS65982</a> と同様の (文書化されていない) CD321x チップによって実装。Apple は Type-C ポートにいくつかの <a href="../../hw/soc/usb-pd/">デバッグ機能</a> を追加。開発用の M1/M2 ホスト (実験対象は別の M1/M2 マシンに接続) で Linux を実行するときにこれらを利用するには、<code>tipd</code> ドライバを拡張する必要あり。</td>
-<td>sven氏より提案</td>
+<td>tuxvdmtool をユーザースペース i2c に書き換え</td>
+<td><strong>手つかず</strong></td>
+<td><a href="https://github.com/AsahiLinux/tuxvdmtool">tuxvdmtool</a> は <a href="https://github.com/AsahiLinux/linux/commit/786523ac62f0aeec37bf9c6b991e8bf2fadc590d">sysfs API</a> を使用。sysfs API はあまり使いやすくなく、上流取り込まれる可能性は低い。tuxvdmtool 公開後に、Linux ユーザースペース I2C クライアントドライバ API を使用する方が良い選択であり動作するはずだと結論付け。詳細は https://github.com/AsahiLinux/tuxvdmtool/issues/1 を参照。</td>
+<td>janne</td>
 </tr>
 <tr>
-<td>Bluetoothサスペンド</td>
-<td>手付かず</td>
-<td>現在、サスペンドしレジュームすると、Bluetoothが壊れる。これは hci_bcm4377 が bluetooth suspend API を使用する方法の問題か、サスペンド前またはレジューム後の特別なベンダー固有のコマンドが欠けているかのどちらか。『XCodeの追加ツール』の一部で追加コマンドを探すApple の PacketLogger を使って、ハイパーバイザーをサスペンド/レジュームサイクルに完全に耐えさせることなく、これを解明することができるはず。また、hci_bcm4377 のサスペンドが他の Bluetooth ドライバとどのように動作するかを比較するのも良いアイデア。なぜなら、デバイスを間違った状態でスタックさせる API を間違って使用している可能性もあるから。</td>
-<td>sven</td>
+<td>シリアルポートリセットを修正</td>
+<td><strong>手つかず</strong></td>
+<td>2つの Apple Silicon 機器を接続して Apple Silicon デバッグ UART を使用すると、ホストデバイスのシリアルポート（<code>/dev/ttySAC0</code>）が<code>tuxvdmtool reboot serial</code>を実行してから数秒以内にリセットされる。この原因を特定し、問題を修正。このタスクは、 m1n1 のハイパーバイザーがハードウェア UART0 を自身の用途で上書きしてしまうため、少し厄介</td>
+<td>janne</td>
 </tr>
 <tr>
 <td>キーボードレイアウトのクリーンアップ (XKB/hid_apple)</td>
 <td>手付かず</td>
 <td>LinuxデスクトップのAppleキーボード対応は、レイアウトやハードウェアキーボードを問わず、まちまちです。キーボードドライバはまだ上流ではないので、 大きなクリーンアップをするチャンスがあります。特に、これらの機器のキーボードにはソフトな<em>Fn</em>キーがあり、これは完全にソフトウェアで処理されます。現在、<code>hid_apple</code>ドライバはこれをカーネルで行っていますが、これは間違ったアプローチです。このキーはXKB/Waylandのユーザースペースで扱われるべきです（Xorgではできませんが、それは非推奨）。そうすれば、ユーザーが他の修飾キーと同じようにキーバインドをカスタマイズしたり、macOSのように特別なシンボルを提供したりするなど、より包括的なFnキーマッピングを行うことができます。これはおそらく、ユーザー空間でこのマッピングを行う新しいXKBキーボードモデルを導入することで実現されるでしょう。これをテストするには、<code>hid_apple</code> の <code>fnmode=0</code> モジュールパラメータを使用して、すべての Fn キー処理を無効にしてください。あとで、編集キー(insert/delete/home/end/pgup/pgdown)のFnキーの組み合わせエミュレーションだけを行う新しいfnmodeを導入したいと思うかもしれませんが、これは使えるTTYとXorgにとって必要最低限なものであって、それ以外はXKBに任せ、Apple Siliconマシンのデフォルトをこのモードにします。Fnの話以外にも、XKBの設定で修正する必要がある地域限定のMacレイアウトはたくさんあり、英語以外のキーボードを持っている人は、この作業に協力することを歓迎します。<a href="https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/379">関連するxkeyboard-configの問題</a></td>
-<td>marcan氏</td>
+<td>janne</td>
 </tr>
 </tbody>
 </table>

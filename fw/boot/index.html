@@ -1269,7 +1269,7 @@
 summary:
 Apple Silicon 機器で使われるブートフロー、Soc 統合 ROM からユーザコードまで</p>
 <hr />
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/fw/boot.md">boot</a>の翻訳</p>
+<p>2025/10/11時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/fw/boot.md">boot</a>の翻訳</p>
 <hr />
 <p>Apple Siliconデバイスは現在のiOSデバイスと非常によく似たブートフローをたどるようです。</p>
 <h4 id="stage-0-securerom">Stage 0 (SecureROM)<a class="headerlink" href="#stage-0-securerom" title="Permanent link">&para;</a></h4>
@@ -1284,26 +1284,29 @@ Apple Silicon 機器で使われるブートフロー、Soc 統合 ROM からユ
 <li>最初にローカルで提案されているハッシュ（<a href="../../project/glossary/#s">SEP</a> コマンド11）を試みる</li>
 <li>それが利用できない場合は、ローカルのブレスドハッシュ(blessed hash)を取得 (<a href="../progject/glossary.md#s">SEP</a>(コマンド14))</li>
 <li>iSCPreboot パーティションの <code>/&lt;volume-group-uuid&gt;/LocalPolicy/&lt;policy-hash&gt;.img4</code> にあるローカルブートポリシーを読む。
-このブートポリシーには次のメタデータキー:</li>
+このブートポリシーには次のメタデータキー (<a href="../../project/glossary/#4">4CCs</a>):</li>
 <li><code>vuid</code>: UUID: Volume group UUID - 上記と同じ</li>
 <li><code>kuid</code>: UUID: KEK group UUID</li>
 <li><code>lpnh</code>: SHA384: ローカルポリシーのナンスハッシュ(nonce hash)</li>
 <li><code>rpnh</code>: SHA384: リモートポリシーのナンスハッシュ</li>
+<li><code>ronh</code>: SHA384: リカバリ OS ポリシーナンスハッシュ</li>
 <li><code>nsih</code>: SHA384: 次のステージのIMG4ハッシュ</li>
 <li><code>coih</code>: SHA384: fuOS（カスタムkernelcache）IMG4ハッシュ</li>
 <li><code>auxp</code>: SHA384 ユーザーが許可した補助的なカーネル拡張のハッシュ</li>
 <li><code>auxi</code>: SHA384: 補助的なカーネルキャッシュ IMG4 のハッシュ</li>
 <li><code>auxr</code>: SHA384：補助的なカーネル拡張機能のレセプターのハッシュ</li>
 <li><code>prot</code>: SHA384: Paired Recovery manifestのハッシュ</li>
+<li><code>hrlp</code>: bool: Secure Enclave が署名するリカバリ OS ローカルポリシー</li>
 <li><code>lobo</code>: bool: ローカルブートポリシー</li>
-<li><code>smb0</code>: bool: Reduced securityを有効化</li>
-<li><code>smb1</code>: bool: Permissive securityを有効化</li>
+<li><code>love</code>: bool: ローカル OS バージョン</li>
+<li><code>smb0</code>: bool: Reduced security を有効化</li>
+<li><code>smb1</code>: bool: Permissive security を有効化</li>
 <li><code>smb2</code>: bool: サードパーティ製カーネル拡張を有効化</li>
 <li><code>smb3</code>: bool: 手動でモバイルデバイス管理（MDM）を登録</li>
-<li><code>smb4</code>: bool? MDM デバイス登録プログラムを無効化</li>
-<li><code>sip0</code>: u16: カスタマイズされたSIP</li>
-<li><code>sip1</code>: bool: 署名付きシステムボリューム（<code>csrutil authenticated-boot</code>）を無効化</li>
-<li><code>sip2</code>: bool: CTRR (<a href="https://keith.github.io/xcode-man-pages/bputil.1.html">configurable text region read-only</a>) を無効化</li>
+<li><code>smb4</code>: bool?: MDM デバイス登録プログラムを無効化</li>
+<li><code>sip0</code>: u16: カスタマイズされた SIP</li>
+<li><code>sip1</code>: bool: 署名付きシステムボリューム（<code>csrutil authenticated-root</code>）を無効化</li>
+<li><code>sip2</code>: bool: CTRR (<a href="https://keith.github.io/xcode-man-pages/bputil.1.html">Configurable Text Region Read-only Region</a>) を無効化</li>
 <li><code>sip3</code>: bool: <code>boot-args</code> フィルタリングを無効化</li>
 </ul>
 <p>また、オプションとして、以下のリンクされたマニフェストが、それぞれ <code>/&lt;volume-group-uuid&gt;/LocalPolicy/&lt;policy-hash&gt;.&lt;id&gt;.im4m</code> に存在:

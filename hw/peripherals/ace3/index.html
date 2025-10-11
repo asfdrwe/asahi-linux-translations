@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://asfdrwe.github.io/asahi-linux-translations/hw/soc/ace3/">
+        <link rel="canonical" href="https://asfdrwe.github.io/asahi-linux-translations/hw/peripherals/ace3/">
       
       
       
@@ -57,7 +57,7 @@
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/hw/soc/ace3.png" >
+        <meta  property="og:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/hw/peripherals/ace3.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -65,7 +65,7 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://asfdrwe.github.io/asahi-linux-translations/hw/soc/ace3/" >
+        <meta  property="og:url"  content="https://asfdrwe.github.io/asahi-linux-translations/hw/peripherals/ace3/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
@@ -73,7 +73,7 @@
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/hw/soc/ace3.png" >
+        <meta  name="twitter:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/hw/peripherals/ace3.png" >
       
     
     
@@ -807,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../soc-codenames/" class="md-nav__link">
+      <a href="../../soc/soc-codenames/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -829,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../display-controllers/" class="md-nav__link">
+      <a href="../../soc/display-controllers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1267,21 +1267,21 @@
 <p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/ace3.md">ace</a>の翻訳</p>
 <hr />
 <p>ACE3 は M3 製品の新しい USB-C / USB-PD コントローラーです。ADT に sn201202x 互換値があります。</p>
-<h5 id="spmi">SPMI トランスポート<a class="headerlink" href="#spmi" title="Permanent link">&para;</a></h5>
+<h5 id="spmi">SPMI レジスタ<a class="headerlink" href="#spmi" title="Permanent link">&para;</a></h5>
 <p>従来のものと異なり、ACE3 は I2C (訳注: <a href="https://ja.wikipedia.org/wiki/I2C">I2C</a>) ではなく SPMI (訳注: <a href="https://en.wikipedia.org/wiki/System_Power_Management_Interface">SPMI</a>) 
 経由でアクセスします。しかし、基本的なインターフェイスは変更されておらず、薄いトランスポート層により、SPMI レジスタを介して、以前は I2C レジスタ
 だったもの（ここでは「論理レジスタ」と呼びます）にアクセスできるようになっています。</p>
 <ul>
-<li><strong>0x00（論理レジスタアドレス）[RW]:</strong> <code>0x80 | logical_register_address</code>をこの SPMI レジスタに書き込むと、論理レジスタの選択プロセスが開始され、以下の SPMI レジスタが更新される。この選択が終了すると MSB はクリアされる</li>
+<li><strong>0x00（論理レジスタアドレス）[RW]:</strong> <code>0x80 | logical_register_address</code>をこの SPMI レジスタが論理レジスタの選択プロセスを引き起こす。終了すると、SPMI レジスタが更新され、このレジスタの MSB がクリアされ、割り込みがアサート("割り込み"を参照)</li>
 </ul>
-<p>注1:『レジスタ 0 書き込み』SPMI コマンドも使用可能。なぜなら、7 ビット値は MSB=1 で完了するため、論理レジスタ選択がトリガーされるから
-  注2: MSB=0 での書き込みはレジスタの値を更新するが、新しいレジスタを選択しない</p>
+<p>注1:『レジスタ 0 書き込み』SPMI コマンドも使用可能(7ビットの値はMSB=1で補完され、したがって論理レジスタ選択を引き起こす)。実際、このコマンドで引き起こされる選択は、より厳格なセマンティクスを持っているようで、場合によっては必要とされるらしい。以下の『デュアルスレーブ操作』を参照
+  注2: MSB=0 での書き込みはレジスタの値を更新するが、選択を引き起こす</p>
 <ul>
 <li>
-<p><strong>0x1F（論理レジスタ・サイズ） [RO]:</strong> 論理レジスタが選択されると、そのサイズがバイト単位でここに書き込まれる</p>
+<p><strong>0x1F（論理レジスタ・サイズ） [RO]:</strong> 論理レジスタが選択されると、そのサイズがバイト単位でハードウェアによりここに書き込まれる</p>
 </li>
 <li>
-<p><strong>0x20..0x5F (論理レジスタデータ) [RW]:</strong> 論理レジスタが選択されると、そのデータが読み出され、ゼロパディングされ、ここに書き込まれる。この領域のどこかに書き込むと、その領域の内容は最後に選択された論理レジスタに(適宜切り捨てて)書き込まれる</p>
+<p><strong>0x20..0x5F (論理レジスタデータ) [RW]:</strong> 論理レジスタが選択されると、そのデータが読み出され、ゼロパディングされ、ハードウェアによりここに書き込まれる。この領域のどこかに書き込むと、その領域の内容は最後に選択された論理レジスタに(適宜切り捨てて)書き込まれる</p>
 </li>
 </ul>
 <p>注1: 論理レジスタ書き込みの完了をモニターする方法はないようだが、それ以上の選択はブロックされるらしい
@@ -1292,16 +1292,51 @@
 <p>最初の 0x60 アドレスのみがマッピングされるが、アドレスビット7 以上は無視されるようで、ブロックが 0x80バイト毎にエイリアスされる。拡張(extended)(または拡張ロング(extended long))コマンドを使用して、一度に多くの連続した SPMI レジスタにアクセス可能</p>
 </li>
 <li>
-<p>機器はスリープ(sleep)とウェイクアップ(wake up)コマンドもサポートしており、ブート時はスリープ。スリープ中は、書き込みは ACK されるが無視される。コマンド受信後、機器がウェイクアップするまでに時間がかかる</p>
-</li>
-<li>
-<p>割り込みは GPIO ピンからではなく、SPMI コントローラーの割り込み機能を通して行われるように(これがバスレベルでどのように機能するのかわからない。おそらく、割り込みはマスターライト(master write)コマンドを介してトリガーされる?)</p>
-</li>
-<li>
-<p>何らかの理由で、各機器は2つの SPMI スレーブを持つ（1つは ADT のアドレスで、もう1つはその次のアドレスでリッスン）。それぞれのスレーブは独自のセレクションを保持しており、どちらかにスリープ/ウェイクアップコマンドを送ると両方に反映...ただし、2番目のスレーブはスリープコマンドを無視</p>
+<p>機器はスリープ(sleep)およびウェイクアップ(wakeup) SPMI コマンドも対応しており、起動時はスリープ状態。スリープ中は、SPMI レジスタへの書き込みは ACK されるが無視される。コマンドを受信してからデバイスがウェイクアップするまでにはある程度の時間がかかる（『割り込み』も参照）。スリープ状態であっても、ACE3 は（ケーブルを接続するなどの）イベントに応答し、適切な割り込みを送信可能</p>
 </li>
 </ul>
-<p>これらの観測は J516c、SN2012024 HW00A1 FW002.062.00 で実施されました。</p>
+<h5 id="_1">割り込み<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
+<p>割り込みはもはやGPIOピンを通じて配信されず、代わりにSPMIコントローラを通じて
+配信されます。そのため、SPMI コントローラは割り込みコントローラとしても機能します。
+バスレベルでこれがどのように機能するかはわかりませんが、マスター書き込みコマンドを
+介して配信される可能性があります。『SPMI 割り込み』を受信する方法については、
+SPMI コントローラの文書を参照してください。</p>
+<p>ADTでは、各ACE3に対して3つの奇数の割り込みがリストされており、その中で最も小さいものを『BASE』と呼びます。</p>
+<ul>
+<li>
+<p>[<code>BASE + 0</code>] <strong>論理割り込み</strong>（ADT で type 0 としてマーク）。未 ACK （論理レジスタ0x14）かつマスクされていない（論理レジスタ0x16）割り込みが保留状態になるとアサート。これは以前の GPIO ピンと同じ目的を果たすが、SPMI 割り込みはエッジ/MSI セマンティクスを持つ：（マスクされていない）各割り込みは、<code>BASE + 0</code>を一度アサートし（既に他の未 ACK かつマスクされていない割り込みがあっても）、ACK されるまで再びアサートされない</p>
+</li>
+<li>
+<p>[<code>BASE + 2</code>] <strong>選択完了？</strong>（ADTには記載なし）：論理レジスタの選択が完了するたびにアサート</p>
+</li>
+<li>
+<p>[<code>BASE + 4</code>]（ADTには記載なし）：実際には観測されていない</p>
+</li>
+<li>
+<p>[<code>BASE + 6</code>] <strong>スリープ完了？</strong>（ADT で type 2 としてマーク）。スレーブに SPMI スリープコマンドが送信されると、たとえスレーブが既にその状態であってもアサート。操作が完了したことを示す可能性あり</p>
+</li>
+<li>
+<p>[<code>BASE + 8</code>] <strong>ウェイクアップ完了？</strong>（ADT で type 3 としてマーク）。スレーブに SPMI ウェイクアップコマンドが送信されると、たとえスレーブが既にその状態であってもアサート。操作が完了したことを示す可能性があるが、レジスタが書き込み可能になるのは割り込みの受信よりもかなり早いため、別の意味があるかも</p>
+</li>
+</ul>
+<p>割り込みの間隔が 2 ずつ空いているのは、以下に説明するデュアルスレーブ操作に対応するためです。</p>
+<h5 id="_2">デュアルスレーブ操作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
+<p>各 ACE3 は、バス上に2つの SPMI スレーブを持っているようです：1つは ADT に記載された（偶数の）アドレスでリッスンし、おそらく AP が使用するもので、もう1つは直後の（奇数の）アドレスでリッスンし、おそらく別の何か（SMC など）が使用するものです。これにより、ACE3 はインターフェースの状態（SPMI レジスタ、割り込みなど）を巡って競合せずに、2つのマスターからアクセスできるようです。特筆すべきものは以下です。</p>
+<ul>
+<li>
+<p>各スレーブは、同じ論理レジスタを操作するにもかかわらず、独自の選択を保持。各スレーブは選択用のキャッシュも持っているようで、『register 0 write』コマンドを使用するとこのキャッシュが無効化されるらしい。一方、通常の書き込みで選択をトリガーするとキャッシュが使用され、古いデータが返される可能性あり：例えば、2 つのスレーブ間で論理レジスタが同期していないように見えたり、（論理レジスタ 8 にコマンドを書き込む）コマンド実行が完了していないように見えたりする場合あり。これは、後続のレジスタ 8 の読み込みが実行結果ではなくキャッシュされたコマンドを返すため。論理レジスタの書き込みは、0x20..0x5F 領域への書き込みでは、選択方法に関係なく常に即座にコミット</p>
+</li>
+<li>
+<p>各スレーブは独自の割り込み状態を保持：『APスレーブ』は、レジスタ 0x14 を保留中の割り込み、0x16 をマスクされていない割り込み、0x18 を ACK に使用。もう一方のスレーブは同じレジスタを使用するが、+1 ずれた（保留中は 0x15、マスクされていないものは 0x17、ACK は 0x19）レジスタを使用。ドライバはこれら（およびセカンダリスレーブが所有する他の状態）に触れないよう注意する必要あり</p>
+</li>
+<li>
+<p>各スレーブは独自のスリープ状態を保持するが、ACE3 は両方のスレーブがスリープ状態にある場合にのみスリープ。この状態では、両方のスレーブは SPMI レジスタへの書き込みを無視（ただしコマンドを ACK ）。少なくとも 1 つのスレーブがウェイクアップすると、この動作は起こらない（どちらのスレーブも書き込みを無視しない）。セカンダリスレーブを使用しているものは、スレーブを一時的にウェイクアップし、必要なコマンドを実行し、再度スリープさせるようにしている。『APスレーブ』は起動時にスリープ状態</p>
+</li>
+<li>
+<p>『APスレーブ』は上記の SPMI 割り込みを使用するが、もう一方のスレーブは同じ割り込みなのに -1 ずれた（+1ではない）ものを使用。例えば、セカンダリスレーブでレジスタを選択すると<code>BASE + 1</code>割り込みが発生し、レジスタ 0x17 の割り込みがトリガーされると<code>BASE - 1</code>割り込みが発生し、セカンダリスレーブにスリープコマンドを送信すると<code>BASE + 5</code>割り込みが発生</p>
+</li>
+</ul>
+<p>セカンダリスレーブは、例えばケーブルを接続すると大量の割り込みを引き起こし、実際に何かが操作していることが明らかになっています。これらの割り込みが私たちの SPMI コントローラに届くことから、割り込み配信メカニズムが『master write』コマンドではないことが示唆されます。これは、単一のマスターにアドレス指定されており、おそらく他のユーザーは私たちの SPMI コントローラではなく、別の SPMI マスターを使用しているためです。</p>
 
 
 
