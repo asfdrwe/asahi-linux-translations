@@ -2,7 +2,7 @@
 title: 問題のあるソフトウェア
 ---
 
-2025/6/2時点の[broken-software](https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md)の翻訳
+2025/10/11時点の[broken-software](https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md)の翻訳
 
 ---
 このページでは、Apple Silicon 機器では正しく動作しないことが知られているソフトウェアをリストアップしています。
@@ -101,6 +101,7 @@ Fedora Linux Asahi Remix の `muvm` パッケージは標準で 4K カーネル�
 | MEGAsync | <https://github.com/meganz/MEGAsync/pull/801> |
 | notion-app(-enhancer) | <https://github.com/notion-enhancer/notion-repackaged/issues/107> | electron + 壊れたビルドフラグ |
 | Waydroid | <https://github.com/waydroid/waydroid/issues/373> | 上流の AOSP は 16k ページに対応して動作 <https://developer.android.com/guide/practices/page-sizes> |
+| trezord | <https://github.com/trezor/trezord-go/issues/306> | ウォレットが接続される前にデーモンが起動するとクラッシュ。ワークアラウンドはウォレットに接続してからデーモンを再起動|
 
 \* x86-64 ソフトウェアの実行は FEX を実行している 4k ページサイズの microVM 経由で対応します。
 

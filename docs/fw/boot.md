@@ -4,7 +4,7 @@ summary:
 Apple Silicon 機器で使われるブートフロー、Soc 統合 ROM からユーザコードまで
 ---
 
-2025/3/9時点の[boot](https://github.com/AsahiLinux/docs/blob/main/docs/fw/boot.md)の翻訳
+2025/10/11時点の[boot](https://github.com/AsahiLinux/docs/blob/main/docs/fw/boot.md)の翻訳
 
 ---
 Apple Siliconデバイスは現在のiOSデバイスと非常によく似たブートフローをたどるようです。
@@ -25,26 +25,29 @@ Apple Siliconデバイスは現在のiOSデバイスと非常によく似たブ�
   - 最初にローカルで提案されているハッシュ（[SEP](../project/glossary.md#s) コマンド11）を試みる
   - それが利用できない場合は、ローカルのブレスドハッシュ(blessed hash)を取得 ([SEP](../progject/glossary.md#s)(コマンド14))
 * iSCPreboot パーティションの `/<volume-group-uuid>/LocalPolicy/<policy-hash>.img4` にあるローカルブートポリシーを読む。
-このブートポリシーには次のメタデータキー:
+このブートポリシーには次のメタデータキー ([4CCs](../project/glossary.md#4)):
   - `vuid`: UUID: Volume group UUID - 上記と同じ
   - `kuid`: UUID: KEK group UUID
   - `lpnh`: SHA384: ローカルポリシーのナンスハッシュ(nonce hash)
   - `rpnh`: SHA384: リモートポリシーのナンスハッシュ
+  - `ronh`: SHA384: リカバリ OS ポリシーナンスハッシュ
   - `nsih`: SHA384: 次のステージのIMG4ハッシュ
   - `coih`: SHA384: fuOS（カスタムkernelcache）IMG4ハッシュ
   - `auxp`: SHA384 ユーザーが許可した補助的なカーネル拡張のハッシュ
   - `auxi`: SHA384: 補助的なカーネルキャッシュ IMG4 のハッシュ
   - `auxr`: SHA384：補助的なカーネル拡張機能のレセプターのハッシュ
   - `prot`: SHA384: Paired Recovery manifestのハッシュ
+  - `hrlp`: bool: Secure Enclave が署名するリカバリ OS ローカルポリシー
   - `lobo`: bool: ローカルブートポリシー
-  - `smb0`: bool: Reduced securityを有効化
-  - `smb1`: bool: Permissive securityを有効化
+  - `love`: bool: ローカル OS バージョン
+  - `smb0`: bool: Reduced security を有効化
+  - `smb1`: bool: Permissive security を有効化
   - `smb2`: bool: サードパーティ製カーネル拡張を有効化
   - `smb3`: bool: 手動でモバイルデバイス管理（MDM）を登録
-  - `smb4`: bool? MDM デバイス登録プログラムを無効化
-  - `sip0`: u16: カスタマイズされたSIP
-  - `sip1`: bool: 署名付きシステムボリューム（`csrutil authenticated-boot`）を無効化
-  - `sip2`: bool: CTRR ([configurable text region read-only](https://keith.github.io/xcode-man-pages/bputil.1.html)) を無効化
+  - `smb4`: bool?: MDM デバイス登録プログラムを無効化
+  - `sip0`: u16: カスタマイズされた SIP
+  - `sip1`: bool: 署名付きシステムボリューム（`csrutil authenticated-root`）を無効化
+  - `sip2`: bool: CTRR ([Configurable Text Region Read-only Region](https://keith.github.io/xcode-man-pages/bputil.1.html)) を無効化
   - `sip3`: bool: `boot-args` フィルタリングを無効化
 
   また、オプションとして、以下のリンクされたマニフェストが、それぞれ `/<volume-group-uuid>/LocalPolicy/<policy-hash>.<id>.im4m` に存在:

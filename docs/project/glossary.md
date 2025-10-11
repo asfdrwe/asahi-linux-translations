@@ -2,7 +2,7 @@
 title: 用語集
 ---
 
-2025/8/22時点の[glossary](https://github.com/AsahiLinux/docs/blob/main/docs/project/glossary.md)の翻訳
+2025/10/11時点の[glossary](https://github.com/AsahiLinux/docs/blob/main/docs/project/glossary.md)の翻訳
 
 ---
 知っておくと役立つ用語
@@ -15,6 +15,9 @@ title: 用語集
 * **1TR**: One True RecoveryOS。電源ボタン長押しで起動するRecoveryOSのことをこう呼ぶ。これは、物理的な存在を主張し
 Appleが完全に信頼するリカバリ環境を実行してカスタムOSをインストールできるなど特別な権限が与えられることを意味する。
 rootアクセスが可能だがAppleの署名入りのソフトウェアのみ実行可能。FileVaultが有効になっている場合は最初に認証が必要
+
+### 4
+* **4CC**] 4文字コード。4バイト列で、通常は印刷可能な範囲のASCII文字で構成され、データを人間が読める形で識別するために使用されるコード。
 
 ### A
 * **AGX**: Apple の GPU シリーズの内部名称
