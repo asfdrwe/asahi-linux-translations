@@ -109,7 +109,7 @@ M3 の非常に基本的なローレベル対応がかなり長い間存在し�
 
 ## ありがとう！
 
-毎回のことですが、[OpenCollective](https://opencollective.com/asahilinux) と [GitHub Sponsors](https://github.com/sponsors/asahilinux) のスポンサーのみなさまに心から感謝します。みさまま方なしでは灯りを保てません。本当に素晴らしい方々です！
+毎回のことですが、[OpenCollective](https://opencollective.com/asahilinux) と [GitHub Sponsors](https://github.com/sponsors/asahilinux) のスポンサーのみなさまに心から感謝します。みなさまなしでは灯りを保つことはできません。本当に素晴らしい方々です！
 
 #### James Calligeros · 2025-10-24
 
