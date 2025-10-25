@@ -5,6 +5,7 @@ title: Windows 11 VM の作成方法
 2025/10/25時点の[How to create a Windows 11 VM](https://github.com/AsahiLinux/docs/blob/main/docs/sw/windows-11-vm.md)の翻訳
 
 訳注: 
+
 - 原文の見出しレベルが変なので修正
 - Microsoft の英語版サイトへのリンクは対応する日本語サイトへのリンクに変更
 
