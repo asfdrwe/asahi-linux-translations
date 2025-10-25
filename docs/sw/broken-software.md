@@ -2,7 +2,7 @@
 title: 問題のあるソフトウェア
 ---
 
-2025/10/11時点の[broken-software](https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md)の翻訳
+2025/10/25時点の[broken-software](https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md)の翻訳
 
 ---
 このページでは、Apple Silicon 機器では正しく動作しないことが知られているソフトウェアをリストアップしています。
@@ -145,7 +145,6 @@ Fedora Linux Asahi Remix の `muvm` パッケージは標準で 4K カーネル�
 | ---------------- | ----- | ----- |
 | firefox        | [wayland:起動時の最初のフレームが一瞬初期化されない場合あり(x11でも)(wayland: The first frame on startup is sometimes uninitialized for a moment (also maybe on x11))](https://bugzilla.mozilla.org/show_bug.cgi?id=1831051) |
 | gnome-bluetooth/bluez | A2DP 出力の音声が頻繁に途切れたり、接続が切れたりする (blueman を使えば問題なし) | バグはまだ未記入 |
-| hyprland         | [split-node GPU ドライバで明示的な同期が動作しない (Explicit sync doesn't work on split-node gpu drivers)](https://github.com/hyprwm/Hyprland/issues/10401) |
 | kwin           | [マルチスクリーンでルートバックグラウンドダメージ領域が正しく計算されない(Root background damage regions are calculated incorrectly with multiscreen)](https://bugs.kde.org/show_bug.cgi?id=477454) |
 | plasmashell      | [startplasmaがprofile.dとenvironment.d間の変数統合を破壊(startplasma breaks variable merging between profile.d and environment.d)](https://bugs.kde.org/show_bug.cgi?id=491579) |
 | systemsettings | [デフォルトのシステムキーボードモデルがWayland上で正しく設定されていない(default system keyboard model is not correctly set on Wayland)](https://bugs.kde.org/show_bug.cgi?id=475435) |
@@ -169,6 +168,7 @@ Fedora Linux Asahi Remix の `muvm` パッケージは標準で 4K カーネル�
 | gtk              | [GSK が Wayland の小数スケーリング時に load=dont-care と blend=over を使用した不正なレンダリング操作を行い、グラフィックの破損を引き起こす問題(GSK issues illegal render ops with load=dont-care and blend=over with Wayland fractional scaling, causing graphical corruption)](https://gitlab.gnome.org/GNOME/gtk/-/issues/7146) | gtk 4.17.6 で修正 |
 | gtk              | [GSK/vulkan がフォーマットをチェックせず`VkImageFormatProperties.maxMipLevels` というチルティングせずにミップマップを使用(GSK/vulkan uses mipmaps without checking the formats/tiling `VkImageFormatProperties.maxMipLevels`)](https://gitlab.gnome.org/GNOME/gtk/-/issues/7229) | gtk 4.17.5 で修正 |
 | hyprland         | [hyprLand 0.42.0 使用時に OpenGL アプリケーションがクラッシュする問題(issue with OpenGL applications crashing when using Hyprland 0.42.0)](https://github.com/hyprwm/Hyprland/issues/7364) | hyprland 0.43.0 で修正 |
+| hyprland         | [split-node GPU ドライバで明示的な同期が動作しない (Explicit sync doesn't work on split-node gpu drivers)](https://github.com/hyprwm/Hyprland/issues/10401) | hyprland 0.51.0 で修正 |
 | kpipewire      | [Spectacleが特定の大きさでh264のウィンドウを録画するのに失敗(Spectacle fails to record a window with h264 in specific dimensions)](https://bugs.kde.org/show_bug.cgi?id=475472) |問題解決|
 | kpipewire      | [OpenH264コーディック対応(OpenH264 codec support)](https://bugs.kde.org/show_bug.cgi?id=476187) | Plasma 6.1.4 で修正|
 | kwin           | [ハードウェアカーソル未対応時にマルチスクリーン上で出力がフリーズ(Outputs freeze on multi-screen when hardware cursors are not supported)](https://bugs.kde.org/show_bug.cgi?id=477451) | Plasma 6.0で修正 |

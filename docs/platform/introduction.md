@@ -2,11 +2,12 @@
 title: Apple Silicon の紹介
 ---
 
-2025/3/9時点の[introduction](https://github.com/AsahiLinux/docs/blob/main/docs/platform/introduction.md)の翻訳
+2025/10/25時点の[introduction](https://github.com/AsahiLinux/docs/blob/main/docs/platform/introduction.md)の翻訳
 
 訳注:
 - プロジェクトページへのリンクは対応する日本語訳ページへのリンクに置き換え
 - Appleの用語は[Appleセキュリティ文書](https://support.apple.com/ja-jp/guide/security/sec7d92dc49f/web)の訳語に従います
+- Apple公式サイトの英語版へのリンクは対応する日本語版へのリンクに置き換え
 
 ---
 
@@ -166,7 +167,7 @@ NVMeはGPTボリュームで内容は以下の通りです:
 
 AS Macはbrick-proofになるように設計されています。NORやNVMeが破壊されても、USBケーブルを使ってROMから起動すれば、
 他のマシンから復旧することができます（※NOR破壊は未検証）。これは別のMacを使った
-[公式文書](https://support.apple.com/guide/apple-configurator-mac/revive-or-restore-a-mac-with-apple-silicon-apdd5f3c75ad/mac)です。
+[公式文書](https://support.apple.com/ja-jp/108900)です。
 Linux等で動作する代替の[オープンソースツール](https://github.com/libimobiledevice/idevicerestore)もあります。
 
 この設計の特筆すべき点は、インストールされた各OSが、OSローダーと同様に、コプロセッサー上で動作するシステムファームウェアの
