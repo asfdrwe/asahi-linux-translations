@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://asfdrwe.github.io/asahi-linux-translations/platform/feature-support/m2/">
+        <link rel="canonical" href="https://asfdrwe.github.io/asahi-linux-translations/hw/soc/spmi/">
       
       
-        <link rel="prev" href="../m1/">
-      
-      
-        <link rel="next" href="../m3/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>M2 シリーズ機能対応 - Asahi Linux 文書非公式日本語訳</title>
+        <title>SPMI - Asahi Linux 文書非公式日本語訳</title>
       
     
     
@@ -57,11 +53,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="M2 シリーズ機能対応 - Asahi Linux 文書非公式日本語訳" >
+        <meta  property="og:title"  content="SPMI - Asahi Linux 文書非公式日本語訳" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/platform/feature-support/m2.png" >
+        <meta  property="og:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/hw/soc/spmi.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -69,15 +65,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://asfdrwe.github.io/asahi-linux-translations/platform/feature-support/m2/" >
+        <meta  property="og:url"  content="https://asfdrwe.github.io/asahi-linux-translations/hw/soc/spmi/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="M2 シリーズ機能対応 - Asahi Linux 文書非公式日本語訳" >
+        <meta  name="twitter:title"  content="SPMI - Asahi Linux 文書非公式日本語訳" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/platform/feature-support/m2.png" >
+        <meta  name="twitter:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/hw/soc/spmi.png" >
       
     
     
@@ -136,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              M2 シリーズ機能対応
+              SPMI
             
           </span>
         </div>
@@ -309,8 +305,6 @@
       
   
   
-    
-  
   
   
     
@@ -322,11 +316,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -341,7 +337,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             機能対応
@@ -355,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../../platform/feature-support/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -377,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../m1/" class="md-nav__link">
+      <a href="../../../platform/feature-support/m1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -396,29 +392,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    M2シリーズ機能対応
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../platform/feature-support/m2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -428,108 +405,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      目次
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#soc" class="md-nav__link">
-    <span class="md-ellipsis">
-      SoCブロック
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="SoCブロック">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#m2" class="md-nav__link">
-    <span class="md-ellipsis">
-      M2機器
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#m2-promaxultra" class="md-nav__link">
-    <span class="md-ellipsis">
-      M2 Pro/Max/Ultra機器
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      注釈
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="注釈">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cpuidle" class="md-nav__link">
-    <span class="md-ellipsis">
-      cpuidleの状況
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ane" class="md-nav__link">
-    <span class="md-ellipsis">
-      ANEドライバ
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hdmi-audio" class="md-nav__link">
-    <span class="md-ellipsis">
-      HDMI Audio
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -542,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../m3/" class="md-nav__link">
+      <a href="../../../platform/feature-support/m3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -564,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../m4/" class="md-nav__link">
+      <a href="../../../platform/feature-support/m4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -866,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../subsystems/" class="md-nav__link">
+      <a href="../../../platform/subsystems/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -888,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/" class="md-nav__link">
+      <a href="../../../platform/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -910,7 +785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hw/devices/device-list/" class="md-nav__link">
+      <a href="../../devices/device-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -932,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hw/soc/soc-codenames/" class="md-nav__link">
+      <a href="../soc-codenames/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -954,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hw/soc/display-controllers/" class="md-nav__link">
+      <a href="../display-controllers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1409,534 +1284,160 @@
   
 
 
-  <h1>M2シリーズ機能対応</h1>
+  <h1>SPMI</h1>
 
-<p>2025/9/6時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/feature-support/m2.md">m2</a>の翻訳</p>
+<p>2025/10/25時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/spmi.md">SPMI</a>の翻訳</p>
 <hr />
-<p>このページでは、現存するすべてのM2シリーズ(M2, M2 Pro, M2 Max, M2 Ultra)のApple Silicon Macで現在対応してている機能と、
-その上流の状況について詳しく説明します。表は次のように解釈されます:</p>
+<p>このブロックは SPMI バス上の単一のマスターを制御します。SPMI コマンドの送信を可能にするとともに、バス参加者向けの256ライン割り込みコントローラとしても機能します。ADT 互換性に基づいて、いくつかのリビジョンが存在します：</p>
 <ul>
-<li><strong>kernel release, 例 6.0:</strong> 機能はこのリリースの時点で上流に取り込み済み</li>
-<li><strong>linux-asahi (kernel release):</strong> 機能は安定しており、Fedora Asahi Remixで使用可能で、指定されたリリースまでに上流に統合される予定</li>
-<li><strong>linux-asahi:</strong> 機能は (ほぼ) 安定しており、Fedora Asahi Remixで使用可能</li>
-<li><strong>作業中</strong>: この機能の開発は活発に進められているが、まだ広くテスト、使用、配布する準備ができていない</li>
-<li><strong>未着手</strong>: この機能に関するアクティブな作業は現時点では未着手</li>
-<li><strong>dts</strong>: この機能はLinux DeviceTreeシステムの一部に含まれる</li>
-<li><strong>-</strong>: この機能はこのプラットフォームのハードウェアでは未対応</li>
+<li><code>spmi,gen1</code>：M1 で使用</li>
+<li><code>spmi,gen2</code>：M2 で使用</li>
+<li><code>spmi,gen3</code>：M3 及びに M4 で使用</li>
 </ul>
-<p>機能にまだ対応できていない場合、それがいつ対応できるかの見積もりはありません。<a href="../../../project/when-will-asahi-be-done/">サポートチャンネル(IRCなど)で見積もりを求めないでください。</a></p>
-<h5 id="_1">目次<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
+<p>この文書は gen3 を基づて記述しています。リビジョンは後方互換性のあるインターフェースを備えているようですが、古いものでは一部の機能が利用できない場合があります。</p>
+<h5 id="_1">レジスタ概要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
+<p>ADT 内の3つの MMIO 領域の最初の領域には、以下の32ビットレジスタが含まれます：</p>
 <ul>
-<li><a href="#socブロック">SoCブロック</a></li>
-<li><a href="#m2機器">M2機器</a></li>
-<li><a href="#m2-promaxultra機器">M2 Pro/Max/Ultra機器</a></li>
-<li><a href="#注釈">注釈</a></li>
+<li>[0x00] <strong>STATUS</strong> [RO]：TX FIFO と FIFOの状態</li>
+<li>[0x04] <strong>TX_PUSH</strong> [WO]：32bit ワードを TX FIFO に入れる書き込み</li>
+<li>[0x08] <strong>RX_PULL</strong> [RO]：RX FIFO から 32bit ワードを消費する読み取り</li>
 </ul>
-<h5 id="soc">SoCブロック<a class="headerlink" href="#soc" title="Permanent link">&para;</a></h5>
-<p>これらは、指定されたSoCを搭載したすべてのデバイスに存在する機能/ハードウェアブロックです。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align: center;">M2 (T8112)</th>
-<th style="text-align: center;">M2 Pro/Max/Ultra (T602x)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DCP</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>USB2 (TB ports)</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>USB3 (TB ports)</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>Thunderbolt</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
-</tr>
-<tr>
-<td>DP Alt Mode</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
-</tr>
-<tr>
-<td>GPU</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>Video Decoder</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-</tr>
-<tr>
-<td>NVMe</td>
-<td style="text-align: center;">5.19</td>
-<td style="text-align: center;">5.19</td>
-</tr>
-<tr>
-<td>PCIe</td>
-<td style="text-align: center;">5.16 / 6.4 (dts)</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>PCIe (GE)</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
-</tr>
-<tr>
-<td>cpufreq</td>
-<td style="text-align: center;">6.2</td>
-<td style="text-align: center;">6.2</td>
-</tr>
-<tr>
-<td>cpuidle</td>
-<td style="text-align: center;">linux-asahi(<a href="#cpuidleの状況">注釈参照</a>)</td>
-<td style="text-align: center;">linux-asahi(<a href="#cpuidleの状況">注釈参照</a>)</td>
-</tr>
-<tr>
-<td>サスペンド・スリープ</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>Video Encoder</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
-</tr>
-<tr>
-<td>ProRes Codec</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-</tr>
-<tr>
-<td>AICv2</td>
-<td style="text-align: center;">5.18</td>
-<td style="text-align: center;">5.18</td>
-</tr>
-<tr>
-<td>DART</td>
-<td style="text-align: center;">6.3</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>PMU</td>
-<td style="text-align: center;">6.4</td>
-<td style="text-align: center;">6.4</td>
-</tr>
-<tr>
-<td>UART</td>
-<td style="text-align: center;">5.13</td>
-<td style="text-align: center;">5.13</td>
-</tr>
-<tr>
-<td>Watchdog</td>
-<td style="text-align: center;">5.17</td>
-<td style="text-align: center;">5.17</td>
-</tr>
-<tr>
-<td>I<sup>2</sup>C</td>
-<td style="text-align: center;">5.16</td>
-<td style="text-align: center;">5.16</td>
-</tr>
-<tr>
-<td>GPIO</td>
-<td style="text-align: center;">5.16</td>
-<td style="text-align: center;">5.16</td>
-</tr>
-<tr>
-<td>USB-PD</td>
-<td style="text-align: center;">5.16</td>
-<td style="text-align: center;">5.16</td>
-</tr>
-<tr>
-<td>MCA</td>
-<td style="text-align: center;">6.1 / 6.4 (dts)</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>SPI</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>SPI NOR</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>SMC</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>SPMI</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>RTC</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>SEP</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
-</tr>
-<tr>
-<td>Neural Engine</td>
-<td style="text-align: center;">ツリー外(<a href="#ANEドライバ">注釈参照</a>)</td>
-<td style="text-align: center;"><a href="#ANEドライバ">注釈参照</a></td>
-</tr>
-</tbody>
-</table>
-<h6 id="m2">M2機器<a class="headerlink" href="#m2" title="Permanent link">&para;</a></h6>
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align: center;">MacBook Air<br>(13-inch, 2022)</th>
-<th style="text-align: center;">MacBook Air<br>(15-inch, 2023)</th>
-<th style="text-align: center;">MacBook Pro<br>(13-inch, 2022)</th>
-<th style="text-align: center;">Mac Mini<br>(2023)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>インストーラー</td>
-<td style="text-align: center;">対応</td>
-<td style="text-align: center;">対応</td>
-<td style="text-align: center;">対応</td>
-<td style="text-align: center;">対応</td>
-</tr>
-<tr>
-<td>DeviceTree</td>
-<td style="text-align: center;">6.4</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">6.4</td>
-<td style="text-align: center;">6.4</td>
-</tr>
-<tr>
-<td>メインディスプレイ</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>キーボード</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>キーボードバックライト</td>
-<td style="text-align: center;">6.4</td>
-<td style="text-align: center;">6.4</td>
-<td style="text-align: center;">6.4</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>タッチパッド</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>輝度調整</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>バッテリー情報</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>WiFi</td>
-<td style="text-align: center;">6.1</td>
-<td style="text-align: center;">6.1</td>
-<td style="text-align: center;">6.1</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>Bluetooth</td>
-<td style="text-align: center;">6.2</td>
-<td style="text-align: center;">6.2</td>
-<td style="text-align: center;">6.2</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>HDMI 出力</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>HDMI audio</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">linux-asahi (<a href="#hdmi-audio">注釈</a>)</td>
-</tr>
-<tr>
-<td>3.5mm ジャック</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>スピーカー</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>マイク</td>
-<td style="text-align: center;">linux-asashi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>Webcam</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>SD card slot</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>1Gbps Ethernet</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">6.4 (dts)</td>
-</tr>
-<tr>
-<td>10Gbps Ethernet</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">6.4 (dts)</td>
-</tr>
-<tr>
-<td>Touch Bar</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">6.15</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>TouchID</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">-</td>
-</tr>
-</tbody>
-</table>
-<h6 id="m2-promaxultra">M2 Pro/Max/Ultra機器<a class="headerlink" href="#m2-promaxultra" title="Permanent link">&para;</a></h6>
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align: center;">Mac Mini<br>(2023)</th>
-<th style="text-align: center;">MacBook Pro<br>(14/16-inch, 2023)</th>
-<th style="text-align: center;">Mac Studio<br>(2023)</th>
-<th style="text-align: center;">Mac PRO<br>(2023)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>インストーラー</td>
-<td style="text-align: center;">対応</td>
-<td style="text-align: center;">対応</td>
-<td style="text-align: center;">対応</td>
-<td style="text-align: center;">作業中</td>
-</tr>
-<tr>
-<td>DeviceTree</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>メインディスプレイ</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">　-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>キーボード</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>キーボードバックライト</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>タッチパッド</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>輝度調整</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>バッテリー情報</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>WiFi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>Bluetooth</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>HDMI 出力</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>HDMI Audio</td>
-<td style="text-align: center;">linux-asahi (<a href="#hdmi-audio">注釈</a>)</td>
-<td style="text-align: center;">linux-asahi (<a href="#hdmi-audio">注釈</a>)</td>
-<td style="text-align: center;">linux-asahi (<a href="#hdmi-audio">注釈</a>)</td>
-<td style="text-align: center;">作業中</td>
-</tr>
-<tr>
-<td>3.5mm ジャック</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>スピーカー</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">未着手</td>
-</tr>
-<tr>
-<td>マイク</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>Webcam</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>SD card slot</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">5.17</td>
-<td style="text-align: center;">5.17</td>
-<td style="text-align: center;">5.17</td>
-</tr>
-<tr>
-<td>1Gbps Ethernet</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>10Gbps Ethernet</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
-</tr>
-<tr>
-<td>Touch Bar</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>TouchID</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">　未着手</td>
-<td style="text-align: center;">未着手</td>
-</tr>
-</tbody>
-</table>
-<p>注: 多くのペリフェラルはT600x DARTやT8112 DARTやPCIe 対応に依存</p>
-<h5 id="_2">注釈<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
-<h6 id="cpuidle">cpuidleの状況<a class="headerlink" href="#cpuidle" title="Permanent link">&para;</a></h6>
-<p>ARMマシンの一部の電源管理機能は、PSCIインターフェイスを介して制御されます。kernelは、PSCIとの対話に関するApple Siliconと互換性のない特定の方法があり、
-最善の方法を見つけるためには上流のメンテナーとの議論が必要です。2年間の議論が失敗したので、この機能をAsahi Linuxに搭載するために、
-WFI/WFE命令を直接呼び出すドライバをハックすることを決めました。これはエネルギーを意識した(enegy-aware)スケジューリングとともにノートパソコンでの
-UXを大きく改善させ、マシンが発熱する問題を解決し、バッテリーの持ちを大幅に向上させました。これは決して上流に統合できませんが、
-近い将来どこかでこのハックしたドライバが不要になると思っています。</p>
-<h6 id="ane">ANEドライバ<a class="headerlink" href="#ane" title="Permanent link">&para;</a></h6>
-<p>ツリー外の<a href="https://github.com/eiln/ane/tree/main">カーネルモジュール</a>が利用可能です。 linux-asahiに統合される予定です。</p>
-<h6 id="hdmi-audio">HDMI Audio<a class="headerlink" href="#hdmi-audio" title="Permanent link">&para;</a></h6>
-<p><code>asahi-6.8.6-3</code>以降、M1/M2 Ultraを除くHDMIポートを持つ全ての機器でHDMI audio対応のプレビューが利用できるようになりました。
-ユーザースペースでの統合が欠けているため、<code>Analog Output (Built-in Audio Stereo)</code>などと表示されます。まだいくつかの不具合があります。
-音声の出だしが途切れたり、ノイズが入ったりすることがあります。HDMI表示部分は動作していても、audioが利用できない場合があります。
-<code>apple_dcp</code>カーネルモジュールの<code>hdmi_audio</code>パラメータを有効にすることで試すことができます。</p>
+<!-- space -->
+<ul>
+<li>[0x20..0x3F] <strong>BUS_IRQ_MASK</strong> [RW]：バスアサート割り込みラインの IRQ マスク領域</li>
+<li>[0x40] <strong>IRQ_MASK</strong> [RW]：コントローラアサート割り込みラインの IRQ マスク領域</li>
+</ul>
+<!-- space -->
+<ul>
+<li>[0x60..0x7F] <strong>BUS_IRQ_ACK</strong> [RW]：バスアサート割り込みラインの IRQ ACK 領域</li>
+<li>[0x80] <strong>IRQ_ACK</strong> [RW]：コントローラアサート割り込みラインの IRQ ACK 領域</li>
+</ul>
+<!-- space -->
+<ul>
+<li>[0xA0] <strong>CONFIG1</strong> [RW]：ビット0..2が設定可能、iBootにより6（<code>nub-spmi-aN</code>）または7（その他）に初期化。マスターアドレス？</li>
+<li>[0xA4] <strong>ACTION1</strong> [WO]：一部のビットに 1 を書き込むとアクションがトリガー</li>
+</ul>
+<!-- space -->
+<ul>
+<li>[0xB0] <strong>CURSORS</strong> [RO]：TX FIFO と RX FIFO の読み書きカーソル位置</li>
+<li>[0xB4] <strong>PEEK_POS</strong> [RW]：ピークする FIFO とバッファ位置</li>
+<li>[0xB8] <strong>PEEK_VALUE</strong> [RO]：PEEK_POS で指定された位置のワード</li>
+<li>[0xBC] <strong>STATUS1</strong> [RO]：ビット 0 のみ確認、バス上で通信できないことを示す？</li>
+</ul>
+<h5 id="_2">一般動作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
+<p>SPMI バスに SPMI コマンドを送信するために、32 ビットワードのバッチをTX FIFOにプッシュします。以下のすべての条件が満たされる必要があります：</p>
+<ul>
+<li>TX FIFO 内に完全で有効なバッチ TX FIFOが次のものとして存在</li>
+<li>RX FIFO に十分な空き容量</li>
+<li>バスが空いている</li>
+<li>CONFIG1 が非ゼロ値を持つ（？）</li>
+</ul>
+<p>この条件を満たすと SPMI マスター側が TX FIFO からバッチを消費し、対応するフレームをバス上に送信し、RX FIFO にワードのバッチを書き込みます。FIFO内のワードバッチの一般的な構造は以下の通りです：</p>
+<ol>
+<li>コマンドワード（TX FIFO）またはリプライワード（RX FIFO）</li>
+<li>0〜16 のデータバイト。リトルエンディアン順でワードにパックされ、結果は（必要に応じて）0〜4ワード</li>
+<li>バイト数が4で割り切れない場合、末尾に必要に応じてバイトが追加されるため、最後のワードの上位 0..3 バイトは未使用（TX FIFO）もしくは 0（RX FIFO）</li>
+</ol>
+<p>たとえば、5データバイトのバッチは以下の3ワードで構成されます：</p>
+<pre><code>+------------------------+  +--------+--------+--------+--------+  +--------------------+--------+
+|   コマンド/リプライワード   |  | バイト3 | バイト2 | バイト1 | バイト0 |  |     未使用/ゼロ     | バイト4 |
++------------------------+  +--------+--------+--------+--------+  +--------------------+--------+
+</code></pre>
+<p>データバイト数は、コマンド/リプライワードの OPCODE フィールドによって完全に決定されます。
+RX FIFO バッチ（リプライ）では、データバイト数は常に SPMI 入力フレーム数（例：レジスタ読み取りで要求されたバイト数）と一致します。ただし、TX FIFO バッチ（コマンド）では関係がより複雑で、以下を参照してください。</p>
+<p>コマンドワードの一般的な構造は以下の通りです：</p>
+<ul>
+<li>[ビット0..7] <strong>OPCODE</strong>：8 ビットの SPMI コマンドオペコード。この値はバス上で送信される正確なオペコードと常に一致するわけではなく、場合によっては一般的なコマンドタイプ（例：レジスタ 0 書き込み、レジスタ読み取り）を識別するだけ（後述する SPMI コマンド参照）</li>
+<li>[ビット8..11] <strong>SLAVE_ID</strong>：4 ビットのスレーブアドレス</li>
+<li>[ビット15] <strong>NOTIFY</strong>：設定されている場合、このコマンドの完了時に NOTIFY 割り込みラインがアサート（後述する割り込み参照）</li>
+<li>[ビット16..31] <strong>PARAM</strong>：データバイトに含まれないオペコード依存の追加パラメータ用の 16 ビット領域</li>
+</ul>
+<p>リプライワードの一般的な構造は以下の通りです：</p>
+<ul>
+<li>[ビット0..7] <strong>OPCODE</strong>：コマンドフレームで実際に送信された 8 ビットの SPMI オペコード（上記のように、コマンドワードの OPCODE フィールドと常に一致するとは限らない）</li>
+<li>[ビット8..11] <strong>SLAVE_ID</strong>：4 ビットのスレーブアドレス（常にコマンドワードと一致）</li>
+<li>[ビット15] <strong>ACK</strong>：SPMI コマンドに確認フレームが含まれる場合（基本的に読み取り以外のすべてのコマンド）、このビットはその値（スレーブが確認した場合 1）を保持し、そうでない場合は 0</li>
+<li>[ビット16..31] <strong>PARITY</strong>：このフィールドの下位 N ビット（N は SPMI コマンドに含まれる入力フレーム数であり、このワードに続くデータバイト数でもある）は、それらのフレームごとのパリティチェック結果（チェック成功なら 1）を保持し、残りは 0</li>
+</ul>
+<p>ワードのバッチ全体はFIFOから/へのアトミックに消費およびプッシュされます。バッチの最初のワードが利用可能になると、他のワードを待つ必要はありません。</p>
+<h5 id="spmi">SPMI コマンド<a class="headerlink" href="#spmi" title="Permanent link">&para;</a></h5>
+<p>コマンド/リプライワードバッチの追加要件は、発行されるコマンドの種類に依存します。</p>
+<h6 id="_3">単純コマンド<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h6>
+<p>電源状態管理コマンド（reset, sleep, shutdown, wakeup）は追加パラメータを持たないため、PARAM フィールドは未使用です。コマンドまたはリプライにデータバイトは続きません。</p>
+<h6 id="_4">基本レジスタアクセス<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h6>
+<p>単一レジスタの読み書きコマンド（レジスタ読み取り、レジスタ書き込み、レジスタ 0 書き込み）の場合、PARAM フィールドは以下のように構成されます：</p>
+<ul>
+<li>[ビット0..7] <strong>ADDRESS</strong>：レジスタアドレス、0..0x1F（レジスタ 0 書き込みコマンドでは未使用）</li>
+<li>[ビット8..15] <strong>VALUE</strong>：書き込まれるレジスタ値（レジスタ読み取りコマンドでは未使用）</li>
+</ul>
+<p>コマンドの OPCODE フィールドでは、この情報を指定するビットは無視され、PARAM の関連ビットに置き換えられます。コマンドにデータバイトは続きませんが、リプライには 0（書き込み）または 1（読み取り）のデータバイトが続きます。</p>
+<h6 id="_5">拡張レジスタアクセス<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h6>
+<p>複数のレジスタを一度に操作可能で、拡張レジスタアドレス空間へのアクセスも許可するコマンド（拡張読み取り、拡張書き込み、拡張読み取りロング、拡張書き込みロング）の場合、
+PARAM フィールドはレジスタアドレス（拡張読み取り/書き込みでは 0..0xFF、拡張読み取り/書き込みロングでは0..0xFFFF）を保持します。</p>
+<p>コマンド（書き込み）またはリプライ（読み取り）に続くデータバイト数は、OPCODE でエンコードされた読み書きされるレジスタ/バイト数です。</p>
+<!-- TODO: 他のコマンド -->
+
+<h5 id="fifo">FIFO<a class="headerlink" href="#fifo" title="Permanent link">&para;</a></h5>
+<p>各 FIFO の容量は 64 ワードです。既知のすべてのバッチが最大 5 ワードであるため、コントローラは最悪の場合 12 個の未処理 SPMI コマンドを保持できます。</p>
+<p>STATUS およびに CURSORS は TX FIFO に関する情報を下位ハーフワードで返し RX FIFOに関する情報を上位ハーフワードで返します。STATUS のハーフワードの構造は以下の通りです：</p>
+<ul>
+<li>[ビット0..7] <strong>COUNT</strong>：FIFO内のワード数。0..0x40</li>
+<li>[ビット8] <strong>EMPTY</strong>：FIFO が空の場合に設定。例：COUNT == 0</li>
+<li>[ビット9] <strong>FULL</strong>：FIFO が満杯の場合に設定。例：COUNT == 0x40</li>
+</ul>
+<p>CURSORS のハーフワードの構造は以下の通りです：</p>
+<ul>
+<li>[ビット0..7] <strong>WRITE_CURSOR</strong>：次に入れるワードのバッファ位置。0..0x3F</li>
+<li>[ビット8..15] <strong>READ_CURSOR</strong>：次に消費するワードのバッファ位置。0..0x3F</li>
+</ul>
+<p>両方のカーソルが等しい場合、FIFO は空または満杯のいずれかです。STATUS を使用して区別できます。</p>
+<p>ACTION1 レジスタのビット 0 に 1 を書き込むと、両方の FIFO がクリアされます。</p>
+<p>FIFO のバッファから任意のワードを読み取るデバッグ機構があります。PEEK_POS で読み取るワードを選択：</p>
+<ul>
+<li>[ビット8] <strong>FIFO_IDX</strong>：選択する FIFO（0 = TX、1 = RX）</li>
+<li>[ビット16..24] <strong>CURSOR</strong>：読み取るバッファ位置。0..0x3F</li>
+</ul>
+<p>そして PEEK_VALUE は選択された位置の現在の値を返します。</p>
+<h5 id="_6">割り込み<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
+<p>ADT にはいくつかの AIC 割り込みラインが記載されていますが、他のラインはすべての SPMI コントローラ間で共有されているように見えます。なので、2 番目のラインのみが重要と思われます。</p>
+<p>マスク領域は <code>0x20..0x5F</code> にあり、それぞれのビットが対応するラインがマスクされていない場合は 1、マスクされている場合は 0 に設定されます。</p>
+<p>ACK 領域は <code>+0x40</code> だけシフトされ、<code>0x60..0x9F</code> にあります。それぞれのビットは、対応するラインがトリガーされると 1 に設定され、そのビットに 1 を書き込むとクリアされます。</p>
+<p>両方の領域に少なくとも 1 つのビットが設定されている場合、AIC ラインがアサートされます。
+最初の 256 ライン（各領域の前半）は、バス上の参加者によってトリガーされるようです（SPMI の仕様ではこれに関するコマンドは指定されていません。マスター書き込みコマンドの可能性？）。
+残りは、特定のイベントが発生したときにコントローラ自身によってトリガーされます。
+なお、ラインをマスクしても、トリガーされること（および ACK 領域の対応するビットが 1 に設定されること）は防げません。</p>
+<p>M3では以下のコントローラトリガー割り込みラインのみがマスク解除可能です：</p>
+<ul>
+<li>[ビット 0] <strong>NOTIFY</strong>：NOTIFY フラグ付きのコマンドが完了し、そのリプライが RX FIFO に入ったときにトリガー</li>
+</ul>
+<!-- space -->
+<ul>
+<li>[ビット 4]</li>
+<li>[ビット 5]</li>
+<li>[ビット 6] <strong>READ_FAIL_1</strong>：読み取りコマンドがパリティチェック失敗で完了したときにトリガー</li>
+<li>[ビット 7] <strong>ACK_FAIL</strong>：（読み取り以外の）コマンドが完了し、スレーブによって確認されなかったときにトリガー</li>
+<li>[ビット 8]</li>
+<li>[ビット 9]</li>
+<li>[ビット 10]</li>
+<li>[ビット 11] <strong>READ_FAIL_2</strong>：読み取りコマンドがパリティチェック失敗で完了したときにトリガー</li>
+<li>[ビット 12]</li>
+<li>[ビット 13]</li>
+</ul>
+<!-- space -->
+<ul>
+<li>[ビット 16]</li>
+<li>[ビット 17]</li>
+</ul>
+<!-- space -->
+<ul>
+<li>[ビット 23]（<code>nub-spmiN</code> のみ）</li>
+<li>[ビット 24]（<code>nub-spmiN</code> のみ）</li>
+<li>[ビット 25]（<code>nub-spmiN</code> のみ）</li>
+<li>[ビット 26]（<code>nub-spmiN</code> のみ）</li>
+<li>[ビット 27] <strong>FAIL</strong>：RX FIFO が空のときにワードを消費しようとしたときにトリガー。他とは異なり、これはレベルトリガーされているようで、(PMGR リセット以外）クリア方法が見つからない</li>
+<li>[ビット 28]（<code>nub-spmiN</code> のみ）</li>
+<li>[ビット 29]（<code>nub-spmiN</code> のみ）</li>
+</ul>
 
 
 

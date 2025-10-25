@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://asfdrwe.github.io/asahi-linux-translations/fw/boot/">
+        <link rel="canonical" href="https://asfdrwe.github.io/asahi-linux-translations/sw/windows-11-vm/">
       
       
+        <link rel="prev" href="../partitioning-cheatsheet/">
+      
+      
+        <link rel="next" href="../../project/help-wanted/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Boot - Asahi Linux 文書非公式日本語訳</title>
+        <title>Windows 11 VM の作成方法 - Asahi Linux 文書非公式日本語訳</title>
       
     
     
@@ -53,11 +57,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Boot - Asahi Linux 文書非公式日本語訳" >
+        <meta  property="og:title"  content="Windows 11 VM の作成方法 - Asahi Linux 文書非公式日本語訳" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/fw/boot.png" >
+        <meta  property="og:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/sw/windows-11-vm.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -65,15 +69,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://asfdrwe.github.io/asahi-linux-translations/fw/boot/" >
+        <meta  property="og:url"  content="https://asfdrwe.github.io/asahi-linux-translations/sw/windows-11-vm/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Boot - Asahi Linux 文書非公式日本語訳" >
+        <meta  name="twitter:title"  content="Windows 11 VM の作成方法 - Asahi Linux 文書非公式日本語訳" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/fw/boot.png" >
+        <meta  name="twitter:image"  content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/sw/windows-11-vm.png" >
       
     
     
@@ -96,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#stage-0-securerom" class="md-skip">
+        <a href="#_1" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -132,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Boot
+              Windows 11 VM の作成方法
             
           </span>
         </div>
@@ -855,8 +859,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -866,13 +872,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -887,7 +891,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             ユーザ向け
@@ -923,7 +927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sw/broken-software/" class="md-nav__link">
+      <a href="../broken-software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -945,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sw/partitioning-cheatsheet/" class="md-nav__link">
+      <a href="../partitioning-cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,10 +968,29 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../sw/windows-11-vm/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Windows 11 VM セットアップガイド
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -977,6 +1000,66 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      はじめに
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="はじめに">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      手順
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      インストール後
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH 手順
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1061,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sw/tethered-boot/" class="md-nav__link">
+      <a href="../tethered-boot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1083,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sw/m1n1-user-guide/" class="md-nav__link">
+      <a href="../m1n1-user-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1105,7 +1188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sw/m1n1-hypervisor/" class="md-nav__link">
+      <a href="../m1n1-hypervisor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1127,7 +1210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sw/u-boot/" class="md-nav__link">
+      <a href="../u-boot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1149,7 +1232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sw/devicetree-bindings/" class="md-nav__link">
+      <a href="../devicetree-bindings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1171,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sw/audio-userspace/" class="md-nav__link">
+      <a href="../audio-userspace/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1284,117 +1367,96 @@
   
 
 
-  <h1>Boot</h1>
+  <h1>Windows 11 VM セットアップガイド</h1>
 
+<p>2025/10/25時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/windows-11-vm.md">How to create a Windows 11 VM</a>の翻訳</p>
+<p>訳注: 
+- 原文の見出しレベルが変なので修正
+- Microsoft の英語版サイトへのリンクは対応する日本語サイトへのリンクに変更</p>
 <hr />
-<p>title: Apple Silicon ブートフロー
-summary:
-Apple Silicon 機器で使われるブートフロー、Soc 統合 ROM からユーザコードまで</p>
-<hr />
-<p>2025/10/11時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/fw/boot.md">boot</a>の翻訳</p>
-<hr />
-<p>Apple Siliconデバイスは現在のiOSデバイスと非常によく似たブートフローをたどるようです。</p>
-<h4 id="stage-0-securerom">Stage 0 (SecureROM)<a class="headerlink" href="#stage-0-securerom" title="Permanent link">&para;</a></h4>
-<p>このステージは、ブート<a href="../project/glossary#r">ROM</a>内にあります。とりわけ、<a href="../../project/glossary/#n">NOR</a>から通常のステージ1を検証、ロード、実行します。
-失敗した場合は、<a href="../../project/glossary/#d">DFU</a>にフォールバックし、<a href="../../project/glossary/#i">iBSS</a>ローダーが送られてくるのを待ってから、ステージ1の<a href="../../project/glossary/#d">DFU</a>のフローを続行します。</p>
-<h4 id="_1">通常の流れ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<h5 id="stage-1-llbiboot">Stage 1 (LLB/iBoot)<a class="headerlink" href="#stage-1-llbiboot" title="Permanent link">&para;</a></h5>
-<p>このステージはオンボードの<a href="../../project/glossary/#n">NOR</a>にあるプライマリアーリーローダー(primary early loader)です。このブートステージでは、非常に大まかに以下のような流れになります:</p>
-<ul>
-<li><a href="Glossary.md#n">NVRAM</a>から <code>boot-volume</code> 変数を読み込み: そのフォーマットは <code>&lt;gpt-partition-type-uuid&gt;:&lt;gpt-partition-uuid&gt;:&lt;volume-group-uuid&gt;</code> 。その他の関連する変数は<code>update-volume</code>と<code>upgrade-boot-volume</code>のようで、おそらく<code>boot-info-payload</code>変数内のメタデータによって選択される</li>
-<li>ローカルポリシーのハッシュを取得:</li>
-<li>最初にローカルで提案されているハッシュ（<a href="../../project/glossary/#s">SEP</a> コマンド11）を試みる</li>
-<li>それが利用できない場合は、ローカルのブレスドハッシュ(blessed hash)を取得 (<a href="../progject/glossary.md#s">SEP</a>(コマンド14))</li>
-<li>iSCPreboot パーティションの <code>/&lt;volume-group-uuid&gt;/LocalPolicy/&lt;policy-hash&gt;.img4</code> にあるローカルブートポリシーを読む。
-このブートポリシーには次のメタデータキー (<a href="../../project/glossary/#4">4CCs</a>):</li>
-<li><code>vuid</code>: UUID: Volume group UUID - 上記と同じ</li>
-<li><code>kuid</code>: UUID: KEK group UUID</li>
-<li><code>lpnh</code>: SHA384: ローカルポリシーのナンスハッシュ(nonce hash)</li>
-<li><code>rpnh</code>: SHA384: リモートポリシーのナンスハッシュ</li>
-<li><code>ronh</code>: SHA384: リカバリ OS ポリシーナンスハッシュ</li>
-<li><code>nsih</code>: SHA384: 次のステージのIMG4ハッシュ</li>
-<li><code>coih</code>: SHA384: fuOS（カスタムkernelcache）IMG4ハッシュ</li>
-<li><code>auxp</code>: SHA384 ユーザーが許可した補助的なカーネル拡張のハッシュ</li>
-<li><code>auxi</code>: SHA384: 補助的なカーネルキャッシュ IMG4 のハッシュ</li>
-<li><code>auxr</code>: SHA384：補助的なカーネル拡張機能のレセプターのハッシュ</li>
-<li><code>prot</code>: SHA384: Paired Recovery manifestのハッシュ</li>
-<li><code>hrlp</code>: bool: Secure Enclave が署名するリカバリ OS ローカルポリシー</li>
-<li><code>lobo</code>: bool: ローカルブートポリシー</li>
-<li><code>love</code>: bool: ローカル OS バージョン</li>
-<li><code>smb0</code>: bool: Reduced security を有効化</li>
-<li><code>smb1</code>: bool: Permissive security を有効化</li>
-<li><code>smb2</code>: bool: サードパーティ製カーネル拡張を有効化</li>
-<li><code>smb3</code>: bool: 手動でモバイルデバイス管理（MDM）を登録</li>
-<li><code>smb4</code>: bool?: MDM デバイス登録プログラムを無効化</li>
-<li><code>sip0</code>: u16: カスタマイズされた SIP</li>
-<li><code>sip1</code>: bool: 署名付きシステムボリューム（<code>csrutil authenticated-root</code>）を無効化</li>
-<li><code>sip2</code>: bool: CTRR (<a href="https://keith.github.io/xcode-man-pages/bputil.1.html">Configurable Text Region Read-only Region</a>) を無効化</li>
-<li><code>sip3</code>: bool: <code>boot-args</code> フィルタリングを無効化</li>
-</ul>
-<p>また、オプションとして、以下のリンクされたマニフェストが、それぞれ <code>/&lt;volume-group-uuid&gt;/LocalPolicy/&lt;policy-hash&gt;.&lt;id&gt;.im4m</code> に存在:
-  - <code>auxk</code>: AuxKC (サードパーティのkext) manifest
-  - <code>fuos</code>: fuOS (カスタムkernelcache) manifest</p>
-<ul>
-<li>
-<p>次のステージを読み込む場合:</p>
-</li>
-<li>
-<p>ブートディレクトリはターゲットパーティションのPreboot subvolumeのパス <code>/&lt;volume-uuid&gt;/boot/&lt;local-policy.metadata.nsih&gt;</code> に存在</p>
-</li>
-<li>
-<p><boot-dir>/usr/standalone/firmware/iBoot.img4` を同じディレクトリにあるデバイス・ツリーや他のファームウェア・ファイルと一緒に復号、検証、実行。他のメタデータ記述子についてはまだ根拠なし</p>
-</li>
-<li>
-<p>カスタムステージ(<a href="Glossary.md#f">fuOS</a>)を読み込む場合:</p>
-</li>
-<li>
-<p>...</p>
-</li>
-</ul>
-<p>この段階で失敗すると、エラーになるか、<a href="../../project/glossary/#d">DFU</a>にフォールバックし、iBECローダーの送信を待ってから、<a href="Glossary.md#d">DFU</a>の流れでステージ2に進みます。</p>
-<h5 id="stage-2-iboot2">Stage 2 (iBoot2)<a class="headerlink" href="#stage-2-iboot2" title="Permanent link">&para;</a></h5>
-<p>このステージはOSレベルのローダーで、OSパーティションの中にありmacOSの一部として出荷されています。システムの残りの部分をロードします。</p>
-<h4 id="dfu"><a href="../../project/glossary/#d">DFU</a>の流れ<a class="headerlink" href="#dfu" title="Permanent link">&para;</a></h4>
-<h5 id="stage-1-ibss">Stage 1 (iBSS)<a class="headerlink" href="#stage-1-ibss" title="Permanent link">&para;</a></h5>
-<p>このステージは『復元』ホストからデバイスに送られます。このステージでは、2つ目のステージであるiBECのブートストラップ、検証、実行が行われます。</p>
-<h5 id="stage-2-ibec">Stage 2 (iBEC)<a class="headerlink" href="#stage-2-ibec" title="Permanent link">&para;</a></h5>
-<h4 id="_2">モード<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p>起動すると、<a href="../../project/glossary/#a">AP</a>は<a href="../../project/glossary/#s">SEP</a>で確認できるようにブートモードのいずれかになります:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">ID</th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">0</td>
-<td>macOS</td>
-</tr>
-<tr>
-<td style="text-align: right;">1</td>
-<td>1TR ("one true" recoveryOS)</td>
-</tr>
-<tr>
-<td style="text-align: right;">2</td>
-<td>recoveryOS ("ordinary" recoveryOS)</td>
-</tr>
-<tr>
-<td style="text-align: right;">3</td>
-<td>kcOS</td>
-</tr>
-<tr>
-<td style="text-align: right;">4</td>
-<td>restoreOS</td>
-</tr>
-<tr>
-<td style="text-align: right;">255</td>
-<td>unknown</td>
-</tr>
-</tbody>
-</table>
-<p><a href="../../project/glossary/#s">SEP</a>では、<a href="../../project/glossary/#1">1TR</a>で特定のコマンド(ブートポリシーの編集など)の実行を許可していないと、エラー11『AP boot mode』で失敗します。</p>
+<h4 id="_1">はじめに<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>Fedora Asahi Remix に Windows 11 をインストールするための簡単なガイドです！
+Windows から必要なものがあっても、ハードウェアを切り替えたりベアメタル Windows マシンを利用したりせずに、Windows 11 インスタンスをインストール、設定、管理する方法を説明します。</p>
+<p>貢献者: aykevl 氏及びに Davide Calvaca 氏</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p><code>dnf install @virtualization</code> はこのガイドの範囲外で、対応していません。
+このガイド執筆時点では未対応で破損しています。virt-manager、libvirtd などが含まれます。
+詳細は https://github.com/AsahiLinux/docs/pull/206#issuecomment-3274648383 を参照してください。このような実験を行う場合は注意が必要です。</p>
+<h5 id="_2">手順<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
+<ol>
+<li><code>dnf install qemu</code> コマンドで QEMU をインストール</li>
+<li>デスクトップ上または任意の場所に新しいディレクトリを作成し、任意の名前を付ける。例えば、 <code>windows11</code> という名前で <code>mkdir windows11</code> で作成。適切なターミナルアプリケーションを使用するか、デスクトップ上で右クリックしてディレクトリを作成</li>
+<li><code>cd windows11</code> でそのディレクトリに移動</li>
+<li>Windows 11 の ISO をダウンロード。適切に ARM64 用の Windows 11 Professional ビルドを <a href="https://www.microsoft.com/ja-JP/software-download/windows11arm64">こちら</a> から取得。任意のターミナルアプリケーションで <code>mv</code> を使用して、<code>windows-11.iso</code> のような適切な名前にリネーム</li>
+<li>その ISO とともに、virtio-drivers を使用してマシンのパフォーマンスを向上させるのが望ましい。<a href="https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Driver-installation">こちら</a> からダウンロードし、<code>win11-virtio.iso</code> のように適切にリネーム</li>
+<li><code>qemu-img create -f qcow2 win11.qcow2 25G</code> コマンドを使用して Windows 11 VM の仮想ディスクを作成。ディスク容量を希望のサイズに調整。25GB はプレースホルダー</li>
+<li>ここで Windows 11 VM の起動スクリプトを作成。<code>win11.sh</code> という名前のファイルを作成し、<code>chmod +x win11.sh</code> で実行可能にする。内容は以下の通り：</li>
+</ol>
+<pre class="copy"><code class="language-md"> #!/bin/sh
+
+performance_cores=$(awk '
+  /^processor/ { proc=$3 } 
+  /^CPU part/ {
+    if ($4 == &quot;0x023&quot; || $4 == &quot;0x025&quot; || $4 == &quot;0x029&quot; || $4 == &quot;0x033&quot; || $4 == &quot;0x035&quot; || $4 == &quot;0x039&quot;)
+      procs=procs ? procs&quot;,&quot;proc : proc
+  } END { print procs }
+' /proc/cpuinfo)
+
+taskset -c &quot;$performance_cores&quot; \
+  qemu-system-aarch64 \
+    -display sdl,gl=on \
+    -cpu host \
+    -M virt \
+    -enable-kvm \
+    -m 2G \
+    -smp 2 \
+    -bios /usr/share/edk2/aarch64/QEMU_EFI.fd \
+    -hda win11.qcow2 \
+    -device qemu-xhci \
+    -device ramfb \
+    -device usb-storage,drive=install \
+    -drive if=none,id=install,format=raw,media=cdrom,file=windows-11-iot.iso \
+    -device usb-storage,drive=virtio-drivers \
+    -drive if=none,id=virtio-drivers,format=raw,media=cdrom,file=virtio-win.iso \
+    -object rng-random,filename=/dev/urandom,id=rng0 \
+    -device virtio-rng-pci,rng=rng0 \
+    -audio driver=pipewire,model=virtio \
+    -device usb-kbd \
+    -device usb-tablet \
+    -nic user,model=virtio-net-pci
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>windows-11.iso や virtio-win.iso とは異なる名前でファイル名を付けた場合は、ファイル引数を調整してください。</p>
+</div>
+<ol>
+<li>そして <code>./win11.sh</code> を実行。QEMU ウィンドウが表示。いくつかのブート画面の後、「Press any key to boot from CD or DVD…」が表示。Windows をブートするために任意のキーを押す（UEFI コンソールに入らないよう素早く押す）</li>
+<li>Windows がブートし、Windows 11 のセットアップ画面が表示されるはず。簡単なはずだが、1 つ注意点があり：
+『Windows 11 のインストール場所を選んでください。』画面で、ドライブが表示されない。これを修正するには、『ドライバーの読み込み』をクリックし、『参照』をクリックして virtio-win ドライブを展開し、viostor → w11 → ARM64 を選択。OK をクリック。表示された『Red Hat VirtIO SCSI controller』を選択してインストールをクリック</li>
+<li>インストール中に VM が数回再起動。何もせずにそのままにしておく</li>
+<li>インストール後、最初のブートウィザード（場所、キーボードなどの設定）に入る
+『ネットワークに接続しましょう』画面で、『ドライバーのインストール』をクリックし、virtio-win ドライブを開いて NetKVM → w11 → ARM64 に移動し、「フォルダーの選択」をクリック。数秒待つと、ネットワークアダプターが表示。これで続行可能に(訳注: 確認していませんがこの段階ではなく 9 の段階でネットワークのドライバもインストールする必要があるかもしれません)</li>
+<li>インストールが完了すると、動作する Windows 11 がインストールされているはず！</li>
+</ol>
+<h5 id="_3">インストール後<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
+<p>通常通り VM をシャットダウンしてください（win11.sh スクリプトをただ終了しないでください、Windows を怖がらせないように）。再起動するには、単に <code>./win11.sh</code> を再度実行するだけです。</p>
+<p>インストール後、2 つの ISO を削除できます。win11.sh スクリプトから以下の 4 行を削除します：</p>
+<pre><code class="language-md">-device usb-storage,drive=install \
+    -drive if=none,id=install,format=raw,media=cdrom,file=windows-11-iot.iso \
+    -device usb-storage,drive=virtio-drivers \
+    -drive if=none,id=virtio-drivers,format=raw,media=cdrom,file=virtio-win.iso \
+</code></pre>
+<h5 id="ssh">SSH 手順<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h5>
+<ol>
+<li>QEMU コマンドラインを変更し、<code>-nic user,model=virtio-net-pci</code> を <code>-device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:22</code> に置き換えて、VM のポート 22 をホストのポート 5555 に転送（任意のポートを選択可能）</li>
+<li>『オプション機能』を開始し、『機能を表示』をクリックして OpenSSH Server を検索し、インストール（これには時間がかかる）</li>
+<li>Windows ファイアウォールでポート 22 を許可します。<a href="https://stackoverflow.com/questions/68594235/allow-ssh-protocol-through-win-10-firewall">この StackOverflow 投稿</a> を参照</li>
+<li>『サービス』を起動し、『OpenSSH SSH Server』を探して開始（右クリック → 開始）。また、右クリックしてプロパティに移動し、起動の種類を自動に設定してブート時に常に開始するように設定</li>
+<li>これで <code>ssh yourusername@localhost -p 5555</code> を使用して Windows システムに SSH で接続可能に！</li>
+<li>パブリックキー認証でシステムにログインしたい場合、パブリックキーを C:\ProgramData\ssh\administrators_authorized_keys に配置（アカウントが管理者アカウントの場合）</li>
+</ol>
 
 
 

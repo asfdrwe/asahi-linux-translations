@@ -960,6 +960,28 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sw/windows-11-vm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows 11 VM セットアップガイド
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1264,10 +1286,11 @@
 
   <h1>Apple Silicon の紹介</h1>
 
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/introduction.md">introduction</a>の翻訳</p>
+<p>2025/10/25時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/introduction.md">introduction</a>の翻訳</p>
 <p>訳注:
 - プロジェクトページへのリンクは対応する日本語訳ページへのリンクに置き換え
-- Appleの用語は<a href="https://support.apple.com/ja-jp/guide/security/sec7d92dc49f/web">Appleセキュリティ文書</a>の訳語に従います</p>
+- Appleの用語は<a href="https://support.apple.com/ja-jp/guide/security/sec7d92dc49f/web">Appleセキュリティ文書</a>の訳語に従います
+- Apple公式サイトの英語版へのリンクは対応する日本語版へのリンクに置き換え</p>
 <hr />
 <h5 id="_1">はじめに<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
 <p>この文書は、Apple Silicon (M1 以降) Mac のブートエコシステム (以下『AS Mac』) について、オープン OS とどのように相互運用するかについて
@@ -1416,7 +1439,7 @@ GPUファームウェアです。これはGPU ページテーブルの一部（�
 含むAPFSコンテナとサブボリュームを中心に設計されています。</p>
 <p>AS Macはbrick-proofになるように設計されています。NORやNVMeが破壊されても、USBケーブルを使ってROMから起動すれば、
 他のマシンから復旧することができます（※NOR破壊は未検証）。これは別のMacを使った
-<a href="https://support.apple.com/guide/apple-configurator-mac/revive-or-restore-a-mac-with-apple-silicon-apdd5f3c75ad/mac">公式文書</a>です。
+<a href="https://support.apple.com/ja-jp/108900">公式文書</a>です。
 Linux等で動作する代替の<a href="https://github.com/libimobiledevice/idevicerestore">オープンソースツール</a>もあります。</p>
 <p>この設計の特筆すべき点は、インストールされた各OSが、OSローダーと同様に、コプロセッサー上で動作するシステムファームウェアの
 大きなサブセットも一緒に持ってくるということです。このため、古いOSとの後方互換性を維持することが容易になりますが、
