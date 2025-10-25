@@ -51,7 +51,7 @@ Gentoo搭載のM1 Pro MacBook Pro上でmuvm外で動作するHollow Knight (2017
 ![nier](https://asahilinux.org/img/blog/2025/10/nier.jpg)
 Gentoo搭載のM1 Pro MacBook Pro上でmuvm外で動作するNieR:Automata (2017)
 
-chaos_princess 氏に再び感謝します。前回待っていたツールチェーンの変更が Gentoo に統合され、WINE インストール時に必要な FEX DLL が自動的にビルドされるようになりました。
+chaos_princess 氏に繰り返し感謝します。前回待っていたツールチェーンの変更が Gentoo に統合され、WINE インストール時に必要な FEX DLL が自動的にビルドされるようになりました。
 
 とはいっても、32 ビットアプリケーションよりもさらにマイルストーンが大きく変動しています。WINE のARM64X と ARM64EC（Microsoft の ABI と実行形式で、AArch64 と amd64 コードの相互運用を可能にする）対応はまだ不完全なので、多くのアプリケーションは（まだ）動作しません。もちろん、危険を好む人々には試してみることを奨励しますが、このソフトウェアに対するサポートは提供できません。早期アルファ版として、より良い未来の予感するものとしてお考えください。
 
