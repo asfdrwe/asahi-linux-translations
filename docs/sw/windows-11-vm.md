@@ -17,7 +17,7 @@ Windows から必要なものがあっても、ハードウェアを切り替え
 貢献者: aykevl 氏及びに Davide Calvaca 氏
 
 !!! note
-   `dnf install @virtualization` はこのガイドの範囲外で、対応していません。
+    `dnf install @virtualization` はこのガイドの範囲外で、対応していません。
 このガイド執筆時点では未対応で破損しています。virt-manager、libvirtd などが含まれます。
 詳細は https://github.com/AsahiLinux/docs/pull/206#issuecomment-3274648383 を参照してください。このような実験を行う場合は注意が必要です。
 

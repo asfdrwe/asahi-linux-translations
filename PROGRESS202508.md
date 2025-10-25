@@ -8,6 +8,7 @@
 # 進捗報告: Linux 6.16
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202505.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202510.md)
 
 Linux 6.16が公開され、また進捗報告の時間がやってきました！前回お伝えしたように、Asahi Linuxと Honeykrisp 氏の Mesa ドライバがようやく上流に取り込まれました。
 これにより GPU　関連の作業が活発化したので、まずはそこから始めていきましょう。
