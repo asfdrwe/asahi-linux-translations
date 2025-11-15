@@ -2,7 +2,7 @@
 title: Apple Silicon プラットフォームセキュリティ
 ---
 
-2025/3/9時点の[security](https://github.com/AsahiLinux/docs/blob/main/docs/platform/security.md)の翻訳
+2025/11/15時点の[security](https://github.com/AsahiLinux/docs/blob/main/docs/platform/security.md)の翻訳
 
 訳注: 
 - 文書へのリンクは対応する日本語訳へのリンクに書き換え

@@ -5,7 +5,7 @@ summary:
 
 ---
 
-2025/8/22時点の[agx](https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/agx.md)の翻訳
+2025/11/15時点の[agx](https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/agx.md)の翻訳
 
 ---
 # Lina氏のAGXノート
@@ -627,9 +627,9 @@ CPU はこれらのレジスタに書き込まず、読み込むだけです。
 
 これらのステータス・レジスタは、CPU上の*something*によって継続的にチェックされます。
 
-    0x11008 : u32 - 作業が行われるたびに常にカウントアップされます。
-    0x1100c : u32 - 通常は0です。
+    0x11008 : u32 - 作業が行われるたびに常にカウントアップ
+    0x1100c : u32 - 通常は 0
     0x11010 : u32 - 別の作業カウンタ？
-    0x11014 : u32 - 使用頻度0
+    0x11014 : u32 - 通常は 0 
 
 ASCのPongとKicksに比べると、これらのステータス・レジスタが読まれるタイミングに多くの関係はないようです。
