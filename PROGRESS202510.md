@@ -8,6 +8,7 @@
 # 進捗報告: Linux 6.17
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202508.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202512.md)
 
 また上流カーネルがリリースされました。進捗報告の時間です！
 
