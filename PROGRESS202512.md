@@ -50,11 +50,11 @@ GitHub Sponsors と OpenCollective の寛大なサポーターのおかげで、
 
 OpenCollective は主に払い戻しモデルで機能し、*すでに*購入したものの請求書を提出・承認されてから資金がリリースされます。つまり、すべての支出はポケットマネーで、
 購入から払い戻しまで最大5週間かかります。MacBook は安くなく、生活の他の支出があります。つまり、突然機器を魔法のように用意して、遭遇したすべてのバグにすべてを投じて即座に
-対応することはできません。優先順位をつけなければならず、非 Asahi のコミットメントも含めます。この待ち時間が長いため、みなさまの忍耐を試していることは理解しております。
+対応することはできません。優先順位をつけなければならず、非 Asahi のコミットメントも含めます。この待ち時間が長いため、みなさまの忍耐力を試していることは理解しております。
 お付き合いありがとうございます。
 
 ## 会合での Asahi 
-12月になりました。つまりChaos Communications Congressはもうすぐです。私たちの一部が 39C3 に参加するだけでなく、Sven 氏が[ 4 日目](https://fahrplan.events.ccc.de/congress/2025/fahrplan/event/asahi-linux-porting-linux-to-apple-silicon)に Asahi をテーマにしたトークを行うことを発表します。トピックには
+12月になりました。つまり Chaos Communications Congressはもうすぐです。私たちの一部が 39C3 に参加するだけでなく、Sven 氏が[ 4 日目](https://fahrplan.events.ccc.de/congress/2025/fahrplan/event/asahi-linux-porting-linux-to-apple-silicon)に Asahi をテーマにしたトークを行うことを発表します。トピックには
 リバースエンジニアリングプロセス、これまでの成果、未来の展望が含まれます。タイムゾーンが許せば、ぜひチェックしてください！
 
 ## より良いインストール体験
