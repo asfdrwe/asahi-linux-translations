@@ -2,7 +2,7 @@
 title: 開発者クイックスタートガイド
 ---
 
-2025/6/30時点の[Developer Quickstart](https://github.com/AsahiLinux/docs/blob/main/docs/platform/developer-quickstart.md)の翻訳
+2026/1/6時点の[Developer Quickstart](https://github.com/AsahiLinux/docs/blob/main/docs/platform/developer-quickstart.md)の翻訳
 
 訳注: 
 - 訳者は以下の内容を検証していません。トラブルが生じた場合は自己責任でお願いします。

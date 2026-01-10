@@ -2,13 +2,10 @@
 title: ディスプレイコントローラー
 ---
 
-2025/3/9時点の[display-controllers](https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/display-controllers.md)の翻訳
+2026/1/6時点の[display-controllers](https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/display-controllers.md)の翻訳
 
 ---
 Mシリーズのチップには`dcp`と`dcpext`の2種類のディスプレイコントローラがあります。どちらの種類にも次のように対応しています。
-- DP 1.4 (4レーン、DSC付き): MSTはなし！
-- HDMI (dp2hdmiコンバーター経由): ルーティングの制限については以下を参照
-- USB-Cポート: DP altmodeまたは各ポート最大2コントローラーのUSB4トンネリング。ルーティングの制限については以下を参照
 
 コントローラー固有情報:
 | 種類 | モード制限 |
