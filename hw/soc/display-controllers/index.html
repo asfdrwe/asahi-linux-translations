@@ -1538,38 +1538,172 @@
 <p>2026/1/6時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/hw/soc/display-controllers.md">display-controllers</a>の翻訳</p>
 <hr />
 <p>Mシリーズのチップには<code>dcp</code>と<code>dcpext</code>の2種類のディスプレイコントローラがあります。どちらの種類にも次のように対応しています。</p>
-<p>コントローラー固有情報:
-| 種類 | モード制限 |
-| - | - |
-| <code>dcp</code> | 5K, 60Hz, 10bpp (Apple提供情報、未テスト) |
-| <code>dcpext</code> | 6K, 60Hz, 10bpp (Apple提供情報、未テスト) |</p>
-<p>M1 のルーティング制限:
-| コントローラー | 内部ディスプレイ | HDMI | USB-C |
-| - | - | - | - |
-| <code>dcp</code> | + | + | |
-| <code>dcpext</code> | | | + |</p>
-<p>M2 以降のルーティング制限:
-| コントローラー | 内部ディスプレイ | HDMI | USB-C |
-| - | - | - | - |
-| <code>dcp</code> | + | + | + |
-| <code>dcpext</code> |  | + | + |</p>
-<p>SoC固有情報:
-| SoC | <code>dcp</code>数 | <code>dcpext</code>数 | 注 |
-| - | - | - | - |
-| M1 | 1 | 1 | |
-| M1 Pro | 1 | 2 | |
-| M1 Max | 1 | 4 |
-| M1 Ultra | 1 | 8 | 内部ディスプレイを持つUltra デバイスなし。ダイの一つで <code>dcp</code> が無効、もう一つの <code>dcp</code> は HDMI にルーティング |
-| M2 | 1 | 1
-| M2 Pro | 1 | 2
-| M2 Max | 1 | 4
-| M2 Ultra | 0 | 8 | 内部ディスプレイを持つ Ultra デバイスなし。両方のダイの <code>dcp</code> で無効 |
-| M3 | 1 | 1 |
-| M3 Pro | 1 | 2 |
-| M3 Max | 1 | 4 |
-| M4 | ? | ? | 未着手 |
-| M4 Pro | ? | ? | 未着手 |
-| M4 Max | ? | ? | 未着手 |</p>
+<p>コントローラー固有情報:</p>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>モード制限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dcp</code></td>
+<td>5K, 60Hz, 10bpp (Apple提供情報、未テスト)</td>
+</tr>
+<tr>
+<td><code>dcpext</code></td>
+<td>6K, 60Hz, 10bpp (Apple提供情報、未テスト)</td>
+</tr>
+</tbody>
+</table>
+<p>M1 のルーティング制限:</p>
+<table>
+<thead>
+<tr>
+<th>コントローラー</th>
+<th>内部ディスプレイ</th>
+<th>HDMI</th>
+<th>USB-C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dcp</code></td>
+<td>+</td>
+<td>+</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dcpext</code></td>
+<td></td>
+<td></td>
+<td>+</td>
+</tr>
+</tbody>
+</table>
+<p>M2 以降のルーティング制限:</p>
+<table>
+<thead>
+<tr>
+<th>コントローラー</th>
+<th>内部ディスプレイ</th>
+<th>HDMI</th>
+<th>USB-C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dcp</code></td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr>
+<td><code>dcpext</code></td>
+<td></td>
+<td>+</td>
+<td>+</td>
+</tr>
+</tbody>
+</table>
+<p>SoC固有情報:</p>
+<table>
+<thead>
+<tr>
+<th>SoC</th>
+<th><code>dcp</code>数</th>
+<th><code>dcpext</code>数</th>
+<th>注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M1</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>M1 Pro</td>
+<td>1</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>M1 Max</td>
+<td>1</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>M1 Ultra</td>
+<td>1</td>
+<td>8</td>
+<td>内部ディスプレイを持つUltra デバイスなし。ダイの一つで <code>dcp</code> が無効、もう一つの <code>dcp</code> は HDMI にルーティング</td>
+</tr>
+<tr>
+<td>M2</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>M2 Pro</td>
+<td>1</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>M2 Max</td>
+<td>1</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>M2 Ultra</td>
+<td>0</td>
+<td>8</td>
+<td>内部ディスプレイを持つ Ultra デバイスなし。両方のダイの <code>dcp</code> で無効</td>
+</tr>
+<tr>
+<td>M3</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>M3 Pro</td>
+<td>1</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>M3 Max</td>
+<td>1</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>M4</td>
+<td>?</td>
+<td>?</td>
+<td>未着手</td>
+</tr>
+<tr>
+<td>M4 Pro</td>
+<td>?</td>
+<td>?</td>
+<td>未着手</td>
+</tr>
+<tr>
+<td>M4 Max</td>
+<td>?</td>
+<td>?</td>
+<td>未着手</td>
+</tr>
+</tbody>
+</table>
 
 
 
