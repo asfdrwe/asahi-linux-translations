@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Apple Silicon に Linux を移植">
+      
       
       
         <link rel="canonical" href="https://asfdrwe.github.io/asahi-linux-translations/sw/broken-software/">
@@ -60,6 +62,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="問題のあるソフトウェア - Asahi Linux 文書非公式日本語訳" />
+<meta property="og:description" content="Apple Silicon に Linux を移植" />
 <meta property="og:image" content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/sw/broken-software.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -67,6 +70,7 @@
 <meta property="og:url" content="https://asfdrwe.github.io/asahi-linux-translations/sw/broken-software/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="問題のあるソフトウェア - Asahi Linux 文書非公式日本語訳" />
+<meta property="twitter:description" content="Apple Silicon に Linux を移植" />
 <meta property="twitter:image" content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/sw/broken-software.png" />
 </head>
   
@@ -1691,7 +1695,7 @@
 
   <h1>問題があるソフトウェア</h1>
 
-<p>2025/10/25時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md">broken-software</a>の翻訳</p>
+<p>2026/1/31時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md">broken-software</a>の翻訳</p>
 <hr />
 <p>このページでは、Apple Silicon 機器では正しく動作しないことが知られているソフトウェアをリストアップしています。
 これを公開することで、コミュニティのメンバーが影響を受けるパッケージの修正を上流に提供する動機となり、AArch64ソフトウェアの
@@ -1986,6 +1990,11 @@ Program Headers:
 <td>バグはまだ未記入</td>
 </tr>
 <tr>
+<td>kdeconnect</td>
+<td><a href="https://bugs.kde.org/show_bug.cgi?id=513536">PipeWire 使用時に KDE Connect Bluetooth backend が Bluetooth ヘッドセット (A2DP)にクリックノイズ(crackling)や音飛び(stuttering)を引き起こす</a></td>
+<td></td>
+</tr>
+<tr>
 <td>kwin</td>
 <td><a href="https://bugs.kde.org/show_bug.cgi?id=477454">マルチスクリーンでルートバックグラウンドダメージ領域が正しく計算されない(Root background damage regions are calculated incorrectly with multiscreen)</a></td>
 <td></td>
@@ -2121,6 +2130,11 @@ Program Headers:
 <td>lib-dsp-lib</td>
 <td><a href="https://github.com/lsp-plugins/lsp-dsp-lib/pull/20">aarch64 msmatricコードの修正(Fix aarch64 msmatrix code)</a></td>
 <td>lsp-dsp-lib 1.0.20 で修正</td>
+</tr>
+<tr>
+<td>pipewire</td>
+<td><a href="https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/4957">pipewiresrc: Asahi Linux でハング</a></td>
+<td>pipewire 1.4.10 で修正</td>
 </tr>
 <tr>
 <td>qqc2-desktop-style</td>

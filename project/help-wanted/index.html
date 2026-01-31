@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Apple Silicon に Linux を移植">
+      
       
       
         <link rel="canonical" href="https://asfdrwe.github.io/asahi-linux-translations/project/help-wanted/">
@@ -60,6 +62,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="助っ人募集！ - Asahi Linux 文書非公式日本語訳" />
+<meta property="og:description" content="Apple Silicon に Linux を移植" />
 <meta property="og:image" content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/project/help-wanted.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -67,6 +70,7 @@
 <meta property="og:url" content="https://asfdrwe.github.io/asahi-linux-translations/project/help-wanted/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="助っ人募集！ - Asahi Linux 文書非公式日本語訳" />
+<meta property="twitter:description" content="Apple Silicon に Linux を移植" />
 <meta property="twitter:image" content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/project/help-wanted.png" />
 </head>
   
@@ -1535,7 +1539,7 @@
 
   <h1>助っ人募集！</h1>
 
-<p>2026/1/24時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/project/help-wanted.md">help-wanted</a>の翻訳</p>
+<p>2026/1/31時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/project/help-wanted.md">help-wanted</a>の翻訳</p>
 <hr />
 <p>このページは、やらなければならないけれども、より大きな魚を揚げることに集中するために優先順位が下げられているような
 雑多なタスクのリストです。これらのタスクのほとんどは、低い費用と低い労力で済むので、カーネル開発や一般的な
@@ -1557,12 +1561,6 @@
 <td><strong>手付かず</strong></td>
 <td>GNOME の音量ミキサーは<code>libgnome-volume-control</code>プラグインで実装。残念ながら、これはWirePlumber/Pipewireとのやりとりが悪く、ノードグラフのパーミッションを尊重しない。このため、デフォルトのsinkが GNOME の『生の(raw)』ハードウェアデバイスになり、DSP をバイパスしてしまう。<code>libgnome-volume-control</code> を修正して、生のハードウェアsinkを非表示にし、正しいデフォルトのsinkを選択するようにする必要あり</td>
 <td>chadmed氏</td>
-</tr>
-<tr>
-<td>tuxvdmtool をユーザースペース i2c に書き換え</td>
-<td>Bjarne</td>
-<td><a href="https://github.com/AsahiLinux/tuxvdmtool">tuxvdmtool</a> は <a href="https://github.com/AsahiLinux/linux/commit/786523ac62f0aeec37bf9c6b991e8bf2fadc590d">sysfs API</a> を使用。sysfs API はあまり使いやすくなく、上流取り込まれる可能性は低い。tuxvdmtool 公開後に、Linux ユーザースペース I2C クライアントドライバ API を使用する方が良い選択であり動作するはずだと結論付け。詳細は https://github.com/AsahiLinux/tuxvdmtool/issues/1 を参照。</td>
-<td>janne</td>
 </tr>
 <tr>
 <td>シリアルポートリセットを修正</td>
