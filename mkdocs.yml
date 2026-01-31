@@ -1,5 +1,6 @@
 site_name: Asahi Linux 文書非公式日本語訳
 site_url: https://asfdrwe.github.io/asahi-linux-translations/
+site_description: Apple Silicon に Linux を移植
 
 repo_url: https://github.com/asfdrwe/asahi-linux-translations/
 repo_name: asfdrwe/asahi-linux-translations
