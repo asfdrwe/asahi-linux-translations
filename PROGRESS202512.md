@@ -4,6 +4,7 @@
 # 進捗報告: Linux 6.18
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202510.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202602.md)
 
 Linux 6.18 が公開されました。ホリデーシーズンの進捗報告ではお話しすることがちょっとだけありますよ！
 
