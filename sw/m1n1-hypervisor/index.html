@@ -1701,7 +1701,7 @@
 
   <h1>Hypervisor</h1>
 
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md">m1n1-hypervisor</a>の翻訳</p>
+<p>2026/2/21時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md">m1n1-hypervisor</a>の翻訳</p>
 <p>訳注:Asahi Linux内のページへのリンクは対応する日本語訳に置き換え</p>
 <hr />
 <h4 id="m1n1macos">m1n1ハイパーバイザーでのmacOSの実行<a class="headerlink" href="#m1n1macos" title="Permanent link">&para;</a></h4>
@@ -1762,6 +1762,7 @@
 <li>1trに入り、ターミナルを起動</li>
 <li>boot policyでほとんどのセキュリティ機能を無効化。<code>bputil -nkcas</code>。 UUIDを取得するために <code>diskutil info [disk name]</code> を使用</li>
 <li>SIP を無効化 (bputilがリセットする): <code>csrutil disable</code></li>
+<li>詳細な出力を有効化: <code>nvram boot-args=-v</code></li>
 <li>カスタムブートオブジェクトとして<a href="../m1n1-user-guide/">m1n1</a>をインストール<pre><code>kmutil configure-boot \
   -c build/m1n1.bin \
   --raw \
