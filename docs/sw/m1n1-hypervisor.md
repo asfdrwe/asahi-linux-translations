@@ -2,7 +2,7 @@
 title: m1n1 ハイパーバイザー
 ---
 
-2025/3/9時点の[m1n1-hypervisor](https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md)の翻訳
+2026/2/21時点の[m1n1-hypervisor](https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md)の翻訳
 
 訳注:Asahi Linux内のページへのリンクは対応する日本語訳に置き換え
 
@@ -72,7 +72,8 @@ Montery 12.3 の InstallAssistant.pkg は [こちら](https://archive.org/detail
 1. 1trに入り、ターミナルを起動
 2. boot policyでほとんどのセキュリティ機能を無効化。`bputil -nkcas`。 UUIDを取得するために `diskutil info [disk name]` を使用
 3. SIP を無効化 (bputilがリセットする): `csrutil disable`
-4. カスタムブートオブジェクトとして[m1n1](m1n1-user-guide.md)をインストール
+4. 詳細な出力を有効化: `nvram boot-args=-v`
+5. カスタムブートオブジェクトとして[m1n1](m1n1-user-guide.md)をインストール
 
         kmutil configure-boot \
           -c build/m1n1.bin \
