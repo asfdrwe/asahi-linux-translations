@@ -2,7 +2,7 @@
 title: Windows 11 VM の作成方法
 ---
 
-2025/10/25時点の[How to create a Windows 11 VM](https://github.com/AsahiLinux/docs/blob/main/docs/sw/windows-11-vm.md)の翻訳
+2026/2/27時点の[How to create a Windows 11 VM](https://github.com/AsahiLinux/docs/blob/main/docs/sw/windows-11-vm.md)の翻訳
 
 訳注: 
 
@@ -15,7 +15,7 @@ title: Windows 11 VM の作成方法
 Fedora Asahi Remix に Windows 11 をインストールするための簡単なガイドです！
 Windows から必要なものがあっても、ハードウェアを切り替えたりベアメタル Windows マシンを利用したりせずに、Windows 11 インスタンスをインストール、設定、管理する方法を説明します。
 
-貢献者: aykevl 氏及びに Davide Calvaca 氏
+貢献者: aykevl 氏及びに Davide Cavalca 氏
 
 !!! note
     `dnf install @virtualization` はこのガイドの範囲外で、対応していません。
