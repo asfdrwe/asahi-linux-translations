@@ -2,7 +2,7 @@
 title: Mac キーボードレイアウト問題
 ---
 
-2025/3/9時点の[kb-layout-issues](https://github.com/AsahiLinux/docs/blob/main/docs/platform/kb-layout-issues.md)の翻訳
+2026/3/19時点の[kb-layout-issues](https://github.com/AsahiLinux/docs/blob/main/docs/platform/kb-layout-issues.md)の翻訳
 
 訳注: キーボードの問題を報告するときは英語でAsahi Linuxの文書サイトにPRを送ってください。
 
@@ -57,7 +57,30 @@ title: Mac キーボードレイアウト問題
 ### システム構成
 ```
 # Output of running:
-cd /sys/module/hid_apple/parameters/; grep . *; pacman -Q xkeyboard-config-asahi; uname -r; cat /proc/device-tree/model; echo; find /sys/devices -name country | xargs cat; dmesg | grep "Keyboard type"
+cd /sys/module/hid_apple/parameters/; grep . *; rpm -Q xkeyboard-config; uname -r; cat /proc/device-tree/model; echo; find /sys/devices -name country | xargs cat; dmesg | grep "Keyboard type"
+```
+
+## ISO - 国際版英語(International English) - M1 MacBook Air 2020
+* UK, Macintosh, intl
+
+1行目： 3 以外 すべての記号は正しい。3 キーにハッシュ記号しかなく、通貨記号が出ない
+2行目： 通貨記号以外すべての記号は正しい
+3行目： 問題なし
+4行目： 間違っているのは ~ キーが ~ と ` しかない。pipe 文字と broken pipe 文字が出ない
+
+### システム構成
+
+```
+# Output of running:
+fnmode:3
+iso_layout:-1
+swap_ctrl_cmd:0
+swap_fn_leftctrl:0
+swap_opt_cmd:0
+6.14.2-401.asahi.fc42.aarch64+16k
+Apple MacBook Air (M1, 2020)
+00
+0d
 ```
 
 ## JIS - 日本語
@@ -310,10 +333,6 @@ iso_layout:-1
 swap_ctrl_cmd:0
 swap_fn_leftctrl:0
 swap_opt_cmd:0
-warning: database file for 'core' does not exist (use '-Sy' to download)
-warning: database file for 'community' does not exist (use '-Sy' to download)
-warning: database file for 'extra' does not exist (use '-Sy' to download)
-error: package 'xkeyboard-config-asahi' was not found
 6.10.6-401.asahi.fc40.aarch64+16k
 Apple MacBook Air (M1, 2020)
 00

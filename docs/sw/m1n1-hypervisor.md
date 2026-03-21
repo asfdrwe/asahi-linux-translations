@@ -2,11 +2,15 @@
 title: m1n1 ハイパーバイザー
 ---
 
-2026/2/21時点の[m1n1-hypervisor](https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md)の翻訳
+2026/3/18時点の[m1n1-hypervisor](https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md)の翻訳
 
 訳注:Asahi Linux内のページへのリンクは対応する日本語訳に置き換え
 
 ---
+!!! 警告
+m1n1 ハイパーバイザーは macOS Ventura 13.5 を対象としています。
+m1n1 ハイパーバイザーの下で以降の macOS バージョンを動作させることには対応していません。
+
 # m1n1ハイパーバイザーでのmacOSの実行
 
 Apple から入手した開発用カーネルを実行することができます。この場合デバッグシンボルを得ることができますし、macOS インストール内の
