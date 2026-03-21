@@ -1779,7 +1779,7 @@
 
   <h1>パーティションチートシート</h1>
 
-<p>2025/6/30時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/partitioning-cheatsheet.md">partitioning-cheatsheet</a>の翻訳</p>
+<p>2026/3/18時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/partitioning-cheatsheet.md">partitioning-cheatsheet</a>の翻訳</p>
 <hr />
 <h4 id="apple_apfs_recovery">警告: <code>Apple_APFS_Recovery</code> パーティションは絶対に削除しないでください。<a class="headerlink" href="#apple_apfs_recovery" title="Permanent link">&para;</a></h4>
 <p>diskutil で <code>Apple_APFS_Recovery</code>と表示されるディスクの最後のパーティションには重要なシステム回復コンポーネントが含まれています。
@@ -1849,7 +1849,7 @@ Asahi Linuxのバニラインストールという共通のケースに対して
 同じように、APFSコンテナにボリュームグループとしてインストールし、実際に起動できるようにする必要があります。これが『スタブmacOS』と
 呼ばれるもので、Appleの世界とLinuxの世界を繋ぐものです。ブートローダパーティションとでも思ってください。このために macOS とコンテナを
 共有することも<em>できます</em>が、エラーの可能性が低くなり削除も簡単になるので、<em>そうしないことにしています</em>し、どのみちディスクのパーティションは既に切ってあります。</p>
-<p>インストーラは(通常の Asahi Linux = Arch Linux ARM インストールの場合)3つのパーティションを作成します:</p>
+<p>インストーラは(通常の Fedora Asahi Remix インストールの場合)3つのパーティションを作成します:</p>
 <ul>
 <li>2.5GB APFS コンテナ、マシンを起動するのに必要な iBoot/macOS の断片と recoveryOS のコピーが含まる<ul>
 <li>m1n1 stage 1 はここにインストール</li>
