@@ -21,7 +21,7 @@ rootfs ファームウェアのディレクトリを作成 `sudo mkdir -p /usr/l
 ## WiFiを有効化
  * [wifi/take5](https://github.com/AsahiLinux/linux/tree/wifi/take5) ブランチなどのM1 WiFIに対応した 
 Asahi Linux カーネルをビルドしておく必要あり
- * [USB経由のm1n1](linux-bringup.md#%E7%9B%B4%E6%8E%A5%E8%B5%B7%E5%8B%95)
+ * [USB経由のm1n1](linux-bringup.md#_1)
 でカーネルを起動する前に、以下のスクリプトを実行して、WiFi ハードウェアを有効化 `python3 ./proxyclient/experiments/pcie_enable_devices.py`
  * 他の方法も存在。私はDebian linuxで行ったのはこの方法
  * Linux カーネルが起動した後は通常のツールで WiFi デバイス (wlan0) を見ることができるようになるはず `ip a l`
