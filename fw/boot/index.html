@@ -1547,10 +1547,10 @@ Apple Silicon 機器で使われるブートフロー、Soc 統合 ROM からユ
 <h5 id="stage-1-llbiboot">Stage 1 (LLB/iBoot)<a class="headerlink" href="#stage-1-llbiboot" title="Permanent link">&para;</a></h5>
 <p>このステージはオンボードの<a href="../../project/glossary/#n">NOR</a>にあるプライマリアーリーローダー(primary early loader)です。このブートステージでは、非常に大まかに以下のような流れになります:</p>
 <ul>
-<li><a href="Glossary.md#n">NVRAM</a>から <code>boot-volume</code> 変数を読み込み: そのフォーマットは <code>&lt;gpt-partition-type-uuid&gt;:&lt;gpt-partition-uuid&gt;:&lt;volume-group-uuid&gt;</code> 。その他の関連する変数は<code>update-volume</code>と<code>upgrade-boot-volume</code>のようで、おそらく<code>boot-info-payload</code>変数内のメタデータによって選択される</li>
+<li><a href="../../project/glossary/#n">NVRAM</a>から <code>boot-volume</code> 変数を読み込み: そのフォーマットは <code>&lt;gpt-partition-type-uuid&gt;:&lt;gpt-partition-uuid&gt;:&lt;volume-group-uuid&gt;</code> 。その他の関連する変数は<code>update-volume</code>と<code>upgrade-boot-volume</code>のようで、おそらく<code>boot-info-payload</code>変数内のメタデータによって選択される</li>
 <li>ローカルポリシーのハッシュを取得:</li>
 <li>最初にローカルで提案されているハッシュ（<a href="../../project/glossary/#s">SEP</a> コマンド11）を試みる</li>
-<li>それが利用できない場合は、ローカルのブレスドハッシュ(blessed hash)を取得 (<a href="../progject/glossary.md#s">SEP</a>(コマンド14))</li>
+<li>それが利用できない場合は、ローカルのブレスドハッシュ(blessed hash)を取得 (<a href="../../project/glossary/#s">SEP</a>(コマンド14))</li>
 <li>iSCPreboot パーティションの <code>/&lt;volume-group-uuid&gt;/LocalPolicy/&lt;policy-hash&gt;.img4</code> にあるローカルブートポリシーを読む。
 このブートポリシーには次のメタデータキー (<a href="../../project/glossary/#4">4CCs</a>):</li>
 <li><code>vuid</code>: UUID: Volume group UUID - 上記と同じ</li>
@@ -1591,13 +1591,13 @@ Apple Silicon 機器で使われるブートフロー、Soc 統合 ROM からユ
 <p><boot-dir>/usr/standalone/firmware/iBoot.img4` を同じディレクトリにあるデバイス・ツリーや他のファームウェア・ファイルと一緒に復号、検証、実行。他のメタデータ記述子についてはまだ根拠なし</p>
 </li>
 <li>
-<p>カスタムステージ(<a href="Glossary.md#f">fuOS</a>)を読み込む場合:</p>
+<p>カスタムステージ(<a href="../../project/glossary/#f">fuOS</a>)を読み込む場合:</p>
 </li>
 <li>
 <p>...</p>
 </li>
 </ul>
-<p>この段階で失敗すると、エラーになるか、<a href="../../project/glossary/#d">DFU</a>にフォールバックし、iBECローダーの送信を待ってから、<a href="Glossary.md#d">DFU</a>の流れでステージ2に進みます。</p>
+<p>この段階で失敗すると、エラーになるか、<a href="../../project/glossary/#d">DFU</a>にフォールバックし、iBECローダーの送信を待ってから、<a href="../../project/glossary/#d">DFU</a>の流れでステージ2に進みます。</p>
 <h5 id="stage-2-iboot2">Stage 2 (iBoot2)<a class="headerlink" href="#stage-2-iboot2" title="Permanent link">&para;</a></h5>
 <p>このステージはOSレベルのローダーで、OSパーティションの中にありmacOSの一部として出荷されています。システムの残りの部分をロードします。</p>
 <h4 id="dfu"><a href="../../project/glossary/#d">DFU</a>の流れ<a class="headerlink" href="#dfu" title="Permanent link">&para;</a></h4>
