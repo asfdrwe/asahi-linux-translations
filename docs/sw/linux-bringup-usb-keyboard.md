@@ -16,4 +16,4 @@ title: Linux Bringup: USB キーボード
 * それから、Type-C to Type-A アダプタを使って、普通の古い USB Dell キーボードを接続し、実行中の /bin/sh にコマンドを入力
 ![M1 macbook で外付け USB キーボードから入力した Linux が動作している様子](https://github.com/AsahiLinux/docs/blob/main/docs/assets/linuxOnM1.png)
 
-   * さらに一歩進んで、[USBドライブブート](SW-Linux-USB-drive.md)を試すことが可能
+   * さらに一歩進んで、[USBドライブブート](linux-bringup-usb.md)を試すことが可能
