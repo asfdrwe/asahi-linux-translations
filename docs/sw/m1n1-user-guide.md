@@ -65,7 +65,7 @@ $ docker-compose run m1n1 make
 ### ビルドオプション
 
 * `make RELEASE=1`でm1n1リリース動作が有効に。これはデフォルトでコンソールを隠し、
-早期プロキシモード([プロキシモード](#プロキシモード)を参照)を有効にするための避難口を提供
+早期プロキシモード([プロキシモード](#_8)を参照)を有効にするための避難口を提供
 
 * `make CHAINLOADING=1` でチェーンローディング対応を有効に。これには aarch64 をサポートする Rust nightly toolchainが
 必要。次の手順で入手可: `Rustup toolchain install nightly && rustup target install aarch64-unknown-none-softfloat`

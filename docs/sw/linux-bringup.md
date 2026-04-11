@@ -52,7 +52,7 @@ cp .../linux/arch/arm64/boot/dts/apple/t8103-j274.dtb t8103-j274.dtb
 
 ## USBケーブルを挿したままの起動
 * m1n1/linux は USB の低レベル PHY のセットアップをまだ行っていないので、Mac を起動する**前**に USB ケーブル/ハブ/アダプタを接続。 
-[m1n1のブートのセットアップ](../platform/dev-quickstart.md#セットアップ)
+[m1n1のブートのセットアップ](../platform/dev-quickstart.md#_8)
 でインストールしたm1n1を起動する際にiBootに実行させる
 * セットアップ後に m1n1 の C コードが更新された場合は、新しい .macho イメージをチェーンロードする必要あり
 
@@ -62,7 +62,7 @@ python3.9 proxyclient/tools/chainload.py build/m1n1.macho
 
 # USBケーブルでLinuxを実行
 * M1 Macに
-[USB Type-C to Type A/Cケーブル](../platform/dev-quickstart.md#標準的なUSBケーブルを使ったUSBガジェットモード)
+[USB Type-C to Type A/Cケーブル](../platform/dev-quickstart.md#usbusb)
 を接続すると、もう一方のコンピュータに2つのUSBシリアルインターフェースが提供される
 
 ![M1 MacBookAirと2012 MacBootAir Proを接続するUSB Type-C to Type Aケーブル](https://github.com/AsahiLinux/docs/blob/main/docs/assets/usb-setup.png)
@@ -427,7 +427,7 @@ Still running 21
 </details>
 
 # rootファイルシステムオプション
-* [initrd + USBキーボード](linux-bringup-usb-keyboard.md#linux-usb-keyboard)
+* [initrd + USBキーボード](linux-bringup-usb-keyboard.md#linux-usb)
 * [USBドライブブート](linux-bringup-usb.md)
 * [USBドライブをNVMEパーティションに](linux-bringup-nvme.md)
 
