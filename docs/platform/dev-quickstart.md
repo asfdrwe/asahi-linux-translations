@@ -110,7 +110,7 @@ M1 MacにLinuxを導入しようとしている私たちを手伝いたいと考
 ### 参考
 
 * [用語集](../project/glossary.md)
-* [Boot](SW-Boot.md)
+* [Boot](../fw/boot.md)
 * [PC Boot プロセスとの差異](pc-boot-differences.md)
 * [NVRAM](../fw/nvram.md)
 * [既製品パーティションレイアウト](stock-partition-layout.md)
