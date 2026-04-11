@@ -1804,7 +1804,7 @@ $ python3 proxyclient/tools/shell.py
 </code></pre>
 <p>なお、この方法は Linux のearlyconとしては(まだ)使えませんし、USB ガジェットのサポートもまだ Linux のメインツリーにはありません。</p>
 <ul>
-<li>詳細は <a href="../../sw/linux-bringup/#USBケーブルでLinuxを実行">USBケーブルでLinuxを実行</a> を参照</li>
+<li>詳細は <a href="../../sw/linux-bringup/#usblinux">USBケーブルでLinuxを実行</a> を参照</li>
 </ul>
 <h5 id="m1n1">m1n1の使用<a class="headerlink" href="#m1n1" title="Permanent link">&para;</a></h5>
 <p>m1n1 は我々の最初のブートローダで、XNU カーネルのふりをして Apple 固有の初期化を行う役割を担っています。</p>
@@ -1865,7 +1865,7 @@ src/payload.cのpayload_runを参照してください。j274は、MacMini Hwモ
 <li>xz</li>
 </ul>
 <h6 id="_13">ホストの設定<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h6>
-<p>現時点ではm1n1をインタラクティブに使用したりデバッグ情報を取得したりするにはシリアルコンソールが必要です。<a href="#シリアルコンソールの取得">シリアルコンソールの取得</a>の項を参照してください。</p>
+<p>現時点ではm1n1をインタラクティブに使用したりデバッグ情報を取得したりするにはシリアルコンソールが必要です。<a href="#_9">シリアルコンソールの取得</a>の項を参照してください。</p>
 <p><strong>注意(2021/02/06)</strong>: 近日中にフレームバッファコンソールを追加し、シリアルなしでのデバッグを容易にする予定です。USB OTGのサポートも将来的に計画されており、標準的なUSB Cケーブルでm1n1と対話し、カーネルをより速くロードできるようになります。</p>
 <p>m1n1 proxyclientを使用するには、Pythonパッケージの『pyserial』と『construct』が必要です。ディストリビューションがこれらを提供していない場合は、以下を使用することができます:</p>
 <pre><code class="language-shell">$ pip install --user pyserial construct
