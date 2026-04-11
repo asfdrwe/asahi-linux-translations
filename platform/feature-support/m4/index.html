@@ -577,45 +577,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        注釈
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="注釈">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cpuidle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cpuidleの状況
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ane" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ANEドライバ
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1662,7 +1623,7 @@
 
   <h1>M4シリーズ機能対応</h1>
 
-<p>2026/3/18時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/feature-support/m4.md">m4</a>の翻訳</p>
+<p>2026/4/5時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/feature-support/m4.md">m4</a>の翻訳</p>
 <hr />
 <p>このページでは、現存するすべてのM4シリーズ(M4, M4 Pro, M4 Max)の Apple Silicon Mac で現在対応してている機能と、
 その上流の状況について詳しく説明します。表は次のように解釈されます:</p>
@@ -1678,8 +1639,9 @@
 <a href="../../../project/when-will-asahi-be-done/">サポートチャンネル(IRCなど)で見積もりを求めないでください。</a></p>
 <h5 id="_1">目次<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
 <ul>
-<li><a href="#socブロック">SoCブロック</a></li>
-<li><a href="#m4機器">M4機器</a></li>
+<li><a href="#soc">SoCブロック</a></li>
+<li><a href="#m4">M4 機器</a></li>
+<li><a href="#m4-promax">M4 Pro/Max 機器</a></li>
 </ul>
 <h5 id="soc">SoCブロック<a class="headerlink" href="#soc" title="Permanent link">&para;</a></h5>
 <p>これらは、指定されたSoCを搭載したすべてのデバイスに存在する機能/ハードウェアブロックです。</p>
@@ -1699,13 +1661,13 @@
 </tr>
 <tr>
 <td>USB2 (TB ports)</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>USB3 (TB ports)</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>Thunderbolt</td>
@@ -1714,8 +1676,8 @@
 </tr>
 <tr>
 <td>DP Alt Mode</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>GPU</td>
@@ -1729,8 +1691,8 @@
 </tr>
 <tr>
 <td>NVMe</td>
-<td style="text-align: center;">5.19</td>
-<td style="text-align: center;">5.19</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>PCIe</td>
@@ -1744,18 +1706,18 @@
 </tr>
 <tr>
 <td>cpufreq</td>
-<td style="text-align: center;">6.2</td>
-<td style="text-align: center;">6.2</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>cpuidle</td>
-<td style="text-align: center;">linux-asahi (<a href="#cpuidleの状況">注釈参照</a>)</td>
-<td style="text-align: center;">linux-asahi (<a href="#cpuidleの状況">注釈参照</a>)</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>Suspend/sleep</td>
-<td style="text-align: center;">asahi-edge</td>
-<td style="text-align: center;">asahi-edge</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>Video Encoder</td>
@@ -1784,68 +1746,68 @@
 </tr>
 <tr>
 <td>UART</td>
-<td style="text-align: center;">5.13</td>
-<td style="text-align: center;">5.13</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>Watchdog</td>
-<td style="text-align: center;">5.17</td>
-<td style="text-align: center;">5.17</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>I<sup>2</sup>C</td>
-<td style="text-align: center;">5.16</td>
-<td style="text-align: center;">5.16</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>GPIO</td>
-<td style="text-align: center;">5.16</td>
-<td style="text-align: center;">5.16</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>USB-PD</td>
-<td style="text-align: center;">5.16</td>
-<td style="text-align: center;">5.16</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>MCA</td>
-<td style="text-align: center;">6.1 / 6.4 (dts)</td>
-<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>SPI</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>SPI NOR</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>SMC</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>SPMI</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>RTC</td>
-<td style="text-align: center;">linux-asahi</td>
-<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>SEP</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>Neural Engine</td>
-<td style="text-align: center;">ツリー外(<a href="#ANEドライバ">注釈参照</a>)</td>
-<td style="text-align: center;">ツリー外(<a href="#ANEドライバ">注釈参照</a>)</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 </tbody>
 </table>
@@ -2092,15 +2054,6 @@
 </tbody>
 </table>
 <p>注: 多くのペリフェラルはDARTやPCIe 対応に依存</p>
-<h5 id="_2">注釈<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
-<h6 id="cpuidle">cpuidleの状況<a class="headerlink" href="#cpuidle" title="Permanent link">&para;</a></h6>
-<p>ARMマシンの一部の電源管理機能は、PSCIインターフェイスを介して制御されます。kernelは、PSCIとの対話に関するApple Siliconと互換性のない特定の方法があり、
-最善の方法を見つけるためには上流のメンテナーとの議論が必要です。2年間の議論が失敗したので、この機能をAsahi Linuxに搭載するために、
-WFI/WFE命令を直接呼び出すドライバをハックすることを決めました。これはエネルギーを意識した(enegy-aware)スケジューリングとともにノートパソコンでの
-UXを大きく改善させ、マシンが発熱する問題を解決し、バッテリーの持ちを大幅に向上させました。これは決して上流に統合できませんが、
-近い将来どこかでこのハックしたドライバが不要になると思っています。</p>
-<h6 id="ane">ANEドライバ<a class="headerlink" href="#ane" title="Permanent link">&para;</a></h6>
-<p>ツリー外の<a href="https://github.com/eiln/ane/tree/main">カーネルモジュール</a>が利用可能です。 linux-asahiに統合される予定です。</p>
 
 
 
