@@ -2,7 +2,7 @@
 title: Windows 11 VM の作成方法
 ---
 
-2026/2/27時点の[How to create a Windows 11 VM](https://github.com/AsahiLinux/docs/blob/main/docs/sw/windows-11-vm.md)の翻訳
+2026/4/19時点の[How to create a Windows 11 VM](https://github.com/AsahiLinux/docs/blob/main/docs/sw/windows-11-vm.md)の翻訳
 
 訳注: 
 
@@ -27,7 +27,7 @@ Windows から必要なものがあっても、ハードウェアを切り替え
 2. デスクトップ上または任意の場所に新しいディレクトリを作成し、任意の名前を付ける。例えば、 `windows11` という名前で `mkdir windows11` で作成。適切なターミナルアプリケーションを使用するか、デスクトップ上で右クリックしてディレクトリを作成
 3. `cd windows11` でそのディレクトリに移動
 4. Windows 11 の ISO をダウンロード。適切に ARM64 用の Windows 11 Professional ビルドを [こちら](https://www.microsoft.com/ja-JP/software-download/windows11arm64) から取得。任意のターミナルアプリケーションで `mv` を使用して、`windows-11.iso` のような適切な名前にリネーム
-5. その ISO とともに、virtio-drivers を使用してマシンのパフォーマンスを向上させるのが望ましい。[こちら](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Driver-installation) からダウンロードし、`win11-virtio.iso` のように適切にリネーム
+5. その ISO とともに、virtio-drivers を使用してマシンのパフォーマンスを向上させるのが望ましい。[こちら](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Driver-installation) からダウンロードし、`virtio-win.iso` のように適切にリネーム
 6. `qemu-img create -f qcow2 win11.qcow2 25G` コマンドを使用して Windows 11 VM の仮想ディスクを作成。ディスク容量を希望のサイズに調整。25GB はプレースホルダー
 7. ここで Windows 11 VM の起動スクリプトを作成。`win11.sh` という名前のファイルを作成し、`chmod +x win11.sh` で実行可能にする。内容は以下の通り：
 
@@ -55,7 +55,7 @@ taskset -c "$performance_cores" \
     -device qemu-xhci \
     -device ramfb \
     -device usb-storage,drive=install \
-    -drive if=none,id=install,format=raw,media=cdrom,file=windows-11-iot.iso \
+    -drive if=none,id=install,format=raw,media=cdrom,file=windows-11.iso \
     -device usb-storage,drive=virtio-drivers \
     -drive if=none,id=virtio-drivers,format=raw,media=cdrom,file=virtio-win.iso \
     -object rng-random,filename=/dev/urandom,id=rng0 \
@@ -66,7 +66,7 @@ taskset -c "$performance_cores" \
     -nic user,model=virtio-net-pci
 ```
 
-!!! note
+!!! 注
     windows-11.iso や virtio-win.iso とは異なる名前でファイル名を付けた場合は、ファイル引数を調整してください。
 
 8. そして `./win11.sh` を実行。QEMU ウィンドウが表示。いくつかのブート画面の後、「Press any key to boot from CD or DVD…」が表示。Windows をブートするために任意のキーを押す（UEFI コンソールに入らないよう素早く押す）
@@ -83,7 +83,7 @@ taskset -c "$performance_cores" \
 インストール後、2 つの ISO を削除できます。win11.sh スクリプトから以下の 4 行を削除します：
 ``` md
 -device usb-storage,drive=install \
-    -drive if=none,id=install,format=raw,media=cdrom,file=windows-11-iot.iso \
+    -drive if=none,id=install,format=raw,media=cdrom,file=windows-11.iso \
     -device usb-storage,drive=virtio-drivers \
     -drive if=none,id=virtio-drivers,format=raw,media=cdrom,file=virtio-win.iso \
 ```
