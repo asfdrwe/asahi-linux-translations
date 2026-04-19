@@ -1695,7 +1695,7 @@
 
   <h1>問題があるソフトウェア</h1>
 
-<p>2026/1/31時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md">broken-software</a>の翻訳</p>
+<p>2026/4/19時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/broken-software.md">broken-software</a>の翻訳</p>
 <hr />
 <p>このページでは、Apple Silicon 機器では正しく動作しないことが知られているソフトウェアをリストアップしています。
 これを公開することで、コミュニティのメンバーが影響を受けるパッケージの修正を上流に提供する動機となり、AArch64ソフトウェアの
@@ -1788,21 +1788,6 @@ Program Headers:
 <td>16kページ対応する前にhardened_mallocに多くの変更が必要。MTEが必要でkこの時点では高優先度ではない</td>
 </tr>
 <tr>
-<td>jemalloc</td>
-<td><a href="https://github.com/jemalloc/jemalloc/issues/467">https://github.com/jemalloc/jemalloc/issues/467</a></td>
-<td>上流は修正する気がない、4kページサイズシステムでコンパイルするならビルドオプションが必要。 ArchLinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1914)で対応</td>
-</tr>
-<tr>
-<td>jemalloc</td>
-<td><a href="https://github.com/archlinuxarm/PKGBUILDs/pull/1914">https://github.com/archlinuxarm/PKGBUILDs/pull/1914</a></td>
-<td>ページサイズ≧システムに対してコンパイルしたときだけ動作</td>
-</tr>
-<tr>
-<td>MEGAsync</td>
-<td><a href="https://github.com/meganz/MEGAsync/pull/801">https://github.com/meganz/MEGAsync/pull/801</a></td>
-<td></td>
-</tr>
-<tr>
 <td>notion-app(-enhancer)</td>
 <td><a href="https://github.com/notion-enhancer/notion-repackaged/issues/107">https://github.com/notion-enhancer/notion-repackaged/issues/107</a></td>
 <td>electron + 壊れたビルドフラグ</td>
@@ -1874,6 +1859,11 @@ Program Headers:
 <td>fd</td>
 <td><a href="https://github.com/sharkdp/fd/issues/1085">https://github.com/sharkdp/fd/issues/1085</a></td>
 <td>10.1以降で修正</td>
+</tr>
+<tr>
+<td>jemalloc</td>
+<td><a href="https://github.com/jemalloc/jemalloc/pull/2864">https://github.com/jemalloc/jemalloc/pull/2864</a></td>
+<td>5.3.1 以降で修正</td>
 </tr>
 <tr>
 <td>k3s-io</td>

@@ -1629,7 +1629,7 @@
 
   <h1>Windows 11 VM セットアップガイド</h1>
 
-<p>2026/2/27時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/windows-11-vm.md">How to create a Windows 11 VM</a>の翻訳</p>
+<p>2026/4/19時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/windows-11-vm.md">How to create a Windows 11 VM</a>の翻訳</p>
 <p>訳注: </p>
 <ul>
 <li>原文の見出しレベルが変なので修正</li>
@@ -1652,7 +1652,7 @@ Windows から必要なものがあっても、ハードウェアを切り替え
 <li>デスクトップ上または任意の場所に新しいディレクトリを作成し、任意の名前を付ける。例えば、 <code>windows11</code> という名前で <code>mkdir windows11</code> で作成。適切なターミナルアプリケーションを使用するか、デスクトップ上で右クリックしてディレクトリを作成</li>
 <li><code>cd windows11</code> でそのディレクトリに移動</li>
 <li>Windows 11 の ISO をダウンロード。適切に ARM64 用の Windows 11 Professional ビルドを <a href="https://www.microsoft.com/ja-JP/software-download/windows11arm64">こちら</a> から取得。任意のターミナルアプリケーションで <code>mv</code> を使用して、<code>windows-11.iso</code> のような適切な名前にリネーム</li>
-<li>その ISO とともに、virtio-drivers を使用してマシンのパフォーマンスを向上させるのが望ましい。<a href="https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Driver-installation">こちら</a> からダウンロードし、<code>win11-virtio.iso</code> のように適切にリネーム</li>
+<li>その ISO とともに、virtio-drivers を使用してマシンのパフォーマンスを向上させるのが望ましい。<a href="https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Driver-installation">こちら</a> からダウンロードし、<code>virtio-win.iso</code> のように適切にリネーム</li>
 <li><code>qemu-img create -f qcow2 win11.qcow2 25G</code> コマンドを使用して Windows 11 VM の仮想ディスクを作成。ディスク容量を希望のサイズに調整。25GB はプレースホルダー</li>
 <li>ここで Windows 11 VM の起動スクリプトを作成。<code>win11.sh</code> という名前のファイルを作成し、<code>chmod +x win11.sh</code> で実行可能にする。内容は以下の通り：</li>
 </ol>
@@ -1679,7 +1679,7 @@ taskset -c &quot;$performance_cores&quot; \
     -device qemu-xhci \
     -device ramfb \
     -device usb-storage,drive=install \
-    -drive if=none,id=install,format=raw,media=cdrom,file=windows-11-iot.iso \
+    -drive if=none,id=install,format=raw,media=cdrom,file=windows-11.iso \
     -device usb-storage,drive=virtio-drivers \
     -drive if=none,id=virtio-drivers,format=raw,media=cdrom,file=virtio-win.iso \
     -object rng-random,filename=/dev/urandom,id=rng0 \
@@ -1689,8 +1689,8 @@ taskset -c &quot;$performance_cores&quot; \
     -device usb-tablet \
     -nic user,model=virtio-net-pci
 </code></pre>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition 注">
+<p class="admonition-title">注</p>
 <p>windows-11.iso や virtio-win.iso とは異なる名前でファイル名を付けた場合は、ファイル引数を調整してください。</p>
 </div>
 <ol>
@@ -1706,7 +1706,7 @@ taskset -c &quot;$performance_cores&quot; \
 <p>通常通り VM をシャットダウンしてください（win11.sh スクリプトをただ終了しないでください、Windows を怖がらせないように）。再起動するには、単に <code>./win11.sh</code> を再度実行するだけです。</p>
 <p>インストール後、2 つの ISO を削除できます。win11.sh スクリプトから以下の 4 行を削除します：</p>
 <pre><code class="language-md">-device usb-storage,drive=install \
-    -drive if=none,id=install,format=raw,media=cdrom,file=windows-11-iot.iso \
+    -drive if=none,id=install,format=raw,media=cdrom,file=windows-11.iso \
     -device usb-storage,drive=virtio-drivers \
     -drive if=none,id=virtio-drivers,format=raw,media=cdrom,file=virtio-win.iso \
 </code></pre>
