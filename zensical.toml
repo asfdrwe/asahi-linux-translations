@@ -1,0 +1,100 @@
+# Zensical config file for Asahi docs
+# Copyright (C) 2026 The Asahi Linux Contributors & asfdrwe
+
+[project]
+site_name = "Asahi Linux 文書非公式日本語訳"
+site_url = "https://asfdrwe.github.io/asahi-linux-translations/"
+site_description = "Apple Silicon に Linux を移植"
+repo_url = "https://github.com/asfdrwe/asahi-linux-translations/"
+repo_name = "asfdrwe/asahi-linux-translations/"
+copyright = "&copy; 2022-2026 The Asahi Linux Contributors & asfdrwe"
+docs_dir = "docs"
+site_dir = "site"
+extra_css = ["stylesheets/extra.css"]
+nav = [
+    { "ホーム" = "index.md" },
+    { "機能対応" = [
+        "platform/feature-support/overview.md",
+        "platform/feature-support/m1.md",
+        "platform/feature-support/m2.md",
+        "platform/feature-support/m3.md",
+        "platform/feature-support/m4.md"
+    ] },
+    { "プロジェクト" = [
+        "project/glossary.md",
+        { "FAQs" = "project/faq.md" },
+        {'"Asahi-Linux はいつ完成するの？"' = "project/when-will-asahi-be-done.md" },
+        {"参考資料" = "project/references.md" },
+        { "Asahi Linux 理事会" = "project/board/asahi-board.md" },
+        { "方針"  = [
+            { "Generative AI" = "project/policies/slop.md" }
+        ] },
+    ] },
+    { "プラットフォーム文書" = [
+        "platform/subsystems.md",
+        "platform/security.md",
+        "hw/devices/device-list.md",
+        "hw/soc/soc-codenames.md"
+    ] },
+    { "ユーザ向け" = [
+        "sw/broken-software.md",
+        "sw/partitioning-cheatsheet.md",
+        "sw/windows-11-vm.md"
+    ] },
+    { "開発者向け" = [
+        "project/help-wanted.md",
+        "sw/tethered-boot.md",
+        "sw/m1n1-user-guide.md",
+        "sw/m1n1-hypervisor.md",
+        "sw/u-boot.md",
+        "sw/devicetree-bindings.md",
+        "platform/open-os-interop.md",
+        "sw/audio-userspace.md"
+    ] },
+    { "ディストリビューション・OS 向け" = [
+        "alt/policy.md"
+    ] },
+    { "Fedora Asahi Remix"  = "https://docs.fedoraproject.org/en-US/fedora-asahi-remix/" },
+]
+
+[project.theme]
+variant = "modern"
+logo = "assets/logo.png"
+favicon = "assets/favicon.png"
+font.text = "Inter"
+font.code = "Hack"
+language = "ja"
+features = [
+    "navigation.path"
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+primary = "custom"
+accent = "custom"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+primary = "custom"
+accent = "custom"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+primary = "custom"
+accent = "custom"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/AsahiLinux"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/mastodon"
+link = "https://social.treehouse.systems/@AsahiLinux"

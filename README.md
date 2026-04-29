@@ -44,6 +44,8 @@
 - [本家GitHub](https://github.com/AsahiLinux)
 - [本家文書のコミット履歴](https://github.com/AsahiLinux/docs/commits/main)
 
+本家の文書は[Zensical](https://zensical.org)に以降していますが、文書の日本語訳は当面の間[MkDocs](https://www.mkdocs.org/)のままにします。
+
 この日本語訳は元の文書の[ライセンス](https://github.com/AsahiLinux/docs/blob/main/LICENSE)と同様にCC BY-SA 4.0に従います。
 
-[DeepL](https://www.deepl.com/)及びに[Grok]()https://x.com/を下訳や参考にして翻訳しています。
+[DeepL](https://www.deepl.com/)及びに[Grok](https://x.com/)を下訳や参考にして翻訳しています。
