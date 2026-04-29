@@ -11,6 +11,7 @@
 ---
 # ゲームを超えて: muvmによる X11 ブリッジ
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202410.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202502.md)
 
 みなさん、こんにちは！Asahi Linuxのx86/x86-64エミュレーションスタックにとてもクールなアップデートがありましたので、
 その内容をシェアしたいと思います。今日からゲーム以外のアプリでも使えるようになりました！
