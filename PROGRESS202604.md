@@ -168,8 +168,6 @@ Fedora Asahi Remix 44では、ベンダー提供のMesaおよびvirglrendererパ
 
 #### James Calligeros · 2026-04-26
 
----
-
 **脚注**  
 [^1]: この名称がどれほど誤解を招くものであるか強調。このProcessorは「常にオン」ではない。
 
