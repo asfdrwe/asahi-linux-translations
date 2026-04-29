@@ -31,22 +31,3 @@ Asahi Linux の文書へようこそ！
 
 ## エンドユーザへ
 対応しているデバイスや機能については、[機能対応](platform/feature-support/overview.md)を調べてください。具体的な文書をお探しの場合は、ページ上部の検索機能をご利用いただくか、サイドバーをご覧ください！
-
-## 最新の Asahi Linux ブログ投稿
-* [進捗報告: Linux 6.15](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202505.md)
-* [進捗報告: Linux 6.14](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202503.md)
-* [Asahi Linux のバトンタッチ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202502.md)
-* [ゲームを超えて: muvmによる X11 ブリッジ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202412.md)
-* [Asahi Linux での AAA ゲーミング](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202410.md)
-* [M1 の Vulkan 1.3 が1ヶ月で登場](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202406.md)
-* [M1 が OpenGL 4.6 に準拠](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202402.md)
-* [Fedora Asahi Remixの新機能](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202401.md)
-* [新しいフラッグシップディストリビューション: Fedora Asahi Remix](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202308.md)
-* [最初の準拠 M1 GPUドライバ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202308.md)
-* [Asahi LinuxでのOpenGL 3.1](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202306.md)
-* [Asahi LinuxでVulkanへの道を拓く](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202303.md)
-* [Asahi LinuxにApple GPUドライバ登場](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202212.md)
-* [M1 GPU物語](https://github.com/asfdrwe/asahi-linux-translations/blob/main/GPU202211.md)
-* [アップデート満載！2022年11月進捗報告](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202211.md)
-* [M2登場！2022年7月リリース＆進捗報告](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202207.md)
-* [最初のAsahi Linux アルファ版リリースです！](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202203.md)
