@@ -48,4 +48,4 @@
 
 この日本語訳は元の文書の[ライセンス](https://github.com/AsahiLinux/docs/blob/main/LICENSE)と同様にCC BY-SA 4.0に従います。
 
-[DeepL](https://www.deepl.com/)及びに[Grok](https://x.com/)を下訳や参考にして翻訳しています。
+[DeepL](https://www.deepl.com/)及びに[Grok](https://x.com/)を下訳にしたりや参考にしたり機械翻訳を人間が後編集する形で翻訳しています。
