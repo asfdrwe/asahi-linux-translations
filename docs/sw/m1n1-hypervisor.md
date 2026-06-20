@@ -2,7 +2,7 @@
 title: m1n1 ハイパーバイザー
 ---
 
-2026/3/18時点の[m1n1-hypervisor](https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md)の翻訳
+2026/6/19の[m1n1-hypervisor](https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md)の翻訳
 
 訳注:Asahi Linux内のページへのリンクは対応する日本語訳に置き換え
 
@@ -144,6 +144,18 @@ $ sw_vers
 7. これで上記と同様の方法でmacOSを実行可能(デバッグDWARFはなし)
 
         python3 proxyclient/tools/run_guest.py \
+          <PATH_TO_EXTRACTED_MACHO> \
+          -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
+
+
+## ハイパーバイザーモジュールの使い方
+
+組み込みシェルに加えて、m1n1 ハイパーバイザーは完全な Python スクリプトを事前に読み込み実行できます。
+これらのスクリプトは主にハードウェアの特定部分をトレースするためにハイパーバイザーを事前設定するために使われます。
+具体例は m1n1 ソースツリー内の `proxyclient/hv` にあります。
+これらのスクリプトは以下のようにして `run_guest.py` に渡されます。
+
+        python3 proxyclient/tools/run_guest.py -m proxyclient/hv/trace_dcp.py \
           <PATH_TO_EXTRACTED_MACHO> \
           -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
 
