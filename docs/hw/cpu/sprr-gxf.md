@@ -6,6 +6,8 @@ summary:
 
 2025/3/9時点の[sprr-gxf](https://github.com/AsahiLinux/docs/blob/main/docs/hw/cpu/sprr-gxf..md)の翻訳
 
+訳注: [Modern iOS Security Features -- A Deep Dive into SPTM, TXM, and Exclaves](https://arxiv.org/abs/2510.09272) この論文がこの項目の理解に役立つと思います(2026/6/25追加)
+
 ---
 # Guarded execution
 
