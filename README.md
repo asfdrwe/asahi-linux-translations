@@ -11,6 +11,7 @@
 - [行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
 - [著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
 - ブログ
+  - [進捗報告: Linux 7.1](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202606.md) 
   - [進捗報告: Linux 7.0](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202604.md) 
   - [進捗報告: Linux 6.19](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202602.md) 
   - [進捗報告: Linux 6.18](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202512.md) 
@@ -48,4 +49,4 @@
 
 この日本語訳は元の文書の[ライセンス](https://github.com/AsahiLinux/docs/blob/main/LICENSE)と同様にCC BY-SA 4.0に従います。
 
-[DeepL](https://www.deepl.com/)及びに[Grok](https://x.com/)を下訳にしたりや参考にしたり機械翻訳を人間が後編集する形で翻訳しています。
+[DeepL](https://www.deepl.com/)及びに[Grok](https://x.com/)を下訳にしたりや参考にしたり機械翻訳を人間が後編集する形(MTPE)で翻訳しています。
