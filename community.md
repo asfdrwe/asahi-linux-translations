@@ -26,6 +26,7 @@
 ポート6697で irc.oftc.net に接続するようにしてください。**
 
 ## Matrix
+Asahi Linux の Matrix スペース ([#asahilinux:matrix.org](https://matrix.to/#/#asahilinux:matrix.org)) ではすべての公式ルームの一覧を提供しています。 
 
 Fedora 固有の Asahi の議論は、Fedora infra の Matrix で行われます。
 - [#asahi-devel:fedoraproject.org](https://matrix.to/#/#asahi-devel:fedoraproject.org) Fedora Asahi 開発。IRC ブリッジ: #fedora-asahi-dev
