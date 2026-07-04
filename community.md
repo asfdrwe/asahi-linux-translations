@@ -34,7 +34,7 @@ Fedora 固有の Asahi の議論は、Fedora infra の Matrix で行われます
 
 ## 文書
 
-作業文書は[GitHub](https://github.com/AsahiLinux/docs)を元に[MKDocs](https://mkdocs.org/)(訳注:[zensical](https://zensical.org/)に移行しています)を使用して[文書サイト](https://asahilinux.org/docs/)で管理されています。
+作業文書は[GitHub](https://github.com/AsahiLinux/docs)を元に[MKDocs](https://mkdocs.org/)(訳注:2026年4月頃に[zensical](https://zensical.org/)に移行済み)を使用して[文書サイト](https://asahilinux.org/docs/)で管理されています。
 
 (訳注: 文書の[非公式日本語訳](https://asfdrwe.github.io/asahi-linux-translations/))
 
