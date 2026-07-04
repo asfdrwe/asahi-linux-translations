@@ -1,4 +1,4 @@
-[Community](https://asahilinux.org/community)の2025年2月14日時点の非公式日本語訳です。
+[Community](https://asahilinux.org/community)の2026年7月4日時点の非公式日本語訳です。
 
 訳注: プロジェクトページへのリンクは対応する日本語訳へのリンクに置き換え
  
@@ -32,9 +32,12 @@ Fedora 固有の Asahi の議論は、Fedora infra の Matrix で行われます
 - [#asahi-devel:fedoraproject.org](https://matrix.to/#/#asahi-devel:fedoraproject.org) Fedora Asahi 開発。IRC ブリッジ: #fedora-asahi-dev
 - [#asahi:fedoraproject.org](https://matrix.to/#/#asahi:fedoraproject.org) Fedora Asahi 一般的な議論/対応
 
-## Wiki
+## 文書
 
-私たちの作業ドキュメントは[GitHub Wiki](https://github.com/asfdrwe/asahi-linux-translations/wiki)で管理されています。
+作業文書は[GitHub](https://github.com/AsahiLinux/docs)を元に[MKDocs](https://mkdocs.org/)(訳注:[zensical](https://zensical.org/)に移行しています)で[https://asahilinux.org/docs/]で管理されています。
 
-## マストドン（Fediverse）
+(訳注: 文書の[非公式日本語訳](https://asfdrwe.github.io/asahi-linux-translations/))
+
+## ソーシャルメディア
 [Asahi Linuxのマストドンアカウント](https://social.treehouse.systems/@AsahiLinux)でも公式発表や情報をご覧いただけます。
+[Asahi Linux Bluesky アカウント](https://bsky.app/profile/asahilinux.org)や[Asahi Linux LinkedInページ](https://linkedin.com/company/asahilinux/)も公開しています。
