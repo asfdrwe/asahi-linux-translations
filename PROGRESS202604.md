@@ -5,6 +5,7 @@
 # 進捗報告：Linux 7.0
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202602.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202606.md)
 
 約 3 年にわたる 6.x シリーズカーネルの開発を経て、ついに Linux 7.0 がリリースされました。これに伴い、Asahi Linux の新たな進捗報告をお届けします。
 
