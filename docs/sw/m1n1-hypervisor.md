@@ -2,196 +2,192 @@
 title: m1n1 ハイパーバイザー
 ---
 
-2026/6/19の[m1n1-hypervisor](https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md)の翻訳
+2026/7/31の[m1n1-hypervisor](https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md)の翻訳
 
 訳注:Asahi Linux内のページへのリンクは対応する日本語訳に置き換え
 
 ---
-!!! 警告
-m1n1 ハイパーバイザーは macOS Ventura 13.5 を対象としています。
-m1n1 ハイパーバイザーの下で以降の macOS バージョンを動作させることには対応していません。
 
 # m1n1ハイパーバイザーでのmacOSの実行
 
-Apple から入手した開発用カーネルを実行することができます。この場合デバッグシンボルを得ることができますし、macOS インストール内の
-純正カーネルを使用することもできます。
+Apple から入手した開発用カーネルを実行することができます。この場合デバッグシンボルを得ることができますし、macOS インストール内の純正カーネルを使用することもできます。
+
+## 対応 macOS バージョン
+
+Apple はバージョン間で ABI 互換性を保証していないため、逆解析の対象としても、ハイパーバイザーのゲストとしても、すべての macOS バージョンに対応することはできませんし、対応するつもりもありません。現在対応している対象は以下の通りです：
+
+- macOS 13.5（M1およびM2シリーズ）
+- macOS 14.8.3（M1〜M3シリーズ）
+
+多数のバグの存在と XNU を起動するために SPTM が動作している必要があるので、M4 およびそれ以降の機器向けの対象バージョンはまだ定めてられていません。
 
 ## 準備
-既存の macOSインストール を使用してもよいですし、 代わりにmacOS のセカンドコピーをインストールすることもできます。
-
-macOS のセカンドコピーをインストールするには、いくつかのステップを完了する必要があります:
+メインの macOS インストールのブートオブジェクトを非破壊的に上書きすることは可能ですが、この方法は推奨されません。
+データ損失のリスクが高まるだけでなく、特定の macOS バージョンを対象にするたびに機器全体を DFU復元しなければならなくなるため、非常に手間がかかります。代わりに、macOS の2つ目のコピーをインストールします。
 
 1. macOS パーティションにセカンドボリュームを作成します。
 
         diskutil apfs addVolume disk4 APFS macOSTest -mountpoint /Volumes/macOSTest
 
 disk4 とボリューム名 (つまり macOSTest) を特定のシステム/環境設定用に変更します。 
+
 _注: このロールをシステムロールにしてはいけません。既存のシステム が混乱します (1TR内に有効なユーザーが存在しない)_
 
-2. macOSをダウンロードしインストールします。macOSの特定のバージョンのインストーラをダウンロードするには次のコマンドを使用します。
+2. macOS をダウンロードしインストールします。macOS の特定のバージョンのインストーラをダウンロードするには次のコマンドを使用します。
 
-        softwareupdate --fetch-full-installer --full-installer-version 12.3
+        softwareupdate --fetch-full-installer --full-installer-version 14.8.3
 
-12.3は必要なバージョンに置き換えます。インストーラはアプリケーションフォルダ内にあり、保存したい場合はここからコピーしてください。
+`14.8.3` は必要なバージョンに置き換えます。インストーラはアプリケーションフォルダ内にあり、保存したい場合はここからコピーしてください。
 そうでない場合は、一度インストールすると自動的に削除されます。
-
-残念ながら、AppleのCDNは限られたバージョン用のフルインストーラパッケージしか保持しておらず、12.3はもうありません。
-_注：現在、ファームウェアのバージョンは13.5となっており、通常通り利用できます。12.3をインストールする必要はありません_
 
 ### アーカイブされたInstallAssistant.pkgの使用
 
-Montery 12.3 の InstallAssistant.pkg は [こちら](https://archive.org/details/12.3-21-e-230-release)にアーカイブされていますが、
-ダブルクリックでインストールしようとすると、ファイルサイズ約 40MB のオンライン版の `Install macOS Monterey.app` がインストールされるようです。
-それを実行すると、最新版のmacOSがインストールされます。
+残念ながら、Apple は CDN 上に macOS インストーラーを無期限に保持していません。上記の方法でフルインストーラーを取得できない場合は、アーカイブされた InstallAssistant.pkg を使用する必要があります。関連する InstallAssistant バージョンの動作確認済みアーカイブは以下の通りです：
 
-しかし、コマンドラインからインストールすると、次のように正しくインストールされるようです：
+| macOS バージョン | リンク |
+| ------------- | --------------------------------------------------------------------- |
+| 13.5 Ventura  | [archive.org](https://archive.org/details/install-assistant_20240930) |
+| 14.8.3 Sonoma | [archive.org](https://archive.org/details/install-assistant_20250207) |
 
-        sudo installer -pkg 12.3\ 21E230\ \(Release\).pkg -target /
+InstallAssistant.pkg をダウンロードして実行してください。これにより、`Install macOS [version].app` アプリケーションが `/Applications` に展開されます。インストールされたアプリケーションを実行し、画面の指示に従って、先ほど作成した APFS ボリュームに macOS をインストールします。
 
-`アプリケーション`フォルダ内の `Install macOS Monterey.app` が 12GB以下 であることを確認してください。
+## カーネルの取得
 
-## macOS の開発用カーネルの取得と kernelcache の作成
+m1n1 に渡すための XNU イメージが必要です。上記でインストールした macOS バージョンに同梱されている製品版カーネルを使用するか、または strip されていない Kernel Debug Kit（KDK）カーネルを使用することができます。
 
-1. macOS開発者アカウントを作成（icloudアカウントが必要)
-2. Appleの[ここ](https://developer.apple.com/download/more/)からMac OS Kernel Debug Kit (KDK)をダウンロード。使用中のMac OSのバージョンに合わせてダウンロード
-3. KDKをMac OSにインストール。KDKは `/Library/Developer/KDKs/KDK_<MACOS_VERSION>_<KDK_VERSION>.kdk` にインストールされる
-4. kernelsディレクトリに移動：
+### 製品版カーネル
 
-        cd /Library/Developer/KDKs/KDK_<MACOS_VERSION>_<KDK_VERSION>.kdk/System/Library/Kernels
-   
-5. KDKフォルダに切り替えて、以下のコマンドを実行:
+製品版カーネルを使用するのが最も簡単です。Apple ID や特別な準備作業は不要です。
 
-        kmutil create -z -n boot -a arm64e -B ~/dev.kc.macho -V development \
-          -k kernel.development.t8101 \
+1. 上記でインストールしたmacOSのコピーに起動
+2. `/System/Volumes/Preboot/[UUID]/boot/[hash]/System/Library/Caches/com.apple.kernelcaches/` から `kernelcache` ファイルを取得し、ホストマシンにコピー
+3. ホストマシンに [img4tool](https://github.com/tihmstar/img4tool) をインストール
+4. IM4PからMach-Oバイナリを抽出する：
+        ```sh
+        img4tool -ep out.im4p kernelcache
+        img4tool -eo kernelcache.macho out.im4p
+        ```
+
+### KDK カーネル
+
+KDK の使用はより手間がかかりますが、ブラインドトレーシングでは不十分な特定のケースで有用な場合があります。
+
+1. インストールした macOS バージョン用の macOS KDK を Apple の [こちら](https://developer.apple.com/download/more/) からダウンロード
+   Apple ID と無料の Apple Developer Account が必要
+3. KDK をインストール。インストール先は `/Library/Developer/KDK/KDK_[macOS ver]_[KDK ver].kdk/` 
+4. ターミナルを開き、KDKのカーネルディレクトリに移動：
+        `cd /Library/Developer/KDK/KDK_[macOS ver]_[KDK ver].kdk/Kernels`
+5. 自分のマシン用のkernelcacheを作成：
+        ```sh
+        kmutil create -zn boot -a arm64e -B ~/dev.kc.macho -V development \
+          -k kernel.development.t8103 \
           -r /System/Library/Extensions/ \
-          -r /System/Library/DriverExtensions \
+          -r /System/Library/DriverExtensions/ \
           -x $(kmutil inspect -V release --no-header | grep -v "SEPHiber" | awk '{print " -b "$1; }')
+        ```
 
-    `-B` designates the output file, our kernel cache is written to `dev.kc.macho` in the home directory
+  `-B` は kernelcache が書き出される場所を指定します。
+  `-k` は `Kernels` ディレクトリ内のファイルと一致させる必要があり、Mac の SoC に固有のものです。上記の例では T8103（M1）カーネルを使用しています。
 
-    `-k` must match a kernel in the kernels directory
+Apple は KDK に各カーネル用の DWARF も同梱しています。これらは m1n1 に渡してシンボル解決に使用できます。  
+場所は `/Library/Developer/KDKs/KDK_[macOS ver]_[KDK ver].kdk/System/Library/Kernels/kernel.development.[SoC].dSYM/Contents/Resources/DWARF/kernel.development.[SoC]` です。
 
-## セキュリティ機能を無効にしてmacOSボリュームを準備
-0. macOSボリュームをデフォルトのブート対象に設定
-1. 1trに入り、ターミナルを起動
-2. boot policyでほとんどのセキュリティ機能を無効化。`bputil -nkcas`。 UUIDを取得するために `diskutil info [disk name]` を使用
-3. SIP を無効化 (bputilがリセットする): `csrutil disable`
-4. 詳細な出力を有効化: `nvram boot-args=-v`
-5. カスタムブートオブジェクトとして[m1n1](m1n1-user-guide.md)をインストール
+これらを使用したい場合は、作成した kernelcache と一緒にホストマシンにコピーする必要があります。
 
+## m1n1 を macOS カーネルとしてインストール
+
+2 つ目の macOS コピーを起動ボリュームとして選択したときに、プラットフォームが XNU ではなく m1n1 にジャンプするように設定する必要があります。  
+そのためには、その APFS ボリュームのセキュリティモデルをダウングレードして未署名コードの実行を許可し、m1n1 をそのブートオブジェクトとして構成します。
+
+1. 2 つ目の macOS コピーがマシンのデフォルトの起動ディスクになっていることを確認
+2. 1TR を起動して Terminal を開く
+3. `diskutil info [disk]` を実行して、macOS ボリュームの UUID を確認
+4. `bputil -nkcas` を実行してボリュームのセキュリティをダウングレード。正しい UUID を選択していることを確認
+5. `bputil` を実行すると SIP がリセットされるため、`csrutil disable` を実行して明示的に無効化
+6. 詳細ログを有効化：`nvram boot-args=-v`
+7. [m1n1](m1n1-user-guide.md) をカスタムブートオブジェクトとしてインストール：
+
+        ```sh
         kmutil configure-boot \
           -c build/m1n1.bin \
           --raw \
           --entry-point 2048 \
           --lowest-virtual-address 0 \
           -v /Volumes/macOSTest
+        ```
 
-## m1n1 ハイパーバイザー下での開発用カーネルの起動
+## m1n1のゲストとしてXNUを起動
 
-1. kernelcache を開発マシンにコピー
-2. デバッグ用 DWARF を `/Library/Developer/KDKs/KDK_<MACOS_VERSION>_<KDK_VERSION>.kdk/System/Library/Kernels/kernel.development.t8101.dSYM/Contents/Resources/DWARF/kernel.development.t8101` からコピー
-3. 実行 
+m1n1 をブートオブジェクトとしてインストールしたので、これで m1n1 のハイパーバイザーのゲストとして XNU を起動できます。Mac をシャットダウンし、ホストマシンに** DFU ポート経由で**接続してから、電源を入れてください。m1n1 が起動し、シリアルプロキシが開始されるはずです。
 
-        python3 proxyclient/tools/run_guest.py \
-          -s <PATH_TO_DEBUG_DWARF> \
-          <PATH_TO_DEVELOPMENT_KERNEL_CACHE> \
-          -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
+### 製品版カーネル
 
-m1n1 ハイパーバイザー下でmacOS が起動
+製品版カーネルをm1n1のゲストとして起動するのは非常に簡単です：
 
-注: KDK for macOS 11.3からはt8101ファイル（カーネルシンボルとドワーフシンボルの両方）が利用できます。ハイパーバイザーでの macOS の起動に関する Marcan 氏のストリームは
-11.3で行われました。
-これらのノートは、macOS 11.5.2でも検証されており、MacBookAirのwifiネットワークでログインできるようになっています:
-
-- Kernel version:  
-
-```
-$ uname -a 
-> Darwin MacBook-Air.home 20.6.0 Darwin Kernel Version 20.6.0: Wed Jun 23 00:26:27 PDT 2021; root:xnu-7195.141.2~5/RELEASE_ARM64_T8101 arm64
-```
-- macOS version: 
-
-```
-$ sw_vers
-> ProductName:	macOS / ProductVersion:	11.5.2 / BuildVersion:	20G95
+```sh
+python3 proxyclient/tools/run_guest.py \
+    path/to/kernelcache.macho \
+    -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
 ```
 
-アップルロゴ（レインボーバージョン）が表示されるがプログレスバーが表示されない場合は、ブートプロセスの初期段階でmacOSがパニックを起こしている可能性があります。
-これは、kernel cache（kernel+extensions）とmacOSのroot fsの間でmacOSのバージョンが一致していないことが原因です。
-ブートプロセスがどこで止まっているかを調べるには、minicom/picocom などのシリアルユーティリティーを 115200 ボーレートで起動します（`picocom -b 115200 /dev/ttyACM1` のように）。
-起動時には、1つのCPUとハイパーバイザで我慢してください。トレースしている内容によっては通常よりも遅くなりますが予想通りです。
+### KDK カーネル
 
-以下は、macOS `11.5.2` と m1n1 バージョンのコミット `bd5211909e36944cb376d66c909544ad23c203bc` を使って実験した結果です:
-- run_guestコマンド launch(t0)からカーネルのロード開始まで: 9秒
-- t0からログイン画面まで（キーボードやマウスカーソルが最初から動いていない状態）：約2分
-- キーボードとマウスのカーソルが動いた状態: 約2分35秒
-- パスワードを入力してからデスクトップとメニューバーが表示されるまで：約2分
+KDK を使用して開発用 kernelcache を作成した場合、m1n1 にデバッグシンボルを渡すことができます：
 
-## インストールしたmacOSからmacOS純正カーネルを実行
-
-1. macOSを起動
-2. `kernelcache` を`/System/Volumes/Preboot/(UUID)/boot/(long hash)/System/Library/Caches/com.apple.kernelcaches/kernelcache` から探す
-3. このファイルのコピーをどこかに作成
-4. img4tool (https://github.com/tihmstar/img4tool) のコピーを入手 (またはビルド)
-5. im4p イメージを抽出:
-
-        img4tool -e -p out.im4p kernelcache
-
-6. im4p から machO を抽出:
-
-        img4tool -e -o kernel.macho out.im4p
-
-7. これで上記と同様の方法でmacOSを実行可能(デバッグDWARFはなし)
-
-        python3 proxyclient/tools/run_guest.py \
-          <PATH_TO_EXTRACTED_MACHO> \
-          -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
+```sh
+python3 proxyclient/tools/run_guest.py \
+    -s path/to/DWARF \
+    path/to/kernelcache.macho\
+    -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
+```
 
 
 ## ハイパーバイザーモジュールの使い方
 
-組み込みシェルに加えて、m1n1 ハイパーバイザーは完全な Python スクリプトを事前に読み込み実行できます。
-これらのスクリプトは主にハードウェアの特定部分をトレースするためにハイパーバイザーを事前設定するために使われます。
-具体例は m1n1 ソースツリー内の `proxyclient/hv` にあります。
-これらのスクリプトは以下のようにして `run_guest.py` に渡されます。
+m1n1 シェルだけでハードウェアをトレースすることは可能ですが、あまり使いやすくありません。代わりに、m1n1 は Python スクリプトの事前読み込みと実行に対応しています。これらのスクリプトは m1n1 の Python API に完全にアクセスできます。
 
-        python3 proxyclient/tools/run_guest.py -m proxyclient/hv/trace_dcp.py \
-          <PATH_TO_EXTRACTED_MACHO> \
-          -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
-
-## m1n1 ハイパーバイザツリーの更新
-
-ハイパーバイザー/m1n1 ABI は * 安定していません* 。上記のように新しい m1n1 ビルドをインストールした場合、時間を節約するために 
-`run_guest.py` を直接使用できます。ただし、m1n1 の git ツリーを更新したらすぐに、 `run_guest.py` の前に更新した m1n1 をビルドし
-
-```
-python tools/chainload.py -r ../build/m1n1.bin
-```
-
-を実行して、ABI が同期していることを確認しなければなりません。
-これを行わないと、ABIの不整合によるランダムなエラーやクラッシュが発生します。
-
-## GDB/LLDBの使用
-
-`gdbserver` コマンドは GDB または LLDB に接続できるサーバーの実装を起動します。LLDBがより推奨されます。というのは
-ポインタ認証とDarwinカーネルdyldに対応しているからです。
-LLDBでシンボルを取得するには、カーネル拡張をロードする必要があります。以下のシェルスクリプトは `target.lldb` を生成します。
-これはターゲットを設定し、カーネル拡張をロードする便利なLLDBスクリプトです:
+主な用途は、特定のハードウェアブロック向けの高機能な自動トレーサーを構築することです。先行事例は `proxyclient/hv/` にあります。これらはモジュールとして `run_guest.py` に渡します：
 
 ```sh
-echo target create -s kernel.development.t8101.dSYM kernel.development.t8101 > target.lldb
-for k in $(find Extensions); do [ "$(file -b --mime-type $k)" != application/x-mach-binary ] || printf 'image add %q\n' $k; done >> target.lldb
+python3 proxyclient/tools/run_guest.py \
+    -m proxyclient/hv/trace_dcp.py \
+    path/to/kernelcache.macho \
+    -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
 ```
 
-以下のLLDB用コマンドは、生成されたスクリプトをロードし、m1n1に接続します:
+上記の例では、DCP トレーサーを事前読み込みし、m1n1 が XNU にジャンプする準備ができた時点ですぐに起動します。
+
+## m1n1 の ABI 同期
+
+m1n1 の ABI は安定しておらず、ソースツリー内のリソース（例：`proxyclient`）は、古い m1n1 ビルドとの後方互換性が保証されることはありません。ハイパーバイザーを使用する前に、常に作業ツリーからビルドした m1n1 をチェインロードして ABI 互換性を確保することが想定されています：
+
+```sh
+python3 proxyclient/tools/chainload.py build/m1n1.macho
+```
+
+## デバッガの使用
+
+m1n1 はネットワーク経由のデバッグをサポートしています。ハイパーバイザーシェルで `gdbserver` を実行すると、GDB または LLDB から接続可能なデバッグサーバー実装が起動します。Mach-O、ポインタ認証、および XNU の dyld の使用に対するサポートが優れているため、LLDB の使用を推奨します。
+
+すべてのカーネル拡張のシンボルを読み込むには、LLDB スクリプトが必要です。以下のシェルスクリプトを macOS 上で使用すると、この作業を行ってくれる LLDB スクリプトを生成できます：
+
+```sh
+echo 'target create -s kernel.development.t8103.dSYM kernel.development.t8103' > target.lldb
+for k in $(find Extensions); do
+    [ "$(file -b --mime-type $k)" != 'application/x-mach-binary' ] || printf 'image add %q\n' $k;
+done >> target.lldb
+```
+
+上記は、macOS 上で起動しており、KDK の `Kernels` ディレクトリ内にいることを前提としています。
+
+LLDB から、生成したスクリプトを実行し、m1n1 のデバッグサーバーに接続できます：
 
 ```
 command source -e false target.lldb
 process connect unix-connect:///tmp/.m1n1-unix
 ```
 
-GDB/LLDBと干渉するハイパーバイザーのコンソールコマンドを実行しないでください。例えば、
-ハイパーバイザーコンソールと GDB/LLDB の両方から同時にブレークポイントを編集しないでください。
+ハイパーバイザーシェルの組み込みデバッグ機能と外部デバッガを同時に使用しないでください。たとえば、LLDBを使用中にハイパーバイザーシェルからブレークポイントを追加・編集しないでください。
 
 # 情報源
 kernelcache作成の情報源: 
