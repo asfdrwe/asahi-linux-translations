@@ -1381,6 +1381,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        対応 macOS バージョン
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1409,51 +1420,96 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#macos-kernelcache" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        macOS の開発用カーネルの取得と kernelcache の作成
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        セキュリティ機能を無効にしてmacOSボリュームを準備
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#m1n1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        m1n1 ハイパーバイザー下での開発用カーネルの起動
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macosmacos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        インストールしたmacOSからmacOS純正カーネルを実行
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        カーネルの取得
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="カーネルの取得">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        製品版カーネル
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KDK カーネル
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m1n1-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        m1n1 を macOS カーネルとしてインストール
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m1n1-xnu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        m1n1 のゲストとして XNU を起動
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="m1n1 のゲストとして XNU を起動">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        製品版カーネル
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kdk_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KDK カーネル
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         ハイパーバイザーモジュールの使い方
@@ -1464,10 +1520,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#m1n1_1" class="md-nav__link">
+  <a href="#m1n1-abi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        m1n1 ハイパーバイザツリーの更新
+        m1n1 の ABI 同期
       
     </span>
   </a>
@@ -1475,10 +1531,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#gdblldb" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GDB/LLDBの使用
+        デバッガの使用
       
     </span>
   </a>
@@ -1491,7 +1547,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         情報源
@@ -1712,174 +1768,156 @@
 
   <h1>Hypervisor</h1>
 
-<p>2026/6/19の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md">m1n1-hypervisor</a>の翻訳</p>
+<p>2026/7/31の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md">m1n1-hypervisor</a>の翻訳</p>
 <p>訳注:Asahi Linux内のページへのリンクは対応する日本語訳に置き換え</p>
 <hr />
-<div class="admonition 警告">
-<p class="admonition-title">警告</p>
-</div>
-<p>m1n1 ハイパーバイザーは macOS Ventura 13.5 を対象としています。
-m1n1 ハイパーバイザーの下で以降の macOS バージョンを動作させることには対応していません。</p>
 <h4 id="m1n1macos">m1n1ハイパーバイザーでのmacOSの実行<a class="headerlink" href="#m1n1macos" title="Permanent link">&para;</a></h4>
-<p>Apple から入手した開発用カーネルを実行することができます。この場合デバッグシンボルを得ることができますし、macOS インストール内の
-純正カーネルを使用することもできます。</p>
+<p>Apple から入手した開発用カーネルを実行することができます。この場合デバッグシンボルを得ることができますし、macOS インストール内の純正カーネルを使用することもできます。</p>
+<h5 id="macos">対応 macOS バージョン<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h5>
+<p>Apple はバージョン間で ABI 互換性を保証していないため、逆解析の対象としても、ハイパーバイザーのゲストとしても、すべての macOS バージョンに対応することはできませんし、対応するつもりもありません。現在対応している対象は以下の通りです：</p>
+<ul>
+<li>macOS 13.5（M1 および M2 シリーズ）</li>
+<li>macOS 14.8.3（M1〜M3 シリーズ）</li>
+</ul>
+<p>多数のバグの存在と XNU を起動するために SPTM が動作している必要があるので、M4 およびそれ以降の機器向けの対象バージョンはまだ定めてられていません。</p>
 <h5 id="_1">準備<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
-<p>既存の macOSインストール を使用してもよいですし、 代わりにmacOS のセカンドコピーをインストールすることもできます。</p>
-<p>macOS のセカンドコピーをインストールするには、いくつかのステップを完了する必要があります:</p>
+<p>メインの macOS インストールのブートオブジェクトを非破壊的に上書きすることは可能ですが、この方法は推奨されません。
+データ損失のリスクが高まるだけでなく、特定の macOS バージョンを対象にするたびに機器全体を DFU復元しなければならなくなるため、非常に手間がかかります。代わりに、macOS の2つ目のコピーをインストールします。</p>
 <ol>
-<li>macOS パーティションにセカンドボリュームを作成します。<pre><code>diskutil apfs addVolume disk4 APFS macOSTest -mountpoint /Volumes/macOSTest
+<li>
+<p>macOS パーティションにセカンドボリュームを作成します。</p>
+<pre><code>diskutil apfs addVolume disk4 APFS macOSTest -mountpoint /Volumes/macOSTest
 </code></pre>
-</li>
-</ol>
 <p>disk4 とボリューム名 (つまり macOSTest) を特定のシステム/環境設定用に変更します。 
 <em>注: このロールをシステムロールにしてはいけません。既存のシステム が混乱します (1TR内に有効なユーザーが存在しない)</em></p>
-<ol>
-<li>macOSをダウンロードしインストールします。macOSの特定のバージョンのインストーラをダウンロードするには次のコマンドを使用します。<pre><code>softwareupdate --fetch-full-installer --full-installer-version 12.3
+</li>
+<li>
+<p>macOS をダウンロードしインストールします。macOS の特定のバージョンのインストーラをダウンロードするには次のコマンドを使用します。</p>
+<pre><code>softwareupdate --fetch-full-installer --full-installer-version 14.8.3
 </code></pre>
+<p><code>14.8.3</code> は必要なバージョンに置き換えます。インストーラはアプリケーションフォルダ内にあり、保存したい場合はここからコピーしてください。そうでない場合は、一度インストールすると自動的に削除されます。</p>
 </li>
 </ol>
-<p>12.3は必要なバージョンに置き換えます。インストーラはアプリケーションフォルダ内にあり、保存したい場合はここからコピーしてください。
-そうでない場合は、一度インストールすると自動的に削除されます。</p>
-<p>残念ながら、AppleのCDNは限られたバージョン用のフルインストーラパッケージしか保持しておらず、12.3はもうありません。
-<em>注：現在、ファームウェアのバージョンは13.5となっており、通常通り利用できます。12.3をインストールする必要はありません</em></p>
 <h6 id="installassistantpkg">アーカイブされたInstallAssistant.pkgの使用<a class="headerlink" href="#installassistantpkg" title="Permanent link">&para;</a></h6>
-<p>Montery 12.3 の InstallAssistant.pkg は <a href="https://archive.org/details/12.3-21-e-230-release">こちら</a>にアーカイブされていますが、
-ダブルクリックでインストールしようとすると、ファイルサイズ約 40MB のオンライン版の <code>Install macOS Monterey.app</code> がインストールされるようです。
-それを実行すると、最新版のmacOSがインストールされます。</p>
-<p>しかし、コマンドラインからインストールすると、次のように正しくインストールされるようです：</p>
-<pre><code>    sudo installer -pkg 12.3\ 21E230\ \(Release\).pkg -target /
-</code></pre>
-<p><code>アプリケーション</code>フォルダ内の <code>Install macOS Monterey.app</code> が 12GB以下 であることを確認してください。</p>
-<h5 id="macos-kernelcache">macOS の開発用カーネルの取得と kernelcache の作成<a class="headerlink" href="#macos-kernelcache" title="Permanent link">&para;</a></h5>
+<p>残念ながら、Apple は CDN 上に macOS インストーラーを無期限に保持していません。上記の方法でフルインストーラーを取得できない場合は、アーカイブされた InstallAssistant.pkg を使用する必要があります。関連する InstallAssistant バージョンの動作確認済みアーカイブは以下の通りです：</p>
+<table>
+<thead>
+<tr>
+<th>macOS バージョン</th>
+<th>リンク</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13.5 Ventura</td>
+<td><a href="https://archive.org/details/install-assistant_20240930">archive.org</a></td>
+</tr>
+<tr>
+<td>14.8.3 Sonoma</td>
+<td><a href="https://archive.org/details/install-assistant_20250207">archive.org</a></td>
+</tr>
+</tbody>
+</table>
+<p>InstallAssistant.pkg をダウンロードして実行してください。これにより、<code>Install macOS [version].app</code> アプリケーションが <code>/Applications</code> に展開されます。インストールされたアプリケーションを実行し、画面の指示に従って、先ほど作成した APFS ボリュームに macOS をインストールします。</p>
+<h5 id="_2">カーネルの取得<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
+<p>m1n1 に渡すための XNU イメージが必要です。上記でインストールした macOS バージョンに同梱されている製品版カーネルを使用するか、または strip されていない Kernel Debug Kit（KDK）カーネルを使用することができます。</p>
+<h6 id="_3">製品版カーネル<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h6>
+<p>製品版カーネルを使用するのが最も簡単です。Apple ID や特別な準備作業は不要です。</p>
 <ol>
-<li>macOS開発者アカウントを作成（icloudアカウントが必要)</li>
-<li>Appleの<a href="https://developer.apple.com/download/more/">ここ</a>からMac OS Kernel Debug Kit (KDK)をダウンロード。使用中のMac OSのバージョンに合わせてダウンロード</li>
-<li>KDKをMac OSにインストール。KDKは <code>/Library/Developer/KDKs/KDK_&lt;MACOS_VERSION&gt;_&lt;KDK_VERSION&gt;.kdk</code> にインストールされる</li>
-<li>
-<p>kernelsディレクトリに移動：</p>
-<pre><code>cd /Library/Developer/KDKs/KDK_&lt;MACOS_VERSION&gt;_&lt;KDK_VERSION&gt;.kdk/System/Library/Kernels
-</code></pre>
-</li>
-<li>
-<p>KDKフォルダに切り替えて、以下のコマンドを実行:</p>
-<pre><code>kmutil create -z -n boot -a arm64e -B ~/dev.kc.macho -V development \
-  -k kernel.development.t8101 \
-  -r /System/Library/Extensions/ \
-  -r /System/Library/DriverExtensions \
-  -x $(kmutil inspect -V release --no-header | grep -v "SEPHiber" | awk '{print " -b "$1; }')
-</code></pre>
-<p><code>-B</code> designates the output file, our kernel cache is written to <code>dev.kc.macho</code> in the home directory</p>
-<p><code>-k</code> must match a kernel in the kernels directory</p>
-</li>
+<li>上記でインストールしたmacOSのコピーに起動</li>
+<li><code>/System/Volumes/Preboot/[UUID]/boot/[hash]/System/Library/Caches/com.apple.kernelcaches/</code> から <code>kernelcache</code> ファイルを取得し、ホストマシンにコピー</li>
+<li>ホストマシンに <a href="https://github.com/tihmstar/img4tool">img4tool</a> をインストール</li>
+<li>IM4PからMach-Oバイナリを抽出する：
+        <code>sh
+        img4tool -ep out.im4p kernelcache
+        img4tool -eo kernelcache.macho out.im4p</code></li>
 </ol>
-<h5 id="macos">セキュリティ機能を無効にしてmacOSボリュームを準備<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h5>
+<h6 id="kdk">KDK カーネル<a class="headerlink" href="#kdk" title="Permanent link">&para;</a></h6>
+<p>KDK の使用はより手間がかかりますが、ブラインドトレーシングでは不十分な特定のケースで有用な場合があります。</p>
 <ol>
-<li>macOSボリュームをデフォルトのブート対象に設定</li>
-<li>1trに入り、ターミナルを起動</li>
-<li>boot policyでほとんどのセキュリティ機能を無効化。<code>bputil -nkcas</code>。 UUIDを取得するために <code>diskutil info [disk name]</code> を使用</li>
-<li>SIP を無効化 (bputilがリセットする): <code>csrutil disable</code></li>
-<li>詳細な出力を有効化: <code>nvram boot-args=-v</code></li>
-<li>カスタムブートオブジェクトとして<a href="../m1n1-user-guide/">m1n1</a>をインストール<pre><code>kmutil configure-boot \
+<li>インストールした macOS バージョン用の macOS KDK を Apple の <a href="https://developer.apple.com/download/more/">こちら</a> からダウンロード
+   Apple ID と無料の Apple Developer Account が必要</li>
+<li>KDK をインストール。インストール先は <code>/Library/Developer/KDK/KDK_[macOS ver]_[KDK ver].kdk/</code> </li>
+<li>ターミナルを開き、KDKのカーネルディレクトリに移動：
+        <code>cd /Library/Developer/KDK/KDK_[macOS ver]_[KDK ver].kdk/Kernels</code></li>
+<li>自分のマシン用のkernelcacheを作成：
+        <code>sh
+        kmutil create -zn boot -a arm64e -B ~/dev.kc.macho -V development \
+          -k kernel.development.t8103 \
+          -r /System/Library/Extensions/ \
+          -r /System/Library/DriverExtensions/ \
+          -x $(kmutil inspect -V release --no-header | grep -v "SEPHiber" | awk '{print " -b "$1; }')</code></li>
+</ol>
+<p><code>-B</code> は kernelcache が書き出される場所を指定します。
+  <code>-k</code> は <code>Kernels</code> ディレクトリ内のファイルと一致させる必要があり、Mac の SoC に固有のものです。上記の例では T8103（M1）カーネルを使用しています。</p>
+<p>Apple は KDK に各カーネル用の DWARF も同梱しています。これらは m1n1 に渡してシンボル解決に使用できます。<br />
+場所は <code>/Library/Developer/KDKs/KDK_[macOS ver]_[KDK ver].kdk/System/Library/Kernels/kernel.development.[SoC].dSYM/Contents/Resources/DWARF/kernel.development.[SoC]</code> です。
+これらを使用したい場合は、作成した kernelcache と一緒にホストマシンにコピーする必要があります。</p>
+<h5 id="m1n1-macos">m1n1 を macOS カーネルとしてインストール<a class="headerlink" href="#m1n1-macos" title="Permanent link">&para;</a></h5>
+<p>2 つ目の macOS コピーを起動ボリュームとして選択したときに、プラットフォームが XNU ではなく m1n1 にジャンプするように設定する必要があります。<br />
+そのためには、その APFS ボリュームのセキュリティモデルをダウングレードして未署名コードの実行を許可し、m1n1 をそのブートオブジェクトとして構成します。</p>
+<ol>
+<li>2 つ目の macOS コピーがマシンのデフォルトの起動ディスクになっていることを確認</li>
+<li>1TR を起動して Terminal を開く</li>
+<li><code>diskutil info [disk]</code> を実行して、macOS ボリュームの UUID を確認</li>
+<li><code>bputil -nkcas</code> を実行してボリュームのセキュリティをダウングレード。正しい UUID を選択していることを確認</li>
+<li><code>bputil</code> を実行すると SIP がリセットされるため、<code>csrutil disable</code> を実行して明示的に無効化</li>
+<li>詳細ログを有効化：<code>nvram boot-args=-v</code></li>
+<li><a href="../m1n1-user-guide/">m1n1</a> をカスタムブートオブジェクトとしてインストール：<pre><code>```sh
+kmutil configure-boot \
   -c build/m1n1.bin \
   --raw \
   --entry-point 2048 \
   --lowest-virtual-address 0 \
   -v /Volumes/macOSTest
+```
 </code></pre>
 </li>
 </ol>
-<h5 id="m1n1">m1n1 ハイパーバイザー下での開発用カーネルの起動<a class="headerlink" href="#m1n1" title="Permanent link">&para;</a></h5>
-<ol>
-<li>kernelcache を開発マシンにコピー</li>
-<li>デバッグ用 DWARF を <code>/Library/Developer/KDKs/KDK_&lt;MACOS_VERSION&gt;_&lt;KDK_VERSION&gt;.kdk/System/Library/Kernels/kernel.development.t8101.dSYM/Contents/Resources/DWARF/kernel.development.t8101</code> からコピー</li>
-<li>実行 <pre><code>python3 proxyclient/tools/run_guest.py \
-  -s &lt;PATH_TO_DEBUG_DWARF&gt; \
-  &lt;PATH_TO_DEVELOPMENT_KERNEL_CACHE&gt; \
-  -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
+<h5 id="m1n1-xnu">m1n1 のゲストとして XNU を起動<a class="headerlink" href="#m1n1-xnu" title="Permanent link">&para;</a></h5>
+<p>m1n1 をブートオブジェクトとしてインストールしたので、これで m1n1 のハイパーバイザーのゲストとして XNU を起動できます。Mac をシャットダウンし、ホストマシンに<strong> DFU ポート経由で</strong>接続してから、電源を入れてください。m1n1 が起動し、シリアルプロキシが開始されるはずです。</p>
+<h6 id="_4">製品版カーネル<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h6>
+<p>製品版カーネルをm1n1のゲストとして起動するのは非常に簡単です：</p>
+<pre><code class="language-sh">python3 proxyclient/tools/run_guest.py \
+    path/to/kernelcache.macho \
+    -- &quot;debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0&quot;
 </code></pre>
-</li>
-</ol>
-<p>m1n1 ハイパーバイザー下でmacOS が起動</p>
-<p>注: KDK for macOS 11.3からはt8101ファイル（カーネルシンボルとドワーフシンボルの両方）が利用できます。ハイパーバイザーでの macOS の起動に関する Marcan 氏のストリームは
-11.3で行われました。
-これらのノートは、macOS 11.5.2でも検証されており、MacBookAirのwifiネットワークでログインできるようになっています:</p>
-<ul>
-<li>Kernel version:  </li>
-</ul>
-<pre><code>$ uname -a 
-&gt; Darwin MacBook-Air.home 20.6.0 Darwin Kernel Version 20.6.0: Wed Jun 23 00:26:27 PDT 2021; root:xnu-7195.141.2~5/RELEASE_ARM64_T8101 arm64
+<h6 id="kdk_1">KDK カーネル<a class="headerlink" href="#kdk_1" title="Permanent link">&para;</a></h6>
+<p>KDK を使用して開発用 kernelcache を作成した場合、m1n1 にデバッグシンボルを渡すことができます：</p>
+<pre><code class="language-sh">python3 proxyclient/tools/run_guest.py \
+    -s path/to/DWARF \
+    path/to/kernelcache.macho\
+    -- &quot;debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0&quot;
 </code></pre>
-<ul>
-<li>macOS version: </li>
-</ul>
-<pre><code>$ sw_vers
-&gt; ProductName:  macOS / ProductVersion: 11.5.2 / BuildVersion:  20G95
+<h5 id="_5">ハイパーバイザーモジュールの使い方<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
+<p>m1n1 シェルだけでハードウェアをトレースすることは可能ですが、あまり使いやすくありません。代わりに、m1n1 は Python スクリプトの事前読み込みと実行に対応しています。これらのスクリプトは m1n1 の Python API に完全にアクセスできます。</p>
+<p>主な用途は、特定のハードウェアブロック向けの高機能な自動トレーサーを構築することです。先行事例は <code>proxyclient/hv/</code> にあります。これらはモジュールとして <code>run_guest.py</code> に渡します：</p>
+<pre><code class="language-sh">python3 proxyclient/tools/run_guest.py \
+    -m proxyclient/hv/trace_dcp.py \
+    path/to/kernelcache.macho \
+    -- &quot;debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0&quot;
 </code></pre>
-<p>アップルロゴ（レインボーバージョン）が表示されるがプログレスバーが表示されない場合は、ブートプロセスの初期段階でmacOSがパニックを起こしている可能性があります。
-これは、kernel cache（kernel+extensions）とmacOSのroot fsの間でmacOSのバージョンが一致していないことが原因です。
-ブートプロセスがどこで止まっているかを調べるには、minicom/picocom などのシリアルユーティリティーを 115200 ボーレートで起動します（<code>picocom -b 115200 /dev/ttyACM1</code> のように）。
-起動時には、1つのCPUとハイパーバイザで我慢してください。トレースしている内容によっては通常よりも遅くなりますが予想通りです。</p>
-<p>以下は、macOS <code>11.5.2</code> と m1n1 バージョンのコミット <code>bd5211909e36944cb376d66c909544ad23c203bc</code> を使って実験した結果です:
-- run_guestコマンド launch(t0)からカーネルのロード開始まで: 9秒
-- t0からログイン画面まで（キーボードやマウスカーソルが最初から動いていない状態）：約2分
-- キーボードとマウスのカーソルが動いた状態: 約2分35秒
-- パスワードを入力してからデスクトップとメニューバーが表示されるまで：約2分</p>
-<h5 id="macosmacos">インストールしたmacOSからmacOS純正カーネルを実行<a class="headerlink" href="#macosmacos" title="Permanent link">&para;</a></h5>
-<ol>
-<li>macOSを起動</li>
-<li><code>kernelcache</code> を<code>/System/Volumes/Preboot/(UUID)/boot/(long hash)/System/Library/Caches/com.apple.kernelcaches/kernelcache</code> から探す</li>
-<li>このファイルのコピーをどこかに作成</li>
-<li>img4tool (https://github.com/tihmstar/img4tool) のコピーを入手 (またはビルド)</li>
-<li>
-<p>im4p イメージを抽出:</p>
-<pre><code>img4tool -e -p out.im4p kernelcache
+<p>上記の例では、DCP トレーサーを事前読み込みし、m1n1 が XNU にジャンプする準備ができた時点ですぐに起動します。</p>
+<h5 id="m1n1-abi">m1n1 の ABI 同期<a class="headerlink" href="#m1n1-abi" title="Permanent link">&para;</a></h5>
+<p>m1n1 の ABI は安定しておらず、ソースツリー内のリソース（例：<code>proxyclient</code>）は、古い m1n1 ビルドとの後方互換性が保証されることはありません。ハイパーバイザーを使用する前に、常に作業ツリーからビルドした m1n1 をチェインロードして ABI 互換性を確保することが想定されています：</p>
+<pre><code class="language-sh">python3 proxyclient/tools/chainload.py build/m1n1.macho
 </code></pre>
-</li>
-<li>
-<p>im4p から machO を抽出:</p>
-<pre><code>img4tool -e -o kernel.macho out.im4p
+<h5 id="_6">デバッガの使用<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
+<p>m1n1 はネットワーク経由のデバッグをサポートしています。ハイパーバイザーシェルで <code>gdbserver</code> を実行すると、GDB または LLDB から接続可能なデバッグサーバー実装が起動します。Mach-O、ポインタ認証、および XNU の dyld の使用に対するサポートが優れているため、LLDB の使用を推奨します。</p>
+<p>すべてのカーネル拡張のシンボルを読み込むには、LLDB スクリプトが必要です。以下のシェルスクリプトを macOS 上で使用すると、この作業を行ってくれる LLDB スクリプトを生成できます：</p>
+<pre><code class="language-sh">echo 'target create -s kernel.development.t8103.dSYM kernel.development.t8103' &gt; target.lldb
+for k in $(find Extensions); do
+    [ &quot;$(file -b --mime-type $k)&quot; != 'application/x-mach-binary' ] || printf 'image add %q\n' $k;
+done &gt;&gt; target.lldb
 </code></pre>
-</li>
-<li>
-<p>これで上記と同様の方法でmacOSを実行可能(デバッグDWARFはなし)</p>
-<pre><code>python3 proxyclient/tools/run_guest.py \
-  &lt;PATH_TO_EXTRACTED_MACHO&gt; \
-  -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
-</code></pre>
-</li>
-</ol>
-<h5 id="_2">ハイパーバイザーモジュールの使い方<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
-<p>組み込みシェルに加えて、m1n1 ハイパーバイザーは完全な Python スクリプトを事前に読み込み実行できます。
-これらのスクリプトは主にハードウェアの特定部分をトレースするためにハイパーバイザーを事前設定するために使われます。
-具体例は m1n1 ソースツリー内の <code>proxyclient/hv</code> にあります。
-これらのスクリプトは以下のようにして <code>run_guest.py</code> に渡されます。</p>
-<pre><code>    python3 proxyclient/tools/run_guest.py -m proxyclient/hv/trace_dcp.py \
-      &lt;PATH_TO_EXTRACTED_MACHO&gt; \
-      -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
-</code></pre>
-<h5 id="m1n1_1">m1n1 ハイパーバイザツリーの更新<a class="headerlink" href="#m1n1_1" title="Permanent link">&para;</a></h5>
-<p>ハイパーバイザー/m1n1 ABI は * 安定していません* 。上記のように新しい m1n1 ビルドをインストールした場合、時間を節約するために 
-<code>run_guest.py</code> を直接使用できます。ただし、m1n1 の git ツリーを更新したらすぐに、 <code>run_guest.py</code> の前に更新した m1n1 をビルドし</p>
-<pre><code>python tools/chainload.py -r ../build/m1n1.bin
-</code></pre>
-<p>を実行して、ABI が同期していることを確認しなければなりません。
-これを行わないと、ABIの不整合によるランダムなエラーやクラッシュが発生します。</p>
-<h5 id="gdblldb">GDB/LLDBの使用<a class="headerlink" href="#gdblldb" title="Permanent link">&para;</a></h5>
-<p><code>gdbserver</code> コマンドは GDB または LLDB に接続できるサーバーの実装を起動します。LLDBがより推奨されます。というのは
-ポインタ認証とDarwinカーネルdyldに対応しているからです。
-LLDBでシンボルを取得するには、カーネル拡張をロードする必要があります。以下のシェルスクリプトは <code>target.lldb</code> を生成します。
-これはターゲットを設定し、カーネル拡張をロードする便利なLLDBスクリプトです:</p>
-<pre><code class="language-sh">echo target create -s kernel.development.t8101.dSYM kernel.development.t8101 &gt; target.lldb
-for k in $(find Extensions); do [ &quot;$(file -b --mime-type $k)&quot; != application/x-mach-binary ] || printf 'image add %q\n' $k; done &gt;&gt; target.lldb
-</code></pre>
-<p>以下のLLDB用コマンドは、生成されたスクリプトをロードし、m1n1に接続します:</p>
+<p>上記は、macOS 上で起動しており、KDK の <code>Kernels</code> ディレクトリ内にいることを前提としています。</p>
+<p>LLDB から、生成したスクリプトを実行し、m1n1 のデバッグサーバーに接続できます：</p>
 <pre><code>command source -e false target.lldb
 process connect unix-connect:///tmp/.m1n1-unix
 </code></pre>
-<p>GDB/LLDBと干渉するハイパーバイザーのコンソールコマンドを実行しないでください。例えば、
-ハイパーバイザーコンソールと GDB/LLDB の両方から同時にブレークポイントを編集しないでください。</p>
-<h4 id="_3">情報源<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p>kernelcache作成の情報源: 
+<p>ハイパーバイザーシェルの組み込みデバッグ機能と外部デバッガを同時に使用しないでください。たとえば、LLDBを使用中にハイパーバイザーシェルからブレークポイントを追加・編集しないでください。</p>
+<h4 id="_7">情報源<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>kernelcache 作成の情報源: 
 <a href="https://kernelshaman.blogspot.com/2021/02/building-xnu-for-macos-112-intel-apple.html">https://kernelshaman.blogspot.com/2021/02/building-xnu-for-macos-112-intel-apple.html</a></p>
 
 

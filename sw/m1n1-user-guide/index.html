@@ -1409,6 +1409,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scriptskmutilpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripts/kmutil.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mach-o" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mach-O（非推奨）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#2-esp" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1801,7 +1823,7 @@
 
   <h1>m1n1:ユーザガイド ブートローダー</h1>
 
-<p>2025/6/30時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-user-guide.md">m1n1-user-guide</a>の翻訳</p>
+<p>2026/7/30時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-user-guide.md">m1n1-user-guide</a>の翻訳</p>
 <hr />
 <p>m1n1は、Apple（XNU）ブートエコシステムとLinuxブートエコシステムの橋渡しをするために、Asahi Linuxプロジェクトが開発したブートローダです。</p>
 <p>GitHub: <a href="https://github.com/AsahiLinux/m1n1">AsahiLinux/m1n1</a></p>
@@ -1865,6 +1887,18 @@ $ docker-compose run m1n1 make
 <p>m1n1（ペイロードを選択可能）は、1TR（macOS 12.1 OS/stub以降）から以下の手順でインストールできます。</p>
 <pre><code>kmutil configure-boot -c m1n1-stage1.bin --raw --entry-point 2048 --lowest-virtual-address 0 -v &lt;OSボリュームのパス&gt;
 </code></pre>
+<p>これは m1n1-stage1.bin をどこかから手動で取得したことを前提としています。</p>
+<h6 id="scriptskmutilpy"><code>scripts/kmutil.py</code><a class="headerlink" href="#scriptskmutilpy" title="Permanent link">&para;</a></h6>
+<p><code>tools/kmutil.py</code> というスクリプトもあります。これはWebサーバーを起動し、m1n1バイナリを含むスクリプトを配信して、一緒に <code>kmutil configure-boot</code> を実行します。</p>
+<p>ホスト側でWebサーバーを起動します：</p>
+<pre><code class="language-shell">./scripts/kmutil.py
+</code></pre>
+<p>ターゲット側の1TRで、スクリプトを取得して実行します：</p>
+<pre><code class="language-shell">sh &lt;(curl HOST:8000)
+</code></pre>
+<p>このスクリプトは標準入力を使用するため、シェルにパイプで渡すことはできません。</p>
+<p>この操作を実行するネットワークを信頼できることを確認してください。</p>
+<h6 id="mach-o">Mach-O（非推奨）<a class="headerlink" href="#mach-o" title="Permanent link">&para;</a></h6>
 <p>古いバージョンでは（推奨しませんが）、代わりに<code>macho</code>が必要です。</p>
 <pre><code>kmutil configure-boot -c m1n1-stage1.macho -v &lt;OSボリュームへのパス&gt;
 </code></pre>
