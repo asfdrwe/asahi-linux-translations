@@ -16,8 +16,8 @@ Apple から入手した開発用カーネルを実行することができま�
 
 Apple はバージョン間で ABI 互換性を保証していないため、逆解析の対象としても、ハイパーバイザーのゲストとしても、すべての macOS バージョンに対応することはできませんし、対応するつもりもありません。現在対応している対象は以下の通りです：
 
-- macOS 13.5（M1およびM2シリーズ）
-- macOS 14.8.3（M1〜M3シリーズ）
+- macOS 13.5（M1 および M2 シリーズ）
+- macOS 14.8.3（M1〜M3 シリーズ）
 
 多数のバグの存在と XNU を起動するために SPTM が動作している必要があるので、M4 およびそれ以降の機器向けの対象バージョンはまだ定めてられていません。
 
@@ -29,16 +29,14 @@ Apple はバージョン間で ABI 互換性を保証していないため、逆
 
         diskutil apfs addVolume disk4 APFS macOSTest -mountpoint /Volumes/macOSTest
 
-disk4 とボリューム名 (つまり macOSTest) を特定のシステム/環境設定用に変更します。 
-
-_注: このロールをシステムロールにしてはいけません。既存のシステム が混乱します (1TR内に有効なユーザーが存在しない)_
+    disk4 とボリューム名 (つまり macOSTest) を特定のシステム/環境設定用に変更します。 
+    _注: このロールをシステムロールにしてはいけません。既存のシステム が混乱します (1TR内に有効なユーザーが存在しない)_
 
 2. macOS をダウンロードしインストールします。macOS の特定のバージョンのインストーラをダウンロードするには次のコマンドを使用します。
 
         softwareupdate --fetch-full-installer --full-installer-version 14.8.3
 
-`14.8.3` は必要なバージョンに置き換えます。インストーラはアプリケーションフォルダ内にあり、保存したい場合はここからコピーしてください。
-そうでない場合は、一度インストールすると自動的に削除されます。
+    `14.8.3` は必要なバージョンに置き換えます。インストーラはアプリケーションフォルダ内にあり、保存したい場合はここからコピーしてください。そうでない場合は、一度インストールすると自動的に削除されます。
 
 ### アーカイブされたInstallAssistant.pkgの使用
 
@@ -91,7 +89,6 @@ KDK の使用はより手間がかかりますが、ブラインドトレーシ�
 
 Apple は KDK に各カーネル用の DWARF も同梱しています。これらは m1n1 に渡してシンボル解決に使用できます。  
 場所は `/Library/Developer/KDKs/KDK_[macOS ver]_[KDK ver].kdk/System/Library/Kernels/kernel.development.[SoC].dSYM/Contents/Resources/DWARF/kernel.development.[SoC]` です。
-
 これらを使用したい場合は、作成した kernelcache と一緒にホストマシンにコピーする必要があります。
 
 ## m1n1 を macOS カーネルとしてインストール
@@ -116,7 +113,7 @@ Apple は KDK に各カーネル用の DWARF も同梱しています。これ�
           -v /Volumes/macOSTest
         ```
 
-## m1n1のゲストとしてXNUを起動
+## m1n1 のゲストとして XNU を起動
 
 m1n1 をブートオブジェクトとしてインストールしたので、これで m1n1 のハイパーバイザーのゲストとして XNU を起動できます。Mac をシャットダウンし、ホストマシンに** DFU ポート経由で**接続してから、電源を入れてください。m1n1 が起動し、シリアルプロキシが開始されるはずです。
 
@@ -140,7 +137,6 @@ python3 proxyclient/tools/run_guest.py \
     path/to/kernelcache.macho\
     -- "debug=0x14e serial=3 apcie=0xfffffffe -enable-kprintf-spam wdt=-1 clpc=0"
 ```
-
 
 ## ハイパーバイザーモジュールの使い方
 
@@ -190,5 +186,5 @@ process connect unix-connect:///tmp/.m1n1-unix
 ハイパーバイザーシェルの組み込みデバッグ機能と外部デバッガを同時に使用しないでください。たとえば、LLDBを使用中にハイパーバイザーシェルからブレークポイントを追加・編集しないでください。
 
 # 情報源
-kernelcache作成の情報源: 
+kernelcache 作成の情報源: 
 [https://kernelshaman.blogspot.com/2021/02/building-xnu-for-macos-112-intel-apple.html](https://kernelshaman.blogspot.com/2021/02/building-xnu-for-macos-112-intel-apple.html)
