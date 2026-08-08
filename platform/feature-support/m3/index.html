@@ -539,10 +539,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#m3-promax" class="md-nav__link">
+  <a href="#m3-promaxultra" class="md-nav__link">
     <span class="md-ellipsis">
       
-        M3 Pro/Max 機器
+        M3 Pro/Max/Ultra 機器
       
     </span>
   </a>
@@ -1623,7 +1623,7 @@
 
   <h1>M3シリーズ機能対応</h1>
 
-<p>2026/4/5時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/feature-support/m3.md">m3</a>の翻訳</p>
+<p>2026/8/3時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/feature-support/m3.md">m3</a>の翻訳</p>
 <hr />
 <p>このページでは、現存するすべてのM3シリーズ(M3, M3 Pro, M3 Max)のApple Silicon Macで現在対応してている機能と、
 その上流の状況について詳しく説明します。表は次のように解釈されます:</p>
@@ -1631,7 +1631,6 @@
 <li><strong>kernel release, 例 6.0:</strong> 機能はこのリリースの時点で上流に取り込み済み</li>
 <li><strong>linux-asahi (kernel release):</strong> 機能は安定しており、<code>linux-asahi</code>で使用可能で、指定されたリリースまでに上流に統合される予定</li>
 <li><strong>linux-asahi:</strong> 機能は (ほぼ) 安定しており、Fedora Asahi Remixと<code>linux-asahi</code>で使用可能</li>
-<li><strong>linux-asahi-edge</strong>: 機能は(ほぼ) 安定しておりFedora Asahi Remixで使用可能。歴史的経緯によりAsahi Linuxディストリビューション内の<code>linux-asahi-edge</code>パッケージで使用可能</li>
 <li><strong>作業中</strong>: この機能の開発は活発に進められているが、まだ広くテスト、使用、配布する準備ができていない</li>
 <li><strong>未着手</strong>: この機能に関するアクティブな作業は現時点では未着手</li>
 </ul>
@@ -1639,9 +1638,9 @@
 <a href="../../../project/when-will-asahi-be-done/">サポートチャンネル(IRCなど)で見積もりを求めないでください。</a></p>
 <h5 id="_1">目次<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
 <ul>
-<li><a href="#soc">SoCブロック</a></li>
-<li><a href="#m3">M3機器</a></li>
-<li><a href="#m3-promax">M3 Pro/Max機器</a></li>
+<li><a href="#soc">SoC ブロック</a></li>
+<li><a href="#m3">M3 機器</a></li>
+<li><a href="#m3-promaxultra">M3 Pro/Max/Ultra 機器</a></li>
 </ul>
 <h5 id="soc">SoCブロック<a class="headerlink" href="#soc" title="Permanent link">&para;</a></h5>
 <p>これらは、指定されたSoCを搭載したすべてのデバイスに存在する機能/ハードウェアブロックです。</p>
@@ -1649,28 +1648,38 @@
 <thead>
 <tr>
 <th></th>
-<th style="text-align: center;">M3 (T8122)</th>
-<th style="text-align: center;">M3 Pro/Max (T603x)</th>
+<th style="text-align: center;">M3<br>(T8122)</th>
+<th style="text-align: center;">M3 Pro<br>(T6030)</th>
+<th style="text-align: center;">M3 Max<br>(T603{1,4})</th>
+<th style="text-align: center;">M3 Ultra<br>(T6032)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>DCP</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>USB2 (TB ports)</td>
 <td style="text-align: center;">作業中</td>
 <td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>USB3 (TB ports)</td>
 <td style="text-align: center;">作業中</td>
 <td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>Thunderbolt</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1678,49 +1687,62 @@
 <td>DP Alt Mode</td>
 <td style="text-align: center;">作業中</td>
 <td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>GPU</td>
 <td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>Video Decoder</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi (AV1 未対応)</td>
+<td style="text-align: center;">linux-asahi (AV1 未対応)</td>
+<td style="text-align: center;">linux-asahi (AV1 未対応)</td>
+<td style="text-align: center;">linux-asahi (AV1 未対応)</td>
 </tr>
 <tr>
 <td>NVMe</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>PCIe</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
-</tr>
-<tr>
-<td>PCIe (GE)</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>cpufreq</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>cpuidle</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>Suspend/sleep</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>Video Encoder</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1728,84 +1750,118 @@
 <td>ProRes Codec</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>AICv3</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">linux-asahi (7.2)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
 </tr>
 <tr>
 <td>DART</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>PMU</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>UART</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">linux-asahi (7.2)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
 </tr>
 <tr>
 <td>Watchdog</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi (7.2)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
 </tr>
 <tr>
 <td>I<sup>2</sup>C</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi (7.2)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
 </tr>
 <tr>
 <td>GPIO</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi (7.2)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
 </tr>
 <tr>
 <td>USB-PD</td>
 <td style="text-align: center;">作業中</td>
 <td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
 </tr>
 <tr>
 <td>MCA</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>SPI</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>SPI NOR</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>SMC</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>SPMI</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>RTC</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>SEP</td>
-<td style="text-align: center;">作業中</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>Neural Engine</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1817,116 +1873,110 @@
 <tr>
 <th></th>
 <th style="text-align: center;">iMac<br>(2023)</th>
-<th style="text-align: center;">MacBook Pro <br> (14インチ, 後期 2023)</th>
-<th style="text-align: center;">MacBook Air <br>(13インチ と 15インチ 2024)</th>
+<th style="text-align: center;">MacBook Pro<br>(14 インチ、2023 後期型)</th>
+<th style="text-align: center;">MacBook Air<br>(13 インチと 15 インチ 2024)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>インストーラー</td>
-<td style="text-align: center;">いいえ</td>
-<td style="text-align: center;">いいえ</td>
-<td style="text-align: center;">いいえ</td>
-</tr>
-<tr>
-<td>DeviceTree</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
 <td style="text-align: center;">作業中</td>
 </tr>
 <tr>
+<td>DeviceTree</td>
+<td style="text-align: center;">linux-asahi (7.2)</td>
+<td style="text-align: center;">linux-asahi (7.2)</td>
+<td style="text-align: center;">linux-asahi (7.2)</td>
+</tr>
+<tr>
 <td>メインディスプレイ</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
 </tr>
 <tr>
 <td>キーボード</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>キーボードバックライト</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">linux-asahi (7.2)</td>
+<td style="text-align: center;">linux-asahi (7.2)</td>
 </tr>
 <tr>
 <td>タッチパッド</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>輝度調整</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
 </tr>
 <tr>
 <td>バッテリー情報</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>WiFi</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>Bluetooth</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>HDMI 出力</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">作業中</td>
 <td style="text-align: center;">-</td>
 </tr>
 <tr>
 <td>3.5mm ジャック</td>
 <td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
-<td>スピーカー　</td>
+<td>スピーカー</td>
 <td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
-<td>マイク　　　</td>
+<td>マイク</td>
 <td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">linux-asahi</td>
 </tr>
 <tr>
 <td>Webcam</td>
 <td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
 </tr>
 <tr>
 <td>SD card slot</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
 <td style="text-align: center;">-</td>
 </tr>
 <tr>
 <td>1Gbps Ethernet</td>
 <td style="text-align: center;">未着手</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td>10Gbps Ethernet</td>
-<td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 </tr>
@@ -1938,90 +1988,105 @@
 </tr>
 </tbody>
 </table>
-<h5 id="m3-promax">M3 Pro/Max 機器<a class="headerlink" href="#m3-promax" title="Permanent link">&para;</a></h5>
+<h5 id="m3-promaxultra">M3 Pro/Max/Ultra 機器<a class="headerlink" href="#m3-promaxultra" title="Permanent link">&para;</a></h5>
 <table>
 <thead>
 <tr>
 <th></th>
 <th style="text-align: center;">MacBook Pro<br>(14/16-inch, late 2023)</th>
+<th style="text-align: center;">Mac Studio (2025)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>インストーラー</td>
-<td style="text-align: center;">いいえ</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr>
 <td>DeviceTree</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
 </tr>
 <tr>
 <td>メインディスプレイ</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr>
 <td>キーボード</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr>
 <td>キーボードバックライト</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">linux-asahi (7.3)</td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr>
 <td>タッチパッド</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr>
-<td>輝度調整　　</td>
-<td style="text-align: center;">未着手</td>
+<td>輝度調整</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr>
 <td>バッテリー情報</td>
-<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr>
 <td>WiFi</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">作業中</td>
 </tr>
 <tr>
 <td>Bluetooth</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">作業中</td>
 </tr>
 <tr>
 <td>HDMI 出力</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
 </tr>
 <tr>
 <td>3.5mm ジャック</td>
+<td style="text-align: center;">linux-asahi</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>スピーカー</td>
+<td style="text-align: center;">linux-asahi</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>マイク</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr>
 <td>Webcam</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr>
 <td>SD card slot</td>
-<td style="text-align: center;">未着手</td>
-</tr>
-<tr>
-<td>1Gbps Ethernet</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">linux-asahi</td>
+<td style="text-align: center;">作業中</td>
 </tr>
 <tr>
 <td>10Gbps Ethernet</td>
 <td style="text-align: center;">-</td>
+<td style="text-align: center;">作業中</td>
 </tr>
 <tr>
 <td>TouchID</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
 </tr>
 </tbody>
 </table>
