@@ -7,6 +7,7 @@
 # 進捗報告：Linux 7.1
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202604.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202608.md)
 
 Linux 7.1 がリリースされました。進捗報告をお届けします。今回は **M3** の進捗、Apple のバグ修正などなどお伝えしますよ！
 
