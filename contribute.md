@@ -1,4 +1,4 @@
-[Contribute](https://asahilinux.org/contribute/)の2025年2月14日時点の非公式日本語訳です。
+[Contribute](https://asahilinux.org/contribute/)の2026年9月5日時点の非公式日本語訳です。
  
 訳注: プロジェクトページへのリンクは対応する日本語訳へのリンクに置き換え
 
@@ -7,7 +7,7 @@
 Asahi Linux はオープンソースプロジェクトで、コミュニティの支援なしには成り立ちません。私たちはあらゆるスキルや経歴の貢献者を歓迎します!
 
 すべての貢献者は、私たちの[行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)と
-[著作権およびリバースエンジニアリングポリシー](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)を遵守することが期待されています。
+[著作権およびリバースエンジニアリングポリシー](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)と[生成 AI ポリシー](https://github.com/asfdrwe/asahi-linux-translations/blob/main/slop.md)を遵守することが期待されています。
 
 ## このようなことは初めてですか？
 この種のプロジェクトに興味はあるがこれまで取り組んだことがなかったですって？私たちも皆一時はそうでした!このようなローレベルのリバースエンジニアリングや
