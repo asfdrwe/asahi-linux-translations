@@ -10,6 +10,7 @@
 - [グッツ](https://github.com/asfdrwe/asahi-linux-translations/blob/main/merch.md)
 - [行動規範](https://github.com/asfdrwe/asahi-linux-translations/blob/main/code-of-conduct.md)
 - [著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
+- [生成 AI ポリシー](https://github.com/asfdrwe/asahi-linux-translations/blob/main/slop.md)
 - ブログ
   - [進捗報告: Linux 7.2](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202608.md) 
   - [進捗報告: Linux 7.1](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202606.md) 
