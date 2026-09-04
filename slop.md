@@ -8,7 +8,7 @@ slop という単語の本来の意味は『こぼすこと』や『こぼれた
 
 このサイトは Asahi Linux から独立した非公式なものなので、 Asahi Linux のライセンス CC BY-SA 4.0 のみに従い、訳者はこの方針に従いません。訳者は生成 AI は有用で合法なものだと考えており、 DeepLやGrokを利用した 機械翻訳後編集(Machine Translation Post Editing, MTPE) で非公式日本語訳を提供します。
 
-- 英語版 Wikipedia へのリンクは対応する日本語版 Wikipedia へのリンクに置き換え
+英語版 Wikipedia へのリンクは対応する日本語版 Wikipedia へのリンクに置き換え
 
 ---
 理事会の意見として、大規模言語モデル（LLM）、以下『Slop Generators』と称するものは、
