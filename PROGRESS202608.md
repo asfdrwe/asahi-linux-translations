@@ -9,6 +9,7 @@
 # 進捗報告：Linux 7.2
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202606.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202609.md)
 
 Linux 7.2 がリリースされました！ あっという間でしたね。また Asahi Linux の進捗報告をお届けします。今日は興味深い進展がたくさんあるので、お茶でも淹れてゆっくり楽しんでください。
 
