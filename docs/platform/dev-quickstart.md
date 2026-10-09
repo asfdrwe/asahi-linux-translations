@@ -2,7 +2,7 @@
 title: 開発者クイックスタートガイド
 ---
 
-2026/1/6時点の[Developer Quickstart](https://github.com/AsahiLinux/docs/blob/main/docs/platform/developer-quickstart.md)の翻訳
+2026/10/4時点の[Developer Quickstart](https://github.com/AsahiLinux/docs/blob/main/docs/platform/developer-quickstart.md)の翻訳
 
 訳注: 
 - 訳者は以下の内容を検証していません。トラブルが生じた場合は自己責任でお願いします。
@@ -345,8 +345,6 @@ picocom /dev/ttyACM1
 
 なお、この方法は Linux のearlyconとしては(まだ)使えませんし、USB ガジェットのサポートもまだ Linux のメインツリーにはありません。
 
-* 詳細は [USBケーブルでLinuxを実行](../sw/linux-bringup.md#usblinux) を参照
-
 ## m1n1の使用
 
 m1n1 は我々の最初のブートローダで、XNU カーネルのふりをして Apple 固有の初期化を行う役割を担っています。
@@ -567,7 +565,7 @@ Proxy is alive again
 
 #### Linux カーネルを起動
 
-このためにここに来たんですよね？ :-)。詳しい手順は [Linux Bringup](../sw/linux-bringup.md) を参照してください。
+このためにここに来たんですよね？ :-)。
 
 ```shell
 $ python linux.py -b 'earlycon console=ttySAC0,1500000 console=tty0 debug' Image.gz apple-j274.dtb initramfs.cpio.gz

@@ -1,8 +1,8 @@
 ---
-title: テザーブート: macOS ホストマシン
+title: テザーブート(macOS ホストマシン)
 ---
 
-2025/8/22時点の[tethered-boot-macos-host](https://github.com/AsahiLinux/docs/blob/main/docs/sw/tethered-boot-macos-host.md)の翻訳
+2026/10/4時点の[tethered-boot-macos-host](https://github.com/AsahiLinux/docs/blob/main/docs/sw/tethered-boot-macos-host.md)の翻訳
 
 訳注:原文のスペルミスやリンクミスは正しいものに修正
 
