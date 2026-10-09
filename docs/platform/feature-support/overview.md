@@ -14,7 +14,7 @@ title: 機能対応概要
 - [M2シリーズ (M2, M2 Pro, M2 Max, M2 Ultra) 機能対応](m2.md)
 - [M3シリーズ (M3, M3 Pro, M3 Max, M3 Ultra) 機能対応](m3.md)
 - [M4シリーズ (A18 Pro, M4, M4 Pro, M4 Max) 機能対応](m4.md)
-- [M5シリーズ (M%, M4 Pro, M4 Max, M5 Ultra) 機能対応](m5.md)
+- [M5シリーズ (M5, M5 Pro, M5 Max, M5 Ultra) 機能対応](m5.md)
 - [M6シリーズ (M6) 機能対応](m6.md)
 
 Fedora Asahi Remixの機能概要の要約は [https://github.com/asfdrwe/asahi-linux-translations/blob/main/fedora.md#機能対応](https://github.com/asfdrwe/asahi-linux-translations/blob/main/fedora.md#%E6%A9%9F%E5%99%A8%E5%AF%BE%E5%BF%9C) です。
