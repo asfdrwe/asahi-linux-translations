@@ -1,4 +1,4 @@
-[fedora](https://asahilinux.org/fedora/)の2025年2月14日時点の非公式日本語訳です。
+[fedora](https://asahilinux.org/fedora/)の2026年4月28日時点の非公式日本語訳です。
 
 訳注: 体裁は一致できていません。また文書へのリンクは対応する日本語訳へのリンクに変更しています。
 
@@ -76,9 +76,9 @@ Metalのようなベンダー独自のAPIの上に重ねることで可能にな
 ## 機器対応
 | 機種       | チップ     | 対応機能      |対応作業中    |   備考          |
 |-----------|:---------:|:------------:|:------------:|:------------:|
-|MacBook Air|M1, M2     | ディスプレイ、キーボード (+バックライト)、トラックパッド、ヘッドセットジャック、スピーカー、カメラ、MagSafe*、USB Type C(USB 3.0)、Wi-Fi、Bluetooth|USB-C ディスプレイ、Thunderbolt / USB4、マイク、Touch ID| *M2モデルのみ
-|MacBook Pro|M1, M1 Pro, M1 Max, M2, M2 Pro, M2 Max| ディスプレイ*、キーボード (+バックライト)、トラックパッド、タッチバー†、ヘッドセットジャック、スピーカー、カメラ、MagSafe‡、USB Type C(USB 3.0)、HDMI‡、SD Card‡、Wi-Fi、Bluetooth|USB-C ディスプレイ、Thunderbolt / USB4、マイク、Touch ID|*14インチおよび16インチモデルではローカルディミングが可能、全モデル最大60HzリフレッシュレートでHDR/120Hzは未対応 †13インチモデルのみ ‡14インチおよび16インチモデルのみ
-|Mac Mini   |M1, M2,M2 Pro|ヘッドセットジャック、スピーカー、USB Type A (3.0),USB Type C(USB 3.0)、HDMI、イーサネット(1/10 Gbps)、Wi-Fi、Bluetooth|USB-C ディスプレイ、Thunderbolt / USB4| |
-|Mac Studio |M1 Max, M1 Ultra, M2 Max, M2 Ultra|ヘッドセットジャック、スピーカー、USB Type A (3.0),USB Type C(USB 3.0)、HDMI、SD Card、イーサネット(1/10 Gbps)、Wi-Fi、Bluetooth|USB-C ディスプレイ、Thunderbolt / USB4| |
-|iMac       | M1        |ディスプレイ、ヘッドセットジャック、カメラ、USB Type C(USB 3.0)、イーサネット(1/10 Gbps)、Wi-Fi、Bluetooth|スピーカー、USB-C ディスプレイ、Thunderbolt / USB4| |
-|Mac Pro    | 作業中     |
+|MacBook Air| M1, M2, M3     | ディスプレイ、キーボード (+バックライト)、トラックパッド、ヘッドセットジャック、スピーカー、カメラ、MagSafe*、USB Type C(USB 3.0)、Wi-Fi、Bluetooth| USB-C ディスプレイ、Thunderbolt / USB4、マイク、Touch ID| *M1 モデルは非対応 |
+|MacBook Pro|M1, M1 Pro, M1 Max, M2, M2 Pro, M2 Max, M3, M3 Pro, M3 Max | ディスプレイ*、キーボード (+バックライト)、トラックパッド、タッチバー†、ヘッドセットジャック、スピーカー、カメラ、MagSafe‡、USB Type C(USB 3.0)、HDMI‡、SD Card‡、Wi-Fi、Bluetooth| USB-C ディスプレイ、Thunderbolt / USB4、マイク、Touch ID|*14インチおよび16インチモデルではローカルディミングが可能、全モデル最大60HzリフレッシュレートでHDR/120Hzは未対応 †13インチモデルのみ ‡14インチおよび16インチモデルのみ
+|Mac Mini   |M1, M2, M2 Pro, M3, M3 Pro|ヘッドセットジャック、スピーカー、USB Type A (3.0),USB Type C(USB 3.0)、HDMI、イーサネット(1/10 Gbps)、Wi-Fi、Bluetooth| USB-C ディスプレイ、Thunderbolt / USB4| |
+|Mac Studio |M1 Max, M1 Ultra, M2 Max, M2 Ultra, M3 Max |ヘッドセットジャック、スピーカー、USB Type A (3.0),USB Type C(USB 3.0)、HDMI、SD Card、イーサネット(1/10 Gbps)、Wi-Fi、Bluetooth|  M3 Ultra、  USB-C ディスプレイ、Thunderbolt / USB4| |
+|iMac       | M1, M3        |ディスプレイ、ヘッドセットジャック、カメラ、USB Type C(USB 3.0)、イーサネット(1/10 Gbps)、Wi-Fi、Bluetooth|スピーカー、USB-C ディスプレイ、Thunderbolt / USB4、マイク| |
+|Mac Pro    | M2 Ultra     | ヘッドセットジャック、USB Type A (3.0),USB Type C(USB 3.0)、HDMI、AHCI/SATA、内蔵 PCIe*、 イーサネット(10 Gbps)、Wi-Fi、Bluetooth * GPU カードは未対応。| スピーカー、USB-C ディスプレイ、Thunderbolt / USB4 | |
