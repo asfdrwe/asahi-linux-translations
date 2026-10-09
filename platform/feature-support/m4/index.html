@@ -27,7 +27,7 @@
     
     
       
-        <title>M4 シリーズ機能対応 - Asahi Linux 文書非公式日本語訳</title>
+        <title>M4 シリーズ機能対応(A18 Pro を含む) - Asahi Linux 文書非公式日本語訳</title>
       
     
     
@@ -61,7 +61,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="M4 シリーズ機能対応 - Asahi Linux 文書非公式日本語訳" />
+<meta property="og:title" content="M4 シリーズ機能対応(A18 Pro を含む) - Asahi Linux 文書非公式日本語訳" />
 <meta property="og:description" content="Apple Silicon に Linux を移植" />
 <meta property="og:image" content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/platform/feature-support/m4.png" />
 <meta property="og:image:type" content="image/png" />
@@ -69,7 +69,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://asfdrwe.github.io/asahi-linux-translations/platform/feature-support/m4/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="M4 シリーズ機能対応 - Asahi Linux 文書非公式日本語訳" />
+<meta property="twitter:title" content="M4 シリーズ機能対応(A18 Pro を含む) - Asahi Linux 文書非公式日本語訳" />
 <meta property="twitter:description" content="Apple Silicon に Linux を移植" />
 <meta property="twitter:image" content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/platform/feature-support/m4.png" />
 </head>
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              M4 シリーズ機能対応
+              M4 シリーズ機能対応(A18 Pro を含む)
             
           </span>
         </div>
@@ -556,10 +556,21 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#a18-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A18 Pro 機器
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#m4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        M4機器
+        M4 機器
       
     </span>
   </a>
@@ -1623,9 +1634,9 @@
 
   <h1>M4シリーズ機能対応</h1>
 
-<p>2026/4/5時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/feature-support/m4.md">m4</a>の翻訳</p>
+<p>2026/10/4時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/feature-support/m4.md">m4</a>の翻訳</p>
 <hr />
-<p>このページでは、現存するすべてのM4シリーズ(M4, M4 Pro, M4 Max)の Apple Silicon Mac で現在対応してている機能と、
+<p>このページでは、現存するすべてのM4シリーズ(A18 Pro, M4, M4 Pro, M4 Max)の Apple Silicon Mac で現在対応してている機能と、
 その上流の状況について詳しく説明します。表は次のように解釈されます:</p>
 <ul>
 <li><strong>kernel release, 例 6.0:</strong> 機能はこのリリースの時点で上流に取り込み済み</li>
@@ -1640,6 +1651,7 @@
 <h5 id="_1">目次<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
 <ul>
 <li><a href="#soc">SoCブロック</a></li>
+<li><a href="#a18">A18 Pro 機器</a></li>
 <li><a href="#m4">M4 機器</a></li>
 <li><a href="#m4-promax">M4 Pro/Max 機器</a></li>
 </ul>
@@ -1649,6 +1661,7 @@
 <thead>
 <tr>
 <th></th>
+<th style="text-align: center;">A18 Pro<br>(t8140)</th>
 <th style="text-align: center;">M4<br>(T8132)</th>
 <th style="text-align: center;">M4 Pro/Max<br>(T604x)</th>
 </tr>
@@ -1658,9 +1671,11 @@
 <td>DCP</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>USB2 (TB ports)</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1668,9 +1683,11 @@
 <td>USB3 (TB ports)</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>Thunderbolt</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1678,9 +1695,11 @@
 <td>DP Alt Mode</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>GPU</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1688,9 +1707,11 @@
 <td>Video Decoder</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>NVMe</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1698,9 +1719,11 @@
 <td>PCIe</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>PCIe (GE)</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 </tr>
@@ -1708,9 +1731,11 @@
 <td>cpufreq</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>cpuidle</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1718,9 +1743,11 @@
 <td>Suspend/sleep</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>Video Encoder</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1728,14 +1755,17 @@
 <td>ProRes Codec</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>AICv3</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
+<td style="text-align: center;">作業中</td>
 </tr>
 <tr>
 <td>DART</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1743,29 +1773,35 @@
 <td>PMU</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>UART</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>Watchdog</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>I<sup>2</sup>C</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>GPIO</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>USB-PD</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1773,9 +1809,11 @@
 <td>MCA</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>SPI</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1783,9 +1821,11 @@
 <td>SPI NOR</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>SMC</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1793,9 +1833,11 @@
 <td>SPMI</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>RTC</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1803,21 +1845,111 @@
 <td>SEP</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>Neural Engine</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 </tbody>
 </table>
-<h5 id="m4">M4機器<a class="headerlink" href="#m4" title="Permanent link">&para;</a></h5>
+<h5 id="a18-pro">A18 Pro 機器<a class="headerlink" href="#a18-pro" title="Permanent link">&para;</a></h5>
 <table>
 <thead>
 <tr>
 <th></th>
-<th style="text-align: center;">MacBook Pro <br> (14 インチ, 後期 2023)</th>
-<th style="text-align: center;">MacBook Air <br>(13 インチ と 15 インチ 2024)</th>
+<th style="text-align: center;">Macbook Neo<br>(2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Installer</td>
+<td style="text-align: center;">未対応</td>
+</tr>
+<tr>
+<td>Devicetree</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
+</tr>
+<tr>
+<td>Main display</td>
+<td style="text-align: center;">ブートフレームバッファ - linux-asahi、完全対応 - 作業中</td>
+</tr>
+<tr>
+<td>Keyboard</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>KB backlight</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td>Touchpad</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Brightness</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Battery info</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>WiFi</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Bluetooth</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>HDMI Out</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td>3.5mm jack</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Speakers</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Microphones</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Webcam</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>SD card slot</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td>1Gbps Ethernet</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td>10Gbps Ethernet</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td>TouchID</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+</tbody>
+</table>
+<h5 id="m4">M4 機器<a class="headerlink" href="#m4" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">iMac<br>(2024)</th>
+<th style="text-align: center;">Mac mini<br>(2024)</th>
+<th style="text-align: center;">MacBook Pro <br> (14 インチ, 後期 2024)</th>
 <th style="text-align: center;">MacBook Air<br>(13 インチと 15 インチ 2025)</th>
 </tr>
 </thead>
@@ -1827,51 +1959,60 @@
 <td style="text-align: center;">いいえ</td>
 <td style="text-align: center;">いいえ</td>
 <td style="text-align: center;">いいえ</td>
+<td style="text-align: center;">いいえ</td>
 </tr>
 <tr>
 <td>DeviceTree</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
 </tr>
 <tr>
 <td>メインディスプレイ</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">ブートフレームバッファ - linux-asahi、完全対応 - 作業中</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">ブートフレームバッファ - linux-asahi、完全対応 - 作業中</td>
+<td style="text-align: center;">ブートフレームバッファ - linux-asahi、完全対応 - 作業中</td>
 </tr>
 <tr>
 <td>キーボード</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>キーボードバックライト</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
+<td style="text-align: center;">linux-asahi (7.4)</td>
 </tr>
 <tr>
 <td>タッチパッド</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>輝度調整</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>バッテリー情報</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>WiFi</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
@@ -1881,9 +2022,11 @@
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>HDMI 出力</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">-</td>
@@ -1893,9 +2036,11 @@
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>スピーカー　</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
@@ -1903,24 +2048,28 @@
 <tr>
 <td>マイク　　　</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>Webcam</td>
 <td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>SD card slot</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>TouchID</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 <td style="text-align: center;">未着手</td>
 </tr>
@@ -1932,8 +2081,8 @@
 <tr>
 <th></th>
 <th style="text-align: center;">Mac mini<br>(2024)</th>
-<th style="text-align: center;">MacBook Pro<br>(14-inch, Nov 2024)</th>
-<th style="text-align: center;">MacBook Pro<br>(16-inch, Nov 2024)</th>
+<th style="text-align: center;">Mac Studio<br>(2025)</th>
+<th style="text-align: center;">MacBook Pro<br>(14 インチと 16 インチ, 2024)</th>
 </tr>
 </thead>
 <tbody>
@@ -1945,44 +2094,44 @@
 </tr>
 <tr>
 <td>DeviceTree</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
+<td style="text-align: center;">作業中</td>
 </tr>
 <tr>
 <td>メインディスプレイ</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>キーボード</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>キーボードバックライト</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>タッチパッド</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>輝度調整　　</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>バッテリー情報</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
@@ -1999,9 +2148,9 @@
 </tr>
 <tr>
 <td>HDMI 出力</td>
-<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>3.5mm ジャック</td>
@@ -2017,14 +2166,14 @@
 </tr>
 <tr>
 <td>マイク</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
 <td>Webcam</td>
-<td style="text-align: center;">未着手</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 <tr>
@@ -2041,19 +2190,18 @@
 </tr>
 <tr>
 <td>10Gbps Ethernet</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
 <td style="text-align: center;">-</td>
 </tr>
 <tr>
 <td>TouchID</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">未着手</td>
 </tr>
 </tbody>
 </table>
-<p>注: 多くのペリフェラルはDARTやPCIe 対応に依存</p>
 
 
 

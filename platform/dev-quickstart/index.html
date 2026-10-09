@@ -1532,7 +1532,7 @@
 
   <h1>開発者クイックスタートガイド</h1>
 
-<p>2026/1/6時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/developer-quickstart.md">Developer Quickstart</a>の翻訳</p>
+<p>2026/10/4時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/developer-quickstart.md">Developer Quickstart</a>の翻訳</p>
 <p>訳注: 
 - 訳者は以下の内容を検証していません。トラブルが生じた場合は自己責任でお願いします。</p>
 <hr />
@@ -1803,9 +1803,6 @@ $ python3 proxyclient/tools/shell.py
 <pre><code>picocom /dev/ttyACM1
 </code></pre>
 <p>なお、この方法は Linux のearlyconとしては(まだ)使えませんし、USB ガジェットのサポートもまだ Linux のメインツリーにはありません。</p>
-<ul>
-<li>詳細は <a href="../../sw/linux-bringup/#usblinux">USBケーブルでLinuxを実行</a> を参照</li>
-</ul>
 <h5 id="m1n1">m1n1の使用<a class="headerlink" href="#m1n1" title="Permanent link">&para;</a></h5>
 <p>m1n1 は我々の最初のブートローダで、XNU カーネルのふりをして Apple 固有の初期化を行う役割を担っています。</p>
 <p>現在、m1n1はシリアル 『プロキシ』サーバとして動作しており、ホストからPythonスクリプトで制御されます。この方法により、Python コンソールを使ってシリアルや USB 経由でカーネルをロードしたりハードウェアを対話的に探索することができます。</p>
@@ -1967,7 +1964,7 @@ TTY&gt; Licensed under the MIT license
 Proxy is alive again
 </code></pre>
 <h6 id="linux">Linux カーネルを起動<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h6>
-<p>このためにここに来たんですよね？ :-)。詳しい手順は <a href="../../sw/linux-bringup/">Linux Bringup</a> を参照してください。</p>
+<p>このためにここに来たんですよね？ :-)。</p>
 <pre><code class="language-shell">$ python linux.py -b 'earlycon console=ttySAC0,1500000 console=tty0 debug' Image.gz apple-j274.dtb initramfs.cpio.gz
 </code></pre>
 <p>m1n1との通信にUSBを使用していますが、Linuxにシリアルコンソールを使用したい場合は『--tty』という引数を使用します。例えば、m1n1に『/dev/ttyACM0』、Linuxに『/dev/ttyUSB0』を使うには次のようにします:</p>

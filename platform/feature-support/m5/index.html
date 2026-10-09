@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://asfdrwe.github.io/asahi-linux-translations/sw/linux-bringup-usb/">
+        <link rel="canonical" href="https://asfdrwe.github.io/asahi-linux-translations/platform/feature-support/m5/">
       
       
       
@@ -18,19 +18,19 @@
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Linux bringup usb - Asahi Linux 文書非公式日本語訳</title>
+        <title>M5 シリーズ機能対応 - Asahi Linux 文書非公式日本語訳</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -57,17 +57,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Linux bringup usb - Asahi Linux 文書非公式日本語訳" />
+<meta property="og:title" content="M5 シリーズ機能対応 - Asahi Linux 文書非公式日本語訳" />
 <meta property="og:description" content="Apple Silicon に Linux を移植" />
-<meta property="og:image" content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/sw/linux-bringup-usb.png" />
+<meta property="og:image" content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/platform/feature-support/m5.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://asfdrwe.github.io/asahi-linux-translations/sw/linux-bringup-usb/" />
+<meta property="og:url" content="https://asfdrwe.github.io/asahi-linux-translations/platform/feature-support/m5/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Linux bringup usb - Asahi Linux 文書非公式日本語訳" />
+<meta property="twitter:title" content="M5 シリーズ機能対応 - Asahi Linux 文書非公式日本語訳" />
 <meta property="twitter:description" content="Apple Silicon に Linux を移植" />
-<meta property="twitter:image" content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/sw/linux-bringup-usb.png" />
+<meta property="twitter:image" content="https://asfdrwe.github.io/asahi-linux-translations/assets/images/social/platform/feature-support/m5.png" />
 </head>
   
   
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#title-linux-bringup-usb" class="md-skip">
+        <a href="#_1" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -103,7 +103,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
-    <a href="../.." title="Asahi Linux 文書非公式日本語訳" class="md-header__button md-logo" aria-label="Asahi Linux 文書非公式日本語訳" data-md-component="logo">
+    <a href="../../.." title="Asahi Linux 文書非公式日本語訳" class="md-header__button md-logo" aria-label="Asahi Linux 文書非公式日本語訳" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Linux bringup usb
+              M5 シリーズ機能対応
             
           </span>
         </div>
@@ -251,7 +251,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Asahi Linux 文書非公式日本語訳" class="md-nav__button md-logo" aria-label="Asahi Linux 文書非公式日本語訳" data-md-component="logo">
+    <a href="../../.." title="Asahi Linux 文書非公式日本語訳" class="md-nav__button md-logo" aria-label="Asahi Linux 文書非公式日本語訳" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -281,7 +281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -362,7 +362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/feature-support/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -390,7 +390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/feature-support/m1/" class="md-nav__link">
+      <a href="../m1/" class="md-nav__link">
         
   
   
@@ -418,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/feature-support/m2/" class="md-nav__link">
+      <a href="../m2/" class="md-nav__link">
         
   
   
@@ -446,7 +446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/feature-support/m3/" class="md-nav__link">
+      <a href="../m3/" class="md-nav__link">
         
   
   
@@ -474,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/feature-support/m4/" class="md-nav__link">
+      <a href="../m4/" class="md-nav__link">
         
   
   
@@ -563,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/glossary/" class="md-nav__link">
+      <a href="../../../project/glossary/" class="md-nav__link">
         
   
   
@@ -591,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/faq/" class="md-nav__link">
+      <a href="../../../project/faq/" class="md-nav__link">
         
   
   
@@ -619,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/when-will-asahi-be-done/" class="md-nav__link">
+      <a href="../../../project/when-will-asahi-be-done/" class="md-nav__link">
         
   
   
@@ -647,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/references/" class="md-nav__link">
+      <a href="../../../project/references/" class="md-nav__link">
         
   
   
@@ -675,7 +675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/board/asahi-board/" class="md-nav__link">
+      <a href="../../../project/board/asahi-board/" class="md-nav__link">
         
   
   
@@ -754,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/policies/slop/" class="md-nav__link">
+      <a href="../../../project/policies/slop/" class="md-nav__link">
         
   
   
@@ -851,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/subsystems/" class="md-nav__link">
+      <a href="../../subsystems/" class="md-nav__link">
         
   
   
@@ -879,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/security/" class="md-nav__link">
+      <a href="../../security/" class="md-nav__link">
         
   
   
@@ -907,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hw/devices/device-list/" class="md-nav__link">
+      <a href="../../../hw/devices/device-list/" class="md-nav__link">
         
   
   
@@ -935,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hw/soc/soc-codenames/" class="md-nav__link">
+      <a href="../../../hw/soc/soc-codenames/" class="md-nav__link">
         
   
   
@@ -963,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hw/soc/display-controllers/" class="md-nav__link">
+      <a href="../../../hw/soc/display-controllers/" class="md-nav__link">
         
   
   
@@ -1080,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../broken-software/" class="md-nav__link">
+      <a href="../../../sw/broken-software/" class="md-nav__link">
         
   
   
@@ -1108,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../partitioning-cheatsheet/" class="md-nav__link">
+      <a href="../../../sw/partitioning-cheatsheet/" class="md-nav__link">
         
   
   
@@ -1136,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../windows-11-vm/" class="md-nav__link">
+      <a href="../../../sw/windows-11-vm/" class="md-nav__link">
         
   
   
@@ -1225,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/help-wanted/" class="md-nav__link">
+      <a href="../../../project/help-wanted/" class="md-nav__link">
         
   
   
@@ -1253,7 +1253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tethered-boot/" class="md-nav__link">
+      <a href="../../../sw/tethered-boot/" class="md-nav__link">
         
   
   
@@ -1281,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../m1n1-user-guide/" class="md-nav__link">
+      <a href="../../../sw/m1n1-user-guide/" class="md-nav__link">
         
   
   
@@ -1309,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../m1n1-hypervisor/" class="md-nav__link">
+      <a href="../../../sw/m1n1-hypervisor/" class="md-nav__link">
         
   
   
@@ -1337,7 +1337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../u-boot/" class="md-nav__link">
+      <a href="../../../sw/u-boot/" class="md-nav__link">
         
   
   
@@ -1365,7 +1365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../devicetree-bindings/" class="md-nav__link">
+      <a href="../../../sw/devicetree-bindings/" class="md-nav__link">
         
   
   
@@ -1393,7 +1393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../audio-userspace/" class="md-nav__link">
+      <a href="../../../sw/audio-userspace/" class="md-nav__link">
         
   
   
@@ -1482,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../alt/policy/" class="md-nav__link">
+      <a href="../../../alt/policy/" class="md-nav__link">
         
   
   
@@ -1530,74 +1530,439 @@
   
 
 
-  <h1>Linux bringup usb</h1>
+  <h1>M5 シリーズ機能対応</h1>
 
+<p>2026/10/5時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/platform/feature-support/m5.md">m5</a>の翻訳</p>
 <hr />
-<h5 id="title-linux-bringup-usb">title: Linux Bringup: USB<a class="headerlink" href="#title-linux-bringup-usb" title="Permanent link">&para;</a></h5>
-<p>2025/3/9時点の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/linux-bringup-usb.md">linux-bringup-usb</a>の翻訳</p>
-<p>訳注: debian rootfsへのリンクは日本語ページヘ</p>
-<hr />
-<h5 id="usb-root">USB ドライブをrootに<a class="headerlink" href="#usb-root" title="Permanent link">&para;</a></h5>
+<p>このページでは、現存するすべてのM5シリーズ(M5, M5 Pro, M5 Max, M5 Ultra)の Apple Silicon Mac で現在対応してている機能と、
+その上流の状況について詳しく説明します。表は次のように解釈されます:</p>
 <ul>
-<li><a href="https://www.tomshardware.com/news/apple-m1-debian-linux">Alyssa氏のtomshardwareの記事</a>から発想</li>
-<li><a href="https://www.debian.org/releases/stretch/arm64/apds03.html.ja">debian rootfs</a> に従って <strong>arm64</strong> のルートファイルシステムを作成</li>
-<li>注意：以下はdebianシステムでrootとして実行</li>
+<li><strong>kernel release, 例 6.0:</strong> 機能はこのリリースの時点で上流に取り込み済み</li>
+<li><strong>linux-asahi (kernel release):</strong> 機能は安定しており、<code>linux-asahi</code>で使用可能で、指定されたリリースまでに上流に統合される予定</li>
+<li><strong>linux-asahi:</strong> 機能は (ほぼ) 安定しており、Fedora Asahi Remixと<code>linux-asahi</code>で使用可能</li>
+<li><strong>linux-asahi-edge</strong>: 機能は(ほぼ) 安定しておりFedora Asahi Remixで使用可能。歴史的経緯によりAsahi Linuxディストリビューション内の<code>linux-asahi-edge</code>パッケージで使用可能</li>
+<li><strong>作業中</strong>: この機能の開発は活発に進められているが、まだ広くテスト、使用、配布する準備ができていない</li>
+<li><strong>未着手</strong>: この機能に関するアクティブな作業は現時点では未着手</li>
 </ul>
-<pre><code>mkdir debinst-buster
-debootstrap --arch arm64 --foreign buster debinst-buster http://ftp.au.debian.org/debian/
-cp /usr/bin/qemu-aarch64-static debinst-buster/usr/bin
-LANG=C.UTF-8 chroot debinst-buster qemu-aarch64-static /bin/bash
-</code></pre>
+<p>機能にまだ対応できていない場合、それがいつ対応できるかの見積もりはありません。
+<a href="../../../project/when-will-asahi-be-done/">サポートチャンネル(IRCなど)で見積もりを求めないでください。</a></p>
+<h5 id="_1">目次<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
 <ul>
-<li>chroot内でセットアップを完了</li>
+<li><a href="#soc">SoCブロック</a></li>
+<li><a href="#m5">M5 機器</a></li>
+<li><a href="#m5-promaxultra">M4 Pro/Max/Ultra 機器</a></li>
 </ul>
-<pre><code>/debootstrap/debootstrap --second-stage
-</code></pre>
-<ul>
-<li>その他必要なパッケージは apt でインストール</li>
-</ul>
-<pre><code>apt install file screenfetch procps openssh-server
-</code></pre>
-<ul>
-<li>sshdをroot権限で使用できるように設定し、パスワードを設定</li>
-</ul>
-<pre><code># Add PermitRootLogin yes
-vi /etc/ssh/sshd_config
-# Set root's password
-passwd
-</code></pre>
-<ul>
-<li>USB デバイスに ext4 パーティションを作成（例：/dev/sdb）</li>
-</ul>
-<pre><code>fdisk /dev/sdb
-# n =&gt; new partition
-# w =&gt; write it out
-</code></pre>
-<ul>
-<li>ext4ファイルシステムをフォーマット <code>mkfs.ext4 /dev/sdb1</code></li>
-<li>新しい rootfs をインストール (パーティションに rootfs を作成するだけでもよかったのですが・・・ :-)</li>
-</ul>
-<pre><code>mount /dev/sdb1 /mnt/img
-cp -a debinst-buster/. /mnt/img
-umount /mnt/img
-</code></pre>
-<ul>
-<li>USBドライブを接続した状態でLinuxを起動（現在は/dev/sda1になっているはず）。2ポート目にシンプルなUSBハブを使い、
-USBキーボードとUSBドライブを差し込んでからMacの電源を入れた</li>
-</ul>
-<pre><code>python3.9 proxyclient/tools/linux.py -b 'earlycon console=tty0  console=tty0 debug net.ifnames=0 rw root=/dev/sda1 rootdelay=5 rootfstype=ext4'  Image-dart-dev.gz t8103-j274-dart-dev.dtb
-</code></pre>
-<ul>
-<li><strong>Image-dart-dev.gz</strong> - 上記と同様の Asahi linux の dart/dev ブランチ</li>
-<li><strong>t8103-j274-dart-dev.dtb</strong> - 上記Linuxのdtb</li>
-<li>initrdは渡されない</li>
-</ul>
+<p>これらは、指定されたSoCを搭載したすべてのデバイスに存在する機能/ハードウェアブロックです。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">M5<br>(T8142)</th>
+<th style="text-align: center;">M5 Pro/Max/Ultra<br>(T6050)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DCP</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>USB2 (TB ports)</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>USB3 (TB ports)</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Thunderbolt</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>DP Alt Mode</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Video Decoder</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>NVMe</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>PCIe</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>PCIe (GE)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td>cpufreq</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>cpuidle</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Suspend/sleep</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Video Encoder</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>ProRes Codec</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>AICv3</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>DART</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>PMU</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>UART</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Watchdog</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>I<sup>2</sup>C</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>GPIO</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>USB-PD</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>MCA</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>SPI</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>SPI NOR</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>SMC</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>SPMI</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>RTC</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>SEP</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Neural Engine</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+</tbody>
+</table>
+<h5 id="m5">M5 機器<a class="headerlink" href="#m5" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">MacBook Pro<br>(14インチ, 2025)</th>
+<th style="text-align: center;">MacBook Air<br>(13インチと 15 インチ, 2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>インストーラー</td>
+<td style="text-align: center;">いいえ</td>
+<td style="text-align: center;">いいえ</td>
+</tr>
+<tr>
+<td>DeviceTree</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>メインディスプレイ</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>キーボード</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>キーボードバックライト</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>タッチパッド</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>輝度調整　　</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>バッテリー情報</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>WiFi</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Bluetooth</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>HDMI 出力</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>3.5mm ジャック</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>スピーカー</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>マイク</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Webcam</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>SD card slot</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>2.5Gbps Ethernet</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td>10Gbps Ethernet</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td>TouchID</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+</tbody>
+</table>
+<h5 id="m5-promaxultra">M5 Pro/Max/Ultra機器<a class="headerlink" href="#m5-promaxultra" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">Mac mini<br>(2026)</th>
+<th style="text-align: center;">Mac Studio<br>(2026)</th>
+<th style="text-align: center;">MacBook Pro<br>(14 インチと 16 インチ, 2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>インストーラー</td>
+<td style="text-align: center;">いいえ</td>
+<td style="text-align: center;">いいえ</td>
+<td style="text-align: center;">いいえ</td>
+</tr>
+<tr>
+<td>DeviceTree</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>メインディスプレイ</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>キーボード</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>キーボードバックライト</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>タッチパッド</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>輝度調整　　</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>バッテリー情報</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>WiFi</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Bluetooth</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>HDMI 出力</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>3.5mm ジャック</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>スピーカー</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>マイク</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>Webcam</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+<tr>
+<td>SD card slot</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td>2.5Gbps Ethernet</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td>10Gbps Ethernet</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">未着手</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td>TouchID</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">未着手</td>
+</tr>
+</tbody>
+</table>
+<p>注: 多くのペリフェラルはDARTやPCIe 対応に依存</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -1647,10 +2012,10 @@ USBキーボードとUSBドライブを差し込んでからMacの電源を入�
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
