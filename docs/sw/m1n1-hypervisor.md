@@ -2,7 +2,7 @@
 title: m1n1 ハイパーバイザー
 ---
 
-2026/7/31の[m1n1-hypervisor](https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md)の翻訳
+2026/10/24の[m1n1-hypervisor](https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md)の翻訳
 
 訳注:Asahi Linux内のページへのリンクは対応する日本語訳に置き換え
 
@@ -184,6 +184,29 @@ process connect unix-connect:///tmp/.m1n1-unix
 ```
 
 ハイパーバイザーシェルの組み込みデバッグ機能と外部デバッガを同時に使用しないでください。たとえば、LLDBを使用中にハイパーバイザーシェルからブレークポイントを追加・編集しないでください。
+
+## M4でSPTM/TXMを使用してハイパーバイザを実行
+
+1. 上記のとおりにカーネルキャッシュをコピーして展開したあと、さらに `/System/Volumes/Preboot` 内で `sptm.tXXXX.release.im4p` と `txm.macosx.release.im4p` を探し、ipswを使ってイメージを展開します：
+
+   ```
+   ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/txm.macosx.release.im4p -o path/to/extract/txm.macho
+   ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/sptm.tXXXX.release.im4p -o path/to/extract/sptm.macho
+   ```
+
+   代わりに、ipsw自体からイメージを取得して展開することもできます。Macにインストールされているものと正確に同じバージョンを使用してください。そうしないと、カーネルがパニックするか、起動中にハングします。
+
+2. ハイパーバイザ上でカーネル、SPTM、TXMを起動します：
+
+   ```sh
+   python3 proxyclient/tools/run_guest.py \
+     --sptm-mode=emulation \
+     --sptm path/to/sptm.macho --txm path/to/txm.macho \
+     path/to/kernelcache.macho \
+      -- "debug=0x14e serial=3 wdt=-1"
+   ```
+
+   一部のハードウェア機能（GXF/SPRR）をエミュレートする必要があるため、macOSは通常より遅く動作することに注意してください。
 
 # 情報源
 kernelcache 作成の情報源: 

@@ -2,7 +2,7 @@
 title: m1n1 ユーザガイド
 ---
 
-2026/7/30時点の[m1n1-user-guide](https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-user-guide.md)の翻訳
+2026/10/27時点の[m1n1-user-guide](https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-user-guide.md)の翻訳
 
 ---
 m1n1は、Apple（XNU）ブートエコシステムとLinuxブートエコシステムの橋渡しをするために、Asahi Linuxプロジェクトが開発したブートローダです。
@@ -86,14 +86,14 @@ kmutil configure-boot -c m1n1-stage1.bin --raw --entry-point 2048 --lowest-virtu
 
 これは m1n1-stage1.bin をどこかから手動で取得したことを前提としています。
 
-#### `scripts/kmutil.py`
+#### `tools/kmutil.py`
 
 `tools/kmutil.py` というスクリプトもあります。これはWebサーバーを起動し、m1n1バイナリを含むスクリプトを配信して、一緒に `kmutil configure-boot` を実行します。
 
 ホスト側でWebサーバーを起動します：
 
 ```shell
-./scripts/kmutil.py
+./tools/kmutil.py
 ```
 
 ターゲット側の1TRで、スクリプトを取得して実行します：
