@@ -12,6 +12,7 @@
 - [著作権方針](https://github.com/asfdrwe/asahi-linux-translations/blob/main/copyright.md)
 - [生成 AI ポリシー](https://github.com/asfdrwe/asahi-linux-translations/blob/main/llm-policy.md)
 - ブログ
+  - [進捗報告: Linux 7.3](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202611.md) 
   - [M2: エピソード 1 (もしくは M3 での Asahi Linux)](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202609.md) 
   - [進捗報告: Linux 7.2](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202608.md) 
   - [進捗報告: Linux 7.1](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202606.md) 
