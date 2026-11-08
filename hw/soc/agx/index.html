@@ -2061,7 +2061,7 @@ Expected: 0x4b1d000000000002, Actual: 0x0
 また、この領域で何も変更せずに何百回ものkickを行うこともあります。</p>
 <p>私の現在の仮説では、この領域はページテーブルの更新状況を追跡するために排他的に使用されています。
 MacOSとgfx-ascの両方からアクセス可能で、ページテーブルの更新のためにアクセスを同期させることができます。</p>
-<p>次のパニックメッセージ `GFX PANIC - Host-mapped FW allocations are disabled, but FW only supports enabled``
+<p>次のパニックメッセージ <code>FX PANIC - Host-mapped FW allocations are disabled, but FW only supports enabled</code>
 (initdataの0xa0バイトを0に設定したときに表示) は、この『ファームウェアによるページテーブルの制御』が機能的に有効でないことを示唆しています。
 機能的にこのファームウェアのバージョンで実際に有効になっていないことを示唆しています。<br />
 運が良ければ、このハンドオフ領域には何も書き込まないようにできるかもしれません。</p>

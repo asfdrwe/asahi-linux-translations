@@ -1598,10 +1598,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#m4sptmtxm" class="md-nav__link">
+  <a href="#m4-sptmtxm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        M4でSPTM/TXMを使用してハイパーバイザを実行
+        M4 で SPTM/TXM を使用してハイパーバイザを実行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m5-sptmtxmcl4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M5 上で SPTM/TXM/cL4 を使ってハイパーバイザを実行
       
     </span>
   </a>
@@ -1835,7 +1846,7 @@
 
   <h1>Hypervisor</h1>
 
-<p>2026/10/24の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md">m1n1-hypervisor</a>の翻訳</p>
+<p>2026/11/7の<a href="https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md">m1n1-hypervisor</a>の翻訳</p>
 <p>訳注:Asahi Linux内のページへのリンクは対応する日本語訳に置き換え</p>
 <hr />
 <h4 id="m1n1macos">m1n1ハイパーバイザーでのmacOSの実行<a class="headerlink" href="#m1n1macos" title="Permanent link">&para;</a></h4>
@@ -1983,7 +1994,7 @@ done &gt;&gt; target.lldb
 process connect unix-connect:///tmp/.m1n1-unix
 </code></pre>
 <p>ハイパーバイザーシェルの組み込みデバッグ機能と外部デバッガを同時に使用しないでください。たとえば、LLDBを使用中にハイパーバイザーシェルからブレークポイントを追加・編集しないでください。</p>
-<h5 id="m4sptmtxm">M4でSPTM/TXMを使用してハイパーバイザを実行<a class="headerlink" href="#m4sptmtxm" title="Permanent link">&para;</a></h5>
+<h5 id="m4-sptmtxm">M4 で SPTM/TXM を使用してハイパーバイザを実行<a class="headerlink" href="#m4-sptmtxm" title="Permanent link">&para;</a></h5>
 <ol>
 <li>上記のとおりにカーネルキャッシュをコピーして展開したあと、さらに <code>/System/Volumes/Preboot</code> 内で <code>sptm.tXXXX.release.im4p</code> と <code>txm.macosx.release.im4p</code> を探し、ipswを使ってイメージを展開します：</li>
 </ol>
@@ -2000,6 +2011,32 @@ process connect unix-connect:///tmp/.m1n1-unix
      path/to/kernelcache.macho \
       -- "debug=0x14e serial=3 wdt=-1"</code></p>
 <p>一部のハードウェア機能（GXF/SPRR）をエミュレートする必要があるため、macOSは通常より遅く動作することに注意してください。</p>
+<h5 id="m5-sptmtxmcl4">M5 上で SPTM/TXM/cL4 を使ってハイパーバイザを実行<a class="headerlink" href="#m5-sptmtxmcl4" title="Permanent link">&para;</a></h5>
+<ol>
+<li>前述のとおりカーネルキャッシュをコピーして展開したあと、<code>/System/Volumes/Preboot</code> 内から <code>sptm.tXXXX.release.im4p</code>、<code>txm.macosx.release.im4p</code>、および <code>exclavecore_bundle.t8142.RELEASE.im4p</code> を探し、ipsw を使ってイメージを展開します：</li>
+</ol>
+<pre><code class="language-bash">ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/txm.macosx.release.im4p -o path/to/extract/txm.macho
+ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/sptm.tXXXX.release.im4p -o path/to/extract/sptm.macho
+ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/image4/exclavecore_bundle.t8142.RELEASE.im4p -o path/to/extract/exclavecorebundle.b
+</code></pre>
+<ol>
+<li><code>/System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/</code> 内で <code>YYY-YYYYY-YYY.dmg.aea.integrity_catalog</code> と <code>YYY-YYYYY-YYY.dmg.aea.trustcache</code> を探します。同じ YYY-... の接頭辞を持つファイル群が複数ありますが、<code>trustcache</code> と <code>integrity_catalog</code> の両方を含むグループは1つだけのはずです。これらも同様に展開します：</li>
+</ol>
+<pre><code class="language-bash">ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/YYY-YYYYY-YYY.dmg.aea.integrity_catalog -o path/to/extract/exclave_integrity_catalog.b
+ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/YYY-YYYYY-YYY.dmg.aea.trustcache -o path/to/extract/exclave_trustcache.b
+</code></pre>
+<ol>
+<li>ハイパーバイザを実行します：</li>
+</ol>
+<pre><code class="language-sh">python3 proxyclient/tools/run_guest.py \
+  --sptm-mode=emulation \
+  --sptm path/to/sptm.macho --txm path/to/txm.macho \
+  --exclave-bundle path/to/exclavecorebundle.b \
+  --exclave-trustcache path/to/exclave_trustcache.b \
+  --exclave-integrity-catalog path/to/exclave_integrity_catalog.b \
+  path/to/kernelcache.macho \
+   -- &quot;debug=0x14e serial=3 wdt=-1&quot;
+</code></pre>
 <h4 id="_7">情報源<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p>kernelcache 作成の情報源: 
 <a href="https://kernelshaman.blogspot.com/2021/02/building-xnu-for-macos-112-intel-apple.html">https://kernelshaman.blogspot.com/2021/02/building-xnu-for-macos-112-intel-apple.html</a></p>
