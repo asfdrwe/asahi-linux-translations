@@ -1,9 +1,7 @@
 [llm-policy](https://asahilinux.org/llm-policy/)の2026年9月8日時点の非公式日本語訳です。
 
 訳注:
-生成 AI に対する Asahi Linux の懸念、特に機密情報の取扱いに関しては理解できますが、LLM に対する技術的理解や法的理解に一面的です。
-
-このサイトは Asahi Linux から独立した非公式なものなので、 Asahi Linux のライセンス CC BY-SA 4.0 のみに従い、訳者はこの方針に従いません。
+生成 AI に対する Asahi Linux の懸念、特に機密情報の取扱いに関しては理解できますが、このサイトは Asahi Linux から独立した非公式なものなので、 Asahi Linux のライセンス CC BY-SA 4.0 のみに従い、訳者はこの方針に従いません。
 
 訳者は生成 AI は有用で合法なものだと考えており、 DeepLやGrokを利用した 機械翻訳後編集(Machine Translation Post Editing, MTPE) で非公式日本語訳を提供します。
 
