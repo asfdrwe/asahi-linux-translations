@@ -2,7 +2,7 @@
 title: m1n1 ハイパーバイザー
 ---
 
-2026/10/24の[m1n1-hypervisor](https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md)の翻訳
+2026/11/7の[m1n1-hypervisor](https://github.com/AsahiLinux/docs/blob/main/docs/sw/m1n1-hypervisor.md)の翻訳
 
 訳注:Asahi Linux内のページへのリンクは対応する日本語訳に置き換え
 
@@ -185,7 +185,7 @@ process connect unix-connect:///tmp/.m1n1-unix
 
 ハイパーバイザーシェルの組み込みデバッグ機能と外部デバッガを同時に使用しないでください。たとえば、LLDBを使用中にハイパーバイザーシェルからブレークポイントを追加・編集しないでください。
 
-## M4でSPTM/TXMを使用してハイパーバイザを実行
+## M4 で SPTM/TXM を使用してハイパーバイザを実行
 
 1. 上記のとおりにカーネルキャッシュをコピーして展開したあと、さらに `/System/Volumes/Preboot` 内で `sptm.tXXXX.release.im4p` と `txm.macosx.release.im4p` を探し、ipswを使ってイメージを展開します：
 
@@ -207,6 +207,36 @@ process connect unix-connect:///tmp/.m1n1-unix
    ```
 
    一部のハードウェア機能（GXF/SPRR）をエミュレートする必要があるため、macOSは通常より遅く動作することに注意してください。
+
+## M5 上で SPTM/TXM/cL4 を使ってハイパーバイザを実行
+
+1. 前述のとおりカーネルキャッシュをコピーして展開したあと、`/System/Volumes/Preboot` 内から `sptm.tXXXX.release.im4p`、`txm.macosx.release.im4p`、および `exclavecore_bundle.t8142.RELEASE.im4p` を探し、ipsw を使ってイメージを展開します：
+
+```bash
+ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/txm.macosx.release.im4p -o path/to/extract/txm.macho
+ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/sptm.tXXXX.release.im4p -o path/to/extract/sptm.macho
+ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/image4/exclavecore_bundle.t8142.RELEASE.im4p -o path/to/extract/exclavecorebundle.b
+```
+
+2. `/System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/` 内で `YYY-YYYYY-YYY.dmg.aea.integrity_catalog` と `YYY-YYYYY-YYY.dmg.aea.trustcache` を探します。同じ YYY-... の接頭辞を持つファイル群が複数ありますが、`trustcache` と `integrity_catalog` の両方を含むグループは1つだけのはずです。これらも同様に展開します：
+
+```bash
+ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/YYY-YYYYY-YYY.dmg.aea.integrity_catalog -o path/to/extract/exclave_integrity_catalog.b
+ipsw img4 im4p extract /System/Volumes/Preboot/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/restore/Firmware/YYY-YYYYY-YYY.dmg.aea.trustcache -o path/to/extract/exclave_trustcache.b
+```
+
+3. ハイパーバイザを実行します：
+
+```sh
+python3 proxyclient/tools/run_guest.py \
+  --sptm-mode=emulation \
+  --sptm path/to/sptm.macho --txm path/to/txm.macho \
+  --exclave-bundle path/to/exclavecorebundle.b \
+  --exclave-trustcache path/to/exclave_trustcache.b \
+  --exclave-integrity-catalog path/to/exclave_integrity_catalog.b \
+  path/to/kernelcache.macho \
+   -- "debug=0x14e serial=3 wdt=-1"
+```
 
 # 情報源
 kernelcache 作成の情報源: 

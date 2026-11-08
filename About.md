@@ -1,4 +1,4 @@
-[About Asahi Linux](https://asahilinux.org/about/)の2025年8月9日時点の非公式日本語訳です。
+[About Asahi Linux](https://asahilinux.org/about/)の2026年11月1日時点の非公式日本語訳です。
 
 訳注: プロジェクトページへのリンクは対応する日本語訳へのリンクに置き換え
 
@@ -26,7 +26,7 @@ Kawaii Asahi Linuxのロゴは[さわらつき氏](https://x.com/sawaratsuki1004
 
 ## よくあるご質問
 ### どのようなデバイスに対応するのですか？
-すべてのApple Macが対象です。また、開発期間が許す限り将来の世代にも対応します。現在、M1およびM2世代のほとんどのマシンに対応しています。
+すべてのApple Macが対象です。また、開発期間が許す限り将来の世代にも対応します。現在、M1、M2、M3 世代のほとんどのマシンに対応しています。
 最新情報は[機能対応ページ](https://github.com/asfdrwe/asahi-linux-translations/wiki/%E6%A9%9F%E8%83%BD%E5%AF%BE%E5%BF%9C)をご覧ください。
 また、機能概要の要約を[こちら](https://github.com/asfdrwe/asahi-linux-translations/blob/main/fedora.md#%E6%A9%9F%E5%99%A8%E5%AF%BE%E5%BF%9C)でご覧いただけます。
 

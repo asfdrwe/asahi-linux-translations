@@ -4,6 +4,7 @@
 # M2: エピソード 1 (もしくは M3 での Asahi Linux)
 
 - [前回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202608.md)
+- [次回](https://github.com/asfdrwe/asahi-linux-translations/blob/main/PROGRESS202611.md)
 
 進捗報告以外のブログ投稿を書くのは久しぶりですが、今日はちょうど良い機会です。M3 シリーズのマシンへの対応がインストーラに統合されました。つまり、**Asahi Linux は M3 シリーズの SoC を搭載した Mac に公式対応するようになりました！**
 
