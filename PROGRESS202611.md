@@ -113,7 +113,7 @@ MacBook に搭載されているマイクアレイ向けのカスタムビーム
 
 これは、FFT ベースの分析変換を排除し、無限インパルス応答（IIR）フィルタに基づく実装に置き換えたときに崩壊しました。これは*本来*より速いはずでしたが、コンパイラは新しい実装を自動ベクトル化できていませんでした。[Linkmauve氏](https://github.com/linkmauve)が親切に介入していただき、arm64 *および* amd64 向けの SIMD 最適化コードを追加してくれました。これと、[Frédéric Bour氏](https://github.com/let-def)による他のパフォーマンス最適化を組み合わせた結果、Triforce はほぼ 2 倍の速度になり、しかも CPU 時間をより少なく使用するようになりました！
 
-## Keeping up
+## 歩調を合わせる
 Fedora Linux 45 は 11 月 3 日にリリースされ、同日に[Fedora Asahi Remix](https://fedoramagazine.org/fedora-asahi-remix-45-is-now-available/)を出荷しました。上流と同じ日に新しいバージョンの Fedora Asahi Remix を出せたのはこれが初めてです！
 
 ## 歴史から学ぶ
